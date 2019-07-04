@@ -1,0 +1,9 @@
+nvim/.config/nvim/autoload
+nvim/.config/nvim/after
+nvim/.config/nvim/bak
+nvim/.config/nvim/plugged
+nvim/.config/nvim/tags
+
+teeworlds/.teeworlds/logs/
+teeworlds/.teeworlds/demos/
+teeworlds/.teeworlds/downloadedmaps/

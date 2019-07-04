@@ -1,0 +1,59 @@
+[global]
+	font = Roboto Sans 15
+	allow_markup = yes
+
+	format = "<b>%s</b>\n%b"
+	sort = yes
+	indicate_hidden = yes
+	alignment = right
+	bounce_freq = 0
+	show_age_threshold = 60
+	word_wrap = no
+	ignore_newline = no
+	geometry = "330x8-12+17"
+	shrink = no
+	transparency = 0
+	idle_threshold = 120
+	monitor = 0
+	follow = mouse
+	sticky_history = yes
+	history_length = 20
+	show_indicators = yes
+	line_height = 0
+	separator_height = 1
+	padding = 10
+	horizontal_padding = 10
+	separator_color = auto
+	startup_notification = true
+	dmenu = /usr/bin/dmenu -p dunst:
+	browser = vivaldi-stable -new-tab
+	icon_position = left
+	icon_path = /usr/share/icons/Paper/24x24/status:/usr/share/icons/Paper/24x24/apps
+	frame_width = 3
+	frame_color = "#353535"
+	/* corner_radius = 1 */
+
+[shortcuts]
+	close = ctrl+space
+	close_all = ctrl+shift+space
+	history = ctrl+grave
+	context = ctrl+shift+period
+
+[urgency_low]
+	background = "#212121"
+	foreground = "#EEFFFF"
+	timeout = 10
+
+[urgency_normal]
+	background = "#212121"
+	foreground = "#EEFFFF"
+	timeout = 10
+
+[urgency_critical]
+	background = "#212121"
+	foreground = "#EEFFFF"
+	timeout = 0
+
+[spotify]
+    appname = *Spotify*
+    new_icon = spotify-client

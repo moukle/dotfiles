@@ -1,0 +1,40 @@
+configuration {
+	display-drun:    "❱";
+	display-combi:    "❱";
+	show-icons:      true;
+	drun-icon-theme: "Papirus";
+}
+
+* {
+	font: "Helvetica Neue 15";
+	padding: 5px 10px;
+	background-color: @background;
+	color: @foreground;
+	/* color: #c0b391; */
+}
+
+
+window {
+	/* border-radius: 3px; */
+	height: 400;
+	width: 800px;
+	padding: 20px;
+	border: 3px;
+	border-color: @color0;
+}
+
+#prompt {
+	color: @color3;
+}
+
+listview {
+	padding: 30px 10px 0px 10px;
+	spacing: 0.5em;
+}
+
+#element selected {
+	text-color: @color3;
+}
+
+@import "/home/moritz/.cache/squash/colors.rasi"
+/* vim:ft=css

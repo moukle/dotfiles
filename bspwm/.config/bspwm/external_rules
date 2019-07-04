@@ -1,0 +1,18 @@
+#!/bin/sh
+#
+# bspwm: external_rules_command
+
+id=${1?};
+instance=$3;
+class=$2;
+
+case $class in
+	(Spotify) echo desktop=^8;;
+	(TelegramDesktop) echo desktop=^9;;
+	('')
+		case $(ps -p "$(xdo pid $id)" -o comm= 2>/dev/null) in
+			(spotify) echo desktop=^8;;
+		esac;;
+esac;
+
+# vim: set ft=sh :

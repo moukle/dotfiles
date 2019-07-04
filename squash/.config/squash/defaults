@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+# ---- GENERAL DEFAULTS ----
+
+# Paths
+CACHE_DIR="${HOME}/.cache/squash"
+THEME_DIR="${HOME}/.config/squash/themes"
+# VIM_CONFIG="${HOME}/.config/nvim/app.vim"
+# BAR_DIR="${HOME}/squash/bar"
+DUNST_PATH="${HOME}/.config/dunst/dunstrc"
+
+# WM Options
+# TWOBWM_PATH="${HOME}/2bwm/src/2bwm"
+BSPWM_PATH="${HOME}/.config/bspwm"
+# CHEF_PATH="${HOME}/.config/windowchef"
+
+# ---- ENABLED MODULES ----
+
+RELOAD_TERMINALS=YES
+RELOAD_WALLPAPER=NO
+RELOAD_BAR=NO
+RELOAD_WM=YES #NOTE: if wm is 2bwm, modifies config files
+RELOAD_VIM=NO # NOTE: Modifies config files
+RELOAD_DUNST=YES #NOTE: Modifies config files
+
+WRITE_ALL=true
