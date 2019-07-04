@@ -23,8 +23,7 @@ setopt autocd
 #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 # Import seperate config files
 #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-eval $( dircolors -b ~/.zsh/lscolours)
-# export LS_COLORS=$(ls_colors_generator)
+eval $( dircolors -b ~/.ls_colors)
 
 for r in $HOME/.zsh/*.zsh; do
 	if [[ $DEBUG > 0 ]]; then
@@ -33,9 +32,6 @@ for r in $HOME/.zsh/*.zsh; do
 	source $r
 done
 
-#export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # vim: foldmethod=marker foldlevel=0
-
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
