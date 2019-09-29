@@ -1,0 +1,54 @@
+#!/bin/bash
+
+# DEFINE COLORS
+FG="#645240"
+BG="#f5eeeb"
+
+WHT="#3b3228"
+RED="#cb6077"
+GRN="#beb55b"
+YLW="#f4bc87"
+BLU="#8ab3b5"
+MAG="#a89bb9"
+CYN="#7bbda4"
+BLK="#ede0da"
+
+BWHT="#7e705a"
+BRED="#cb6077"
+BGRN="#beb55b"
+BYLW="#f4bc87"
+BBLU="#8ab3b5"
+BMAG="#a89bb9"
+BCYN="#7bbda4"
+BBLK="#ddc4b8"
+
+# ROFI OPTIONS
+ACC="${YLW}"
+
+#BAR OPTIONS
+BAR_SCRIPT="simplebar"
+
+# VIM COLORSCHEME
+VIM_SCHEME='base16-eighties'
+
+# WALLPAPER OPTIONS
+WALLPAPER_PATH="$HOME/Wallpapers/rob-bye-20143-unsplash.jpg"
+WALLPAPER_STYLE="fill"
+
+# 2BWM OPTIONS
+TWOBWM_FOCUS="${BBLK}"
+TWOBWM_UNFOCUS="${BLK}"
+TWOBWM_FIXED="${RED}"
+TWOBWM_UNKILL="${CYN}"
+TWOBWM_FIXEDUNK="${MAG}"
+TWOBWM_OUTR="${BG}"
+TWOBWM_EMP="${BG}"
+
+# BSPWM OPTIONS
+BSPWM_NORMAL="${BBLK}"
+BSPWM_FOCUSED="${CYN}"
+BSPWM_URGENT="${RED}"
+BSPWM_PRESEL="${GRN}"
+SQUASH_FONT=xft:Iosevka\ Nerd\ Font:size=13
+SQUASH_FONT="xft:Iosevka Nerd Font:size=13"
+ST_FONT="Iosevka Nerd Font:size=13"

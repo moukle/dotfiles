@@ -1,17 +1,17 @@
 [global]
-	font = Roboto Sans 15
+	font = SF Pro Text 14
 	allow_markup = yes
 
-	format = "<b>%s</b>\n%b"
+	format = "<b>%s</b>  %b"
 	sort = yes
 	indicate_hidden = yes
 	alignment = right
 	bounce_freq = 0
 	show_age_threshold = 60
-	word_wrap = no
+	word_wrap = yes
 	ignore_newline = no
-	geometry = "330x8-12+17"
-	shrink = no
+	geometry = "375x50-15+25"
+	shrink = yes
 	transparency = 0
 	idle_threshold = 120
 	monitor = 0
@@ -21,17 +21,17 @@
 	show_indicators = yes
 	line_height = 0
 	separator_height = 1
-	padding = 10
+	padding = 5
 	horizontal_padding = 10
 	separator_color = auto
 	startup_notification = true
 	dmenu = /usr/bin/dmenu -p dunst:
 	browser = vivaldi-stable -new-tab
 	icon_position = left
-	icon_path = /usr/share/icons/Paper/24x24/status:/usr/share/icons/Paper/24x24/apps
-	frame_width = 3
-	frame_color = "#353535"
-	/* corner_radius = 1 */
+	icon_path = /usr/share/icons/Paper/24x24/status:/usr/share/icons/Paper/24x24/apps:/usr/share/icons/Paper/24x24/web
+	frame_width = 1
+	frame_color = "#747369"
+	corner_radius = 0
 
 [shortcuts]
 	close = ctrl+space
@@ -40,20 +40,24 @@
 	context = ctrl+shift+period
 
 [urgency_low]
-	background = "#212121"
-	foreground = "#EEFFFF"
-	timeout = 10
+	background = "#2d2d2d"
+	foreground = "#d3d0c8"
+	timeout = 5
 
 [urgency_normal]
-	background = "#212121"
-	foreground = "#EEFFFF"
-	timeout = 10
+	background = "#2d2d2d"
+	foreground = "#d3d0c8"
+	timeout = 7
 
 [urgency_critical]
-	background = "#212121"
-	foreground = "#EEFFFF"
-	timeout = 0
+	background = "#2d2d2d"
+	foreground = "#d3d0c8"
+	timeout = 30
 
 [spotify]
     appname = *Spotify*
     new_icon = spotify-client
+
+[telegram]
+    appname = *telegram-desktop*
+    new_icon = telegram

@@ -1,6 +1,7 @@
+; ---------- global --------------
+;
 [colors]
 background     = ${xrdb:background}
-; background     = #0022525
 foreground     = ${xrdb:foreground}
 black_dark     = ${xrdb:color0}
 black_bright   = ${xrdb:color8}
@@ -19,26 +20,21 @@ cyan_bright    = ${xrdb:color14}
 white_dark     = ${xrdb:color7}
 white_bright   = ${xrdb:color15}
 
+transparent    = #00000000
 
 [fonts]
-font_Roboto = "Roboto Mono Nerd Font:size=16:weight=medium:antialias=true;4"
-font_OpenSans = "Open Sans:size=18:weight=regular:antialias=true;3"
-font_Helvitica = "Helvetica Neue:size=20:weight=regular:antialias=true;3"
-font_Hack = "Hack Nerd Font:size=15:weight=regular:antialias=true;3"
-
-; ICON
-icon_siji = "WunconSiji:pixelsize=10;3"
-icon_iconmoon = "icomoon:pixelsize=14:weight=bold:antialias=true;3"
-icon_awesome = "Font Awesome:size=20:weight=medium:antialias=true;4"
-icon_typicons = "Typicons:size=20:weight=regular:antialias=true;3"
+font_Iosevka = "Iosevka Nerd Font:size=13:weight=regular:antialias=true;3"
+font_SF = "SF Pro Text:size=14:weight=bold:antialias=true;3"
+icon_typicons = "Typicons:size=14:weight=regular:antialias=true;2"
 
 [settings]
-main_font = ${fonts.font_Roboto}
+main_font = ${fonts.font_SF}
+main_font2 = ${fonts.font_Iosevka}
 main_icon = ${fonts.icon_typicons}
-main_icon2 = ${fonts.icon_awesome}
 
+accent = ${colors.blue_bright}
 bar_bg = ${colors.background}
-bar_fg = ${colors.foreground}
+bar_fg = ${colors.black_bright}
 bar_height = 35
 bar_width = 100%
 bar_x = 0
@@ -47,6 +43,112 @@ bar_bottom = false
 
 spacing = 1
 line_size = 10
+
+; ---------- bars --------------
+[bar/tray]
+monitor  = DP-2
+width    = 200
+height   = ${settings.bar_height}
+offset-x = 1713
+offset-y = ${settings.bar_y}
+bottom   = ${settings.bar_bottom}
+
+background = ${colors.transparent}
+foreground = ${settings.bar_fg}
+
+line-size = ${settings.line_size}
+
+font-0 = ${settings.main_icon}
+font-1 = ${settings.main_font}
+font-2 = ${settings.main_font2}
+
+modules-left   =
+modules-center = separator
+modules-right  =
+
+tray-position   = right
+tray-padding    = ${settings.spacing}
+
+padding = 0
+
+wm-restack = bspwm
+
+[bar/time]
+monitor  = DP-4
+width    = 165
+height   = ${settings.bar_height}
+offset-x = 1748
+offset-y = ${settings.bar_y}
+bottom   = ${settings.bar_bottom}
+
+background = ${settings.bar_bg}
+foreground = ${settings.bar_fg}
+
+line-size = ${settings.line_size}
+border-bottom-size = 0
+border-color = ${settings.accent}
+
+font-0 = ${settings.main_font}
+font-1 = ${settings.main_font2}
+font-2 = ${settings.main_icon}
+
+modules-left   =
+modules-center = pulseaudio
+modules-right  = time
+
+padding = 0
+
+[bar/workspacesL]
+monitor  = DP-2
+width    = 235
+height   = ${settings.bar_height}
+offset-x = ${settings.bar_x}
+offset-y = ${settings.bar_y}
+bottom   = ${settings.bar_bottom}
+
+background = ${settings.bar_bg}
+foreground = ${settings.bar_fg}
+
+line-size = ${settings.line_size}
+border-bottom-size = 0
+border-color = ${settings.accent}
+
+font-0 = ${settings.main_font}
+font-1 = ${settings.main_font2}
+font-2 = ${settings.main_icon}
+
+modules-left   = launcher bspwm
+modules-center =
+modules-right  =
+
+padding = 0
+
+wm-restack = bspwm
+
+[bar/workspacesR]
+monitor  = DP-4
+width    = 235
+height   = ${settings.bar_height}
+offset-x = ${settings.bar_x}
+offset-y = ${settings.bar_y}
+bottom   = ${settings.bar_bottom}
+
+background = ${settings.bar_bg}
+foreground = ${settings.bar_fg}
+
+line-size = ${settings.line_size}
+border-bottom-size = 0
+border-color = ${settings.accent}
+
+font-0 = ${settings.main_font}
+font-1 = ${settings.main_font2}
+font-2 = ${settings.main_icon}
+
+modules-left   = shot bspwm
+modules-center =
+modules-right  =
+
+padding = 0
 
 [bar/laptop]
 monitor = eDP1
@@ -62,11 +164,12 @@ foreground = ${settings.bar_fg}
 line-size = ${settings.line_size}
 
 font-0 = ${settings.main_font}
-font-1 = ${settings.main_icon}
-font-2 = ${settings.main_icon2}
+font-1 = ${settings.main_font2}
+font-2 = ${settings.main_icon}
+font-3 = ${settings.main_icon2}
 
-modules-left   = notes shot date
-modules-center = bspwm
+modules-left   = shot bspwm
+modules-center = date
 modules-right  = wlan pulseaudio backlight bat0 bat1 powermenu
 
 padding-left = ${settings.spacing}
@@ -75,7 +178,7 @@ module-margin-right = ${settings.spacing}
 
 tray-position   = right
 tray-padding    = ${settings.spacing}
-tray-background = ${colors.black_dark}
+tray-background = ${colors.black_bright}
 
 wm-restack = bspwm
 
@@ -91,21 +194,21 @@ background = ${settings.bar_bg}
 foreground = ${settings.bar_fg}
 
 line-size = ${settings.line_size}
+border-bottom-size = 1
+border-color = ${colors.black_bright}
 
-font-0 = ${settings.main_font}
-font-1 = ${settings.main_icon}
+font-0 = ${settings.main_icon}
+font-1 = ${settings.main_font}
+font-2 = ${settings.main_font2}
 
-modules-left   = pulseaudio
+modules-left   = shot
 modules-center = bspwm
-modules-right  = powermenu
+modules-right  = pulseaudio powermenu time
 
 padding-left = ${settings.spacing}
+padding-right = ${settings.spacing}
 module-margin-left  = ${settings.spacing}
 module-margin-right = ${settings.spacing}
-
-tray-position   = right
-tray-padding    = ${settings.spacing}
-tray-background = ${colors.black_dark}
 
 wm-restack = bspwm
 
@@ -121,13 +224,16 @@ background = ${settings.bar_bg}
 foreground = ${settings.bar_fg}
 
 line-size = ${settings.line_size}
+border-bottom-size = 1
+border-color = ${colors.black_bright}
 
-font-0 = ${settings.main_font}
-font-1 = ${settings.main_icon}
+font-0 = ${settings.main_icon}
+font-1 = ${settings.main_font}
+font-2 = ${settings.main_font2}
 
-modules-left   = date
+modules-left   = launcher
 modules-center = bspwm
-modules-right  = shot notes
+modules-right  =
 
 padding-left = ${settings.spacing}
 padding-right = ${settings.spacing}
@@ -136,23 +242,40 @@ module-margin-right = ${settings.spacing}
 
 wm-restack = bspwm
 
+tray-position   = right
+tray-padding    = ${settings.spacing}
+tray-background = ${colors.background}
+
+; ---------- modules --------------
+[module/nobar]
+type = custom/script
+
 [module/launcher]
 type = custom/script
-click-left = rofi -combi-modi window,drun -show combi -modi combi
-exec = echo ""
-label-foreground = ${colors.yellow_dark}
+click-left = ~/.config/rofi/bins/appsmenu
+exec = echo "    "
+; label-foreground = ${colors.white_bright}
+; label-background = ${settings.accent}
 
 [module/notes]
 type = custom/script
-exec = echo ""
+exec = echo ""
 click-left = rofi-notes
-label-foreground = ${colors.blue_dark}
+; label-foreground = ${colors.black_bright}
+
+[module/power]
+type = custom/script
+exec = echo "  拉  "
+click-left = ~/tankdots/rofi/.config/rofi/bins/powermenu
+label-foreground = ${colors.red_bright}
+; label-background = ${colors.red_bright}
 
 [module/shot]
 type = custom/script
-exec = echo ""
+exec = echo "    "
 click-left = flameshot gui &
-label-foreground = ${colors.magenta_dark}
+; label-foreground = ${colors.white_bright}
+; label-background = ${settings.accent}
 
 [module/bspwm]
 type = internal/bspwm
@@ -160,74 +283,93 @@ pin-workspaces = true
 enable-click = true
 
 format = <label-state> <label-mode>
+; format-background = ${colors.black_dark}
 
-label-focused  = "ﱣ"
-label-occupied = "ﱣ"
-label-urgent   = "ﱣ"
-label-empty    = "ﱤ"
+; label = %name%
+; label-focused  = —
+label-focused  = ""
+label-occupied = ""
+label-urgent   = ""
+label-empty    = ""
+; label-empty    = "ﱤ"
 
-label-focused-foreground  = ${colors.yellow_dark}
+label-focused-foreground  = ${settings.accent}
 label-occupied-foreground = ${colors.white_bright}
 label-urgent-foreground   = ${colors.red_dark}
-label-empty-foreground    = ${colors.white_dark}
+label-empty-foreground    = ${colors.black_bright}
 
-label-focused-padding  = 1
-label-occupied-padding = 1
-label-urgent-padding   = 1
-label-empty-padding    = 1
+label-focused-padding  = 2
+label-occupied-padding = 2
+label-urgent-padding   = 2
+label-empty-padding    = 2
 
 [module/bspbars]
 type = internal/bspwm
 pin-workspaces = true
 enable-click = true
 
-label-focused  = "    "
-label-occupied = "    "
-label-urgent   = "    "
-label-empty    = "    "
+label-focused = 
+label-occupied = %name%
+label-empty = "   "
+label-urgent = 
+; label-focused  = "       "
+; label-occupied = "       "
+; label-urgent   = "       "
+; label-empty    = "       "
 
-label-focused-overline  = ${colors.yellow_dark}
-label-occupied-overline = ${colors.white_dark}
-label-urgent-overline   = ${colors.red_dark}
-label-empty-overline    = ${colors.black_dark}
+; label-focused-overline  = ${settings.accent}
+; label-occupied-overline = ${colors.white_dark}
+; label-urgent-overline   = ${colors.red_dark}
+; label-empty-overline    = ${colors.black_dark}
+
+label-focused-background  = ${settings.accent}
+label-occupied-background = ${colors.black_dark}
+label-urgent-background   = ${colors.red_dark}
+label-empty-background    = ${colors.background}
+
+label-focused-padding  = 1
+label-occupied-padding = 1
+label-urgent-padding   = 1
+label-empty-padding    = 1
+
+[module/time]
+type = internal/date
+label = %time%
+time = "%H:%M"
+time-alt = "%d %b"
+
+; format-background = ${settings.accent}
+format-foreground = ${colors.white_bright}
 
 [module/date]
 type = internal/date
-label = "%date% %time%"
+
+label = %date% %time%
+
 time = "%H:%M"
 date = "%d. %b,"
+
 time-alt = "%H:%M:%S"
 date-alt = "%A - %d. %B,"
-
-[module/pulsebar]
-type = internal/pulseaudio
-use-ui-max = true
-
-format-muted = <bar-volume>
-format-muted-background = ${colors.red_dark}
-
-format-volume = <bar-volume>
-format-volume-background = ${colors.white_dark}
-
-bar-volume-width = 5
-bar-volume-empty     = ""
-bar-volume-fill      = "  "
-bar-volume-indicator = "  "
-bar-volume-indicator-background = ${colors.white_dark}
 
 [module/pulseaudio]
 type = internal/pulseaudio
 use-ui-max = true
 
 format-volume = <ramp-volume>
+; format-volume-background = ${colors.black_dark}
 
-ramp-volume-0 = 奄
-ramp-volume-1 = 奔
-ramp-volume-2 = 墳
-ramp-volume-3 = 
-ramp-volume-foreground = ${colors.yellow_dark}
+; ramp-volume-0 = 奄
+; ramp-volume-1 = 奔
+; ramp-volume-2 = 墳
+; ramp-volume-3 = 
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+; ramp-volume-3 = 
+; ramp-volume-foreground = ${settings.accent}
 
-label-muted = 婢
+label-muted = 
 label-muted-foreground = ${colors.red_dark}
 
 [module/wlan]
@@ -236,9 +378,9 @@ interface = wlp4s0
 interval = 3.0
 
 ; format-connected = <ramp-signal>
-format-connected = %{}
+format-connected = %{}  %{}
 format-connected-prefix = 直
-format-connected-prefix-foreground = ${colors.green_dark}
+format-connected-prefix-foreground = ${settings.accent}
 
 label-connected = " %essid%"
 
@@ -260,17 +402,17 @@ type = internal/battery
 adapter = ADP1
 full-at = 96
 
-format-charging        = <ramp-capacity>
+format-charging        = %{}  <ramp-capacity>  %{}
 label-charging         = %percentage%
 format-charging-foreground = ${colors.yellow_dark}
 
-format-discharging       = <ramp-capacity>
+format-discharging       = %{}  <ramp-capacity>  %{}
 label-discharging        = %percentage%
 format-discharging-foreground = ${colors.blue_dark}
 
-format-full = <label-full>
+format-full = %{}  <label-full>  %{}
 label-full = ""
-label-full-foreground = ${colors.yellow_dark}
+label-full-foreground = ${settings.accent}
 
 ; hack nerd
 ramp-capacity-0 = 
@@ -283,6 +425,11 @@ ramp-capacity-6 = 
 ramp-capacity-7 = 
 ramp-capacity-8 = 
 ramp-capacity-9 = 
+
+; ramp-capacity-0 = 
+; ramp-capacity-1 = 
+; ramp-capacity-2 = 
+; ramp-capacity-3 = 
 
 animation-charging-0 = 
 animation-charging-1 = 
@@ -303,8 +450,9 @@ battery = BAT1
 [module/backlight]
 type = internal/xbacklight
 
-format = <ramp>
-label = %{} %percentage% %{}
+format = %{}  <ramp>  %{}
+label = %percentage%
+; format-prefix = 
 format-foreground = ${colors.magenta_dark}
 
 ramp-0 = 
@@ -350,12 +498,20 @@ menu-4-0 = hibernate
 menu-4-0-exec = systemctl suspend && slock
 
 format-spacing = 1
-format-background = ${colors.black_dark}
-format-foreground = ${colors.red_dark}
+; format-background = ${colors.black_dark}
+; format-foreground = ${colors.red_dark}
+; format-background = ${colors.black_dark}
 format-padding = 1
 
-label-open = "拉"
+label-open = "  "
+; label-open = "  "
 label-close = ""
 label-separator = " "
+
+[module/separator]
+type              = custom/script
+format-text       = <label>
+label             = %{}
+exec              = echo label
 
 ; vim:ft=dosini

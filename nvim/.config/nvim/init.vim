@@ -29,6 +29,7 @@ let mapleader = "\<Space>"
 			Plug 'jiangmiao/auto-pairs'
 			Plug 'AndrewRadev/splitjoin.vim'
 			Plug 'junegunn/vim-easy-align'
+			Plug 'lambdalisue/suda.vim'
 		" }}}
 		" {{{ fancy
 			" Plug 'https://github.com/romainl/flattened'
@@ -336,8 +337,8 @@ endfunction
 		set tm=500
 	" }}}
 	" {{{ backup files
-		set undofile
-		set undodir=/home/moritz/.config/nvim/bak
+		" set undofile
+		" set undodir=/home/moritz/.config/nvim/bak
 
 		set nobackup
 		set nowb
@@ -409,6 +410,6 @@ endfunction
 		" }}}
 	" }}}
 	" {{{ commands
-		cmap w!! w !sudo tee > /dev/null %
+		cmap w!! w suda://%
 	" }}}
 	" }}}

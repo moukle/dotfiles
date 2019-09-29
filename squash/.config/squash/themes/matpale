@@ -53,3 +53,4 @@ BSPWM_PRESEL="${GRN}"
 
 SQUASH_FONT=xft:Iosevka\ Nerd\ Font:size=14
 SQUASH_FONT="xft:Iosevka Nerd Font:size=14"
+ST_FONT="Iosevka Nerd Font:size=13"

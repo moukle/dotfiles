@@ -1,20 +1,14 @@
-#!/bin/sh
+#! /bin/sh
 
-border_width=2
-padding=10
-# gap=-3
-gap=-3
-barpadding=$((35+$padding))
-# barpadding=$((5+$padding))
-
+source $HOME/.cache/squash/colors
 sxhkd &
-# pkill -USR1 -x sxhkd
-xrdb $HOME/.Xresources
 
-# bspc config border_radius			5
-bspc config window_gap				$gap
-bspc config border_width			$border_width
-bspc config top_padding				$barpadding
+padding=8
+padding_bar=$((35+$padding))
+
+bspc config window_gap				5
+bspc config border_width			1
+bspc config top_padding				$padding_bar
 bspc config bottom_padding			$padding
 bspc config right_padding			$padding
 bspc config left_padding			$padding
@@ -22,52 +16,31 @@ bspc config left_padding			$padding
 bspc config split_ratio				0.5
 bspc config click_to_focus			true
 bspc config focus_follows_pointer	false
-
 bspc config borderless_monocle		true
 
-a_col=$(xrdb -query | grep color8 | cut -f 2)
-n_col=$(xrdb -query | grep color8 | cut -f 2)
-f_col=$(xrdb -query | grep color3 | cut -f 2)
+bspc config focused_border_color	$BWHT
+bspc config normal_border_color		$BLK
+bspc config active_border_color		$BBLK
+bspc config presel_feedback_color	$YLW
 
-bspc config focused_border_color	"$f_col"
-bspc config normal_border_color		"$n_col"
-bspc config active_border_color		"$a_col"
-bspc config presel_feedback_color	"$f_col"
-
-HOSTNAME = $HOST
-if [[ $HOSTNAME = "moe" ]]; then
+if [ $HOSTNAME == "olo" ]; then
 	bspc monitor DP-2 -d q w e r t
 	bspc monitor DP-4 -d y u i o p
-	# $HOME/.config/polybar/launch.sh bars_left bars_right tray
 	$HOME/.config/polybar/launch.sh left right
 else
 	bspc monitor -d q w e r t z u i o p
 	$HOME/.config/polybar/launch.sh laptop
 fi
 
-bspc rule -a Chromium				desktop=^1
-bspc rule -a Firefox				desktop=^1
-bspc rule -a Vivaldi-stable			desktop=^1 # state=tiled
-bspc rule -a enpass					desktop=^1 state=locked
-
-bspc rule -a jetbrains-idea			desktop=^2 follow=off
-bspc rule -a jetbrains-webstorm		desktop=^2 follow=off
+bspc rule -a qutebrowser			desktop=^1
 bspc rule -a code-oss				desktop=^2 follow=off
-
 bspc rule -a "Gimp-2.10"			desktop=^4 follow=off
-bspc rule -a resolve				desktop=^4 follow=off
 bspc rule -a DDNet					desktop=^5 follow=off state=fullscreen
-
 bspc rule -a discord				desktop=^7 follow=off
 bspc rule -a ts3client_linux_amd64	desktop=^7
-
 bspc rule -a Zathura				state=tiled
 bspc rule -a Pinentry				state=floating
 
-bspc rule -a Platformer_Godot		state=floating
-
-# Spotify
-bspc config external_rules_command "$HOME/.config/bspwm/external_rules"
-
+bspc config external_rules_command "$HOME/.config/bspwm/external_rules" # Spotify
 
 # vim: set ft=sh :

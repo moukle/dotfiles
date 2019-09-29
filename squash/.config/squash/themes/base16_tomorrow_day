@@ -1,0 +1,53 @@
+#!/bin/bash
+
+# DEFINE COLORS
+BG="#f6f5f5"
+FG="#373b41"
+
+BLK="#c5c8c6"
+RED="#cc6666"
+GRN="#b5bd68"
+YLW="#f0c674"
+BLU="#81a2be"
+MAG="#b294bb"
+CYN="#8abeb7"
+WHT="#1d1f21"
+
+BBLK="#969896"
+BRED="#cc6666"
+BGRN="#b5bd68"
+BYLW="#f0c674"
+BBLU="#81a2be"
+BMAG="#b294bb"
+BCYN="#8abeb7"
+BWHT="#35393c"
+
+# ROFI OPTIONS
+ACC="${RED}"
+
+# BAR OPTIONS
+BAR_SCRIPT="infobar2"
+
+# VIM COLORSCHEME
+VIM_SCHEME='term'
+
+# WALLPAPER OPTIONS
+WALLPAPER_PATH="$HOME/Media/walls/anna/DSC_9033-white.jpg"
+WALLPAPER_STYLE="fill"
+
+# 2BWM OPTIONS
+TWOBWM_FOCUS="${BYLW}"
+TWOBWM_UNFOCUS="${BGRN}"
+TWOBWM_FIXED="${RED}"
+TWOBWM_UNKILL="${CYN}"
+TWOBWM_FIXEDUNK="${MAG}"
+TWOBWM_OUTR="${BG}"
+TWOBWM_EMP="${BG}"
+
+# LEMONBAR OPTIONS
+LMNBAR_DARK="${BYLW}"
+LMNBAR_DARKER="${BGRN}"
+
+SQUASH_FONT=xft:Iosevka\ Nerd\ Font:size=13
+SQUASH_FONT="xft:Iosevka Nerd Font:size=13"
+ST_FONT="Iosevka Nerd Font:size=13"

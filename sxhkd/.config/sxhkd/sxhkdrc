@@ -1,23 +1,12 @@
-#
-# bspwm hotkeys
-#
+# quit/restart bspwm
+super + ctrl + {q,b}
+	bspc {quit,wm -r}
 
-#reload bspwm
-super + ctrl + b
-	~/.config/bspwm/bspwmrc
-
-#reload sxhkdrc
+# reload sxhkdrc
 super + ctrl + s
 	pkill -USR1 -x sxhkd
 
-#quit
-super + ctrl + q
-	pkill panel; \
-	bspc quit
 
-#
-# bspwm hotkeys
-#
 # focus monitor DIR
 super + x
 	bspc monitor -f next
@@ -44,10 +33,8 @@ super + {_,shift + }c
 super + b
 	bspc node -s biggest.local
 
-#
-# state/flags
-#
 
+### state/flags
 # alternate between the tiled and monocle layout
 super + f
 	bspc desktop -l next
@@ -59,10 +46,8 @@ super + {s,shift + f}
 super + ctrl + {x,y,z}
 	bspc node -g {locked,sticky,private}
 
-#
-# focus/swap
-#
 
+### focus/swap
 # focus/move/resize/presel the node in the given direction
 super + {_,shift,alt,ctrl} + {h,j,k,l}
 	{focus,move,resize,presel}.sh {west,south,north,east}
@@ -82,17 +67,14 @@ super + {_, shift} + Tab
 alt + Tab
     bspc desktop -f last
 
-#--- desktop ---#
 # adjust window gap
 super + {KP_Add, KP_Subtract}
     bspc config -d focused window_gap $((`bspc config -d focused window_gap` {+,-} 2 ))
 
-#
-# preselect
-#
+### preselect
 # if the current node is automatic, send it to the last manual, otherwise pull the last leaf
 super + semicolon
-	bspc node -n 'last.!automatic.local'
+	bspc node newest.marked.local -n newest.!automatic.local
 
 # preselect the direction
 super + ctrl + {h,j,k,l}
@@ -103,50 +85,38 @@ super + ctrl + {1-9}
 	bspc node -o 0.{1-9}
 
 # cancel the preselection for the focused node
-super + ctrl + f
+super + ctrl + shift + f
 	bspc node -p cancel
 
 # cancel the preselection for the focused desktop
-super + ctrl + shift + f
+super + ctrl + f
 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
-#
 
-#--- applications/.. ---#
 
+### applications
 super + Return
-	st
-	# urxvtc
-	# alacritty
+	urxvt
 
-super + ctrl + Return
-	urxvtd -q -f -o
+# super + ctrl + Return
+# 	urxvtd -q -f -o
 
-#rofi
+## rofi
 super + d
-	rofi -show drun
-	#rofi -combi-modi window,drun -show combi
+	~/.config/rofi/bins/appsmenu
+	# rofi -show drun
 
 super + v
 	rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
 
 super + ctrl + p
-	rofi-pass
+	bwmenu
+	# rofi-pass
 
-#info
-super + z
-    notifyStats.sh
-
-#scrot
-super + 0
-	region
-super + 9
-	scrot
-
-#--- volume&mpc ---#
+### volume
 XF86AudioPlay
 	mpc toggle
 
