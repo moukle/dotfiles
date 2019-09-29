@@ -14,3 +14,9 @@ bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
+
+bindkey '^L' forward-word
+bindkey '^H' backward-word
+bindkey '^K' history-beginning-search-backward
+bindkey '^J' history-beginning-search-forward
+

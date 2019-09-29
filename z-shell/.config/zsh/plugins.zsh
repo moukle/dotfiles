@@ -9,4 +9,6 @@ zplug "zsh-users/zsh-completions"
 
 zplug "b4b4r07/enhancd", use:init.sh, at:2ccdaca
 zplug "Tarrasch/zsh-bd"
+
+zplug "plugins/git", from:oh-my-zsh
 zplug load

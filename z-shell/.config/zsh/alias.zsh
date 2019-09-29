@@ -18,11 +18,6 @@ alias cp='cp -rv'
 alias rm='rm --verbose'
 alias rmf='rm -rf'
 
-alias gl='git pull '
-alias gcm='git commit -m '
-alias ga='git add '
-alias gp='git push '
-
 alias ende='trans en:de'
 alias deen='trans de:en'
 
