@@ -10,7 +10,7 @@ configuration {
 }
 
 * {
-	font: "SF Pro Text 20";
+	font: "SF Pro Text 15";
 	padding: 5px 10px;
 	background-color: @background;
 	color: @color8;
@@ -18,7 +18,7 @@ configuration {
 
 window {
 	border-radius: 0px;
-	height: 400;
+	height: 500px;
 	width: 800px;
 	padding: 20px;
 	border: 1px;
