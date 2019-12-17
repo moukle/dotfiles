@@ -6,13 +6,6 @@ HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.cache/zsh/history
 
-# Basic auto/tab complete:
-autoload -U compinit
-zstyle ':completion:*' menu select
-zmodload zsh/complist
-compinit
-_comp_options+=(globdots)		# Include hidden files.
-
 # vi mode
 bindkey -v
 export KEYTIMEOUT=1
@@ -38,6 +31,12 @@ zle -N zle-line-init
 echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
+# Basic auto/tab complete:
+autoload -Uz compinit
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+compinit
+_comp_options+=(globdots)		# Include hidden files.
 
 # Import seperate config files
 for r in $HOME/.config/zsh/*.zsh; do
@@ -46,5 +45,6 @@ for r in $HOME/.config/zsh/*.zsh; do
 	fi
 	source $r
 done
+
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

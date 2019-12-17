@@ -39,8 +39,12 @@ super + b
 super + f
 	bspc desktop -l next
 
-super + {s,shift + f}
-	bspc node -t '~{floating,fullscreen}'
+# super + {s,shift + f}
+# 	bspc node -t '~{floating,fullscreen}'
+
+# set the window state
+super + {z,shift + z,s,f}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
 # set the node flags
 super + ctrl + {x,y,z}
@@ -74,7 +78,8 @@ super + {KP_Add, KP_Subtract}
 ### preselect
 # if the current node is automatic, send it to the last manual, otherwise pull the last leaf
 super + semicolon
-	bspc node newest.marked.local -n newest.!automatic.local
+	bspc node -n 'last.!automatic.local'
+	# bspc node newest.marked.local -n newest.!automatic.local
 
 # preselect the direction
 super + ctrl + {h,j,k,l}

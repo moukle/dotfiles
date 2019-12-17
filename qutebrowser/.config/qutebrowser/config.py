@@ -310,37 +310,38 @@ c.colors.statusbar.url.warn.fg = base0E
 c.colors.tabs.bar.bg = base00
 
 # Color gradient start for the tab indicator.
-c.colors.tabs.indicator.start = base0D
+c.colors.tabs.indicator.start = base00
 
 # Color gradient end for the tab indicator.
-c.colors.tabs.indicator.stop = base0C
+c.colors.tabs.indicator.stop = base00
 
 # Color for the tab indicator on errors.
 c.colors.tabs.indicator.error = base08
 
 # Foreground color of unselected odd tabs.
-c.colors.tabs.odd.fg = xresources["*.foreground"]
+c.colors.tabs.odd.fg = base07
 
 # Background color of unselected odd tabs.
 c.colors.tabs.odd.bg = base00
 
 # Foreground color of unselected even tabs.
-c.colors.tabs.even.fg = xresources["*.foreground"]
+c.colors.tabs.even.fg = base07
 
 # Background color of unselected even tabs.
 c.colors.tabs.even.bg = base00
 
 # Foreground color of selected odd tabs.
-c.colors.tabs.selected.odd.fg = xresources["*.foreground"]
+# c.colors.tabs.selected.odd.fg = xresources["*.foreground"]
+c.colors.tabs.selected.odd.fg = base0F
 
 # Background color of selected odd tabs.
-c.colors.tabs.selected.odd.bg = base08
+c.colors.tabs.selected.odd.bg = base00
 
 # Foreground color of selected even tabs.
-c.colors.tabs.selected.even.bg = base08
+c.colors.tabs.selected.even.bg = base00
 
 # Background color of selected even tabs.
-c.colors.tabs.selected.even.fg = xresources["*.foreground"]
+c.colors.tabs.selected.even.fg = base0F
 
 # Background color for webpages if unset (or empty to use the theme's
 # color).

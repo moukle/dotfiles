@@ -41,9 +41,11 @@ let mapleader = "\<Space>"
 			Plug 'ap/vim-buftabline'
 			Plug 'unblevable/quick-scope'
 			Plug 'ayu-theme/ayu-vim'
+			Plug 'dylanaraps/wal.vim'
 		" }}}
 		" {{{ markdown
 			Plug 'suan/vim-instant-markdown'
+			Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 		" }}}
 		" {{{ git
 		Plug 'airblade/vim-gitgutter'
@@ -170,7 +172,7 @@ let mapleader = "\<Space>"
 
 		set lbr
 		" set tw=300
-		let &showbreak=' ► '
+		let &showbreak=' ▸ '
 
 		" " {{{ 80 char line
 		" 	augroup vimrc_autocmds
@@ -337,8 +339,8 @@ endfunction
 		set tm=500
 	" }}}
 	" {{{ backup files
-		" set undofile
-		" set undodir=/home/moritz/.config/nvim/bak
+		set undofile
+		set undodir=~/.config/nvim/bak
 
 		set nobackup
 		set nowb

@@ -1,10 +1,12 @@
 #!/bin/bash
 
 # DEFINE COLORS
-BG="#f5eeeb"
+# BG="#f5eeeb"
+BG="#e5dddb"
 FG="#6c7680"
 
-BLK="#edeae8"
+#BLK="#edeae8"
+BLK="#e1dcda"
 RED="#f51818"
 GRN="#86b300"
 YLW="#f29718"
@@ -15,7 +17,7 @@ WHT="#adaeae"
 
 BBLK="#c1bdba"
 BRED="#f74949"
-BGRN="#ace600"
+BGRN="#99cd00"
 BYLW="#f5ad48"
 BBLU="#66b4ec"
 BMAG="#bd9fda"

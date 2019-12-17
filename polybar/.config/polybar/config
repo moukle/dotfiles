@@ -20,7 +20,7 @@ cyan_bright    = ${xrdb:color14}
 white_dark     = ${xrdb:color7}
 white_bright   = ${xrdb:color15}
 
-transparent    = #00000000
+transparent    = #60263238
 
 [fonts]
 font_Iosevka = "Iosevka Nerd Font:size=13:weight=regular:antialias=true;3"
@@ -32,17 +32,17 @@ main_font = ${fonts.font_SF}
 main_font2 = ${fonts.font_Iosevka}
 main_icon = ${fonts.icon_typicons}
 
-accent = ${colors.blue_bright}
-bar_bg = ${colors.background}
-bar_fg = ${colors.black_bright}
-bar_height = 35
+accent = ${colors.yellow_bright}
+bar_fg = ${colors.white_bright}
+bar_bg = ${colors.transparent}
+bar_height = 30
 bar_width = 100%
 bar_x = 0
 bar_y = 0
 bar_bottom = false
 
 spacing = 1
-line_size = 10
+line_size = 5
 
 ; ---------- bars --------------
 [bar/tray]
@@ -194,7 +194,7 @@ background = ${settings.bar_bg}
 foreground = ${settings.bar_fg}
 
 line-size = ${settings.line_size}
-border-bottom-size = 1
+; border-bottom-size = 1
 border-color = ${colors.black_bright}
 
 font-0 = ${settings.main_icon}
@@ -202,13 +202,17 @@ font-1 = ${settings.main_font}
 font-2 = ${settings.main_font2}
 
 modules-left   = shot
-modules-center = bspwm
-modules-right  = pulseaudio powermenu time
+modules-center = bspbars
+modules-right  = time
 
 padding-left = ${settings.spacing}
 padding-right = ${settings.spacing}
 module-margin-left  = ${settings.spacing}
 module-margin-right = ${settings.spacing}
+
+tray-position   = right
+tray-padding    = ${settings.spacing}
+tray-background = ${settings.bar_bg}
 
 wm-restack = bspwm
 
@@ -224,7 +228,7 @@ background = ${settings.bar_bg}
 foreground = ${settings.bar_fg}
 
 line-size = ${settings.line_size}
-border-bottom-size = 1
+; border-bottom-size = 1
 border-color = ${colors.black_bright}
 
 font-0 = ${settings.main_icon}
@@ -232,8 +236,8 @@ font-1 = ${settings.main_font}
 font-2 = ${settings.main_font2}
 
 modules-left   = launcher
-modules-center = bspwm
-modules-right  =
+modules-center = bspbars
+modules-right  = pulseaudio powermenu
 
 padding-left = ${settings.spacing}
 padding-right = ${settings.spacing}
@@ -242,9 +246,9 @@ module-margin-right = ${settings.spacing}
 
 wm-restack = bspwm
 
-tray-position   = right
-tray-padding    = ${settings.spacing}
-tray-background = ${colors.background}
+; tray-position   = right
+; tray-padding    = ${settings.spacing}
+; tray-background = ${settings.bar_bg}
 
 ; ---------- modules --------------
 [module/nobar]
@@ -294,7 +298,7 @@ label-empty    = ""
 ; label-empty    = "ﱤ"
 
 label-focused-foreground  = ${settings.accent}
-label-occupied-foreground = ${colors.white_bright}
+label-occupied-foreground = ${colors.white_dark}
 label-urgent-foreground   = ${colors.red_dark}
 label-empty-foreground    = ${colors.black_bright}
 
@@ -308,24 +312,20 @@ type = internal/bspwm
 pin-workspaces = true
 enable-click = true
 
-label-focused = 
-label-occupied = %name%
-label-empty = "   "
-label-urgent = 
-; label-focused  = "       "
-; label-occupied = "       "
-; label-urgent   = "       "
-; label-empty    = "       "
+label-focused  = "       "
+label-occupied = "       "
+label-urgent   = "       "
+label-empty    = "       "
 
-; label-focused-overline  = ${settings.accent}
-; label-occupied-overline = ${colors.white_dark}
-; label-urgent-overline   = ${colors.red_dark}
-; label-empty-overline    = ${colors.black_dark}
+label-focused-overline  = ${settings.accent}
+label-occupied-overline = ${colors.white_bright}
+label-urgent-overline   = ${colors.red_dark}
+label-empty-overline    = ${colors.black_bright}
 
-label-focused-background  = ${settings.accent}
-label-occupied-background = ${colors.black_dark}
-label-urgent-background   = ${colors.red_dark}
-label-empty-background    = ${colors.background}
+; label-focused-background  = ${settings.accent}
+; label-occupied-background = ${colors.black_dark}
+; label-urgent-background   = ${colors.red_dark}
+; label-empty-background    = ${colors.background}
 
 label-focused-padding  = 1
 label-occupied-padding = 1

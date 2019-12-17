@@ -1,26 +1,26 @@
 #!/usr/bin/env bash
 
 # DEFINE COLORS
-BG="#292D3E"
-FG="#959DCB"
+BG="#09090d"
+FG="#839496"
 
-BLK="#41485f"
-RED="#F07178"
-GRN="#C3E88D"
-YLW="#FFCB6B"
-BLU="#82AAFF"
-MAG="#C792EA"
-CYN="#89DDFF"
-WHT="#959DCB"
+BLK="#353540"
+RED="#8c5760"
+GRN="#7b8c58"
+YLW="#8c6e43"
+BLU="#58698c"
+MAG="#7b5e7d"
+CYN="#66808c"
+WHT="#8c8b8b"
 
-BBLK="#565679"
-BRED="#F07178"
-BGRN="#C3E88D"
-BYLW="#FFCB6B"
-BBLU="#82AAFF"
-BMAG="#C792EA"
-BCYN="#89DDFF"
-BWHT="#FFFFFF"
+BBLK="#545466"
+BRED="#b26f7a"
+BGRN="#9db270"
+BYLW="#b28c55"
+BBLU="#7086b2"
+BMAG="#9c77b2"
+BCYN="#82a2b2"
+BWHT="#b8b8c8"
 
 # ROFI OPTIONS 
 ACC="${YLW}" 
@@ -51,6 +51,6 @@ BSPWM_FOCUSED="${CYN}"
 BSPWM_URGENT="${RED}"
 BSPWM_PRESEL="${GRN}"
 
-SQUASH_FONT=xft:Iosevka\ Nerd\ Font:size=13
-SQUASH_FONT="xft:Iosevka Nerd Font:size=13"
+SQUASH_FONT=xft:Iosevka\ Nerd\ Font:size=14
+SQUASH_FONT="xft:Iosevka Nerd Font:size=14"
 ST_FONT="Iosevka Nerd Font:size=13"

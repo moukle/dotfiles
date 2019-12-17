@@ -1,27 +1,26 @@
 #!/bin/bash
 
 # DEFINE COLORS
-BG="#1d1f21"
-FG="#c5c8c6"
+BG="#292525"
+FG="#cbccc6"
 
-WHT="#969896"
-RED="#cc6666"
-GRN="#b5bd68"
-YLW="#f0c674"
-BLU="#81a2be"
-MAG="#b294bb"
-CYN="#8abeb7"
-# BLK="#26292c"
-BLK="#1d1f21"
+BLK="#353535"
+RED="#ea5965"
+GRN="#bae67e"
+YLW="#ffcc66"
+BLU="#2d91d0"
+MAG="#d4bfff"
+CYN="#4cbf99"
+WHT="#c2c2c2"
 
-BWHT="#f5f8f6"
-BRED="#cc6666"
-BGRN="#b5bd68"
-BYLW="#f0c674"
-BBLU="#81a2be"
-BMAG="#b294bb"
-BCYN="#8abeb7"
-BBLK="#55595c"
+BBLK="#5f5f5f"
+BRED="#f28779"
+BGRN="#d1eea9"
+BYLW="#ffd580"
+BBLU="#73d0ff"
+BMAG="#e0d1ff"
+BCYN="#95e6cb"
+BWHT="#ffffff"
 
 # ROFI OPTIONS
 ACC="${RED}"
@@ -51,5 +50,4 @@ LMNBAR_DARKER="${BGRN}"
 
 SQUASH_FONT=xft:Iosevka\ Nerd\ Font:size=13
 SQUASH_FONT="xft:Iosevka Nerd Font:size=13"
-# SQUASH_FONT="xft:Iosevka Custom:size=13"
 ST_FONT="Iosevka Nerd Font:size=13"

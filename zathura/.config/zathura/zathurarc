@@ -5,35 +5,35 @@ set adjust-open "width"
 set recolor                     "false"
 set recolor-keephue             "false"
 
-set default-bg                  "#2d2d2d"
-set default-fg                  "#393939"
+set default-bg                  "#263238"
+set default-fg                  "#2E3C43"
 
-set statusbar-fg                "#a09f93"
-set statusbar-bg                "#515151"
+set statusbar-fg                "#B2CCD6"
+set statusbar-bg                "#314549"
 
-set inputbar-bg                 "#2d2d2d"
-set inputbar-fg                 "#f2f0ec"
+set inputbar-bg                 "#263238"
+set inputbar-fg                 "#FFFFFF"
 
-set notification-bg             "#2d2d2d"
-set notification-fg             "#f2f0ec"
+set notification-bg             "#263238"
+set notification-fg             "#FFFFFF"
 
-set notification-error-bg       "#2d2d2d"
-set notification-error-fg       "#f2777a"
+set notification-error-bg       "#263238"
+set notification-error-fg       "#F07178"
 
-set notification-warning-bg     "#2d2d2d"
-set notification-warning-fg     "#f2777a"
+set notification-warning-bg     "#263238"
+set notification-warning-fg     "#F07178"
 
-set highlight-color             "#ffcc66"
-set highlight-active-color      "#6699cc"
+set highlight-color             "#FFCB6B"
+set highlight-active-color      "#82AAFF"
 
-set completion-bg               "#393939"
-set completion-fg               "#6699cc"
+set completion-bg               "#2E3C43"
+set completion-fg               "#82AAFF"
 
-set completion-highlight-fg     "#f2f0ec"
-set completion-highlight-bg     "#6699cc"
+set completion-highlight-fg     "#FFFFFF"
+set completion-highlight-bg     "#82AAFF"
 
-set recolor-lightcolor          "#2d2d2d"
-set recolor-darkcolor           "#e8e6df"
+set recolor-lightcolor          "#263238"
+set recolor-darkcolor           "#EEFFFF"
 
 set smooth-scroll true
 set window-title-home-tilde true

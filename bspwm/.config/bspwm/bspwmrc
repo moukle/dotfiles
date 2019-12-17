@@ -3,8 +3,8 @@
 source $HOME/.cache/squash/colors
 sxhkd &
 
-padding=8
-padding_bar=$((35+$padding))
+padding=5
+padding_bar=$((30+$padding))
 
 bspc config window_gap				5
 bspc config border_width			1
@@ -35,11 +35,15 @@ fi
 bspc rule -a qutebrowser			desktop=^1
 bspc rule -a code-oss				desktop=^2 follow=off
 bspc rule -a "Gimp-2.10"			desktop=^4 follow=off
-bspc rule -a DDNet					desktop=^5 follow=off state=fullscreen
+bspc rule -a DDNet					desktop=^5 follow=off
 bspc rule -a discord				desktop=^7 follow=off
 bspc rule -a ts3client_linux_amd64	desktop=^7
 bspc rule -a Zathura				state=tiled
 bspc rule -a Pinentry				state=floating
+bspc rule -a Spotify				desktop=^8
+bspc rule -a ':cv2 -*'				state=tiled
+# bspc rule -a TelegramDesktop		desktop=^9 state=pseudo_tiled
+
 
 bspc config external_rules_command "$HOME/.config/bspwm/external_rules" # Spotify
 

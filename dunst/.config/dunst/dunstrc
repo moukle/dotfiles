@@ -10,7 +10,7 @@
 	show_age_threshold = 60
 	word_wrap = yes
 	ignore_newline = no
-	geometry = "375x50-15+25"
+	geometry = "375x50-5+35"
 	shrink = yes
 	transparency = 0
 	idle_threshold = 120
@@ -29,8 +29,8 @@
 	browser = vivaldi-stable -new-tab
 	icon_position = left
 	icon_path = /usr/share/icons/Paper/24x24/status:/usr/share/icons/Paper/24x24/apps:/usr/share/icons/Paper/24x24/web
-	frame_width = 1
-	frame_color = "#747369"
+	frame_width = 0
+	frame_color = "#546e7a"
 	corner_radius = 0
 
 [shortcuts]
@@ -40,18 +40,18 @@
 	context = ctrl+shift+period
 
 [urgency_low]
-	background = "#2d2d2d"
-	foreground = "#d3d0c8"
+	background = "#263238"
+	foreground = "#eeffff"
 	timeout = 5
 
 [urgency_normal]
-	background = "#2d2d2d"
-	foreground = "#d3d0c8"
+	background = "#263238"
+	foreground = "#eeffff"
 	timeout = 7
 
 [urgency_critical]
-	background = "#2d2d2d"
-	foreground = "#d3d0c8"
+	background = "#263238"
+	foreground = "#eeffff"
 	timeout = 30
 
 [spotify]
