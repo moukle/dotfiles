@@ -1,10 +1,11 @@
 #! /bin/sh
 
+xrdb $HOME/.Xresources
 source $HOME/.cache/squash/colors
 sxhkd &
 
 padding=5
-padding_bar=$((30+$padding))
+padding_bar=$((35+$padding))
 
 bspc config window_gap				5
 bspc config border_width			1

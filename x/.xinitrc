@@ -28,8 +28,9 @@ fi
 
 nitrogen  --restore &
 squash    material
-greenclip daemon
-picom -cC -fI 0.1 -O 0.1 --glx-no-rebind-pixmap --use-damage -b
+greenclip daemon &
+# picom -cC -fI 0.1 -O 0.1 --glx-no-rebind-pixmap --use-damage -b
+picom --config ~/.config/compton/compton.conf &
 numlockx  &
 # blockify  &
 flameshot &
@@ -40,4 +41,3 @@ dunst     &
 # compton
 
 exec bspwm
-urxvt

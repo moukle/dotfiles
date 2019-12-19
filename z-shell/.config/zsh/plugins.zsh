@@ -12,4 +12,7 @@ zplug "Tarrasch/zsh-bd"
 
 zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/pipenv", from:oh-my-zsh
+
+zplug "plugins/colored-man-pages", from:oh-my-zsh
+
 zplug load
