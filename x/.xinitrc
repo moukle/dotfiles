@@ -27,10 +27,9 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 nitrogen  --restore &
-squash    material
+squash    base16_tomorrow_night
 greenclip daemon &
-# picom -cC -fI 0.1 -O 0.1 --glx-no-rebind-pixmap --use-damage -b
-picom --config ~/.config/compton/compton.conf &
+# picom --config ~/.config/compton/compton.conf &
 numlockx  &
 # blockify  &
 flameshot &

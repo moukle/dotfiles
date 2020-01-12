@@ -4,11 +4,11 @@ xrdb $HOME/.Xresources
 source $HOME/.cache/squash/colors
 sxhkd &
 
-padding=5
+padding=7
 padding_bar=$((35+$padding))
 
-bspc config window_gap				5
-bspc config border_width			1
+bspc config window_gap				3
+bspc config border_width			2
 bspc config top_padding				$padding_bar
 bspc config bottom_padding			$padding
 bspc config right_padding			$padding
@@ -25,7 +25,8 @@ bspc config active_border_color		$WHT
 bspc config presel_feedback_color	$YLW
 
 if [ $HOSTNAME == "olo" ]; then
-	bspc monitor DP-2 -d q w e r t
+	# bspc monitor DP-2 -d q w e r t
+	bspc monitor DP-2 -d q w e r ﭞ
 	bspc monitor DP-4 -d y u i o p
 	$HOME/.config/polybar/launch.sh left right
 else
