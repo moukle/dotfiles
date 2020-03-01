@@ -35,17 +35,17 @@ main_font = ${fonts.font_SF}
 main_font2 = ${fonts.font_Iosevka}
 main_icon = ${fonts.icon_material}
 
-accent = ${colors.yellow_bright}
+accent = ${colors.white_bright}
 bar_fg = ${colors.white_bright}
 bar_bg = ${colors.background}
-bar_height = 35
+bar_height = 55
 bar_width = 100%
 bar_x = 0
 bar_y = 0
 bar_bottom = false
 
 spacing = 0
-line_size = 5
+line_size = 2
 
 ; ---------- bars --------------
 [bar/tray]
@@ -80,7 +80,7 @@ wm-restack = bspwm
 monitor  = DP-4
 width    = 165
 height   = ${settings.bar_height}
-offset-x = 1748
+offset-x = 2513
 offset-y = ${settings.bar_y}
 bottom   = ${settings.bar_bottom}
 
@@ -88,7 +88,7 @@ background = ${settings.bar_bg}
 foreground = ${settings.bar_fg}
 
 line-size = ${settings.line_size}
-border-bottom-size = 0
+border-size = ${settings.line_size}
 border-color = ${settings.accent}
 
 font-0 = ${settings.main_font}
@@ -96,8 +96,8 @@ font-1 = ${settings.main_font2}
 font-2 = ${settings.main_icon}
 
 modules-left   =
-modules-center = pulseaudio
-modules-right  = time
+modules-center = pulseaudio time
+modules-right  =
 
 padding = 0
 
@@ -186,7 +186,8 @@ tray-background = ${colors.black_bright}
 wm-restack = bspwm
 
 [bar/right]
-monitor  = DP-4
+dpi = 140
+monitor  = DP-2
 width    = ${settings.bar_width}
 height   = ${settings.bar_height}
 offset-x = ${settings.bar_x}
@@ -204,8 +205,8 @@ font-0 = ${settings.main_font}
 font-2 = ${settings.main_font2}
 font-1 = ${settings.main_icon}
 
-modules-left   = bspwm
-modules-center = date
+modules-left   =
+modules-center = bspwm
 modules-right  = pulseaudio powermenu
 
 padding-left = ${settings.spacing}
@@ -219,8 +220,40 @@ tray-background = ${settings.bar_bg}
 
 wm-restack = bspwm
 
+[bar/middle]
+dpi = 140
+monitor = DP-0
+width    = ${settings.bar_width}
+height   = ${settings.bar_height}
+offset-x = ${settings.bar_x}
+offset-y = ${settings.bar_y}
+bottom   = ${settings.bar_bottom}
+
+background = ${settings.bar_bg}
+foreground = ${settings.bar_fg}
+
+line-size = ${settings.line_size}
+; border-bottom-size = 1
+border-color = ${colors.black_bright}
+
+font-0 = ${settings.main_font}
+font-2 = ${settings.main_font2}
+font-1 = ${settings.main_icon}
+
+modules-left   =
+modules-center = bspwm
+modules-right  =
+
+padding-left = ${settings.spacing}
+padding-right = ${settings.spacing}
+module-margin-left  = ${settings.spacing}
+module-margin-right = ${settings.spacing}
+
+wm-restack = bspwm
+
 [bar/left]
-monitor = DP-2
+dpi = 140
+monitor = DP-4
 width    = ${settings.bar_width}
 height   = ${settings.bar_height}
 offset-x = ${settings.bar_x}
@@ -239,7 +272,7 @@ font-2 = ${settings.main_font2}
 font-1 = ${settings.main_icon}
 
 modules-left   = launcher shot
-modules-center =
+modules-center = date
 modules-right  = bspwm
 
 padding-left = ${settings.spacing}

@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =3
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/home/ritzo/.x'
 let g:netrw_dirhist_3='/home/ritzo/.zkbd'
 let g:netrw_dirhist_2='/home/ritzo/dotfiles/.git'
 let g:netrw_dirhist_1='/home/ritzo/Documents/Bachelor/mahdabschaltung/.git'

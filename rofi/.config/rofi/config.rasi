@@ -7,6 +7,7 @@ configuration {
   modi:               "drun";
   display-drun:       "apps";
   columns: 2;
+  dpi: 138;
 }
 
 * {
@@ -18,9 +19,9 @@ configuration {
 
 window {
 	border-radius: 0px;
-	height: 500px;
-	width: 800px;
-	padding: 20px;
+	/* height: 500px; */
+	/* width: 800px; */
+	/* padding: 20px; */
 	border: 1px;
 	border-color: @color8;
 }

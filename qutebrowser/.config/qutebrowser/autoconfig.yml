@@ -11,9 +11,32 @@ settings:
   content.geolocation:
     https://rocket.accso.de: false
   content.notifications:
+    https://w1.eurosptp.com: false
     https://www.reddit.com: false
+  qt.highdpi:
+    global: true
   url.searchengines:
     global:
       DEFAULT: https://www.google.com/search?hl=en&q={}
       d: https://duckduckgo.com/?q={}
       wa: https://wiki.archlinux.org/?search={}
+  zoom.default:
+    global: 100%
+  zoom.levels:
+    global:
+    - 25%
+    - 33%
+    - 50%
+    - 67%
+    - 75%
+    - 90%
+    - 100%
+    - 110%
+    - 125%
+    - 150%
+    - 175%
+    - 200%
+    - 250%
+    - 300%
+    - 400%
+    - 500%

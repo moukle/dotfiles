@@ -9,6 +9,7 @@ let mapleader = "\<Space>"
 	" }}}
 	" {{{ coc
 		Plug 'neoclide/coc.nvim', {'do': './install.sh nightly'}
+		imap <C-l> <Plug>(coc-snippets-expand)
 	" }}}
 	" {{{ targets
 			Plug 'wellle/targets.vim'
@@ -41,7 +42,9 @@ let mapleader = "\<Space>"
 			Plug 'ap/vim-buftabline'
 			Plug 'unblevable/quick-scope'
 			Plug 'ayu-theme/ayu-vim'
+			Plug 'drewtempelmeyer/palenight.vim'
 			Plug 'dylanaraps/wal.vim'
+			Plug 'morhetz/gruvbox'
 		" }}}
 		" {{{ markdown
 			Plug 'suan/vim-instant-markdown'
@@ -50,6 +53,9 @@ let mapleader = "\<Space>"
 		" {{{ git
 		Plug 'airblade/vim-gitgutter'
 		Plug 'tpope/vim-fugitive'
+		" }}}
+		" {{{ other
+		Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 		" }}}
 	call plug#end()
 	"}}}
@@ -150,12 +156,19 @@ let mapleader = "\<Space>"
 " {{{ general settings
 	" {{{ visual settings
 		syntax on
-		colors term
+
+		set cursorline
+		" set termguicolors
+		let g:gruvbox_italic=1
+		colorscheme gruvbox
+
+		" colors term
+		" colorscheme wal
+
 		" set termguicolors
 		" let ayucolor="mirage"
 		" colorscheme ayu
 
-		set cursorline
 
 		let &t_SI = "\<Esc>[6 q"
 		let &t_SR = "\<Esc>[4 q"

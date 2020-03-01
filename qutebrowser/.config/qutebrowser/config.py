@@ -32,12 +32,12 @@ config.set('content.javascript.enabled', True, 'chrome://*/*')
 # Type: Bool
 config.set('content.javascript.enabled', True, 'qute://*/*')
 config.set('tabs.padding', { 'top': 10, 'bottom': 10, 'left': 10, 'right': 10 })
-config.set('zoom.default', '100%')
+config.set('zoom.default', '140%')
 
 # Default monospace fonts. Whenever "monospace" is used in a font
 # setting, it's replaced with the fonts listed here.
 # Type: Font
-c.fonts.monospace = '"Iosevka", "IBM Plex Mono", Terminus, Monospace, "DejaVu Sans Mono", Monaco, "Bitstream Vera Sans Mono", "Andale Mono", "Courier New", Courier, "Liberation Mono", monospace, Fixed, Consolas, Terminal'
+# c.fonts.monospace = '"Iosevka", "IBM Plex Mono", Terminus, Monospace, "DejaVu Sans Mono", Monaco, "Bitstream Vera Sans Mono", "Andale Mono", "Courier New", Courier, "Liberation Mono", monospace, Fixed, Consolas, Terminal'
 # c.fonts.monospace = 'sf pro'
 
 # Font family for standard fonts.

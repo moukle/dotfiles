@@ -4,11 +4,11 @@ xrdb $HOME/.Xresources
 source $HOME/.cache/squash/colors
 sxhkd &
 
-padding=7
-padding_bar=$((35+$padding))
+padding=0
+padding_bar=$((55+3+$padding))
 
-bspc config window_gap				3
-bspc config border_width			2
+bspc config window_gap				15
+bspc config border_width			3
 bspc config top_padding				$padding_bar
 bspc config bottom_padding			$padding
 bspc config right_padding			$padding
@@ -26,20 +26,22 @@ bspc config presel_feedback_color	$YLW
 
 if [ $HOSTNAME == "olo" ]; then
 	# bspc monitor DP-2 -d q w e r t
-	bspc monitor DP-2 -d q w e r ﭞ
-	bspc monitor DP-4 -d y u i o p
-	$HOME/.config/polybar/launch.sh left right
+	bspc monitor DP-4 -d 1 2 3 4 5
+	bspc monitor DP-0 -d q w e r y
+	bspc monitor DP-2 -d y u i o p
+	$HOME/.config/polybar/launch.sh left middle right
+	# $HOME/.config/polybar/launch.sh time
 else
 	bspc monitor -d q w e r t z u i o p
 	$HOME/.config/polybar/launch.sh laptop
 fi
 
 bspc rule -a qutebrowser			desktop=^1
-bspc rule -a code-oss				desktop=^2 follow=off
+bspc rule -a code-oss				desktop=^7 follow=off
 bspc rule -a "Gimp-2.10"			desktop=^4 follow=off
 bspc rule -a DDNet					desktop=^5 follow=off
-bspc rule -a discord				desktop=^7 follow=off
-bspc rule -a ts3client_linux_amd64	desktop=^7
+bspc rule -a discord				desktop=^14 follow=off
+bspc rule -a ts3client_linux_amd64	desktop=^14
 bspc rule -a Zathura				state=tiled
 bspc rule -a Pinentry				state=floating
 bspc rule -a Spotify				desktop=^8

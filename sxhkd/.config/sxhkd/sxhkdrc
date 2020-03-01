@@ -12,10 +12,10 @@ super + x
 	bspc monitor -f next
 
 # send node to desktop on current monitor index
-super + {_,shift} + {q,w,e,r,t,y,u,i,o,p}
+super + {_,shift} + {q,w,e,r,t,1-5}
 	bspc {desktop -f,node -d} '^{1-9,10}'
-super + {_,shift} + {1-5}
-	bspc {desktop -f,node -d} '^{6-9,10}'
+super + {_,shift} + {y,u,i,o,p}
+	bspc {desktop -f,node -d} '^{11,12,13,14,15}'
 
 # hide current node, or restore a queried hidden node
 super + a
