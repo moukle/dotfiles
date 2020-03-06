@@ -5,7 +5,7 @@ source $HOME/.cache/squash/colors
 sxhkd &
 
 padding=0
-padding_bar=$((55+3+$padding))
+padding_bar=$((15+0+$padding))
 
 bspc config window_gap				15
 bspc config border_width			3
@@ -29,14 +29,14 @@ if [ $HOSTNAME == "olo" ]; then
 	bspc monitor DP-4 -d 1 2 3 4 5
 	bspc monitor DP-0 -d q w e r y
 	bspc monitor DP-2 -d y u i o p
-	$HOME/.config/polybar/launch.sh left middle right
-	# $HOME/.config/polybar/launch.sh time
+	# $HOME/.config/polybar/launch.sh left middle right
+	$HOME/.config/polybar/launch.sh workspacesL workspacesM workspacesR
 else
 	bspc monitor -d q w e r t z u i o p
 	$HOME/.config/polybar/launch.sh laptop
 fi
 
-bspc rule -a qutebrowser			desktop=^1
+bspc rule -a qutebrowser			desktop=^6
 bspc rule -a code-oss				desktop=^7 follow=off
 bspc rule -a "Gimp-2.10"			desktop=^4 follow=off
 bspc rule -a DDNet					desktop=^5 follow=off

@@ -159,10 +159,10 @@ let mapleader = "\<Space>"
 
 		set cursorline
 		" set termguicolors
-		let g:gruvbox_italic=1
-		colorscheme gruvbox
+		" let g:gruvbox_italic=1
+		" colorscheme gruvbox
 
-		" colors term
+		colors term
 		" colorscheme wal
 
 		" set termguicolors

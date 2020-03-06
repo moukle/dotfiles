@@ -21,6 +21,10 @@ super + {_,shift} + {y,u,i,o,p}
 super + a
 	bspc node $(bspc query -N -d -n .hidden | head -n 1) -g hidden
 
+# toggle polybar
+alt + m
+	toggle_bar.sh
+
 # rotate, balance
 super + {_,shift} + g
 	bspc node $(bspc query -N -n -n .!leaf || echo @/) {-R 90,-B}

@@ -35,7 +35,7 @@ main_font = ${fonts.font_SF}
 main_font2 = ${fonts.font_Iosevka}
 main_icon = ${fonts.icon_material}
 
-accent = ${colors.white_bright}
+accent = ${colors.yellow_dark}
 bar_fg = ${colors.white_bright}
 bar_bg = ${colors.background}
 bar_height = 55
@@ -45,18 +45,18 @@ bar_y = 0
 bar_bottom = false
 
 spacing = 0
-line_size = 2
+line_size = 10
 
 ; ---------- bars --------------
 [bar/tray]
 monitor  = DP-2
 width    = 200
 height   = ${settings.bar_height}
-offset-x = 1713
+offset-x = 300
 offset-y = ${settings.bar_y}
 bottom   = ${settings.bar_bottom}
 
-background = ${colors.transparent}
+background = ${settings.bar_bg}
 foreground = ${settings.bar_fg}
 
 line-size = ${settings.line_size}
@@ -77,10 +77,10 @@ padding = 0
 wm-restack = bspwm
 
 [bar/time]
-monitor  = DP-4
+monitor  = DP-0
 width    = 165
-height   = ${settings.bar_height}
-offset-x = 2513
+height   = 20
+offset-x = 90%
 offset-y = ${settings.bar_y}
 bottom   = ${settings.bar_bottom}
 
@@ -88,7 +88,7 @@ background = ${settings.bar_bg}
 foreground = ${settings.bar_fg}
 
 line-size = ${settings.line_size}
-border-size = ${settings.line_size}
+border-size = 0
 border-color = ${settings.accent}
 
 font-0 = ${settings.main_font}
@@ -102,9 +102,10 @@ modules-right  =
 padding = 0
 
 [bar/workspacesL]
-monitor  = DP-2
-width    = 235
-height   = ${settings.bar_height}
+enabel-ipc = true
+monitor  = DP-4
+width    = 310
+height   = 10
 offset-x = ${settings.bar_x}
 offset-y = ${settings.bar_y}
 bottom   = ${settings.bar_bottom}
@@ -120,7 +121,35 @@ font-0 = ${settings.main_font}
 font-1 = ${settings.main_font2}
 font-2 = ${settings.main_icon}
 
-modules-left   = launcher bspwm
+modules-left   = bspbars
+modules-center =
+modules-right  =
+
+padding = 0
+
+wm-restack = bspwm
+
+[bar/workspacesM]
+enabel-ipc = true
+monitor  = DP-0
+width    = 310
+height   = 10
+offset-x = ${settings.bar_x}
+offset-y = ${settings.bar_y}
+bottom   = ${settings.bar_bottom}
+
+background = ${settings.bar_bg}
+foreground = ${settings.bar_fg}
+
+line-size = ${settings.line_size}
+border-bottom-size = 0
+border-color = ${settings.accent}
+
+font-0 = ${settings.main_font}
+font-1 = ${settings.main_font2}
+font-2 = ${settings.main_icon}
+
+modules-left   = bspbars
 modules-center =
 modules-right  =
 
@@ -129,9 +158,9 @@ padding = 0
 wm-restack = bspwm
 
 [bar/workspacesR]
-monitor  = DP-4
-width    = 235
-height   = ${settings.bar_height}
+monitor  = DP-2
+width    = 310
+height   = 10
 offset-x = ${settings.bar_x}
 offset-y = ${settings.bar_y}
 bottom   = ${settings.bar_bottom}
@@ -147,7 +176,7 @@ font-0 = ${settings.main_font}
 font-1 = ${settings.main_font2}
 font-2 = ${settings.main_icon}
 
-modules-left   = shot bspwm
+modules-left   = bspbars
 modules-center =
 modules-right  =
 

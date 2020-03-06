@@ -2,25 +2,25 @@
 
 # DEFINE COLORS
 FG="#f5eeeb"
-BG="#3b3228"
+BG="#323232"
 
-BLK="#594c3d"
+BLK="#383838"
 RED="#cb6077"
 GRN="#beb55b"
 YLW="#f4bc87"
 BLU="#8ab3b5"
 MAG="#a89bb9"
 CYN="#7bbda4"
-WHT="#ddc4b8"
+WHT="#cdcdcd"
 
-BBLK="#7e705a"
+BBLK="#777777"
 BRED="#cb6077"
 BGRN="#beb55b"
 BYLW="#f4bc87"
 BBLU="#8ab3b5"
 BMAG="#a89bb9"
 BCYN="#7bbda4"
-BWHT="#f5eeeb"
+BWHT="#f5f5f5"
 
 # ROFI OPTIONS
 ACC="${YLW}"
