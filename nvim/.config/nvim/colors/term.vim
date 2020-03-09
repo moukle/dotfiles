@@ -56,3 +56,5 @@ hi  Pmenu        ctermfg=white ctermbg=black
 hi  PmenuSel     ctermfg=black ctermbg=white
 hi  PmenuSbar    ctermfg=white ctermbg=black
 hi  PmenuThumb   ctermfg=black ctermbg=white
+
+hi EndOfBuffer ctermfg=0 ctermbg=none

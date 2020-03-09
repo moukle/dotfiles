@@ -24,10 +24,10 @@ transparent    = #50263238
 
 [fonts]
 font_Iosevka = "Iosevka Nerd Font:size=18:weight=regular:antialias=true;3"
-font_SF = "SF Pro Text:size=18:weight=medium:antialias=true;3"
+font_SF = "SF Pro Text:size=20:weight=bold:antialias=true;3"
 font_roboto = "Roboto:size=18:weight=medium:antialias=true;3"
 icon_typicons = "Typicons:size=20:weight=regular:antialias=true;2"
-icon_material = "Material Design Icons:size=13:weight=bold:antialias=true;5"
+icon_material = "Material Design Icons:size=18:weight=bold:antialias=true;3"
 
 [settings]
 main_font = ${fonts.font_SF}
@@ -78,28 +78,30 @@ wm-restack = bspwm
 
 [bar/time]
 monitor  = DP-0
-width    = 165
-height   = 20
-offset-x = 90%
-offset-y = ${settings.bar_y}
+width    = 175
+height   = 40
+offset-x = 3600
+offset-y = 15
 bottom   = ${settings.bar_bottom}
 
 background = ${settings.bar_bg}
-foreground = ${settings.bar_fg}
+foreground = ${colors.black_bright}
 
-line-size = ${settings.line_size}
-border-size = 0
-border-color = ${settings.accent}
+line-size = 0
+border-size = 3
+border-color = ${colors.white_bright}
 
 font-0 = ${settings.main_font}
-font-1 = ${settings.main_font2}
-font-2 = ${settings.main_icon}
+font-2 = ${settings.main_font2}
+font-1 = ${settings.main_icon}
 
 modules-left   =
 modules-center = pulseaudio time
 modules-right  =
 
 padding = 0
+
+; wm-restack = bspwm
 
 [bar/workspacesL]
 enabel-ipc = true
@@ -400,7 +402,7 @@ label-empty-padding    = 1
 
 [module/time]
 type = internal/date
-label = " %time% "
+label = " %time%  "
 time = "%H:%M"
 time-alt = "%d %b"
 
@@ -410,7 +412,7 @@ time-alt = "%d %b"
 [module/date]
 type = internal/date
 
-label = %date% %time%
+label = " %date% %time% "
 
 time = "%H:%M"
 date = "%d. %b,"

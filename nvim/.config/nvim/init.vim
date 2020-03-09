@@ -35,6 +35,7 @@ let mapleader = "\<Space>"
 		" {{{ fancy
 			" Plug 'https://github.com/romainl/flattened'
 			Plug 'junegunn/goyo.vim'
+			Plug 'junegunn/limelight.vim'
 			Plug 'chriskempson/base16-vim'
 			Plug 'junegunn/vim-peekaboo' " registers
 			Plug 'mhinz/vim-startify'
@@ -89,7 +90,7 @@ let mapleader = "\<Space>"
 			"               \ 'ncm2#on_complete#omni', 'csscomplete#CompleteCSS'],
 			au User Ncm2Plugin call ncm2#register_source({
 					\ 'name' : 'css',
-					\ 'priority': 9, 
+					\ 'priority': 9,
 					\ 'subscope_enable': 1,
 					\ 'scope': ['css','scss'],
 					\ 'mark': 'css',
@@ -149,6 +150,11 @@ let mapleader = "\<Space>"
 		" {{{ atags
 			" map <Leader>t :call atags#generate()<cr>
 			" let g:neotags_run_ctags = 0
+		" }}}
+		" {{{ limelight
+		" " Color name (:help cterm-colors) or ANSI code
+			let g:limelight_conceal_ctermfg = 'gray'
+			let g:limelight_conceal_ctermfg = 240
 		" }}}
 	" }}}
 " }}}
@@ -288,7 +294,7 @@ hi PrimaryBlock ctermfg=00 ctermbg=none
 hi SecondaryBlock ctermfg=08 ctermbg=none
 hi Blanks ctermfg=6 ctermbg=none
 
-highlight EndOfBuffer ctermfg=08 ctermbg=none
+highlight EndOfBuffer ctermfg=0 ctermbg=none
 
 set statusline=
 " set statusline+=%#PrimaryBlock#
@@ -296,16 +302,16 @@ set statusline+=\ %{g:currentmode[mode()]}
 set statusline+=%#SecondaryBlock#
 set statusline+=%{StatuslineGit()}
 set statusline+=%#Blanks#
-set statusline+=\ %t\ 
+set statusline+=\ %t\
 set statusline+=%(%m%)
 set statusline+=%=
 set statusline+=%#SecondaryBlock#
 set statusline+=\ Ln
 set statusline+=\ %l
 set statusline+=,Col
-set statusline+=\ %c\ 
+set statusline+=\ %c\
 set statusline+=%#PrimaryBlock#
-set statusline+=\ %Y\ 
+set statusline+=\ %Y\
 
 function! GitBranch()
 	return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
@@ -386,10 +392,10 @@ endfunction
 
 		nnoremap <leader>o o<esc>k
 		nnoremap <leader>O O<esc>j
-		
+
 		nnoremap <leader>l :bnext<cr>
 		nnoremap <leader>h :bprevious<cr>
-	
+
 		nnoremap <leader>b :Buffer<cr>
 		nnoremap <leader>m :Marks<cr>
 		nnoremap <leader>e :Files<cr>
@@ -401,6 +407,8 @@ endfunction
 
 		nnoremap <leader>= <esc>mmgg=G`m
 		nnoremap <silent> <leader>d :%s/\s\+$//e<cr>
+
+		nnoremap <leader>g :Goyo x70% <bar> Limelight!!<cr>
 
 		" {{{ fzf
 		nmap <leader><tab> <plug>(fzf-maps-n)
