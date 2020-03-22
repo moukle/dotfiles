@@ -4,11 +4,11 @@ xrdb $HOME/.Xresources
 source $HOME/.cache/squash/colors
 sxhkd &
 
-$HOME/.config/polybar/launch.sh workspacesL workspacesM workspacesR time
-sleep 1.5
+# $HOME/.config/polybar/launch.sh workspacesL workspacesM workspacesR time
+# sleep 1.5
 
-padding=22
-padding_bar=$((0+0+$padding))
+padding=0
+padding_bar=$((56+0+$padding))
 
 bspc config window_gap				15
 bspc config border_width			3
@@ -32,7 +32,7 @@ if [ $HOSTNAME == "olo" ]; then
 	bspc monitor DP-4 -d 1 2 3 4 5
 	bspc monitor DP-0 -d q w e r y
 	bspc monitor DP-2 -d y u i o p
-	# $HOME/.config/polybar/launch.sh left middle right
+	$HOME/.config/polybar/launch.sh left middle right
 	# $HOME/.config/polybar/launch.sh workspacesL workspacesM workspacesR time
 else
 	bspc monitor -d q w e r t z u i o p
