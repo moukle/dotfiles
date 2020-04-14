@@ -321,13 +321,13 @@ c.colors.tabs.indicator.stop = base00
 c.colors.tabs.indicator.error = base08
 
 # Foreground color of unselected odd tabs.
-c.colors.tabs.odd.fg = base08
+c.colors.tabs.odd.fg = base07
 
 # Background color of unselected odd tabs.
 c.colors.tabs.odd.bg = basebb
 
 # Foreground color of unselected even tabs.
-c.colors.tabs.even.fg = base08
+c.colors.tabs.even.fg = base07
 
 # Background color of unselected even tabs.
 c.colors.tabs.even.bg = basebb

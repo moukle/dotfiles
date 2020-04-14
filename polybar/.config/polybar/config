@@ -79,7 +79,7 @@ font-1 = ${settings.main_icon}
 
 modules-left   = shot bspwm
 modules-center = date
-modules-right  = pulseaudio powermenu notification
+modules-right  = pulseaudio powermenu
 
 padding-left = ${settings.spacing}
 padding-right = ${settings.spacing}
@@ -87,6 +87,11 @@ module-margin-left  = ${settings.spacing}
 module-margin-right = ${settings.spacing}
 
 wm-restack = bspwm
+
+tray-maxsize = 20
+tray-position   = right
+tray-padding    = ${settings.spacing}
+tray-background = ${melon.bg_dark}
 
 [bar/left]
 dpi = 140
@@ -110,7 +115,7 @@ font-1 = ${settings.main_icon}
 
 modules-left   = launcher bspwm
 modules-center =
-modules-right  =
+modules-right  = darkmode
 
 padding-left = ${settings.spacing}
 padding-right = ${settings.spacing}
@@ -120,9 +125,6 @@ module-margin-right = ${settings.spacing}
 wm-restack = bspwm
 
 ; ---------- modules --------------
-[module/nobar]
-type = custom/script
-
 [module/notification]
 type = custom/script
 click-left = kill -s USR1 $(pidof deadd-notification-center)
@@ -132,30 +134,20 @@ label-background = ${melon.blue_dark}
 [module/launcher]
 type = custom/script
 click-left = ~/.config/rofi/bins/appsmenu
-; exec = echo "    "
-exec = echo "    "
-; label-foreground = ${colors.white_bright}
+exec = echo "      "
 label-background = ${melon.cyan}
 
-[module/notes]
+[module/darkmode]
 type = custom/script
-exec = echo ""
-click-left = rofi-notes
-; label-foreground = ${colors.black_bright}
-
-[module/power]
-type = custom/script
-exec = echo "  拉  "
-click-left = ~/tankdots/rofi/.config/rofi/bins/powermenu
-label-foreground = ${colors.red_bright}
-; label-background = ${colors.red_bright}
+exec = echo "    "
+click-left = ~/.local/bin/toggle_nightday.sh
+label-foreground = ${melon.white}
+label-background = ${melon.blue_light}
 
 [module/shot]
 type = custom/script
-; exec = echo "    " ; feather
 exec = echo "      "
 click-left = flameshot gui &
-; label-foreground = ${colors.white_bright}
 label-background = ${melon.cyan}
 
 [module/bspwm]
@@ -164,7 +156,6 @@ pin-workspaces = true
 enable-click = true
 
 format = <label-state> <label-mode>
-; format-background = ${colors.black_dark}
 
 label-focused  = %name%
 label-occupied  = %name%
@@ -190,45 +181,11 @@ label-occupied-padding = 4
 label-urgent-padding   = 4
 label-empty-padding    = 4
 
-[module/bspbars]
-type = internal/bspwm
-pin-workspaces = true
-enable-click = true
-
-label-focused  = "       "
-label-occupied = "       "
-label-urgent   = "       "
-label-empty    = "       "
-
-label-focused-underline  = ${settings.accent}
-label-occupied-underline = ${colors.white_bright}
-label-urgent-underline   = ${colors.red_dark}
-label-empty-underline    = ${colors.black_bright}
-
-; label-focused-background  = ${settings.accent}
-; label-occupied-background = ${colors.black_dark}
-; label-urgent-background   = ${colors.red_dark}
-; label-empty-background    = ${colors.background}
-
-label-focused-padding  = 1
-label-occupied-padding = 1
-label-urgent-padding   = 1
-label-empty-padding    = 1
-
-[module/time]
-type = internal/date
-label = " %time%  "
-time = "%H:%M"
-time-alt = "%d %b"
-
-; format-background = ${colors.black_dark}
-; format-foreground = ${colors.white_bright}
-
 [module/date]
-; format-background = ${melon.bg_dark}
 type = internal/date
 
 label = "   %date% %time%   "
+; format-background = ${melon.bg_dark}
 
 time = "%H:%M"
 date = "%A, %d. %B"
@@ -244,15 +201,9 @@ format-volume = "%{}  <ramp-volume>  "
 format-volume-background = ${melon.bg_dark}
 format-volume-foreground = ${melon.gray}
 
-; ramp-volume-0 = 奄
-; ramp-volume-1 = 奔
-; ramp-volume-2 = 墳
-; ramp-volume-3 = 
 ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
-; ramp-volume-3 = 
-; ramp-volume-foreground = ${settings.accent}
 
 label-muted = "    "
 label-muted-foreground = ${melon.gray}
@@ -392,11 +343,5 @@ label-open = "  "
 ; label-open = "  "
 label-close = "ﾇ"
 label-separator = " "
-
-[module/separator]
-type              = custom/script
-format-text       = <label>
-label             = %{}
-exec              = echo label
 
 ; vim:ft=dosini

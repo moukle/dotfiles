@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # DEFINE COLORS
-BG="#1d1f21"
+BG="#12171b"
 FG="#c5c8c6"
 
-WHT="#969896"
+WHT="#dfe5ea"
 RED="#cc6666"
 GRN="#b5bd68"
 YLW="#f0c674"
@@ -12,7 +12,7 @@ BLU="#81a2be"
 MAG="#b294bb"
 CYN="#8abeb7"
 # BLK="#26292c"
-BLK="#1d1f21"
+BLK="#222b33"
 
 BWHT="#f5f8f6"
 BRED="#cc6666"
@@ -21,7 +21,7 @@ BYLW="#f0c674"
 BBLU="#81a2be"
 BMAG="#b294bb"
 BCYN="#8abeb7"
-BBLK="#55595c"
+BBLK="#445967"
 
 # ROFI OPTIONS
 ACC="${RED}"

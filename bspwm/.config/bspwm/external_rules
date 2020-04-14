@@ -8,7 +8,7 @@ class=$2;
 
 case $class in
 	(Spotify) echo desktop=^8;;
-	(TelegramDesktop) echo desktop=^14;;
+	(TelegramDesktop) echo desktop=^9;;
 	('')
 		case $(ps -p "$(xdo pid $id)" -o comm= 2>/dev/null) in
 			(spotify) echo desktop=^8;;

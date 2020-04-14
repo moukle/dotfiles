@@ -196,7 +196,8 @@ reload_bspwm()
     if [[ -z ${BSPWM_PATH} ]]; then
         printf "Error: BSPWM_PATH not found, not reloading bspwm\n"
     else
-        "${BSPWM_PATH}/bspwmrc" &
+        # "${BSPWM_PATH}/bspwmrc" &
+		bspc wm -r
     fi
 }
 
@@ -239,6 +240,16 @@ reload_terminals()
     for term in /dev/pts/[0-9]*; do
         printf "%b" "${seq}" > "${term}"
     done
+}
+
+reload_qutebrowser()
+{
+	qutebrowser ':restart'
+}
+
+reload_spotify()
+{
+	spicetify apply
 }
 
 write_x()
@@ -345,7 +356,7 @@ run_post()
 
 get_args()
 {
-    while getopts ":hc:bnwtmdfe:l" opt; do
+    while getopts ":hc:bnwtmdqsfe:l" opt; do
         case "$opt" in
             "h") usage ;;
             "c") CONFIG_FILE="${OPTARG}" ;;
@@ -355,6 +366,8 @@ get_args()
             "t") RELOAD_TERMINALS="NO" ;;
             "m") RELOAD_WM="NO" ;;
             "d") RELOAD_DUNST="NO" ;;
+            "q") RELOAD_QUTE="NO" ;;
+            "s") RELOAD_SPOTIFY="NO" ;;
             "f") WRITE_ALL="NO" ;;
             "e") EXTERNAL_SCRIPT="${OPTARG}" ;;
             "l") list_files; exit 1;;
@@ -393,13 +406,16 @@ main()
     [[ ! "${WRITE_ALL}" = "NO" ]] && write_plain
 
     xrdb "${HOME}/.Xresources"
+	sleep 1
 
     [[ "${RELOAD_WALLPAPER}" != "NO" ]] && update_wall
     [[ "${RELOAD_TERMINALS}" != "NO" ]] && update_terminals
     [[ "${RELOAD_NVIM}" != "NO" ]] && update_nvim
     [[ "${RELOAD_BAR}" != "NO" ]] && update_bar
-    [[ "${RELOAD_WM}" != "NO" ]] && update_wm
     [[ "${RELOAD_DUNST}" != "NO" ]] && update_dunst
+    [[ "${RELOAD_QUTE}" != "NO" ]] && reload_qutebrowser
+    [[ "${RELOAD_SPOTIFY}" != "NO" ]] && reload_spotify
+    [[ "${RELOAD_WM}" != "NO" ]] && update_wm
     [[ $(command ${EXTERNAL_SCRIPT})  ]] && run_post
 }
 
