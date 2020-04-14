@@ -4,7 +4,7 @@ TOGGLE=/tmp/polybar_is_hidden
 
 if [ ! -e $TOGGLE ]; then
 	touch $TOGGLE
-	$HOME/.config/polybar/launch.sh workspacesL workspacesM workspacesR time &
+	$HOME/.config/polybar/launch.sh workspacesL workspacesM &
 	sleep 1.5
 	# xdo hide -n polybar
 	bspc config bottom_padding 22

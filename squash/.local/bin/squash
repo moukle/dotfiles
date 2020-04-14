@@ -142,8 +142,9 @@ update_dunst()
     else
         killall dunst
         sed -i "s/frame_color.*/frame_color = \"${WHT}\"/g" "${DUNST_PATH}"
-        sed -i "s/background.*/background = \"${BWHT}\"/g" "${DUNST_PATH}"
-        sed -i "s/foreground.*/foreground = \"${BLK}\"/g" "${DUNST_PATH}"
+        sed -i "s/separator_color.*/separator_color = \"${BLK}\"/g" "${DUNST_PATH}"
+        sed -i "s/background.*/background = \"${BG}\"/g" "${DUNST_PATH}"
+        sed -i "s/foreground.*/foreground = \"${FG}\"/g" "${DUNST_PATH}"
         dunst &
         notify-send "DUNST RELOADED"
     fi

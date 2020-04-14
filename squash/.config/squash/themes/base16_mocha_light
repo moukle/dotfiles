@@ -4,23 +4,23 @@
 FG="#645240"
 BG="#f5eeeb"
 
-WHT="#3b3228"
+BLK="#ede0da"
 RED="#cb6077"
 GRN="#beb55b"
 YLW="#f4bc87"
 BLU="#8ab3b5"
 MAG="#a89bb9"
 CYN="#7bbda4"
-BLK="#ede0da"
+WHT="#7e705a"
 
-BWHT="#7e705a"
+BBLK="#cdb4a8"
 BRED="#cb6077"
 BGRN="#beb55b"
 BYLW="#f4bc87"
 BBLU="#8ab3b5"
 BMAG="#a89bb9"
 BCYN="#7bbda4"
-BBLK="#ddc4b8"
+BWHT="#3b3228"
 
 # ROFI OPTIONS
 ACC="${YLW}"

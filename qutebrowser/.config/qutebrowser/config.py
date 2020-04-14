@@ -92,11 +92,13 @@ c.fonts.statusbar = '10pt monospace'
 
 # Font used in the tab bar.
 # Type: QtFont
-c.fonts.tabs = '10pt "SF Pro Text"'
+c.fonts.tabs = '12pt "SF Pro Text"'
 
 # Base16 qutebrowser template by theova
 # iA theme by @dab
 
+basebb = xresources['*.background']
+base00 = xresources['*.color0']
 base00 = xresources['*.color0']
 base01 = xresources['*.color1']
 base02 = xresources['*.color2']
@@ -307,7 +309,7 @@ c.colors.statusbar.url.success.https.fg = base0B
 c.colors.statusbar.url.warn.fg = base0E
 
 # Background color of the tab bar.
-c.colors.tabs.bar.bg = base00
+c.colors.tabs.bar.bg = basebb
 
 # Color gradient start for the tab indicator.
 c.colors.tabs.indicator.start = base00
@@ -322,13 +324,13 @@ c.colors.tabs.indicator.error = base08
 c.colors.tabs.odd.fg = base08
 
 # Background color of unselected odd tabs.
-c.colors.tabs.odd.bg = base00
+c.colors.tabs.odd.bg = basebb
 
 # Foreground color of unselected even tabs.
 c.colors.tabs.even.fg = base08
 
 # Background color of unselected even tabs.
-c.colors.tabs.even.bg = base00
+c.colors.tabs.even.bg = basebb
 
 # Foreground color of selected odd tabs.
 # c.colors.tabs.selected.odd.fg = xresources["*.foreground"]
