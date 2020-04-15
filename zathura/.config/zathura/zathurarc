@@ -5,8 +5,7 @@ set adjust-open "width"
 set recolor                     "false"
 set recolor-keephue             "false"
 
-/* tomorrow */
-et default-bg                  "#1d1f21"
+set default-bg                  "#1d1f21"
 set default-fg                  "#282a2e"
 
 set statusbar-fg                "#b4b7b4"
@@ -36,69 +35,6 @@ set completion-highlight-bg     "#81a2be"
 set recolor-lightcolor          "#1d1f21"
 set recolor-darkcolor           "#e0e0e0"
 
-/* eighties */
-/* set default-bg                  "#2d2d2d" */
-/* set default-fg                  "#393939" */
-
-/* set statusbar-fg                "#a09f93" */
-/* set statusbar-bg                "#393939" */
-
-/* set inputbar-bg                 "#2d2d2d" */
-/* set inputbar-fg                 "#515151" */
-
-/* set notification-error-bg       "#f2777a" */
-/* set notification-error-fg       "#2d2d2d" */
-
-/* set notification-warning-bg     "#f2777a" */
-/* set notification-warning-fg     "#2d2d2d" */
-
-/* set highlight-color             "#ffcc66" */
-/* set highlight-active-color      "#6699cc" */
-
-/* set completion-highlight-fg     "#515151" */
-/* set completion-highlight-bg     "#66cccc" */
-
-/* set completion-bg               "#515151" */
-/* set completion-fg               "#66cccc" */
-
-/* set notification-bg             "#99cc99" */
-/* set notification-fg             "#2d2d2d" */
-
-/* set recolor-lightcolor          "#2d2d2d" */
-/* set recolor-darkcolor           "#e8e6df" */
-
-/* material */
-/* set default-bg                  "#263238" */
-/* set default-fg                  "#2E3C43" */
-
-/* set statusbar-fg                "#B2CCD6" */
-/* set statusbar-bg                "#314549" */
-
-/* set inputbar-bg                 "#263238" */
-/* set inputbar-fg                 "#FFFFFF" */
-
-/* set notification-bg             "#263238" */
-/* set notification-fg             "#FFFFFF" */
-
-/* set notification-error-bg       "#263238" */
-/* set notification-error-fg       "#F07178" */
-
-/* set notification-warning-bg     "#263238" */
-/* set notification-warning-fg     "#F07178" */
-
-/* set highlight-color             "#FFCB6B" */
-/* set highlight-active-color      "#82AAFF" */
-
-/* set completion-bg               "#2E3C43" */
-/* set completion-fg               "#82AAFF" */
-
-/* set completion-highlight-fg     "#FFFFFF" */
-/* set completion-highlight-bg     "#82AAFF" */
-
-/* set recolor-lightcolor          "#263238" */
-/* set recolor-darkcolor           "#EEFFFF" */
-
-set smooth-scroll true
 set window-title-home-tilde true
 set statusbar-basename true
 set selection-clipboard clipboard

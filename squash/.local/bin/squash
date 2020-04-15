@@ -32,6 +32,9 @@ Flags:
   -t    don't reload terminals
   -m    don't reload windowmanager
   -d    don't reload dunst
+  -z    don't reload zathura
+  -s    don't reload spotify
+  -q    don't reload qutebrowser
   -f    don't write files
   -e    run script after squash
   -l    list all available themes
@@ -148,6 +151,39 @@ update_dunst()
         dunst &
         notify-send "DUNST RELOADED"
     fi
+}
+
+update_zathura()
+{
+	if ! [ -x "$(command -v zathura)" ]; then
+        printf "ERROR: Zathura not installed: not updating zathurarc\n"
+	else
+		local ZATHURA_PATH=$HOME/.config/zathura/zathurarc
+		# BG
+		sed -i "s/set default-bg.*/set default-bg \"${BG}\"/g" "${ZATHURA_PATH}"
+		sed -i "s/set inputbar-bg.*/set inputbar-bg \"${BLK}\"/g" "${ZATHURA_PATH}"
+		sed -i "s/set notification-bg.*/set notification-bg \"${BG}\"/g" "${ZATHURA_PATH}"
+		sed -i "s/set notification-error-bg.*/set notification-error-bg \"${BG}\"/g" "${ZATHURA_PATH}"
+		sed -i "s/set notification-warning-bg.*/set notification-warning-bg \"${BG}\"/g" "${ZATHURA_PATH}"
+		sed -i "s/set recolor-lightcolor.*/set recolor-lightcolor \"${BG}\"/g" "${ZATHURA_PATH}"
+		sed -i "s/set statusbar-bg.*/set statusbar-bg \"${BLK}\"/g" "${ZATHURA_PATH}"
+		sed -i "s/set completion-bg.*/set completion-bg \"${BLK}\"/g" "${ZATHURA_PATH}"
+		sed -i "s/set completion-highlight-bg.*/set completion-highlight-bg \"${BBLK}\"/g" "${ZATHURA_PATH}"
+		sed -i "s/set highlight-color.*/set highlight-color \"${BBLK}\"/g" "${ZATHURA_PATH}"
+
+
+		# FG
+		sed -i "s/set default-fg.*/set default-fg \"${FG}\"/g" "${ZATHURA_PATH}"
+		sed -i "s/set statusbar-fg.*/set statusbar-fg \"${FG}\"/g" "${ZATHURA_PATH}"
+		sed -i "s/set completion-highlight-fg.*/set completion-fg \"${BWHT}\"/g" "${ZATHURA_PATH}"
+		sed -i "s/set completion-fg.*/set completion-fg \"${WHT}\"/g" "${ZATHURA_PATH}"
+		sed -i "s/set highlight-active-color.*/set highlight-active-color \"${GRN}\"/g" "${ZATHURA_PATH}"
+		sed -i "s/set inputbar-fg.*/set inputbar-fg \"${FG}\"/g" "${ZATHURA_PATH}"
+		sed -i "s/set notification-fg.*/set notification-fg \"${FG}\"/g" "${ZATHURA_PATH}"
+		sed -i "s/set notification-error-fg.*/set notification-error-fg \"${RED}\"/g" "${ZATHURA_PATH}"
+		sed -i "s/set notification-warning-fg.*/set notification-warning-fg \"${YLW}\"/g" "${ZATHURA_PATH}"
+		sed -i "s/set recolor-darkcolor.*/set recolor-darkcolor \"${FG}\"/g" "${ZATHURA_PATH}"
+	fi
 }
 
 reload_2bwm()
@@ -368,6 +404,7 @@ get_args()
             "d") RELOAD_DUNST="NO" ;;
             "q") RELOAD_QUTE="NO" ;;
             "s") RELOAD_SPOTIFY="NO" ;;
+            "s") RELOAD_ZATHURA="NO" ;;
             "f") WRITE_ALL="NO" ;;
             "e") EXTERNAL_SCRIPT="${OPTARG}" ;;
             "l") list_files; exit 1;;
@@ -415,6 +452,7 @@ main()
     [[ "${RELOAD_DUNST}" != "NO" ]] && update_dunst
     [[ "${RELOAD_QUTE}" != "NO" ]] && reload_qutebrowser
     [[ "${RELOAD_SPOTIFY}" != "NO" ]] && reload_spotify
+    [[ "${RELOAD_ZATHURA}" != "NO" ]] && update_zathura
     [[ "${RELOAD_WM}" != "NO" ]] && update_wm
     [[ $(command ${EXTERNAL_SCRIPT})  ]] && run_post
 }
