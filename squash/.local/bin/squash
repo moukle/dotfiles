@@ -280,7 +280,9 @@ reload_terminals()
 
 reload_qutebrowser()
 {
-	qutebrowser ':restart'
+	if pgrep -x "qutebrowser" > /dev/null ; then
+		qutebrowser ':restart'
+	fi
 }
 
 reload_spotify()
