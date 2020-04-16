@@ -30,6 +30,7 @@ blue_dark  = #5394C9
 cyan       = #37BF8D
 white      = #ffffff
 gray       = #CCCCCC
+red        = #d37277
 
 [fonts]
 font_Iosevka = "Iosevka Nerd Font:size=18:weight=regular:antialias=true;3"
@@ -168,7 +169,7 @@ label-empty  = %name%
 
 label-focused-background  = ${melon.blue_light}
 label-occupied-background = ${melon.blue_dark}
-label-urgent-background   = ${colors.red_dark}
+label-urgent-background   = ${melon.red}
 label-empty-background    = ${melon.bg_dark}
 
 ; label-focused-foreground  = ${melon.white}

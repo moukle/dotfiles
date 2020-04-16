@@ -32,7 +32,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 nitrogen  --restore &
-squash    paper -qs
+squash    -qs paper 
 greenclip daemon &
 numlockx  &
 # blockify  &

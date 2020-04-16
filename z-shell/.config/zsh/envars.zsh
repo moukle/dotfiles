@@ -5,5 +5,10 @@ export TERMINAL="st"
 export BROWSER="qtbrowser"
 export READER="zathura"
 
+export FFF_COL2=6
+export FFF_FAV1=$HOME/Documents
+export FFF_FAV2=$HOME/Downloads
+export FFF_FAV3=$HOME/Documents/MOOC
+
 # export QT_AUTO_SCREEN_SCALE_FACTOR=1.5
 # export GDK_SCALE=1.5

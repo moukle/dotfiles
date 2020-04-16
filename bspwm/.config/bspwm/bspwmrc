@@ -41,7 +41,7 @@ fi
 bspc rule -a qutebrowser			desktop=^6
 bspc rule -a code-oss				desktop=^7 follow=off
 bspc rule -a "Gimp-2.10"			desktop=^4 follow=off
-bspc rule -a DDNet					desktop=^5 follow=off
+bspc rule -a DDNet					desktop=^5 follow=off state=fullscreen
 bspc rule -a discord				desktop=^14 follow=off
 bspc rule -a ts3client_linux_amd64	desktop=^14
 bspc rule -a Zathura				state=tiled

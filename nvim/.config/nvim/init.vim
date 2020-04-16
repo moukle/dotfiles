@@ -32,6 +32,7 @@ let mapleader = "\<Space>"
 			Plug 'junegunn/vim-easy-align'
 			Plug 'lambdalisue/suda.vim'
 			Plug 'chrisbra/unicode.vim'
+			Plug 'honza/vim-snippets'
 		" }}}
 		" {{{ fancy
 			" Plug 'https://github.com/romainl/flattened'
