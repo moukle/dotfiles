@@ -3,9 +3,9 @@
 TOGGLE=/tmp/its_night
 
 if [ ! -e $TOGGLE ]; then
-	rm $TOGGLE
+	touch $TOGGLE
 	squash base16_tomorrow_night
 else
-	touch $TOGGLE
+	rm $TOGGLE
 	squash paper
 fi

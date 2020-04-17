@@ -252,7 +252,7 @@ interface = wlp4s0
 interval = 3.0
 
 ; format-connected = <ramp-signal>
-format-connected = %{} <ramp-signal>%{}
+format-connected = %{}  <ramp-signal>  %{}
 ; format-connected-prefix = 
 format-connected-prefix-foreground = ${settings.accent}
 format-connected-background = ${melon.bg_dark}
