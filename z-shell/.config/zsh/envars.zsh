@@ -1,4 +1,4 @@
-export PATH=$PATH:"$HOME/.local/bin/bspwm"
+export PATH=$PATH:"$HOME/.local/bin/":"$HOME/.local/bin/bspwm/"
 
 export EDITOR="nvim"
 export TERMINAL="st"

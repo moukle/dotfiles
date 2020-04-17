@@ -34,10 +34,10 @@ red        = #d37277
 
 [fonts]
 font_Iosevka = "Iosevka Nerd Font:size=18:weight=regular:antialias=true;3"
-font_SF = "SF Pro Text:size=14:weight=bold:antialias=true;5"
+font_SF = "SF Pro Text:size=14:weight=bold:antialias=true;3"
 font_roboto = "Roboto:size=18:weight=medium:antialias=true;3"
 icon_typicons = "Typicons:size=20:weight=regular:antialias=true;2"
-icon_material = "Material Design Icons:size=15:weight=regular:antialias=true;6"
+icon_material = "Material Design Icons:size=15:weight=regular:antialias=true;4"
 
 [settings]
 main_font = ${fonts.font_SF}
@@ -92,7 +92,7 @@ wm-restack = bspwm
 tray-maxsize = 20
 tray-position   = right
 tray-padding    = ${settings.spacing}
-tray-background = ${melon.bg_dark}
+tray-background = ${melon.blue_dark}
 
 [bar/left]
 dpi = 140
@@ -125,6 +125,42 @@ module-margin-right = ${settings.spacing}
 
 wm-restack = bspwm
 
+[bar/laptop]
+; dpi = 140
+; monitor = DP-4
+width    = ${settings.bar_width}
+height   = ${settings.bar_height}
+offset-x = ${settings.bar_x}
+offset-y = ${settings.bar_y}
+bottom   = ${settings.bar_bottom}
+
+background = ${settings.bar_bg}
+foreground = ${settings.bar_fg}
+
+line-size = ${settings.line_size}
+border-bottom-size = 0
+border-color = ${colors.black_bright}
+
+font-0 = ${settings.main_font}
+font-1 = ${settings.main_icon}
+font-2 = ${settings.main_font2}
+
+modules-left   = launcher shot bspwm
+modules-center = date
+modules-right  = pulseaudio wlan backlight bat0 bat1 darkmode powermenu
+
+padding-left = ${settings.spacing}
+padding-right = ${settings.spacing}
+module-margin-left  = ${settings.spacing}
+module-margin-right = ${settings.spacing}
+
+wm-restack = bspwm
+
+tray-maxsize = 20
+tray-position   = right
+tray-padding    = ${settings.spacing}
+tray-background = ${melon.blue_dark}
+
 ; ---------- modules --------------
 [module/notification]
 type = custom/script
@@ -142,8 +178,8 @@ label-background = ${melon.cyan}
 type = custom/script
 exec = echo "    "
 click-left = ~/.local/bin/toggle_nightday.sh
-label-foreground = ${melon.white}
-label-background = ${melon.blue_light}
+; label-foreground = ${melon.white}
+label-background = ${melon.blue_dark}
 
 [module/shot]
 type = custom/script
@@ -200,14 +236,14 @@ use-ui-max = true
 
 format-volume = "%{}  <ramp-volume>  "
 format-volume-background = ${melon.bg_dark}
-format-volume-foreground = ${melon.gray}
+; format-volume-foreground = ${melon.gray}
 
 ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
 
 label-muted = "    "
-label-muted-foreground = ${melon.gray}
+; label-muted-foreground = ${melon.gray}
 label-muted-background = ${melon.bg_dark}
 
 [module/wlan]
@@ -216,22 +252,23 @@ interface = wlp4s0
 interval = 3.0
 
 ; format-connected = <ramp-signal>
-format-connected = %{}  %{}
-format-connected-prefix = 直
+format-connected = %{} <ramp-signal>%{}
+; format-connected-prefix = 
 format-connected-prefix-foreground = ${settings.accent}
+format-connected-background = ${melon.bg_dark}
 
 label-connected = " %essid%"
 
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-5 = 
+ramp-signal-0 = 冷
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
 
 format-disconnected = <label-disconnected>
-format-disconnected-prefix = 睊
-format-disconnected-foreground = ${colors.red_dark}
+format-disconnected-prefix = 
+format-disconnected-foreground = ${melon.red}
+format-disconnected-background = ${melon.bg_dark}
 
 label-disconnected = %{}
 
@@ -240,29 +277,33 @@ type = internal/battery
 adapter = ADP1
 full-at = 96
 
-format-charging        = %{}  <ramp-capacity>  %{}
-label-charging         = %percentage%
-format-charging-foreground = ${colors.yellow_dark}
+format-charging-background    = ${melon.bg_dark}
+format-discharging-background = ${melon.bg_dark}
+format-full-background        = ${melon.bg_dark}
 
-format-discharging       = %{}  <ramp-capacity>  %{}
-label-discharging        = %percentage%
-format-discharging-foreground = ${colors.blue_dark}
+format-charging-foreground    = ${melon.blue_light}
+format-discharging-foreground = ${melon.white}
+label-full-foreground         = ${melon.blue_light}
 
-format-full = %{}  <label-full>  %{}
-label-full = ""
-label-full-foreground = ${settings.accent}
+format-charging    = %{}  <ramp-capacity>  %{}
+format-discharging = %{}  <ramp-capacity>  %{}
+format-full        = %{}  <label-full>  %{}
+
+label-charging    = %percentage%
+label-discharging = %percentage%
+label-full        = ""
 
 ; hack nerd
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
-ramp-capacity-5 = 
-ramp-capacity-6 = 
-ramp-capacity-7 = 
-ramp-capacity-8 = 
-ramp-capacity-9 = 
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-5 = 
+ramp-capacity-6 = 
+ramp-capacity-7 = 
+ramp-capacity-8 = 
+ramp-capacity-9 = 
 
 ; ramp-capacity-0 = 
 ; ramp-capacity-1 = 
@@ -291,23 +332,24 @@ type = internal/xbacklight
 format = %{}  <ramp>  %{}
 label = %percentage%
 ; format-prefix = 
-format-foreground = ${colors.magenta_dark}
+format-foreground = ${melon.white}
+format-background = ${melon.bg_dark}
 
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-3 = 
-ramp-4 = 
-ramp-5 = 
-ramp-6 = 
-ramp-7 = 
-ramp-8 = 
-ramp-9 = 
-ramp-10 = 
-ramp-11 = 
-ramp-12 = 
-ramp-13 = 
-ramp-14 = 
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+; ramp-3 = 
+; ramp-4 = 
+; ramp-5 = 
+; ramp-6 = 
+; ramp-7 = 
+; ramp-8 = 
+; ramp-9 = 
+; ramp-10 = 
+; ramp-11 = 
+; ramp-12 = 
+; ramp-13 = 
+; ramp-14 = 
 
 [module/powermenu]
 type = custom/menu
@@ -336,13 +378,13 @@ menu-4-0 = hibernate
 menu-4-0-exec = systemctl suspend && slock
 
 format-spacing = 1
-format-background = ${melon.bg_dark}
-format-foreground = ${melon.gray}
+format-background = ${melon.blue_dark}
+; format-foreground = ${melon.gray}
 format-padding = 1
 
 label-open = "  "
 ; label-open = "  "
-label-close = "ﾇ"
+label-close = ""
 label-separator = " "
 
 ; vim:ft=dosini

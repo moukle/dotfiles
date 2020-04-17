@@ -28,7 +28,7 @@
 	dmenu = /usr/bin/dmenu -p dunst:
 	browser = chromium
 	icon_position = left
-	icon_path = /usr/share/icons/eSuru++/apps/32/:/usr/share/icons/eSuru++/status/32/
+	icon_path = /usr/share/icons/eSuru++/apps/32/:/usr/share/icons/eSuru++/status/32/:/usr/share/icons/eSuru++/status/symbolic
 	max_icon_size = 100
 	frame_width = 15
 	frame_color = "#a6bbc9"

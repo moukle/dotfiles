@@ -1,0 +1,14 @@
+/* URxvt.letterSpace: -4 */
+URxvt.scrollBar:              false
+URxvt.internalBorder:         5
+URxvt.iso14755:               false
+URxvt.perl-ext-common:        default,matcher,clipboard
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt.url-launcher:           $BROWSER
+URxvt.matcher.button:         1
+
+Xft.dpi:                    100
+Xft.antialias:              true
+Xft.rgba:                   rgb
+Xft.hinting:                false
+Xft.hintstyle: hintslight
