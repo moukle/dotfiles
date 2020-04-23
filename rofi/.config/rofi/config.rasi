@@ -7,8 +7,8 @@ configuration {
   modi:               "drun";
   display-drun:       "apps";
   columns: 2;
-  /* dpi: 138; */
-  dpi: 100;
+  dpi: 138;
+  /* dpi: 100; */
 }
 
 * {

@@ -1,3 +1,6 @@
 [submodule "pass/.password-store"]
 	path = pass/.password-store
 	url = git@github.com:phcrm/password-store.git
+[submodule "startpage"]
+	path = startpage
+	url = https://github.com/morilein/startpage

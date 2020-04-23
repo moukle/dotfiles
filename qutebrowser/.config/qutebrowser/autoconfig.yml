@@ -6,13 +6,59 @@
 
 config_version: 2
 settings:
-  auto_save.session:
-    global: true
-  content.geolocation:
-    https://rocket.accso.de: false
+  colors.completion.fg:
+    global: black
   content.notifications:
-    https://w1.eurosptp.com: false
-    https://www.reddit.com: false
+    global: true
+  fonts.completion.entry:
+    global: 13pt default_family
+  fonts.debug_console:
+    global: 13pt default_family
+  fonts.default_family:
+    global:
+    - Iosevka
+  fonts.downloads:
+    global: 13pt default_family
+  fonts.hints:
+    global: bold 12pt default_family
+  fonts.keyhint:
+    global: 13pt default_family
+  fonts.messages.error:
+    global: 13pt default_family
+  fonts.messages.info:
+    global: 13pt default_family
+  fonts.messages.warning:
+    global: 13pt default_family
+  fonts.statusbar:
+    global: 13pt default_family
+  fonts.tabs:
+    global: 13pt default_family
+  statusbar.padding:
+    global:
+      bottom: 5
+      left: 0
+      right: 0
+      top: 5
+  tabs.favicons.show:
+    global: never
+  tabs.indicator.width:
+    global: 0
+  tabs.max_width:
+    global: 200
+  tabs.padding:
+    global:
+      bottom: 10
+      left: 5
+      right: 5
+      top: 10
+  tabs.position:
+    global: top
+  tabs.title.alignment:
+    global: center
+  tabs.title.format:
+    global: '{current_title}'
+  zoom.default:
+    global: 140%
   qt.highdpi:
     global: true
   url.searchengines:
@@ -20,23 +66,5 @@ settings:
       DEFAULT: https://www.google.com/search?hl=en&q={}
       d: https://duckduckgo.com/?q={}
       wa: https://wiki.archlinux.org/?search={}
-  zoom.default:
-    global: 100%
-  zoom.levels:
-    global:
-    - 25%
-    - 33%
-    - 50%
-    - 67%
-    - 75%
-    - 90%
-    - 100%
-    - 110%
-    - 125%
-    - 150%
-    - 175%
-    - 200%
-    - 250%
-    - 300%
-    - 400%
-    - 500%
+  auto_save.session:
+    global: true
