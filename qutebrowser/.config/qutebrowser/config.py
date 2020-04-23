@@ -72,10 +72,10 @@ c.colors.messages.warning.bg     = xresources['*.color1']
 c.colors.messages.warning.border = xresources['*.color1']
 c.colors.messages.warning.fg     = xresources['*.color7']
 
-c.colors.prompts.bg          = xresources['*.color7']
+c.colors.prompts.bg          = xresources['*.background']
 c.colors.prompts.border      = '1px solid gray'
 c.colors.prompts.fg          = xresources['*.color7']
-c.colors.prompts.selected.bg = xresources['*.background']
+c.colors.prompts.selected.bg = xresources['*.color0']
 
 c.colors.statusbar.caret.bg             = xresources['*.color5']
 c.colors.statusbar.caret.fg             = xresources['*.color7']
