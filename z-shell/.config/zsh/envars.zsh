@@ -1,4 +1,6 @@
-export PATH=$PATH:"$HOME/.local/bin/":"$HOME/.local/bin/bspwm/"
+export PATH="$PATH:$HOME/.local/bin/"
+export PATH="$PATH:$HOME/.local/bin/bspwm/"
+export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
 
 export EDITOR="nvim"
 export TERMINAL="st"

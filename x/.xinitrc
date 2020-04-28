@@ -8,6 +8,7 @@ xrdb ~/.Xresources
 
 if [[ $HOSTNAME = "olo" ]]; then
 	setxkbmap us altgr-intl nodeadkeys
+	numlockx
 	xrandr --dpi 140 --fb 6528x2160 \
 		--output DP-0   --mode 3840x2160 --panning 3840x2160+2688+0 \
 		--output DP-4   --scale 1.4x1.4 --mode 1920x1080 --rate 144 --pos 0x324 --panning 2688x1512+0+324

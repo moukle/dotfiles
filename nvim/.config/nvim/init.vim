@@ -48,10 +48,13 @@ let mapleader = "\<Space>"
 			Plug 'drewtempelmeyer/palenight.vim'
 			Plug 'dylanaraps/wal.vim'
 			Plug 'morhetz/gruvbox'
+			Plug 'Yggdroot/indentLine'
 		" }}}
-		" {{{ markdown
+		" {{{ langs
 			Plug 'suan/vim-instant-markdown'
 			Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+			Plug 'alaviss/nim.nvim'
+			" Plug 'zah/nim.vim'
 		" }}}
 		" {{{ git
 		Plug 'airblade/vim-gitgutter'
@@ -188,6 +191,8 @@ let mapleader = "\<Space>"
 		set list
 		set listchars=tab:\│\ ,trail:━
 		" set listchars=tab:\¦\ ,trail:━
+		" let g:indentLine_char = '│'
+		let g:indentLine_char_list = ['│', '┆', '┊']
 
 		set fillchars=vert:\│
 

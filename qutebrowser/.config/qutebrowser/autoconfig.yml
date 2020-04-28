@@ -44,7 +44,7 @@ settings:
   tabs.indicator.width:
     global: 0
   tabs.max_width:
-    global: 200
+    global: 250
   tabs.padding:
     global:
       bottom: 10
