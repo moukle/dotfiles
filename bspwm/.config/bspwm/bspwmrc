@@ -7,7 +7,7 @@ sxhkd &
 # $HOME/.config/polybar/launch.sh workspacesL workspacesM workspacesR time
 # sleep 1.5
 
-padding=25
+padding=8
 padding_bar=$((55+0+$padding))
 
 bspc config window_gap				-8

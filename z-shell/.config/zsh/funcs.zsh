@@ -76,3 +76,10 @@ fkill() {
 		echo $pid | xargs kill -${1:-9}
 	fi
 }
+
+mdp() {
+	filename=$1
+	basename="${filename%.*}"
+	# rm $basename.html
+	pandoc --css ~/dotfiles/pandoc/pandoc.css --self-contained --mathjax -t html $filename > $basename.html
+}

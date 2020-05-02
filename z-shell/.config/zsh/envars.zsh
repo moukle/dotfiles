@@ -3,9 +3,12 @@ export PATH="$PATH:$HOME/.local/bin/bspwm/"
 export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
 
 export EDITOR="nvim"
-export TERMINAL="st"
+export TERMINAL="urxvt"
 export BROWSER="qtbrowser"
 export READER="zathura"
+
+export PAGER="less"
+export MANPAGER="nvim -R -c 'set ft=man'"
 
 export FFF_COL2=6
 export FFF_FAV1=$HOME/Documents
