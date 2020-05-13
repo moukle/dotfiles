@@ -49,11 +49,13 @@ let mapleader = "\<Space>"
 			Plug 'dylanaraps/wal.vim'
 			Plug 'morhetz/gruvbox'
 			Plug 'Yggdroot/indentLine'
+			Plug 'fehawen/cs.vim'
 		" }}}
 		" {{{ langs
 			Plug 'suan/vim-instant-markdown'
 			Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 			Plug 'alaviss/nim.nvim'
+			Plug 'lervag/vimtex'
 			" Plug 'zah/nim.vim'
 		" }}}
 		" {{{ git
@@ -160,6 +162,10 @@ let mapleader = "\<Space>"
 		" " Color name (:help cterm-colors) or ANSI code
 			let g:limelight_conceal_ctermfg = 'gray'
 			let g:limelight_conceal_ctermfg = 240
+		" }}}
+		" {{{ vimtex
+			let g:vimtex_view_method ="zathura"
+			let conceallevel = 0
 		" }}}
 	" }}}
 " }}}
