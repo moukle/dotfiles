@@ -89,7 +89,7 @@ module-margin-right = ${settings.spacing}
 
 wm-restack = bspwm
 
-tray-maxsize = 20
+tray-maxsize = 32
 tray-position   = right
 tray-padding    = ${settings.spacing}
 tray-background = ${melon.blue_dark}
