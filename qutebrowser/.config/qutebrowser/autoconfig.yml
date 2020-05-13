@@ -6,6 +6,8 @@
 
 config_version: 2
 settings:
+  auto_save.session:
+    global: true
   colors.completion.fg:
     global: black
   content.notifications:
@@ -33,6 +35,8 @@ settings:
     global: 13pt default_family
   fonts.tabs:
     global: 13pt default_family
+  qt.highdpi:
+    global: true
   statusbar.padding:
     global:
       bottom: 5
@@ -57,14 +61,10 @@ settings:
     global: center
   tabs.title.format:
     global: '{current_title}'
-  zoom.default:
-    global: 140%
-  qt.highdpi:
-    global: true
   url.searchengines:
     global:
       DEFAULT: https://www.google.com/search?hl=en&q={}
       d: https://duckduckgo.com/?q={}
       wa: https://wiki.archlinux.org/?search={}
-  auto_save.session:
-    global: true
+  zoom.default:
+    global: '100'
