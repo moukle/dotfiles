@@ -56,6 +56,7 @@ let mapleader = "\<Space>"
 			Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 			Plug 'alaviss/nim.nvim'
 			Plug 'lervag/vimtex'
+			Plug 'jvirtanen/vim-octave'
 			" Plug 'zah/nim.vim'
 		" }}}
 		" {{{ git

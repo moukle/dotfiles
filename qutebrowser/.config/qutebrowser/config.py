@@ -30,6 +30,15 @@ def adjust(hexstr, scalefactor):
     return "#%02x%02x%02x" % (r, g, b)
 
 xresources = read_xresources('*')
+melon = {}
+melon['bg_light']   = '#445967'
+melon['bg_dark']    = '#3C4F5B'
+melon['blue_light'] = '#72A7D3'
+melon['blue_dark']  = '#5394C9'
+melon['cyan']       = '#37BF8D'
+melon['white']      = '#ffffff'
+melon['gray']       = '#CCCCCC'
+melon['red']        = '#d37277'
 
 config.load_autoconfig()
 
@@ -100,18 +109,53 @@ c.colors.statusbar.url.success.https.fg = adjust(xresources['*.foreground'], 0.7
 c.colors.statusbar.url.warn.fg          = xresources['*.color3']
 
 
-c.colors.tabs.bar.bg           = xresources['*.background']
-c.colors.tabs.even.bg          = adjust(xresources['*.background'], 1.15)
-c.colors.tabs.even.fg          = xresources['*.color7']
-c.colors.tabs.indicator.error  = '#ff0000'
-c.colors.tabs.odd.bg           = adjust(xresources['*.background'], 1.35)
-c.colors.tabs.odd.fg           = xresources['*.color7']
-c.colors.tabs.selected.even.bg = adjust(xresources['*.background'], 1.15)
-c.colors.tabs.selected.even.fg = xresources['*.color3']
-c.colors.tabs.selected.odd.bg  = adjust(xresources['*.background'], 1.35)
-c.colors.tabs.selected.odd.fg  = xresources['*.color3']
+# c.colors.tabs.bar.bg           = xresources['*.background']
+# c.colors.tabs.even.bg          = adjust(xresources['*.background'], 1.15)
+# c.colors.tabs.even.fg          = xresources['*.color7']
+# c.colors.tabs.indicator.error  = '#ff0000'
+# c.colors.tabs.odd.bg           = adjust(xresources['*.background'], 1.35)
+# c.colors.tabs.odd.fg           = xresources['*.color7']
+# c.colors.tabs.selected.even.bg = adjust(xresources['*.background'], 1.15)
+# c.colors.tabs.selected.even.fg = xresources['*.color3']
+# c.colors.tabs.selected.odd.bg  = adjust(xresources['*.background'], 1.35)
+# c.colors.tabs.selected.odd.fg  = xresources['*.color3']
 
-c.colors.webpage.bg = "#ffffff"
+c.colors.tabs.bar.bg           = melon['blue_dark']
+
+c.colors.tabs.indicator.error  = melon['red']
+c.colors.tabs.indicator.start  = melon['white']
+c.colors.tabs.indicator.stop  = melon['gray']
+
+c.colors.tabs.even.bg          = melon['blue_dark']
+c.colors.tabs.even.fg          = melon['white']
+c.colors.tabs.odd.bg           = melon['blue_dark']
+c.colors.tabs.odd.fg           = melon['white']
+
+c.colors.tabs.selected.even.bg = melon['blue_light']
+c.colors.tabs.selected.even.fg = melon['white']
+c.colors.tabs.selected.odd.bg  = melon['blue_light']
+c.colors.tabs.selected.odd.fg  = melon['white']
+
+
+# tabs left and only favicons
+c.tabs.padding = {"bottom":24, "left":11, "right":20, "top":23}
+c.tabs.position = "left"
+c.tabs.show = "multiple"
+c.tabs.title.format = "{index}"
+c.tabs.width = 80
+c.tabs.favicons.scale = 1.5
+c.tabs.indicator.width = 2
+c.tabs.indicator.padding = {"bottom":0, "left":0, "right":8, "top":0}
+
+# miscs
+c.tabs.background = True
+
+c.statusbar.padding = {"bottom":24, "left":11, "right":20, "top":23}
+c.statusbar.hide = True
+
+c.scrolling.smooth = True
+c.colors.webpage.prefers_color_scheme_dark = True
+# c.colors.webpage.bg = "#ffffff"
 
 c.url.start_pages = "~/dotfiles/startpage/index.html"
 c.url.default_page = "~/dotfiles/startpage/index.html"

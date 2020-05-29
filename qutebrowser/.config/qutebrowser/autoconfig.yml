@@ -8,8 +8,6 @@ config_version: 2
 settings:
   auto_save.session:
     global: true
-  colors.completion.fg:
-    global: black
   content.notifications:
     global: true
   fonts.completion.entry:
@@ -37,34 +35,20 @@ settings:
     global: 13pt default_family
   qt.highdpi:
     global: true
+  statusbar.hide:
+    global: true
   statusbar.padding:
     global:
       bottom: 5
       left: 0
       right: 0
       top: 5
-  tabs.favicons.show:
-    global: never
-  tabs.indicator.width:
-    global: 0
-  tabs.max_width:
-    global: 250
-  tabs.padding:
-    global:
-      bottom: 10
-      left: 5
-      right: 5
-      top: 10
   tabs.position:
-    global: top
-  tabs.title.alignment:
-    global: center
-  tabs.title.format:
-    global: '{current_title}'
+    global: left
   url.searchengines:
     global:
       DEFAULT: https://www.google.com/search?hl=en&q={}
       d: https://duckduckgo.com/?q={}
       wa: https://wiki.archlinux.org/?search={}
   zoom.default:
-    global: '100'
+    global: '140'
