@@ -19,53 +19,55 @@ let mapleader = "\<Space>"
 				Plug 'glts/vim-textobj-indblock'
 			" }}}
 		" }}}
-		" {{{ editing helpers
-			Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-			Plug 'junegunn/fzf.vim'
-			Plug 'donRaphaco/neotex', { 'for': 'tex' }
-			Plug 'tpope/vim-commentary'
-			Plug 'tpope/vim-surround'
-			Plug 'tpope/vim-repeat'
-			Plug 'dhruvasagar/vim-table-mode'
-			Plug 'jiangmiao/auto-pairs'
-			Plug 'AndrewRadev/splitjoin.vim'
-			Plug 'junegunn/vim-easy-align'
-			Plug 'lambdalisue/suda.vim'
-			Plug 'chrisbra/unicode.vim'
-			Plug 'honza/vim-snippets'
-		" }}}
-		" {{{ fancy
-			" Plug 'https://github.com/romainl/flattened'
-			Plug 'junegunn/goyo.vim'
-			Plug 'junegunn/limelight.vim'
-			Plug 'chriskempson/base16-vim'
-			Plug 'junegunn/vim-peekaboo' " registers
-			Plug 'mhinz/vim-startify'
-			Plug 'itchyny/vim-cursorword'
-			Plug 'ap/vim-buftabline'
-			Plug 'unblevable/quick-scope'
-			Plug 'ayu-theme/ayu-vim'
-			Plug 'drewtempelmeyer/palenight.vim'
-			Plug 'dylanaraps/wal.vim'
-			Plug 'morhetz/gruvbox'
-			Plug 'Yggdroot/indentLine'
-			Plug 'fehawen/cs.vim'
-		" }}}
-		" {{{ langs
-			Plug 'suan/vim-instant-markdown'
-			Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
-			Plug 'alaviss/nim.nvim'
-			Plug 'lervag/vimtex'
-			Plug 'jvirtanen/vim-octave'
-			" Plug 'zah/nim.vim'
-		" }}}
-		" {{{ git
-		Plug 'airblade/vim-gitgutter'
-		Plug 'tpope/vim-fugitive'
-		" }}}
-		" {{{ other
-		Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
-		" }}}
+	" {{{ editing helpers
+		Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+		Plug 'junegunn/fzf.vim'
+		Plug 'donRaphaco/neotex', { 'for': 'tex' }
+		Plug 'tpope/vim-commentary'
+		Plug 'tpope/vim-surround'
+		Plug 'tpope/vim-repeat'
+		Plug 'dhruvasagar/vim-table-mode'
+		Plug 'jiangmiao/auto-pairs'
+		Plug 'AndrewRadev/splitjoin.vim'
+		Plug 'junegunn/vim-easy-align'
+		Plug 'lambdalisue/suda.vim'
+		Plug 'chrisbra/unicode.vim'
+		Plug 'honza/vim-snippets'
+	" }}}
+	" {{{ fancy
+		" Plug 'https://github.com/romainl/flattened'
+		Plug 'junegunn/goyo.vim'
+		Plug 'junegunn/limelight.vim'
+		Plug 'chriskempson/base16-vim'
+		Plug 'junegunn/vim-peekaboo' " registers
+		Plug 'mhinz/vim-startify'
+		Plug 'Yggdroot/indentLine'
+		Plug 'itchyny/vim-cursorword'
+		Plug 'ap/vim-buftabline'
+		Plug 'unblevable/quick-scope'
+	" }}}
+	" {{{ colors
+		Plug 'ayu-theme/ayu-vim'
+		Plug 'drewtempelmeyer/palenight.vim'
+		Plug 'dylanaraps/wal.vim'
+		Plug 'morhetz/gruvbox'
+		Plug 'fehawen/cs.vim'
+	" }}}
+	" {{{ langs
+		Plug 'suan/vim-instant-markdown'
+		Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+		Plug 'alaviss/nim.nvim'
+		" Plug 'lervag/vimtex'
+		Plug 'jvirtanen/vim-octave'
+		" Plug 'zah/nim.vim'
+	" }}}
+	" {{{ git
+	Plug 'airblade/vim-gitgutter'
+	Plug 'tpope/vim-fugitive'
+	" }}}
+	" {{{ other
+	Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
+	" }}}
 	call plug#end()
 	"}}}
 	" {{{ plugin settings
@@ -165,8 +167,8 @@ let mapleader = "\<Space>"
 			let g:limelight_conceal_ctermfg = 240
 		" }}}
 		" {{{ vimtex
-			let g:vimtex_view_method ="zathura"
-			let conceallevel = 0
+			" let g:vimtex_view_method="zathura"
+			" let conceallevel=0
 		" }}}
 	" }}}
 " }}}
@@ -304,20 +306,20 @@ let g:currentmode={
 			\ '!'  : 'SHELL ',
 			\ 't'  : 'TERMINAL '}
 
-hi PrimaryBlock ctermfg=07 ctermbg=none
-hi SecondaryBlock ctermfg=15 ctermbg=none
-hi Blanks ctermfg=6 ctermbg=none
-
-highlight EndOfBuffer ctermfg=0 ctermbg=none
+hi PrimaryBlock   ctermfg=07   ctermbg=0
+hi SecondaryBlock ctermfg=15   ctermbg=0
+hi TrinaryBlock   ctermfg=6    ctermbg=0
+hi Blanks         ctermfg=none ctermbg=0
 
 set statusline=
 " set statusline+=%#PrimaryBlock#
 set statusline+=\ %{g:currentmode[mode()]}
 set statusline+=%#SecondaryBlock#
 set statusline+=%{StatuslineGit()}
-set statusline+=%#Blanks#
+set statusline+=%#TrinaryBlock#
 set statusline+=\ %t
 set statusline+=%(%m%)
+set statusline+=%#Blanks#
 set statusline+=%=
 set statusline+=%#SecondaryBlock#
 set statusline+=\ Ln
@@ -449,4 +451,4 @@ endfunction
 	" {{{ commands
 		cmap w!! w suda://%
 	" }}}
-	" }}}
+" }}}

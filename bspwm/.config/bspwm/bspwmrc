@@ -7,11 +7,11 @@ sxhkd &
 # $HOME/.config/polybar/launch.sh workspacesL workspacesM workspacesR time
 # sleep 1.5
 
-padding=24
+padding=20
 padding_bar=$((55+0+$padding))
 
-bspc config window_gap				-8
-bspc config border_width			8
+bspc config window_gap				-5
+bspc config border_width			5
 bspc config top_padding				$padding_bar
 bspc config bottom_padding			$padding
 bspc config right_padding			$padding
@@ -38,12 +38,12 @@ else
 	$HOME/.config/polybar/launch.sh laptop
 fi
 
-bspc rule -a qutebrowser			desktop=^6
-bspc rule -a code-oss				desktop=^7 follow=off
+bspc rule -a qutebrowser			desktop=^1
+bspc rule -a code-oss				desktop=^5 follow=off
 bspc rule -a "Gimp-2.10"			desktop=^4 follow=off
-bspc rule -a DDNet					desktop=^5 follow=off state=fullscreen
-bspc rule -a discord				desktop=^14 follow=off
-bspc rule -a ts3client_linux_amd64	desktop=^14
+bspc rule -a DDNet					desktop=^10 follow=off state=fullscreen
+bspc rule -a discord				desktop=^7 follow=off
+bspc rule -a ts3client_linux_amd64	desktop=^7
 bspc rule -a Zathura				state=tiled
 bspc rule -a Pinentry				state=floating
 bspc rule -a Spotify				desktop=^8
