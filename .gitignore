@@ -3,6 +3,7 @@ nvim/.config/nvim/after
 nvim/.config/nvim/bak
 nvim/.config/nvim/plugged
 nvim/.config/nvim/tags
+nvim/.config/nvim/.netrwhist
 
 teeworlds/.teeworlds/logs/
 teeworlds/.teeworlds/demos/

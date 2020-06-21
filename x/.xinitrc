@@ -1,7 +1,7 @@
 #! /bin/sh
 
 xsetroot -cursor_name left_ptr
-xset +b
+xset -b
 xset +fp ~/.fonts
 xset fp rehash
 xrdb ~/.Xresources
