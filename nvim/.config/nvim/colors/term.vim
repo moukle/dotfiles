@@ -35,14 +35,15 @@ hi  SignColumn   ctermbg=none
 hi  VertSplit    ctermfg=0     ctermbg=none cterm=none
 
 " Status line / related
-hi StatusLine   ctermfg=03 ctermbg=none cterm=none
-hi StatusLineNC ctermfg=07 ctermbg=none cterm=none
+hi StatusLine   ctermfg=03 ctermbg=0 cterm=none
+hi StatusLineNC ctermfg=07 ctermbg=8 cterm=none
 hi WildMenu     ctermfg=0 ctermbg=4
 
 " Tabs
 hi TabLine      ctermfg=8  ctermbg=none  cterm=none
 hi TabLineFill  ctermfg=7  ctermbg=none  cterm=none
-hi TabLineSel   ctermfg=3  ctermbg=none    cterm=none
+hi TabLineSel   ctermfg=3  ctermbg=0    cterm=none
+
 hi BufTabLineActive ctermbg=none ctermfg=15
 
 " Vimdiff

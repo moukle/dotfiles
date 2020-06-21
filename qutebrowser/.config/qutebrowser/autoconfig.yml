@@ -36,13 +36,13 @@ settings:
   qt.highdpi:
     global: true
   statusbar.hide:
-    global: true
+    global: false
   statusbar.padding:
     global:
-      bottom: 5
-      left: 0
-      right: 0
-      top: 5
+      bottom: 15
+      left: 3
+      right: 3
+      top: 15
   tabs.position:
     global: left
   url.searchengines:

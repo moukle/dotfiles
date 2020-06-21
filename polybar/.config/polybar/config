@@ -60,7 +60,7 @@ line_size = 0
 ; ---------- bars --------------
 [bar/right]
 dpi = 140
-monitor = DP-0
+monitor = DP-4
 width    = ${settings.bar_width}
 height   = ${settings.bar_height}
 offset-x = ${settings.bar_x}
@@ -92,11 +92,11 @@ wm-restack = bspwm
 tray-maxsize = 32
 tray-position   = right
 tray-padding    = ${settings.spacing}
-tray-background = ${melon.blue_dark}
+tray-background = ${melon.bg_dark}
 
 [bar/left]
 dpi = 140
-monitor = DP-4
+monitor = DP-0
 width    = ${settings.bar_width}
 height   = ${settings.bar_height}
 offset-x = ${settings.bar_x}
@@ -114,7 +114,7 @@ font-0 = ${settings.main_font}
 font-2 = ${settings.main_font2}
 font-1 = ${settings.main_icon}
 
-modules-left   = launcher bspwm
+modules-left   = bspwm
 modules-center =
 modules-right  = darkmode
 
@@ -178,8 +178,8 @@ label-background = ${melon.cyan}
 type = custom/script
 exec = echo "    "
 click-left = ~/.local/bin/toggle_nightday.sh
-; label-foreground = ${melon.white}
-label-background = ${melon.blue_dark}
+label-foreground = ${melon.gray}
+; label-background = ${melon.blue_dark}
 
 [module/shot]
 type = custom/script
@@ -228,7 +228,7 @@ time = "%H:%M"
 date = "%A, %d. %B"
 
 time-alt = "%H:%M:%S"
-date-alt = "%A - %d. %B,"
+date-alt = "%A, %d. %B"
 
 [module/pulseaudio]
 type = internal/pulseaudio
@@ -378,7 +378,7 @@ menu-4-0 = hibernate
 menu-4-0-exec = systemctl suspend && slock
 
 format-spacing = 1
-format-background = ${melon.blue_dark}
+format-background = ${melon.bg_dark}
 ; format-foreground = ${melon.gray}
 format-padding = 1
 
