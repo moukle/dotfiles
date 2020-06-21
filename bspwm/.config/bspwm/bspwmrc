@@ -4,8 +4,7 @@ xrdb $HOME/.Xresources
 source $HOME/.cache/squash/colors
 sxhkd &
 
-# $HOME/.config/polybar/launch.sh workspacesL workspacesM workspacesR time
-# sleep 1.5
+wmname LG3D # for gay java
 
 padding=24
 padding_bar=$((55+0+$padding))
