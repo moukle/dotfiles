@@ -2,7 +2,7 @@
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+  # source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 autoload -U colors && colors
@@ -45,6 +45,9 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots)		# Include hidden files.
 
+# Completion for kitty
+kitty + complete setup zsh | source /dev/stdin
+
 # Import seperate config files
 for r in $HOME/.config/zsh/*.zsh; do
 	if [[ $DEBUG > 0 ]]; then
@@ -52,6 +55,5 @@ for r in $HOME/.config/zsh/*.zsh; do
 	fi
 	source $r
 done
-
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

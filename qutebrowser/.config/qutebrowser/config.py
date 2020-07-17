@@ -150,8 +150,7 @@ c.tabs.indicator.padding = {"bottom":0, "left":0, "right":8, "top":0}
 # miscs
 c.tabs.background = True
 
-c.statusbar.padding = {"bottom":24, "left":11, "right":20, "top":23}
-c.statusbar.hide = False
+c.statusbar.padding = {"bottom":15, "left":3, "right":3, "top":15}
 
 c.scrolling.smooth = True
 c.colors.webpage.prefers_color_scheme_dark = True

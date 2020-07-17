@@ -1,0 +1,46 @@
+[2020-06-17 23:03:04][client]: starting...
+[2020-06-17 23:03:04][sdl]: SDL version 2.0.12 (compiled = 2.0.12)
+[2020-06-17 23:03:05][gfx]: Using OpenGL version 3.3.
+[2020-06-17 23:03:05][client/sound]: sound init successful using audio driver 'pulseaudio'
+[2020-06-17 23:03:05][freetype]: freetype version 2.10.2 (compiled = 2.10.2)
+[2020-06-17 23:03:05][textrender]: loaded pFont from '/usr/share/ddnet/data/fonts/Icons.ttf'
+[2020-06-17 23:03:05][engine/mastersrv]: refreshing master server addresses
+[2020-06-17 23:03:05][host lookup]: host='master1.teeworlds.com' port=0 3
+[2020-06-17 23:03:05][host lookup]: host='master2.teeworlds.com' port=0 3
+[2020-06-17 23:03:05][host lookup]: host='master3.teeworlds.com' port=0 3
+[2020-06-17 23:03:05][host lookup]: host='master4.teeworlds.com' port=0 3
+[2020-06-17 23:03:05][textrender]: loaded pFont from '/usr/share/ddnet/data/fonts/DejaVuSansCJKName.ttf'
+[2020-06-17 23:03:05][textrender]: default pFont set 0x558bf2c1a090
+[2020-06-17 23:03:05][datafile]: loading. filename='maps/bg_666.map'
+[2020-06-17 23:03:05][datafile]: allocsize=6544
+[2020-06-17 23:03:05][datafile]: readsize=6128
+[2020-06-17 23:03:05][datafile]: swaplen=6148
+[2020-06-17 23:03:05][datafile]: item_size=5576
+[2020-06-17 23:03:05][datafile]: loading done. datafile='maps/bg_666.map'
+[2020-06-17 23:03:05][datafile]: loading data index=0 size=18 uncompressed=10
+[2020-06-17 23:03:05][datafile]: loading data index=1 size=18 uncompressed=10
+[2020-06-17 23:03:05][datafile]: loading data index=2 size=22 uncompressed=14
+[2020-06-17 23:03:05][datafile]: loading data index=4 size=5637 uncompressed=1048576
+[2020-06-17 23:03:05][datafile]: loading data index=6 size=6462 uncompressed=1048576
+[2020-06-17 23:03:05][datafile]: loading data index=8 size=87091 uncompressed=4194304
+[2020-06-17 23:03:05][datafile]: loading data index=10 size=3223 uncompressed=16384
+[2020-06-17 23:03:05][datafile]: loading data index=12 size=10682 uncompressed=1048576
+[2020-06-17 23:03:05][datafile]: loading data index=14 size=12411 uncompressed=4194304
+[2020-06-17 23:03:05][datafile]: loading data index=16 size=5429 uncompressed=1048576
+[2020-06-17 23:03:05][datafile]: loading data index=18 size=7600 uncompressed=1048576
+[2020-06-17 23:03:05][datafile]: loading data index=20 size=6936 uncompressed=1048576
+[2020-06-17 23:03:05][datafile]: loading data index=21 size=23 uncompressed=15
+[2020-06-17 23:03:05][datafile]: loading data index=22 size=20 uncompressed=12
+[2020-06-17 23:03:05][datafile]: loading data index=23 size=25 uncompressed=17
+[2020-06-17 23:03:05][datafile]: loading data index=24 size=27 uncompressed=19
+[2020-06-17 23:03:05][datafile]: loading data index=26 size=47085 uncompressed=4194304
+[2020-06-17 23:03:05][datafile]: loading data index=28 size=497 uncompressed=16384
+[2020-06-17 23:03:05][datafile]: loading data index=29 size=50 uncompressed=8000
+[2020-06-17 23:03:05][datafile]: loading data index=30 size=63 uncompressed=8000
+[2020-06-17 23:03:05][datafile]: loading data index=31 size=61 uncompressed=8000
+[2020-06-17 23:03:05][datafile]: loading data index=32 size=820 uncompressed=822848
+[2020-06-17 23:03:06][gameclient]: initialisation finished after 679.00ms
+[2020-06-17 23:03:06][client]: version 0.6 626fce9a778df4d4
+[2020-06-17 23:03:06][engine/mastersrv]: saving addresses
+[2020-06-17 23:03:06][http]: http https://info.ddnet.tw/info?name=%3Dphacrum%3D
+[2020-06-17 23:03:06][http]: task done https://info.ddnet.tw/info?name=%3Dphacrum%3D

@@ -8,6 +8,8 @@ config_version: 2
 settings:
   auto_save.session:
     global: true
+  content.geolocation:
+    https://rocket.accso.de: false
   content.notifications:
     global: true
   fonts.completion.entry:
@@ -31,18 +33,20 @@ settings:
     global: 13pt default_family
   fonts.statusbar:
     global: 13pt default_family
-  fonts.tabs:
+  fonts.tabs.selected:
+    global: 13pt default_family
+  fonts.tabs.unselected:
     global: 13pt default_family
   qt.highdpi:
     global: true
-  statusbar.hide:
-    global: false
   statusbar.padding:
     global:
       bottom: 15
       left: 3
       right: 3
       top: 15
+  statusbar.show:
+    global: in-mode
   tabs.position:
     global: left
   url.searchengines:

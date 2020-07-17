@@ -38,7 +38,6 @@ let mapleader = "\<Space>"
 		" Plug 'https://github.com/romainl/flattened'
 		Plug 'junegunn/goyo.vim'
 		Plug 'junegunn/limelight.vim'
-		Plug 'chriskempson/base16-vim'
 		Plug 'junegunn/vim-peekaboo' " registers
 		Plug 'mhinz/vim-startify'
 		Plug 'Yggdroot/indentLine'
@@ -48,6 +47,7 @@ let mapleader = "\<Space>"
 	" }}}
 	" {{{ colors
 		Plug 'ayu-theme/ayu-vim'
+		Plug 'chriskempson/base16-vim'
 		Plug 'drewtempelmeyer/palenight.vim'
 		Plug 'dylanaraps/wal.vim'
 		Plug 'morhetz/gruvbox'
@@ -135,11 +135,11 @@ let mapleader = "\<Space>"
 			map <silent> <leader>j <Plug>(ale_next_wrap)
 
 			let g:ale_sign_column_always = 1
-			let g:ale_sign_error = '│'
-			let g:ale_sign_warning = '│'
+			let g:ale_sign_error = '!'
+			let g:ale_sign_warning = '!'
 
-			hi ALEWarningSign ctermbg=none ctermfg=blue
-			hi ALEErrorSign   ctermbg=none  ctermfg=red
+			hi ALEWarningSign ctermbg=none ctermfg=2
+			hi ALEErrorSign   ctermbg=none ctermfg=4
 		" }}}
 		" {{{ auto-pairs
 			let g:AutoPairsFlyMode = 0
@@ -260,83 +260,56 @@ let mapleader = "\<Space>"
 		" }}}
 
 		set laststatus=2
-		" hi User1        ctermfg=red     ctermbg=black
-		" hi User2        ctermfg=red     ctermbg=black
-		" hi User3        ctermfg=magenta ctermbg=black
-		" hi User4        ctermfg=black   ctermbg=black
-		" hi User5        ctermfg=blue    ctermbg=black
-		" hi User6        ctermfg=blue    ctermbg=black
-		" hi User7        ctermfg=cyan    ctermbg=black
-		" hi User8        ctermfg=green   ctermbg=black
-		" hi User9        ctermfg=cyan    ctermbg=black
+		let g:currentmode={
+					\ 'n'  : 'NORMAL ',
+					\ 'no' : 'N·OPERATOR PENDING ',
+					\ 'v'  : 'VISUAL ',
+					\ 'V'  : 'V·LINE ',
+					\ '' : 'V·BLOCK ',
+					\ 's'  : 'SELECT ',
+					\ 'S'  : 'S·LINE ',
+					\ '' : 'S·BLOCK ',
+					\ 'i'  : 'INSERT ',
+					\ 'R'  : 'REPLACE ',
+					\ 'Rv' : 'V·REPLACE ',
+					\ 'c'  : 'COMMAND ',
+					\ 'cv' : 'VIM EX ',
+					\ 'ce' : 'EX ',
+					\ 'r'  : 'PROMPT ',
+					\ 'rm' : 'MORE ',
+					\ 'r?' : 'CONFIRM ',
+					\ '!'  : 'SHELL ',
+					\ 't'  : 'TERMINAL '}
 
-		" set statusline=\ \                 " Padding
-		" set statusline+=%F                  " Path to the file
-		" set statusline+=\ %1*%2*\         " Separator
-		" set statusline+=%y                  " File type
-		" set statusline+=\ %3*%4*\         " Separator
-		" set statusline+=%=                  " Switch to right-side
-		" set statusline+=\ %9*%9*\         " Separator
-		" set statusline+=\(0x%-B\)\              " current char
-		" set statusline+=\ %5*%6*\         " Separator
-		" set statusline+=%p%%                " Line percent
-		" set statusline+=\ %7*%8*\         " Separator
-		" set statusline+=%l/%L               " Current line
-		" set statusline+=\ \                 " Padding
+		hi PrimaryBlock   ctermfg=07   ctermbg=0
+		hi SecondaryBlock ctermfg=15   ctermbg=0
+		hi TrinaryBlock   ctermfg=6    ctermbg=0
+		hi Blanks         ctermfg=none ctermbg=0
 
-		" statusline
-let g:currentmode={
-			\ 'n'  : 'NORMAL ',
-			\ 'no' : 'N·OPERATOR PENDING ',
-			\ 'v'  : 'VISUAL ',
-			\ 'V'  : 'V·LINE ',
-			\ '' : 'V·BLOCK ',
-			\ 's'  : 'SELECT ',
-			\ 'S'  : 'S·LINE ',
-			\ '' : 'S·BLOCK ',
-			\ 'i'  : 'INSERT ',
-			\ 'R'  : 'REPLACE ',
-			\ 'Rv' : 'V·REPLACE ',
-			\ 'c'  : 'COMMAND ',
-			\ 'cv' : 'VIM EX ',
-			\ 'ce' : 'EX ',
-			\ 'r'  : 'PROMPT ',
-			\ 'rm' : 'MORE ',
-			\ 'r?' : 'CONFIRM ',
-			\ '!'  : 'SHELL ',
-			\ 't'  : 'TERMINAL '}
+		set statusline=
+		" set statusline+=%#PrimaryBlock#
+		set statusline+=\ %{g:currentmode[mode()]}
+		set statusline+=%#SecondaryBlock#
+		set statusline+=%{StatuslineGit()}
+		set statusline+=%#TrinaryBlock#
+		set statusline+=\ %t
+		set statusline+=%(%m%)
+		set statusline+=%#Blanks#
+		set statusline+=%=
+		set statusline+=%#SecondaryBlock#
+		set statusline+=\%p%%
+		set statusline+=\ %l:%c
+		set statusline+=%#PrimaryBlock#
+		set statusline+=\ [%Y]
 
-hi PrimaryBlock   ctermfg=07   ctermbg=0
-hi SecondaryBlock ctermfg=15   ctermbg=0
-hi TrinaryBlock   ctermfg=6    ctermbg=0
-hi Blanks         ctermfg=none ctermbg=0
+		function! GitBranch()
+			return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+		endfunction
 
-set statusline=
-" set statusline+=%#PrimaryBlock#
-set statusline+=\ %{g:currentmode[mode()]}
-set statusline+=%#SecondaryBlock#
-set statusline+=%{StatuslineGit()}
-set statusline+=%#TrinaryBlock#
-set statusline+=\ %t
-set statusline+=%(%m%)
-set statusline+=%#Blanks#
-set statusline+=%=
-set statusline+=%#SecondaryBlock#
-set statusline+=\ Ln
-set statusline+=\ %l
-set statusline+=,Col
-set statusline+=\ %c
-set statusline+=%#PrimaryBlock#
-set statusline+=\ %Y
-
-function! GitBranch()
-	return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
-endfunction
-
-function! StatuslineGit()
-	let l:branchname = GitBranch()
-	return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
-endfunction
+		function! StatuslineGit()
+			let l:branchname = GitBranch()
+			return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
+		endfunction
 
 	" }}}
 	" {{{ tab

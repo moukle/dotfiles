@@ -3,8 +3,8 @@ export PATH="$PATH:$HOME/.local/bin/bspwm/"
 export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
 
 export EDITOR="nvim"
-export TERMINAL="urxvt"
-export BROWSER="qtbrowser"
+export TERMINAL="kitty"
+export BROWSER="qutebrowser"
 export READER="zathura"
 
 export PAGER="less"

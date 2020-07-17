@@ -307,14 +307,6 @@ write_x()
    local rofi_output+="rofi.color-window: ${BLK}, ${BLK}, ${BLK}${NEWLINE}"
    local rofi_output+="rofi.color-normal: ${BLK}, ${FG}, ${BLK}, ${BBLK}, ${ACC}${NEWLINE}"
 
-   local twobwm_output=""
-   local twobwm_output+="twobwm.focus_color: ${TWOBWM_FOCUS}${NEWLINE}"
-   local twobwm_output+="twobwm.unfocus_color: ${TWOBWM_FOCUS}${NEWLINE}"
-   local twobwm_output+="twobwm.fixed_color: ${TWOBWM_FIXED}${NEWLINE}"
-   local twobwm_output+="twobwm.unkill_color: ${TWOBWM_UNKILL}${NEWLINE}"
-   local twobwm_output+="twobwm.outer_border_color: ${TWOBWM_OUTR}${NEWLINE}"
-   local twobwm_output+="twobwm.fixed_unkill_color: ${TWOBWM_UNKILL}${NEWLINE}"
-
    if [[ $SQUASH_FONT ]]; then
        local x_output+="URxvt*font:${SQUASH_FONT}${NEWLINE}"
        local x_output+="URxvt*boldFont:${SQUASH_FONT}${NEWLINE}"
@@ -323,8 +315,26 @@ write_x()
        local x_output+="st.font:${ST_FONT}${NEWLINE}"
    fi
 
-   local output="${x_output}${rofi_output}${twobwm_output}"
+   local output="${x_output}${rofi_output}"
    printf "${output}" > "${CACHE_DIR}/x_colors"
+}
+
+write_conf()
+{
+   local output=""
+   local output+="foreground   ${FG}${NEWLINE}"
+   local output+="background   ${BG}${NEWLINE}"
+   local output+="cursorColor  ${FG}${NEWLINE}"
+
+   for i in {0..15}; do
+      local output+="color${i} ${COLOR_ARRAY[${i}]}${NEWLINE}"
+   done
+
+   local output+="url_color ${COLOR_ARRAY[4]}${NEWLINE}"
+   # local output+="selection_foreground ${COLOR_ARRAY[7]}"
+   local output+="selection_background ${COLOR_ARRAY[8]}${NEWLINE}"
+
+   printf "${output}" > "${CACHE_DIR}/colors.conf"
 }
 
 write_rasi()
@@ -364,6 +374,9 @@ write_sh()
 
 write_plain()
 {
+	local output=""
+
+
     for i in {0..15}; do
         local output+="${COLOR_ARRAY[${i}]}${NEWLINE}"
     done
@@ -439,6 +452,7 @@ main()
                  $BBLK $BRED $BGRN $BYLW $BBLU $BMAG $BCYN $BWHT)
 
     [[ ! "${WRITE_ALL}" = "NO" ]] && write_x
+    [[ ! "${WRITE_ALL}" = "NO" ]] && write_conf
     [[ ! "${WRITE_ALL}" = "NO" ]] && write_sh
     [[ ! "${WRITE_ALL}" = "NO" ]] && write_rasi
     [[ ! "${WRITE_ALL}" = "NO" ]] && write_css
