@@ -54,13 +54,12 @@ let mapleader = "\<Space>"
 		Plug 'fehawen/cs.vim'
 	" }}}
 	" {{{ langs
-		Plug 'suan/vim-instant-markdown'
 		Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 		Plug 'alaviss/nim.nvim'
 		" Plug 'lervag/vimtex'
 		Plug 'jvirtanen/vim-octave'
 		" Plug 'zah/nim.vim'
-	" }}}
+		" }}}
 	" {{{ git
 	Plug 'airblade/vim-gitgutter'
 	Plug 'tpope/vim-fugitive'
@@ -399,6 +398,7 @@ let mapleader = "\<Space>"
 
 		nnoremap <leader>g :Goyo x70% <bar> Limelight!!<cr>
 
+
 		" {{{ fzf
 		nmap <leader><tab> <plug>(fzf-maps-n)
 		xmap <leader><tab> <plug>(fzf-maps-x)
@@ -411,7 +411,6 @@ let mapleader = "\<Space>"
 		nnoremap Y y$
 		set pastetoggle=<F6>
 
-		autocmd Filetype rmd map <F5> :!echo<space>"require(rmarkdown);<space>render('<c-r>%')"<space>\|<space>R<space>--vanilla<enter>
 		autocmd Filetype cpp map <F5> :make run<CR>
 
 		" {{{ fzf
