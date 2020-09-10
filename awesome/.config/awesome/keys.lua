@@ -44,8 +44,8 @@ keys.desktopbuttons = gears.table.join(
     -- awful.button({ }, 3, function () mymainmenu:toggle() end),
     awful.button({ }, 3, function ()
         if app_drawer_show then
-            awful.spawn.with_shell("~/.config/rofi/bins/appsmenu")
-            -- app_drawer_show()
+            -- awful.spawn.with_shell("~/.config/rofi/bins/appsmenu")
+            app_drawer_show()
         end
     end),
 
@@ -316,8 +316,8 @@ keys.globalkeys = gears.table.join(
     -- Run program (d for dmenu ;)
     awful.key({ superkey }, "d",
         function()
-            -- awful.spawn.with_shell("rofi -matching fuzzy -show combi")
-            awful.spawn.with_shell("~/.config/rofi/bins/appsmenu")
+            awful.spawn.with_shell("rofi -matching fuzzy -show combi")
+            -- awful.spawn.with_shell("~/.config/rofi/bins/appsmenu")
         end,
         {description = "rofi launcher", group = "launcher"}),
 
@@ -600,6 +600,8 @@ keys.clientkeys = gears.table.join(
         helpers.single_double_tap(
             nil,
             function ()
+				screen_width = awful.screen.focused().geometry.width
+				screen_height = awful.screen.focused().geometry.height
                 helpers.float_and_resize(c, screen_width * 0.65, screen_height * 0.9)
             end)
     end),
@@ -657,24 +659,32 @@ keys.clientkeys = gears.table.join(
     -- F for focused view
     awful.key({ superkey, ctrlkey  }, "f",
         function (c)
+			screen_width = awful.screen.focused().geometry.width
+			screen_height = awful.screen.focused().geometry.height
             helpers.float_and_resize(c, screen_width * 0.7, screen_height * 0.75)
         end,
         {description = "focus mode", group = "client"}),
     -- V for vertical view
     awful.key({ superkey, ctrlkey  }, "v",
         function (c)
+			screen_width = awful.screen.focused().geometry.width
+			screen_height = awful.screen.focused().geometry.height
             helpers.float_and_resize(c, screen_width * 0.45, screen_height * 0.90)
         end,
         {description = "focus mode", group = "client"}),
     -- T for tiny window
     awful.key({ superkey, ctrlkey  }, "t",
         function (c)
+			screen_width = awful.screen.focused().geometry.width
+			screen_height = awful.screen.focused().geometry.height
             helpers.float_and_resize(c, screen_width * 0.3, screen_height * 0.35)
         end,
         {description = "tiny mode", group = "client"}),
     -- N for normal size (good for terminals)
     awful.key({ superkey, ctrlkey  }, "n",
         function (c)
+			screen_width = awful.screen.focused().geometry.width
+			screen_height = awful.screen.focused().geometry.height
             helpers.float_and_resize(c, screen_width * 0.45, screen_height * 0.5)
         end,
         {description = "normal mode", group = "client"}),

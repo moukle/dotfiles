@@ -1,6 +1,7 @@
 local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
+local awful = require("awful")
 
 local notifications = {}
 
@@ -8,6 +9,7 @@ local notifications = {}
 -- Icon size
 -- naughty.config.defaults['icon_size'] = beautiful.notification_icon_size
 naughty.config.defaults['border_width'] = beautiful.notification_border_width
+naughty.config.defaults['screen'] = awful.screen.primary
 
 -- Timeouts
 naughty.config.defaults.timeout = 5

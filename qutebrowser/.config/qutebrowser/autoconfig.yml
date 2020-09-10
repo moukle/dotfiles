@@ -45,8 +45,10 @@ settings:
       left: 3
       right: 3
       top: 15
+  statusbar.position:
+    global: bottom
   statusbar.show:
-    global: in-mode
+    global: always
   tabs.position:
     global: left
   url.searchengines:

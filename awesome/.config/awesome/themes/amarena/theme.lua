@@ -48,9 +48,9 @@ theme.screen_margin = dpi(5)
 theme.border_width  = dpi(5)
 -- theme.border_color = x.color0
 theme.border_normal = x.color0
-theme.border_focus  = x.color7
+theme.border_focus  = x.color15
 -- Rounded corners
-theme.border_radius = dpi(18)
+theme.border_radius = dpi(6)
 
 -- Titlebars
 -- (Titlebar items can be customized in titlebars.lua)
@@ -214,13 +214,13 @@ theme.taglist_text_urgent   = {"+","+","+","+","+","+","+","+","+","+"}
 -- theme.taglist_text_urgent   = {"","","","","","","","","",""}
 -- theme.taglist_text_urgent   = {"","","","","","","","","",""}
 
-theme.taglist_text_color_empty  = { x.background.."22", x.background.."22", x.background.."22", x.background.."22", x.background.."22", x.background.."22", x.background.."22", x.background.."22", x.background.."22", x.background.."22" }
+theme.taglist_text_color_empty  = { x.background.."00", x.background.."00", x.background.."00", x.background.."00", x.background.."00", x.background.."00", x.background.."00", x.background.."00", x.background.."00", x.background.."00" }
 -- theme.taglist_text_color_occupied  = { x.foreground.."F0", x.foreground.."F0", x.foreground.."F0", x.foreground.."F0", x.foreground.."F0", x.foreground.."F0", x.foreground.."F0", x.foreground.."F0", x.foreground.."F0", x.foreground.."F0" }
 -- theme.taglist_text_color_focused  = { x.foreground.."F0", x.foreground.."F0", x.foreground.."F0", x.foreground.."F0", x.foreground.."F0", x.foreground.."F0", x.foreground.."F0", x.foreground.."F0", x.foreground.."F0", x.foreground.."F0" }
 -- theme.taglist_text_color_urgent  = { x.foreground, x.foreground, x.foreground, x.foreground, x.foreground, x.foreground, x.foreground, x.foreground, x.foreground, x.foreground }
 
-theme.taglist_text_color_occupied  = { x.color1.."99", x.color2.."99", x.color3.."99", x.color4.."99", x.color5.."99", x.color6.."99", x.color1.."99", x.color2.."99", x.color3.."99", x.color4.."99" }
-theme.taglist_text_color_focused  = { x.color9, x.color10, x.color11, x.color12, x.color13, x.color14, x.color9, x.color10, x.color11, x.color12 }
+theme.taglist_text_color_occupied  = { x.color2.."ff", x.color2.."ff", x.color2.."ff", x.color2.."ff", x.color2.."ff", x.color2.."ff", x.color2.."ff", x.color2.."ff", x.color2.."ff", x.color2.."ff" }
+theme.taglist_text_color_focused  = { x.color2, x.color2, x.color2, x.color2, x.color2, x.color2, x.color2, x.color2, x.color2, x.color2 }
 theme.taglist_text_color_urgent   = { x.background, x.background, x.background, x.background, x.background, x.background, x.background, x.background, x.background, x.background }
 -- theme.taglist_text_color_urgent   = { x.color9, x.color10, x.color11, x.color12, x.color13, x.color14, x.color9, x.color10, x.color11, x.color12 }
 

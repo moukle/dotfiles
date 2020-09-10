@@ -10,8 +10,8 @@ if [[ $HOSTNAME = "olo" ]]; then
 	setxkbmap us altgr-intl nodeadkeys
 	numlockx
 	xrandr --dpi 140 --fb 6528x2160 \
-		--output DP-4   --mode 3840x2160 --panning 3840x2160+0+0 --primary \
-		--output DP-0   --scale 1.4x1.4 --mode 1920x1080 --rate 144 --pos 0x324 --panning 2688x1512+3840+324
+		--output DP-2   --mode 3840x2160 --primary --panning 3840x2160+0+0 \
+		--output DP-4   --mode 1920x1080 --rate 144 --scale 1.4x1.4 --pos 0x324 --panning 2688x1512+3840+324
 		# --output DP-4   --mode 3840x2160 --panning 3840x2160+2688+0 \
 		# --output DP-0   --scale 1.4x1.4 --mode 1920x1080 --rate 144 --pos 0x324 --panning 2688x1512+0+324
 else
@@ -29,15 +29,13 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 	unset f
 fi
 
-# squash    -qs paper
+# squash -dqs paper
 # squash -dqs base16_tomorrow_night
-squash -dqs base16_mocha_edit
-# nitrogen  --restore &
-redshift  51:10     &
+# squash -dqs base16_mocha_edit
+squash   -dqs  base16_eighties
 
-# flameshot &
-# dunst     &
-picom     &
+redshift 51:10 &
+picom --experimental-backends &
 
 exec awesome >> ~/.cache/awesome/stdout 2>> ~/.cache/awesome/stderr
 # exec bspwm

@@ -1,8 +1,16 @@
 #! /bin/sh
 
+# colors
 xrdb $HOME/.Xresources
 source $HOME/.cache/squash/colors
+
+# keybinds
 sxhkd &
+
+# start utils
+flameshot &
+dunst &
+nitrogen --restore &
 
 wmname LG3D # for gay java
 
@@ -28,8 +36,8 @@ bspc config presel_feedback_color	$YLW
 
 if [ $HOSTNAME == "olo" ]; then
 	# bspc monitor DP-2 -d q w e r t
-	bspc monitor DP-4 -d q w e r t
-	bspc monitor DP-0 -d 1 2 3 4 5
+	bspc monitor DP-2 -d q w e r t
+	bspc monitor DP-4 -d 1 2 3 4 5
 	$HOME/.config/polybar/launch.sh left right
 	# $HOME/.config/polybar/launch.sh workspacesL workspacesM workspacesR time
 else

@@ -96,7 +96,7 @@ tray-background = ${melon.bg_dark}
 
 [bar/left]
 dpi = 140
-monitor = DP-0
+monitor = DP-2
 width    = ${settings.bar_width}
 height   = ${settings.bar_height}
 offset-x = ${settings.bar_x}

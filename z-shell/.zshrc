@@ -56,4 +56,10 @@ for r in $HOME/.config/zsh/*.zsh; do
 	source $r
 done
 
+# for lf word splitting
+set shell zsh
+set shellopts '-eu:--shwordsplit'
+set ifs "\n"
+set filesep "\n"  # default already
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

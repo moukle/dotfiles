@@ -9,3 +9,4 @@ teeworlds/.teeworlds/logs/
 teeworlds/.teeworlds/demos/
 teeworlds/.teeworlds/downloadedmaps/
 teeworlds/.teeworlds/ghosts/
+teeworlds/.teeworlds/ddnet-info.json*

@@ -79,7 +79,7 @@ user = {
     terminal = "kitty -1",
     floating_terminal = "kitty -1",
     browser = "qutebrowser",
-    file_manager = "kitty -1 --class files -e lf",
+    file_manager = "kitty -1 --class files -e fff",
     editor = "kitty -1 --class editor -e nvim",
     email_client = "kitty -1 --class email -e neomutt",
     music_client = "kitty -o font_size=12 --class music -e ncmpcpp",
@@ -353,6 +353,12 @@ local centered_client_placement = function(c)
 end
 
 -- Rules
+-- variables for montior
+local primary_monitor   = screen[1]
+local secondary_monitor = screen[1]
+if screen.count() > 1 then
+	secondary_monitor = screen[2]
+end
 -- ===================================================================
 -- Rules to apply to new clients (through the "manage" signal).
 awful.rules.rules = {
@@ -826,6 +832,8 @@ awful.rules.rules = {
                 "firefox",
                 "Nightly",
                 "qutebrowser",
+                "Chromium",
+                "Chromium-browser"
             },
         },
         except_any = {
@@ -862,15 +870,13 @@ awful.rules.rules = {
                 "glyphclientapp.exe"
             },
         },
-        properties = { tag = screen[2].tags[2] }
+        properties = { tag = secondary_monitor.tags[2] }
     },
 
     -- Chatting
     {
         rule_any = {
             class = {
-                "Chromium",
-                "Chromium-browser",
                 "discord",
                 "TelegramDesktop",
                 "Signal",
@@ -881,7 +887,17 @@ awful.rules.rules = {
                 "6cord",
             },
         },
-        properties = { tag = screen[2].tags[3] }
+        properties = { tag = secondary_monitor.tags[3] }
+    },
+
+    -- Music
+    {
+        rule_any = {
+            class = {
+                "Spotify"
+            },
+        },
+        properties = { tag = secondary_monitor.tags[4] }
     },
 
     -- Editing

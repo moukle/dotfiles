@@ -44,6 +44,8 @@ let mapleader = "\<Space>"
 		Plug 'itchyny/vim-cursorword'
 		Plug 'ap/vim-buftabline'
 		Plug 'unblevable/quick-scope'
+		Plug 'preservim/nerdtree'
+		Plug 'ryanoasis/vim-devicons'
 	" }}}
 	" {{{ colors
 		Plug 'ayu-theme/ayu-vim'
@@ -52,6 +54,7 @@ let mapleader = "\<Space>"
 		Plug 'dylanaraps/wal.vim'
 		Plug 'morhetz/gruvbox'
 		Plug 'fehawen/cs.vim'
+		Plug 'NerdyPepper/vim-colors-plain', { 'branch': 'duotone' }
 	" }}}
 	" {{{ langs
 		Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
@@ -70,6 +73,9 @@ let mapleader = "\<Space>"
 	call plug#end()
 	"}}}
 	" {{{ plugin settings
+		" {{{ nerdtree
+			let g:NERDTreeShowHidden=1
+		" }}}
 		" {{{ ncm
 			let g:cm_matcher = {'module': 'cm_matchers.fuzzy_matcher', 'case': 'smartcase'}
 			inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
@@ -148,9 +154,47 @@ let mapleader = "\<Space>"
 			let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
 		" }}}
 		" {{{ startify
+			hi! link StartifyHeader Normal
+			hi! link StartifyFile Directory
+			hi! link StartifyPath LineNr
+			hi! link StartifySlash StartifyPath
+			hi! link StartifyBracket StartifyPath
+			hi! link StartifyNumber Normal
+
+			let g:startify_skiplist = [
+						\ 'COMMIT_EDITMSG',
+						\ '^/tmp',
+						\ escape(fnamemodify(resolve($VIMRUNTIME), ':p'), '\') .'doc',
+						\ 'bundle/.*/doc',
+						\ ]
+
+			let g:startify_padding_left = 5
+			let g:startify_relative_path = 1
 			let g:startify_fortune_use_unicode = 1
+			let g:startify_change_to_vcs_root = 1
+			" let g:startify_session_autoload = 1
+			let g:startify_update_oldfiles = 1
+			let g:startify_use_env = 1
+
+			let g:startify_fortune_use_unicode = 0
 			let g:startify_session_sort = 1
-			let g:startify_custom_header = []
+			let g:startify_custom_header = [
+						\ "              .            .      ",
+						\ "            .,;'           :,.    ",
+						\ "          .,;;;,,.         ccc;.  ",
+						\ "        .;c::::,,,'        ccccc: ",
+						\ "        .::cc::,,,,,.      cccccc.",
+						\ "        .cccccc;;;;;;'     llllll.",
+						\ "        .cccccc.,;;;;;;.   llllll.",
+						\ "        .cccccc  ';;;;;;'  oooooo.",
+						\ "        'lllllc   .;;;;;;;.oooooo'",
+						\ "        'lllllc     ,::::::looooo'",
+						\ "        'llllll      .:::::lloddd'",
+						\ "        .looool       .;::coooodo.",
+						\ "          .cool         'ccoooc.  ",
+						\ "            .co          .:o:.    ",
+						\ "              .           .'  vim    ",
+						\]
 		" }}}
 		" {{{ buftabline
 		" moved to colorscheme file
@@ -168,6 +212,9 @@ let mapleader = "\<Space>"
 		" {{{ vimtex
 			" let g:vimtex_view_method="zathura"
 			" let conceallevel=0
+		" }}}
+		" {{{ markdown preview
+		let g:mkdp_browser = 'qutebrowser'
 		" }}}
 	" }}}
 " }}}
@@ -201,6 +248,9 @@ let mapleader = "\<Space>"
 		" set listchars=tab:\¦\ ,trail:━
 		" let g:indentLine_char = '│'
 		let g:indentLine_char_list = ['│', '┆', '┊']
+		let g:indentLine_color_term = 8
+		" let g:indentLine_setConceal = 0
+
 
 		set fillchars=vert:\│
 
@@ -387,6 +437,7 @@ let mapleader = "\<Space>"
 		nnoremap <leader>b :Buffer<cr>
 		nnoremap <leader>m :Marks<cr>
 		nnoremap <leader>e :Files<cr>
+		nnoremap <leader>f :NERDTreeToggle<cr>
 		" nnoremap <leader>s :Startify<cr>
 
 		nnoremap <silent> <leader>n :noh<cr>

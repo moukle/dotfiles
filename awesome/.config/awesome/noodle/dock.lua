@@ -12,7 +12,7 @@ local class_icons = icons.text.by_class
 
 -- TODO: These variables (and more) should ideally be retrieved through `beautiful`
 local item_font = "icomoon 15"
-local item_bg = x.background
+local item_bg = x.background.."00"
 local item_size = dpi(50)
 local item_shape = helpers.squircle(1.7, 0)
 local item_margin = dpi(8) -- For spacing between items

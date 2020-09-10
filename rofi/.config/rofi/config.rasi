@@ -1,42 +1,59 @@
 configuration {
-  show-icons:         true;
-  icon-theme:         "Tela";
-  cycle:              true;
-  hide-scrollbar:     true;
-  disable-history:    false;
-  modi:               "drun";
-  display-drun:       "apps";
-  columns: 2;
-  dpi: 138;
-  /* dpi: 100; */
+	show-icons:         false;
+	icon-theme:         "Tela";
+	cycle:              false;
+	hide-scrollbar:     true;
+	disable-history:    false;
+	columns: 1;
+	bw: 0;
+
+	modi:             "combi";
+	combi-modi:       "window,drun";
+	modi:             "combi,windowcd,run";
+	display-window:   "";
+	display-windowcd: "";
+	display-run:      "";
+	display-ssh:      "";
+	/* display-drun:     ""; */
+	display-drun:      "";
+	display-combi:    "";
+
+	dpi: 138;
+	fake-transparency: false;
+	/* dpi: 100; */
 }
 
 * {
-	font: "SF Pro Text 15";
+	font: "SF Pro Text Bold 22";
 	padding: 5px 10px;
-	background-color: @background;
+	/* background-color: @background; */
+	/* background-color: #000000ee; */
+	background-color: transparent;
 	color: @color8;
 }
 
 window {
-	border-radius: 0px;
-	/* height: 500px; */
-	/* width: 800px; */
-	/* padding: 20px; */
-	border: 7;
-	border-color: @color8;
+	fullscreen: true;
+	transparency: "real";
+	/* height: 20%; */
+	/* width: 20%; */
+	background-color: #000000ee;
+	padding: 40%;
 }
 
-#prompt {
+prompt {
 	color: @color7;
+	/* enabled: false; */
 }
 
 listview {
+	/* padding: 1%; */
+	/* background-color: #000000ee; */
 	padding: 30px 10px 0px 10px;
 	spacing: 0.5em;
 }
 
-#element selected {
+element selected {
 	text-color: @color15;
 }
 
