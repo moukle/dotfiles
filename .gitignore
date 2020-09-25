@@ -5,8 +5,9 @@ nvim/.config/nvim/plugged
 nvim/.config/nvim/tags
 nvim/.config/nvim/.netrwhist
 
-teeworlds/*
+teeworlds/.teeworlds/*
 !teeworlds/.teeworlds/editor/
-!teeworlds/.teeworlds/settings_ddnet.cfg
+!teeworlds/.teeworlds/editor/entities/
 !teeworlds/.teeworlds/console.png
 !teeworlds/.teeworlds/console_bar.png
+!teeworlds/.teeworlds/settings_ddnet.cfg
