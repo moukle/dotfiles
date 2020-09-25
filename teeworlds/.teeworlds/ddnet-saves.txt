@@ -1,6 +1,0 @@
-Time,Player,Map,Code
-2020-06-28 18:03:43,el 64,Flow Fever,1231
-2020-07-26 18:42:47,:,Justice 2,".,"
-2020-08-22 00:42:01,&dAt,Partenack,aids
-2020-08-22 01:09:27,&dAt,Partenack,aids
-2020-09-01 16:55:09,=phacrum=,Polarity,aids

@@ -29,10 +29,10 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 	unset f
 fi
 
-# squash -dqs paper
+squash -dqs paper
 # squash -dqs base16_tomorrow_night
 # squash -dqs base16_mocha_edit
-squash   -dqs  base16_eighties
+# squash   -dqs  base16_eighties
 
 redshift 51:10 &
 picom --experimental-backends &

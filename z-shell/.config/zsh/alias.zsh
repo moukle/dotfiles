@@ -25,11 +25,12 @@ alias rmf='rm -rf'
 alias ende='trans en:de'
 alias deen='trans de:en'
 
-alias -g C='| mycopy'
+alias -g C='| xclip -selection clipboard'
 alias -g V='| vi -'
 alias -g L='| less'
 alias -g M='| more'
 alias -g S='| sort'
+
 
 alias vcf='e ~/.config/nvim/init.vim'
 alias zcf='e ~/.zshrc ~/.config/zsh/*.zsh'

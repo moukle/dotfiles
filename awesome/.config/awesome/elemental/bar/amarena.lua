@@ -28,29 +28,29 @@ end
 
 local tag_colors_empty = { "#00000005", "#00000005", "#00000005", "#00000005", "#00000005", "#00000005", "#00000005", "#00000005", "#00000005", "#00000005" }
 
-local tag_colors_urgent = { x.foreground, x.foreground, x.foreground, x.foreground, x.foreground, x.foreground, x.foreground, x.foreground, x.foreground, x.foreground }
+local tag_colors_urgent = { x.color1, x.color1, x.color1, x.color1, x.color1, x.color1, x.color1, x.color1, x.color1, x.color1 }
 
 local tag_colors_focused = {
-    x.color1,
-    x.color5,
-    x.color4,
-    x.color6,
-    x.color2,
-    x.color3,
-    x.color1,
-    x.color5,
-    x.color4,
-    x.color6,
-	-- x.color7,
-	-- x.color7,
-	-- x.color7,
-	-- x.color7,
-	-- x.color7,
-	-- x.color7,
-	-- x.color7,
-	-- x.color7,
-	-- x.color7,
-	-- x.color7,
+    -- x.color1,
+    -- x.color5,
+    -- x.color4,
+    -- x.color6,
+    -- x.color2,
+    -- x.color3,
+    -- x.color1,
+    -- x.color5,
+    -- x.color4,
+    -- x.color6,
+	x.color15,
+	x.color15,
+	x.color15,
+	x.color15,
+	x.color15,
+	x.color15,
+	x.color15,
+	x.color15,
+	x.color15,
+	x.color15,
 }
 
 local tag_colors_occupied = {
