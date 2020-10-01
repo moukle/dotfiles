@@ -1,4 +1,4 @@
-# Dotfiles -- my personal configuration files
+# Dotfiles - my personal configuration files
 
 ## Credits
 - Managed with [stow](https://www.gnu.org/software/stow/).
