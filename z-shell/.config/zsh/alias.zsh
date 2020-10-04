@@ -14,6 +14,8 @@ alias ls='exa --group-directories-first'
 alias ll='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
+alias big20='du -ahx / | sort -rh | head -20'
+# alias delete_old='find /path/to/directory/ -mindepth 1 -mtime +5 -delete'
 
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -30,7 +32,6 @@ alias -g V='| vi -'
 alias -g L='| less'
 alias -g M='| more'
 alias -g S='| sort'
-
 
 alias vcf='e ~/.config/nvim/init.vim'
 alias zcf='e ~/.zshrc ~/.config/zsh/*.zsh'
