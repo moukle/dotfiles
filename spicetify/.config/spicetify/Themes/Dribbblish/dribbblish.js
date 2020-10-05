@@ -1,19 +1,13 @@
-function waitForElement(els, func) {
+// Hide popover message
+document.getElementById("popover-container").style.height = 0;
+
+function waitForElement(els, func, timeout = 100) {
     const queries = els.map(el => document.querySelector(el));
     if (queries.every(a => a)) {
         func(queries);
-    } else {
-        setTimeout(waitForElement, 300, els, func);
+    } else if (timeout > 0) {
+        setTimeout(waitForElement, 300, els, func, --timeout);
     }
-}
-
-// Remove Recently Played app
-if (Spicetify.Abba) {
-    if (!Spicetify.Abba.getOverrideFlags()["ab_no_recently_played_desktop"]) {
-        Spicetify.Abba.addOverrideFlag("ab_no_recently_played_desktop", "no-recently-played");
-    }
-} else {
-    console.info(`Please upgrade spicetify to v0.9.9 or above. Then run "spicetify restore backup apply"`)
 }
 
 // Add "Open User Profile" item in profile menu
@@ -26,8 +20,11 @@ waitForElement([".LeftSidebar", ".LeftSidebar__section--rootlist .SidebarList__l
 
         for (let i = 0; i < sidebarItem.length; i++) {
             const item = sidebarItem[i];
-            const link = item.getElementsByTagName("a")[0];
-            const href = link.href.replace("app:", "");
+            let link = item.getElementsByTagName("a");
+            if (!link || !link[0]) continue;
+            link = link[0];
+
+            let href = link.href.replace("app:", "");
 
             if (href.indexOf("playlist-folder") != -1) {
                 const button = item.getElementsByTagName("button")[0]
@@ -35,6 +32,10 @@ waitForElement([".LeftSidebar", ".LeftSidebar__section--rootlist .SidebarList__l
                 item.setAttribute("data-tooltip", item.innerText);
                 link.firstChild.innerText = item.innerText.slice(0, 3);
                 continue;
+            }
+
+            if (href.indexOf("chart") != -1) {
+                href = href.replace("chart:", "user:spotifycharts:playlist:");
             }
 
             Spicetify.CosmosAPI.resolver.get({
@@ -54,7 +55,7 @@ waitForElement([".LeftSidebar", ".LeftSidebar__section--rootlist .SidebarList__l
 
     new MutationObserver(loadPlaylistImage)
         .observe(queries[1], {childList: true});
-    
+
     /** Replace Apps name with icons */
 
     /** List of avaiable icons to use:
@@ -80,6 +81,15 @@ waitForElement([".LeftSidebar", ".LeftSidebar__section--rootlist .SidebarList__l
     events              mix             skipback15
     */
 
+    function replaceTextWithIcon(el, iconName) {
+        if (iconName) {
+            el.classList.add(`spoticon-${iconName}-24`);
+        }
+
+        el.parentNode.setAttribute("data-tooltip", el.innerText);
+        el.innerText = "";
+    }
+
     queries[0].querySelectorAll(".LeftSidebar__section:not(.LeftSidebar__section--rootlist) [href]")
         .forEach(item => {
             let icon = ((app) => {switch (app) {
@@ -95,12 +105,21 @@ waitForElement([".LeftSidebar", ".LeftSidebar__section--rootlist .SidebarList__l
                 case "collection:podcasts":     return "podcasts";
                 case "playlist:local-files":    return "localfile";
                 case "stations":                return "stations";
+                /**
+                 * Uncomment 3 lines below if you're using old version of Spotify that
+                 * does not have Home/Browse/Radio app icons by default.
+                 */
+                //case "home":					return "home";
+                //case "browse":	                return "browse";
+                //case "radio":	                return "radio";
             }})(item.href.replace("spotify:app:", ""));
 
-            item.firstChild.classList.add(`spoticon-${icon}-24`);
-            item.firstChild.setAttribute("data-tooltip", item.firstChild.innerText);
-            item.firstChild.innerText = "";
+            replaceTextWithIcon(item.firstChild, icon);
         });
+
+    waitForElement([`[href="spotify:app:recently-played"]`], ([query]) => {
+        replaceTextWithIcon(query.firstChild, "time");
+    });
 });
 
 waitForElement(["#search-input"], (queries) => {
