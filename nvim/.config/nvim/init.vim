@@ -1,477 +1,376 @@
-filetype plugin on
+" ====================================================== */
+" Mappings
+" ====================================================== */
 
-let mapleader = "\<Space>"
-" {{{ plugins
-	" {{{ plug
-	call plug#begin('~/.config/nvim/plugged')
-	" {{{ plug itself
-	Plug 'junegunn/vim-plug'
-	" }}}
-	" {{{ coc
-		Plug 'neoclide/coc.nvim', {'do': './install.sh nightly'}
-		imap <C-l> <Plug>(coc-snippets-expand)
-	" }}}
-	" {{{ targets
-			Plug 'wellle/targets.vim'
-			" {{{ objects
-				Plug 'kana/vim-textobj-user'
-				Plug 'glts/vim-textobj-comment'
-				Plug 'glts/vim-textobj-indblock'
-			" }}}
-		" }}}
-	" {{{ editing helpers
-		Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-		Plug 'junegunn/fzf.vim'
-		Plug 'donRaphaco/neotex', { 'for': 'tex' }
-		Plug 'tpope/vim-commentary'
-		Plug 'tpope/vim-surround'
-		Plug 'tpope/vim-repeat'
-		Plug 'dhruvasagar/vim-table-mode'
-		Plug 'jiangmiao/auto-pairs'
-		Plug 'AndrewRadev/splitjoin.vim'
-		Plug 'junegunn/vim-easy-align'
-		Plug 'lambdalisue/suda.vim'
-		Plug 'chrisbra/unicode.vim'
-		Plug 'honza/vim-snippets'
-	" }}}
-	" {{{ fancy
-		" Plug 'https://github.com/romainl/flattened'
-		Plug 'junegunn/goyo.vim'
-		Plug 'junegunn/limelight.vim'
-		Plug 'junegunn/vim-peekaboo' " registers
-		Plug 'mhinz/vim-startify'
-		Plug 'Yggdroot/indentLine'
-		Plug 'itchyny/vim-cursorword'
-		Plug 'ap/vim-buftabline'
-		Plug 'unblevable/quick-scope'
-		Plug 'preservim/nerdtree'
-		Plug 'ryanoasis/vim-devicons'
-	" }}}
-	" {{{ colors
-		Plug 'ayu-theme/ayu-vim'
-		Plug 'chriskempson/base16-vim'
-		Plug 'drewtempelmeyer/palenight.vim'
-		Plug 'dylanaraps/wal.vim'
-		Plug 'morhetz/gruvbox'
-		Plug 'fehawen/cs.vim'
-		Plug 'NerdyPepper/vim-colors-plain', { 'branch': 'duotone' }
-	" }}}
-	" {{{ langs
-		Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
-		Plug 'alaviss/nim.nvim'
-		" Plug 'lervag/vimtex'
-		Plug 'jvirtanen/vim-octave'
-		" Plug 'zah/nim.vim'
-		" }}}
-	" {{{ git
-	Plug 'airblade/vim-gitgutter'
-	Plug 'tpope/vim-fugitive'
-	" }}}
-	" {{{ other
-	Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
-	" }}}
-	call plug#end()
-	"}}}
-	" {{{ plugin settings
-		" {{{ nerdtree
-			let g:NERDTreeShowHidden=1
-		" }}}
-		" {{{ ncm
-			let g:cm_matcher = {'module': 'cm_matchers.fuzzy_matcher', 'case': 'smartcase'}
-			inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
-			inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
+let mapleader = ' '
 
-			" suppress the annoying 'match x of y', 'The only match' and 'Pattern not
-			" found' messages
-			set shortmess+=c
+" Navigation - Wrapped lines
+nnoremap j gj
+nnoremap k gk
+vnoremap j gj
+vnoremap k gk
 
-			" CTRL-C doesn't trigger the InsertLeave autocmd . map to <ESC> instead.
-			inoremap <c-c> <ESC>
+" Navigation - Windows / Buffers
+" nnoremap <C-j> <C-w>j
+" nnoremap <C-k> <C-w>k
+" nnoremap <C-h> <C-w>h
+" nnoremap <C-l> <C-w>l
 
-			" When the <Enter> key is pressed while the popup menu is visible, it only
-			" hides the menu. Use this mapping to close the menu and also start a new
-			" line.
-			inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
+" Tab shifting - (keep selection)
+nnoremap <Tab> >>
+nnoremap <S-Tab> <<
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
 
-			" Use <TAB> to select the popup menu:
-			" inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-			" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" Visually select function block
+nnoremap <Leader>vf va{V
 
-			" wrap existing omnifunc
-			" Note that omnifunc does not run in background and may probably block the
-			" editor. If you don't want to be blocked by omnifunc too often, you could
-			" add 180ms delay before the omni wrapper:
-			"  'on_complete': ['ncm2#on_complete#delay', 180,
-			"               \ 'ncm2#on_complete#omni', 'csscomplete#CompleteCSS'],
-			au User Ncm2Plugin call ncm2#register_source({
-					\ 'name' : 'css',
-					\ 'priority': 9,
-					\ 'subscope_enable': 1,
-					\ 'scope': ['css','scss'],
-					\ 'mark': 'css',
-					\ 'word_pattern': '[\w\-]+',
-					\ 'complete_pattern': ':\s*',
-					\ 'on_complete': ['ncm2#on_complete#omni', 'csscomplete#CompleteCSS'],
-					\ })
-		" }}}
-		" {{{ polyglot
-			let g:polyglot_disabled = ['latex']
-		" }}}
-		" {{{ ultisnips
-			let g:UltiSnipsExpandTrigger            = "<c-l>"
-			let g:UltiSnipsJumpForwardTrigger       = "<c-l>"
-			let g:UltiSnipsJumpBackwardTrigger      = "<c-h>"
-			let g:UltiSnipsRemoveSelectModeMappings = 0
-			" optional
-			inoremap <silent> <c-u> <c-r>=cm#sources#ultisnips#trigger_or_popup("\<Plug>(ultisnips_expand)")<cr>
-		" }}}
-		" {{{ neosnippet
-			" imap <c-l>     <Plug>(neosnippet_expand_or_jump)
-			" vmap <c-l>     <Plug>(neosnippet_expand_or_jump)
-			" " expand parameters
-			" let g:neosnippet#enable_completed_snippet=1
-		" }}}
-		" {{{ easyalign
-			xmap ga <Plug>(EasyAlign)
-			nmap ga <Plug>(EasyAlign)
-		" }}}
-		" {{{ ale
-			map <silent> <leader>k <Plug>(ale_previous_wrap)
-			map <silent> <leader>j <Plug>(ale_next_wrap)
+" Search - unset highlight from last search pattern onEnter (carriage return)
+nnoremap <silent> <CR> :nohlsearch<CR>
 
-			let g:ale_sign_column_always = 1
-			let g:ale_sign_error = '!'
-			let g:ale_sign_warning = '!'
+" Suspend Vim to open full shell prompt (write fg in shell to put V into foreground)
+nnoremap <Leader>sh :sus<CR>
 
-			hi ALEWarningSign ctermbg=none ctermfg=2
-			hi ALEErrorSign   ctermbg=none ctermfg=4
-		" }}}
-		" {{{ auto-pairs
-			let g:AutoPairsFlyMode = 0
-			let g:AutoPairsShortcutJump = '<c-n>'
-		" }}}
-		" {{{ fzf
-			let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
-		" }}}
-		" {{{ startify
-			hi! link StartifyHeader Normal
-			hi! link StartifyFile Directory
-			hi! link StartifyPath LineNr
-			hi! link StartifySlash StartifyPath
-			hi! link StartifyBracket StartifyPath
-			hi! link StartifyNumber Normal
+" Commenting
+vmap <Leader>cc <Plug>Commentary
+nmap <Leader>cc <Plug>CommentaryLine<CR>
 
-			let g:startify_skiplist = [
-						\ 'COMMIT_EDITMSG',
-						\ '^/tmp',
-						\ escape(fnamemodify(resolve($VIMRUNTIME), ':p'), '\') .'doc',
-						\ 'bundle/.*/doc',
-						\ ]
+" Quick vimrc refresh
+nnoremap <Leader>sv :so ~/.config/nvim/init.vim<CR> <BAR> :echo 'init.vim reloaded'<CR>
 
-			let g:startify_padding_left = 5
-			let g:startify_relative_path = 1
-			let g:startify_fortune_use_unicode = 1
-			let g:startify_change_to_vcs_root = 1
-			" let g:startify_session_autoload = 1
-			let g:startify_update_oldfiles = 1
-			let g:startify_use_env = 1
+" Quick writes and quits
+nnoremap <leader>w :w<cr>
+nnoremap <leader>q :q!<cr>
 
-			let g:startify_fortune_use_unicode = 0
-			let g:startify_session_sort = 1
-			let g:startify_custom_header = [
-						\ "              .            .      ",
-						\ "            .,;'           :,.    ",
-						\ "          .,;;;,,.         ccc;.  ",
-						\ "        .;c::::,,,'        ccccc: ",
-						\ "        .::cc::,,,,,.      cccccc.",
-						\ "        .cccccc;;;;;;'     llllll.",
-						\ "        .cccccc.,;;;;;;.   llllll.",
-						\ "        .cccccc  ';;;;;;'  oooooo.",
-						\ "        'lllllc   .;;;;;;;.oooooo'",
-						\ "        'lllllc     ,::::::looooo'",
-						\ "        'llllll      .:::::lloddd'",
-						\ "        .looool       .;::coooodo.",
-						\ "          .cool         'ccoooc.  ",
-						\ "            .co          .:o:.    ",
-						\ "              .           .'  vim    ",
-						\]
-		" }}}
-		" {{{ buftabline
-		" moved to colorscheme file
-		" hi BufTabLineActive ctermbg=8 ctermfg=7
-		" }}}
-		" {{{ atags
-			" map <Leader>t :call atags#generate()<cr>
-			" let g:neotags_run_ctags = 0
-		" }}}
-		" {{{ limelight
-		" " Color name (:help cterm-colors) or ANSI code
-			let g:limelight_conceal_ctermfg = 'gray'
-			let g:limelight_conceal_ctermfg = 240
-		" }}}
-		" {{{ vimtex
-			" let g:vimtex_view_method="zathura"
-			" let conceallevel=0
-		" }}}
-		" {{{ markdown preview
-		let g:mkdp_browser = 'qutebrowser'
-		" }}}
-	" }}}
-" }}}
+" Replace word under cursor with..
+nnoremap <leader>s :%s/\<<C-r><C-w>\>/
 
-" {{{ general settings
-	" {{{ visual settings
-		syntax on
+" Insert line below/above cursor in normalmode and return to last postition
+nnoremap <leader>o o<esc>k
+nnoremap <leader>O O<esc>j
 
-		set cursorline
-		" set termguicolors
-		" let g:gruvbox_italic=1
-		" colorscheme gruvbox
+" Buffer navigation
+nnoremap <leader>l :bnext<cr>
+nnoremap <leader>h :bprevious<cr>
 
-		colors term
-		" colorscheme wal
+" Open various plugs / fzf
+nnoremap <leader>b :Buffer<cr>
+nnoremap <leader>m :Marks<cr>
+nnoremap <leader>e :Files<cr>
+nnoremap <leader>f :NERDTreeToggle<cr>
 
-		" set termguicolors
-		" let ayucolor="mirage"
-		" colorscheme ayu
+" Change dir to current file
+nnoremap <leader>cd :cd %:p:h<cr>:pwd<cr>
+
+" Goyo + Limelight
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
+nmap <silent> <leader>g :Limelight<CR>
+nmap <silent> <leader>G :Limelight!<CR>
+
+" fzf navigation
+nmap <leader><tab> <plug>(fzf-maps-n)
+xmap <leader><tab> <plug>(fzf-maps-x)
+omap <leader><tab> <plug>(fzf-maps-o)
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+imap <c-x><c-l> <plug>(fzf-complete-line)
+
+" coc
+imap <C-l> <Plug>(coc-snippets-expand)
+nmap <silent> <leader>dd <Plug>(coc-definition)
+nmap <silent> <leader>dr <Plug>(coc-references)
+nmap <silent> <leader>dj <Plug>(coc-implementation)
+
+let g:cm_matcher = {'module': 'cm_matchers.fuzzy_matcher', 'case': 'smartcase'}
+inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
+inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
+imap <C-l> <Plug>(coc-snippets-expand)
 
 
-		let &t_SI = "\<Esc>[6 q"
-		let &t_SR = "\<Esc>[4 q"
-		let &t_EI = "\<Esc>[2 q"
+" easy align
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
 
-		set number
-		set relativenumber
+" CTRL-C doesn't trigger the InsertLeave autocmd . map to <ESC> instead.
+inoremap <c-c> <ESC>
 
-		set list
-		set listchars=tab:\│\ ,trail:━
-		" set listchars=tab:\¦\ ,trail:━
-		" let g:indentLine_char = '│'
-		let g:indentLine_char_list = ['│', '┆', '┊']
-		let g:indentLine_color_term = 8
-		" let g:indentLine_setConceal = 0
+" command for sudo writing
+cmap w!! w suda://%
 
+" ====================================================== */
+" General Settings
+" ====================================================== */
 
-		set fillchars=vert:\│
+" Suppress the annoying 'match x of y', 'The only match' and 'Pattern not found' messages
+set shortmess+=c
 
-		set lbr
-		" set tw=300
-		let &showbreak=' ▸ '
+" Hybrid line number
+set relativenumber number
 
-		" " {{{ 80 char line
-		" 	augroup vimrc_autocmds
-		" 		autocmd BufEnter * highlight OverLength ctermbg=0
-		" 		autocmd BufEnter * match OverLength /\%>80v.\+/
-		" 	augroup END
-		" " }}}
-	" }}}
-	" {{{ statusline
-		" {{{ old
-			" set laststatus=1
+" Tabs
+set expandtab
+set smarttab
+set tabstop=4
+set shiftwidth=4
+set softtabstop=0
 
-			" set statusline=
+" Window
+set title
+set titlestring=%t
+set mouse=a " enables mousewheel
 
-			" " set statusline+=\[%{mode()}\]           " current mode
-			" " set statusline+=\                       " blank space
-			" set statusline+=%F                      " current file path
-			" set statusline+=\                       " blank space
-			" set statusline+=%y                      " filetype
-			" set statusline+=\                       " blank space
-			" set statusline+=%m                      " modified flag [+]
-			" set statusline+=\                       " blank space
+" Some servers have issues with backup files, see #649 (COC)
+set nobackup
+set nowritebackup
+set noswapfile
 
-			" set statusline+=%=                      " right-align from now on
+" undofile
+set undofile
+set undodir=~/.config/nvim/bak
 
-			" set statusline+=%{PasteForStatusline()} " paste flag
-			" set statusline+=\                       " blank space
-			" set statusline+=\(0x%-B\)\              " current char
-			" set statusline+=%v                      " column number
-			" set statusline+=\:                      " colon separator
-			" set statusline+=%l                      " row number
-			" set statusline+=\/                      " slash separator
-			" set statusline+=%L                      " number of rows
-			" set statusline+=\                       " blank space
-			" set statusline+=%{winnr()}              " buffer number
+" Indents
+set autoindent copyindent
 
-			" set statusline+=\                       " blank space
-			" set statusline+=[%{ALEGetStatusLine()}] " ALE
+" Search casing
+set ignorecase smartcase
+set hlsearch
+set incsearch
 
-			" {{{ PasteForStatusline()
-				function! PasteForStatusline()
-					let paste_status = &paste
-					if paste_status == 1
-						return " [p] "
-					else
-						return ""
-					endif
-				endfunction
-			" }}}
-		" }}}
+set laststatus=0 "hide status bar
+set noshowmode " hide mode indicator
+set backspace=eol,indent,start "no backspace past end of line
 
-		set laststatus=2
-		let g:currentmode={
-					\ 'n'  : 'NORMAL ',
-					\ 'no' : 'N·OPERATOR PENDING ',
-					\ 'v'  : 'VISUAL ',
-					\ 'V'  : 'V·LINE ',
-					\ '' : 'V·BLOCK ',
-					\ 's'  : 'SELECT ',
-					\ 'S'  : 'S·LINE ',
-					\ '' : 'S·BLOCK ',
-					\ 'i'  : 'INSERT ',
-					\ 'R'  : 'REPLACE ',
-					\ 'Rv' : 'V·REPLACE ',
-					\ 'c'  : 'COMMAND ',
-					\ 'cv' : 'VIM EX ',
-					\ 'ce' : 'EX ',
-					\ 'r'  : 'PROMPT ',
-					\ 'rm' : 'MORE ',
-					\ 'r?' : 'CONFIRM ',
-					\ '!'  : 'SHELL ',
-					\ 't'  : 'TERMINAL '}
+set autochdir
+set splitright
+set splitbelow
+set clipboard=unnamedplus
+set hidden
+    
+" Nvim native autocomplete
+set completeopt=menuone,noinsert
 
-		hi PrimaryBlock   ctermfg=07   ctermbg=0
-		hi SecondaryBlock ctermfg=15   ctermbg=0
-		hi TrinaryBlock   ctermfg=6    ctermbg=0
-		hi Blanks         ctermfg=none ctermbg=0
+" list chars
+" set listchars=tab:>-,trail:~,extends:>,precedes:<,space:.
+set list lcs=tab:\┊\  "draw tabline
+set fillchars+=vert:\  "draw verticle split
+set ve+=onemore "allow cursor to go to end of line
 
-		set statusline=
-		" set statusline+=%#PrimaryBlock#
-		set statusline+=\ %{g:currentmode[mode()]}
-		set statusline+=%#SecondaryBlock#
-		set statusline+=%{StatuslineGit()}
-		set statusline+=%#TrinaryBlock#
-		set statusline+=\ %t
-		set statusline+=%(%m%)
-		set statusline+=%#Blanks#
-		set statusline+=%=
-		set statusline+=%#SecondaryBlock#
-		set statusline+=\%p%%
-		set statusline+=\ %l:%c
-		set statusline+=%#PrimaryBlock#
-		set statusline+=\ [%Y]
+" Give more space for displaying messages.
+set cmdheight=2
 
-		function! GitBranch()
-			return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
-		endfunction
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience.
+set updatetime=300
 
-		function! StatuslineGit()
-			let l:branchname = GitBranch()
-			return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
-		endfunction
+filetype plugin indent on
 
-	" }}}
-	" {{{ tab
-		set smarttab
+" set cursor to last known position
+autocmd BufReadPost *
+	\ if line("'\"") > 1 && line("'\"") <= line("$") |
+	\ exe "normal! g`\"" |
+	\ endif
 
-		set shiftwidth=4
-		set tabstop=4
-		set softtabstop=4
-		set noexpandtab
+set nocursorcolumn "cursor tracking
+set nocursorline "cursor tracking
+set cursorline "cursor tracking
 
-		set ai
-		set si
-		set wrap
-	" }}}
-	" {{{ fold settings
-		set foldmethod=marker
-	" }}}
-	" {{{ search
-		set ignorecase
-		set smartcase
-
-		set hlsearch
-		set incsearch
-	" }}}
-	" {{{ set cursor to last known position
-		autocmd BufReadPost *
-			\ if line("'\"") > 1 && line("'\"") <= line("$") |
-			\ exe "normal! g`\"" |
-			\ endif
-	" }}}
-	" {{{ errorbell
-		set noerrorbells
-		set novisualbell
-		set t_vb=
-		set tm=500
-	" }}}
-	" {{{ backup files
-		set undofile
-		set undodir=~/.config/nvim/bak
-
-		set nobackup
-		set nowb
-		set noswapfile
-	" }}}
-	" {{{ various
-		" filetype plugin indent on
-		set nocompatible
-		set wildmenu
-		set hidden
-		set encoding=utf8
-		set lazyredraw
-		set showmatch
-		set showcmd
-
-		set backspace=eol,start,indent
-		set whichwrap+=<,>,h,l
-
-		set so=7
-	" }}}
-" }}}
-
-" {{{ mappings
-	" {{{ leader mappings
-		nnoremap <leader>w :w<cr>
-		nnoremap <leader>q :q!<cr>
-
-		nnoremap <leader>s :%s/\<<C-r><C-w>\>/
-		nnoremap <leader>x :%g/\<<C-r><C-w>\>/d
-
-		nnoremap <leader>o o<esc>k
-		nnoremap <leader>O O<esc>j
-
-		nnoremap <leader>l :bnext<cr>
-		nnoremap <leader>h :bprevious<cr>
-
-		nnoremap <leader>b :Buffer<cr>
-		nnoremap <leader>m :Marks<cr>
-		nnoremap <leader>e :Files<cr>
-		nnoremap <leader>f :NERDTreeToggle<cr>
-		" nnoremap <leader>s :Startify<cr>
-
-		nnoremap <silent> <leader>n :noh<cr>
-
-		nnoremap <leader>cd :cd %:p:h<cr>:pwd<cr>
-
-		nnoremap <leader>= <esc>mmgg=G`m
-		nnoremap <silent> <leader>d :%s/\s\+$//e<cr>
-
-		nnoremap <leader>g :Goyo x70% <bar> Limelight!!<cr>
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+if has("patch-8.1.1564")
+  " Recently vim can merge signcolumn and number column into one
+  set signcolumn=number
+else
+  set signcolumn=yes
+endif
 
 
-		" {{{ fzf
-		nmap <leader><tab> <plug>(fzf-maps-n)
-		xmap <leader><tab> <plug>(fzf-maps-x)
-		omap <leader><tab> <plug>(fzf-maps-o)
-		" }}}
-	" }}}
-	" {{{ no leader
-		nnoremap j gj
-		nnoremap k gk
-		nnoremap Y y$
-		set pastetoggle=<F6>
 
-		autocmd Filetype cpp map <F5> :make run<CR>
+" ====================================================== */
+" Plugins
+" ====================================================== */
 
-		" {{{ fzf
-		imap <c-x><c-k> <plug>(fzf-complete-word)
-		imap <c-x><c-f> <plug>(fzf-complete-path)
-		imap <c-x><c-j> <plug>(fzf-complete-file-ag)
-		imap <c-x><c-l> <plug>(fzf-complete-line)
-		" }}}
-	" }}}
-	" {{{ commands
-		cmap w!! w suda://%
-	" }}}
-" }}}
+call plug#begin('~/.vim/plugged')
+
+" Colorschemes & other fancy stuff
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+Plug 'junegunn/vim-peekaboo' " registers
+Plug 'mhinz/vim-startify'
+Plug 'itchyny/vim-cursorword'
+Plug 'ap/vim-buftabline'
+Plug 'unblevable/quick-scope'
+Plug 'preservim/nerdtree'
+Plug 'ryanoasis/vim-devicons'
+
+" Session
+Plug 'tpope/vim-obsession'
+
+" Markdown
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+" Plug 'plasticboy/vim-markdown'
+" Plug 'vim-pandoc/vim-pandoc-syntax'
+
+" Targets & objects
+Plug 'wellle/targets.vim'
+Plug 'kana/vim-textobj-user'
+Plug 'glts/vim-textobj-comment'
+Plug 'glts/vim-textobj-indblock'
+
+" Search and List
+Plug 'junegunn/fzf', { 'do': 'yes \| ./install' }
+Plug 'junegunn/fzf.vim'
+
+" Code completion - COC
+Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'} |
+           \ Plug 'antoinemadec/coc-fzf' |
+           \ Plug 'wellle/tmux-complete.vim' " coc completion from open tmux panes
+let g:coc_global_extensions = [
+			\ 'coc-actions',
+			\ 'coc-explorer',
+			\ 'coc-css',
+			\ 'coc-git',
+			\ 'coc-html',
+			\ 'coc-json',
+			\ 'coc-markdownlint',
+			\ 'coc-pairs',
+			\ 'coc-snippets',
+			\ 'coc-spell-checker',
+			\ 'coc-flutter',
+			\ 'coc-sh',
+			\ 'coc-r-lsp',
+			\ 'coc-python',
+			\ ]
+
+" Utils
+Plug 'lambdalisue/suda.vim'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'wfxr/minimap.vim'
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'junegunn/vim-easy-align'
+
+Plug 'preservim/nerdcommenter'
+let NERDSpaceDelims = 1
+let NERDDefaultAlign = 'left'
+let NERDCommentEmptyLines = 1
+let NERDToggleCheckAllLines = 1
+
+" Git
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+
+" Statusline
+Plug 'itchyny/lightline.vim'
+Plug 'maximbaz/lightline-ale'
+
+call plug#end()
+
+
+" ====================================================== */
+" Themes - Colorschemes
+" ====================================================== */
+colorscheme wal
+
+" Vim cursor (for some terminals | pipe <==> block)
+let &t_SI = "\<Esc>[6 q"
+let &t_SR = "\<Esc>[4 q"
+let &t_EI = "\<Esc>[2 q"
+
+set lbr
+set wrap
+let &showbreak=' ▸ '
+
+" minimap
+let g:minimap_auto_start=1
+let g:minimap_width=6
+let g:minimap = 'NonText'
+" hi MinimapCurrentLine ctermfg=0 guifg=0 guibg=0
+" let g:minimap_highlight = 'MinimapCurrentLine'
+
+" nerdtree
+" auto open and focus on file
+" autocmd VimEnter * NERDTree
+" Go to previous (last accessed) window.
+" autocmd VimEnter * wincmd p
+let NERDTreeMinimalUI = 1
+let NERDTreeQuitOnOpen = 0
+let NERDTreeShowHidden = 0
+let NERDTreeWinSize = 15
+let g:NERDTreeDirArrowExpandable = ''
+let g:NERDTreeDirArrowCollapsible = ''
+let NERDTreeHighlightCursorline = 1
+let g:NERDTreeMouseMode = 2
+" let NERDTreeChDirMode=2
+" autocmd FileType nerdtree nmap <buffer> <right> C
+" autocmd FileType nerdtree nmap <buffer> <left> u
+" autocmd FileType nerdtree nmap <buffer> <return> o
+" autocmd FileType nerdtree nmap <buffer> . I
+" autocmd FileType nerdtree nmap <buffer> r R
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") 
+      \ && b:NERDTree.isTabTree()) | q | endif
+
+" startify
+let g:startify_custom_header = [
+	\ '  _  _    _   __       *   _  _  _   ',
+	\ ' / |/ |  |/  /  \_|  |_|  / |/ |/ |  ',
+	\ '   |  |_/|__/\__/  \/  |_/  |  |  |_/',
+	\ ' - - - - - - - - - - - - - - - - - - ',
+	\ ]
+let g:startify_files_number = 5
+let g:startify_bookmarks = [
+	\ '~/.config/nvim/init.vim',
+	\ '~/.config/bspwm/bspwmrc',
+	\ '~/.config/sxhkd/sxhkdrc',
+	\ '~/.config/polybar/config',
+	\ '~/.zshrc',
+	\ ]
+let g:startify_commands = [
+	\ ['plug install', 'PlugInstall']
+	\ ]
+let g:startify_lists = [
+			\ { 'type': 'files',     'header': ['   recents']        },
+			\ { 'type': 'bookmarks', 'header': ['   bookmarks']      },
+			\ { 'type': 'commands',  'header': ['   commands']       }
+			\ ]
+
+
+" hide splits
+hi VertSplit cterm=NONE
+" hide empty line tilde
+hi! EndOfBuffer ctermbg=None ctermfg=0 guibg=0 guifg=0
+" minimap
+hi MinimapCurrentLine ctermfg=1 ctermbg=NONE
+let g:minimap_highlight = 'MinimapCurrentLine'
+" nerdtree
+hi NERDTreeDirSlash ctermbg=NONE ctermfg=8
+hi NERDTreeExecFile ctermbg=NONE ctermfg=8
+hi NERDTreeOpenable ctermbg=NONE ctermfg=8
+hi NERDTreeClosable ctermbg=NONE ctermfg=8
+hi NERDTreeDir ctermbg=NONE ctermfg=8
+hi NERDTreeFile ctermbg=NONE ctermfg=8
+hi NERDTreeLinkFile ctermbg=NONE ctermfg=8
+hi NERDTreeLinkDir ctermbg=NONE ctermfg=8
+hi NERDTreeLinkTarget ctermbg=NONE ctermfg=8
+hi NERDTreeCurrentNode ctermbg=NONE ctermfg=7
+hi NERDTreeCWD ctermbg=NONE ctermfg=6
+
+" dim bg windows
+" hi ActiveWindow ctermfg=7 
+hi InactiveWindow ctermfg=8 ctermbg=NONE
+set winhighlight=NormalNC:InactiveWindow
+" italics
+hi Directory cterm=italic
+hi Comment cterm=italic
+hi String cterm=italic
+hi Statement cterm=italic
+
+" ale
+let g:ale_sign_column_always = 1
+let g:ale_sign_error = '!'
+let g:ale_sign_warning = '!'
+
+hi ALEWarningSign ctermbg=none ctermfg=2
+hi ALEErrorSign   ctermbg=none ctermfg=4

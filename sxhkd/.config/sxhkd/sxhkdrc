@@ -108,15 +108,15 @@ super + {Left,Down,Up,Right}
 
 ### applications
 super + Return
-	urxvt
+	kitty
 
 # super + ctrl + Return
 # 	urxvtd -q -f -o
 
 ## rofi
 super + d
-	~/.config/rofi/bins/appsmenu
-	# rofi -show drun
+	rofi -show drun
+	# ~/.config/rofi/bins/appsmenu
 
 super + v
 	rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'

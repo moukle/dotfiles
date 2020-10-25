@@ -16,3 +16,6 @@ zplug "plugins/pipenv", from:oh-my-zsh
 zplug "plugins/colored-man-pages", from:oh-my-zsh
 
 zplug load
+
+# to revieve job management < https://github.com/zplug/zplug/issues/374 >
+# rm ~/.zplug/log/job.lock 

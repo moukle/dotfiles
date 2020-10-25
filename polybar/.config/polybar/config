@@ -1,7 +1,8 @@
 ; ---------- global --------------
 ;
 [colors]
-background     = ${xrdb:background}
+; background     = ${xrdb:background}
+background     = "#00112233"
 foreground     = ${xrdb:foreground}
 black_dark     = ${xrdb:color0}
 black_bright   = ${xrdb:color8}
@@ -33,29 +34,31 @@ gray       = #CCCCCC
 red        = #d37277
 
 [fonts]
+font_source = "Source Serif Pro:weight=semibold:size=18:antialias=true;3"
 font_Iosevka = "Iosevka Nerd Font:size=18:weight=regular:antialias=true;3"
-font_SF = "SF Pro Text:size=14:weight=bold:antialias=true;3"
+font_SF = "SF Pro Text:size=12:weight=bold:antialias=true;3"
 font_roboto = "Roboto:size=18:weight=medium:antialias=true;3"
+font_jetbrains = "JetBrainsMono Nerd Font Mono:size=17:weight=medium:antialias=true;5"
 icon_typicons = "Typicons:size=20:weight=regular:antialias=true;2"
 icon_material = "Material Design Icons:size=15:weight=regular:antialias=true;4"
 
 [settings]
 main_font = ${fonts.font_SF}
 ; main_font = ${fonts.font_roboto}
-main_font2 = ${fonts.font_Iosevka}
+main_font2 = ${fonts.font_jetbrains}
 main_icon = ${fonts.icon_material}
 
-accent = ${melon.cyan}
-bar_fg = ${melon.white}
-bar_bg = ${melon.bg_light}
-bar_height = 55
-bar_width = 100%
-bar_x = 0
+accent = ${colors.yellow_dark}
+bar_fg = ${colors.foreground}
+bar_bg = ${colors.background}
+bar_height = 45
+bar_width = 97%
+bar_x = 1.5%
 bar_y = 0
 bar_bottom = false
 
 spacing = 0
-line_size = 0
+line_size = 10
 
 ; ---------- bars --------------
 [bar/right]
@@ -78,9 +81,9 @@ font-0 = ${settings.main_font}
 font-2 = ${settings.main_font2}
 font-1 = ${settings.main_icon}
 
-modules-left   = shot bspwm
-modules-center = date
-modules-right  = pulseaudio powermenu
+modules-left   = 
+modules-center = bspwm
+modules-right  = 
 
 padding-left = ${settings.spacing}
 padding-right = ${settings.spacing}
@@ -88,11 +91,6 @@ module-margin-left  = ${settings.spacing}
 module-margin-right = ${settings.spacing}
 
 wm-restack = bspwm
-
-tray-maxsize = 32
-tray-position   = right
-tray-padding    = ${settings.spacing}
-tray-background = ${melon.bg_dark}
 
 [bar/left]
 dpi = 140
@@ -114,14 +112,19 @@ font-0 = ${settings.main_font}
 font-2 = ${settings.main_font2}
 font-1 = ${settings.main_icon}
 
-modules-left   = bspwm
-modules-center =
-modules-right  = darkmode
+modules-left   = shot darkmode
+modules-center = bspwm
+modules-right  = date pulseaudio powermenu
 
 padding-left = ${settings.spacing}
 padding-right = ${settings.spacing}
 module-margin-left  = ${settings.spacing}
 module-margin-right = ${settings.spacing}
+
+tray-maxsize = 32
+tray-position   = right
+tray-padding    = ${settings.spacing}
+tray-background = ${colors.black_dark}
 
 wm-restack = bspwm
 
@@ -159,33 +162,33 @@ wm-restack = bspwm
 tray-maxsize = 20
 tray-position   = right
 tray-padding    = ${settings.spacing}
-tray-background = ${melon.blue_dark}
+tray-background = ${colors.black_dark}
 
 ; ---------- modules --------------
 [module/notification]
 type = custom/script
 click-left = kill -s USR1 $(pidof deadd-notification-center)
 exec = echo "    "
-label-background = ${melon.blue_dark}
+label-background = ${colors.black_dark}
 
 [module/launcher]
 type = custom/script
 click-left = ~/.config/rofi/bins/appsmenu
 exec = echo "      "
-label-background = ${melon.cyan}
+label-background = ${colors.black_dark}
 
 [module/darkmode]
 type = custom/script
-exec = echo "    "
+exec = echo "  嗀  "
 click-left = ~/.local/bin/toggle_nightday.sh
-label-foreground = ${melon.gray}
-; label-background = ${melon.blue_dark}
+; label-foreground = ${colors.white_bright}
+label-background = ${colors.black_dark}
 
 [module/shot]
 type = custom/script
-exec = echo "      "
+exec = echo "     "
 click-left = flameshot gui &
-label-background = ${melon.cyan}
+label-background = ${colors.black_dark}
 
 [module/bspwm]
 type = internal/bspwm
@@ -203,29 +206,30 @@ label-empty  = %name%
 ; label-urgent   = ""
 ; label-empty    = "吏"
 
-label-focused-background  = ${melon.blue_light}
-label-occupied-background = ${melon.blue_dark}
-label-urgent-background   = ${melon.red}
-label-empty-background    = ${melon.bg_dark}
+label-focused-background  = ${colors.white_dark}
+label-occupied-background = ${colors.cyan_dark}
+label-urgent-background   = ${colors.red_dark}
+label-empty-background    = ${colors.black_dark}
 
-; label-focused-foreground  = ${melon.white}
-; label-occupied-foreground = ${melon.blue_light}
-; label-urgent-foreground   = ${colors.red_dark}
-; label-empty-foreground    = ${melon.blue_dark}
+label-focused-foreground  = ${colors.black_dark}
+label-occupied-foreground = ${colors.white_dark}
+label-urgent-foreground   = ${colors.white_dark}
+label-empty-foreground    = ${colors.black_bright}
 
-label-focused-padding  = 4
-label-occupied-padding = 4
-label-urgent-padding   = 4
-label-empty-padding    = 4
+label-focused-padding  = 25
+label-occupied-padding = 25
+label-urgent-padding   = 25
+label-empty-padding    = 25
 
 [module/date]
 type = internal/date
 
-label = "   %date% %time%   "
-; format-background = ${melon.bg_dark}
+label = %date% %time%
+label-padding = 2
+format-background = ${colors.black_dark}
 
 time = "%H:%M"
-date = "%A, %d. %B"
+; date = "%A, %d. %B"
 
 time-alt = "%H:%M:%S"
 date-alt = "%A, %d. %B"
@@ -234,17 +238,20 @@ date-alt = "%A, %d. %B"
 type = internal/pulseaudio
 use-ui-max = true
 
-format-volume = "%{}  <ramp-volume>  "
-format-volume-background = ${melon.bg_dark}
+format-volume-padding = 2
+format-volume = <ramp-volume>
+format-volume-background = ${colors.black_dark}
 ; format-volume-foreground = ${melon.gray}
 
-ramp-volume-0 = 
-ramp-volume-1 = 
-ramp-volume-2 = 
+ramp-volume-0 = 奄
+ramp-volume-1 = 奔
+ramp-volume-2 = 墳
+ramp-volume-3 = 
 
-label-muted = "    "
-; label-muted-foreground = ${melon.gray}
-label-muted-background = ${melon.bg_dark}
+label-muted = 婢
+label-muted-background = ${colors.black_dark}
+label-muted-foreground = ${colors.black_bright}
+label-muted-padding = 2
 
 [module/wlan]
 type = internal/network
@@ -277,13 +284,13 @@ type = internal/battery
 adapter = ADP1
 full-at = 96
 
-format-charging-background    = ${melon.bg_dark}
-format-discharging-background = ${melon.bg_dark}
-format-full-background        = ${melon.bg_dark}
+format-charging-background    = ${colors.black_dark}
+format-discharging-background = ${colors.yellow_dark}
+format-full-background        = ${colors.black_dark}
 
-format-charging-foreground    = ${melon.blue_light}
-format-discharging-foreground = ${melon.white}
-label-full-foreground         = ${melon.blue_light}
+format-charging-foreground    = ${colors.white_dark}
+format-discharging-foreground = ${colors.white_dark}
+label-full-foreground         = ${colors.white_dark}
 
 format-charging    = %{}  <ramp-capacity>  %{}
 format-discharging = %{}  <ramp-capacity>  %{}
@@ -291,24 +298,19 @@ format-full        = %{}  <label-full>  %{}
 
 label-charging    = %percentage%
 label-discharging = %percentage%
-label-full        = ""
+label-full        = ""
 
 ; hack nerd
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
-ramp-capacity-5 = 
-ramp-capacity-6 = 
-ramp-capacity-7 = 
-ramp-capacity-8 = 
-ramp-capacity-9 = 
-
-; ramp-capacity-0 = 
-; ramp-capacity-1 = 
-; ramp-capacity-2 = 
-; ramp-capacity-3 = 
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+; ramp-capacity-5 = 
+; ramp-capacity-6 = 
+; ramp-capacity-7 = 
+; ramp-capacity-8 = 
+; ramp-capacity-9 = 
 
 animation-charging-0 = 
 animation-charging-1 = 
@@ -356,13 +358,13 @@ type = custom/menu
 
 expand-right = true
 
-menu-0-0 = 連
+menu-0-0 = ﰇ
 menu-0-0-exec = menu-open-1
-menu-0-1 = 
+menu-0-1 = 
 menu-0-1-exec = menu-open-2
-menu-0-2 = 
+menu-0-2 = 
 menu-0-2-exec = menu-open-3
-menu-0-3 = 
+menu-0-3 = 鈴
 menu-0-3-exec = menu-open-4
 
 menu-1-0 = reboot
@@ -379,13 +381,14 @@ menu-4-0 = hibernate
 menu-4-0-exec = betterlockscreen -s dim
 
 format-spacing = 1
-format-background = ${melon.bg_dark}
-; format-foreground = ${melon.gray}
+format-background = ${colors.black_dark}
 format-padding = 1
 
-label-open = "  "
-; label-open = "  "
-label-close = ""
+label-open = 拉
+label-close = 
 label-separator = " "
+
+label-close-padding = 2
+label-open-padding = 2
 
 ; vim:ft=dosini

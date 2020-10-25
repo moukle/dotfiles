@@ -26,44 +26,44 @@ local dock_placement = function(w)
 	return awful.placement.bottom(w)
 end
 
-local tag_colors_empty = { "#00000005", "#00000005", "#00000005", "#00000005", "#00000005", "#00000005", "#00000005", "#00000005", "#00000005", "#00000005" }
+local tag_colors_empty = { "#f0000005", "#00000005", "#00000005", "#00000005", "#00000005", "#00000005", "#00000005", "#00000005", "#00000005", "#00000005" }
 
 local tag_colors_urgent = { x.color1, x.color1, x.color1, x.color1, x.color1, x.color1, x.color1, x.color1, x.color1, x.color1 }
 
 local tag_colors_focused = {
-    -- x.color1,
-    -- x.color5,
-    -- x.color4,
-    -- x.color6,
-    -- x.color2,
-    -- x.color3,
-    -- x.color1,
-    -- x.color5,
-    -- x.color4,
-    -- x.color6,
-	x.color15,
-	x.color15,
-	x.color15,
-	x.color15,
-	x.color15,
-	x.color15,
-	x.color15,
-	x.color15,
-	x.color15,
-	x.color15,
+    x.color1,
+    x.color5,
+    x.color4,
+    x.color6,
+    x.color2,
+    x.color3,
+    x.color1,
+    x.color5,
+    x.color4,
+    x.color6,
+	-- x.color15,
+	-- x.color15,
+	-- x.color15,
+	-- x.color15,
+	-- x.color15,
+	-- x.color15,
+	-- x.color15,
+	-- x.color15,
+	-- x.color15,
+	-- x.color15,
 }
 
 local tag_colors_occupied = {
-	x.color7.."c5",
-	x.color7.."c5",
-	x.color7.."c5",
-	x.color7.."c5",
-	x.color7.."c5",
-	x.color7.."c5",
-	x.color7.."c5",
-	x.color7.."c5",
-	x.color7.."c5",
-	x.color7.."c5",
+	x.color1.."c5",
+	x.color5.."c5",
+	x.color4.."c5",
+	x.color6.."c5",
+	x.color2.."c5",
+	x.color3.."c5",
+	x.color1.."c5",
+	x.color5.."c5",
+	x.color5.."c5",
+	x.color6.."c5",
 }
 
 -- Helper function that updates a taglist item

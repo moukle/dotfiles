@@ -49,5 +49,5 @@ LMNBAR_DARK="${BYLW}"
 LMNBAR_DARKER="${BGRN}"
 
 SQUASH_FONT=xft:Iosevka\ Nerd\ Font:size=13
-SQUASH_FONT="xft:Iosevka Nerd Font:size=13"
+SQUASH_FONT="xft:JetBrainsMono Nerd Font:size=13"
 ST_FONT="Iosevka Nerd Font:size=13"

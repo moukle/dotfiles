@@ -120,21 +120,21 @@ c.colors.statusbar.url.warn.fg          = xresources['*.color3']
 # c.colors.tabs.selected.odd.bg  = adjust(xresources['*.background'], 1.35)
 # c.colors.tabs.selected.odd.fg  = xresources['*.color3']
 
-c.colors.tabs.bar.bg           = melon['blue_dark']
+c.colors.tabs.bar.bg           = xresources['*.background']
 
-c.colors.tabs.indicator.error  = melon['red']
-c.colors.tabs.indicator.start  = melon['white']
-c.colors.tabs.indicator.stop  = melon['gray']
+c.colors.tabs.indicator.error  = xresources['*.color1']
+c.colors.tabs.indicator.start  = xresources['*.color7']
+c.colors.tabs.indicator.stop  = xresources['*.color6']
 
-c.colors.tabs.even.bg          = melon['blue_dark']
-c.colors.tabs.even.fg          = melon['white']
-c.colors.tabs.odd.bg           = melon['blue_dark']
-c.colors.tabs.odd.fg           = melon['white']
+c.colors.tabs.even.bg          = xresources['*.background']
+c.colors.tabs.even.fg          = xresources['*.foreground']
+c.colors.tabs.odd.bg           = xresources['*.background']
+c.colors.tabs.odd.fg           = xresources['*.foreground']
 
-c.colors.tabs.selected.even.bg = melon['blue_light']
-c.colors.tabs.selected.even.fg = melon['white']
-c.colors.tabs.selected.odd.bg  = melon['blue_light']
-c.colors.tabs.selected.odd.fg  = melon['white']
+c.colors.tabs.selected.even.bg = xresources['*.color0']
+c.colors.tabs.selected.even.fg = xresources['*.foreground']
+c.colors.tabs.selected.odd.bg  = xresources['*.color0']
+c.colors.tabs.selected.odd.fg  = xresources['*.foreground']
 
 
 # tabs left and only favicons
