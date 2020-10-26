@@ -14,7 +14,7 @@ nitrogen --restore &
 
 wmname LG3D # for java
 
-padding=40
+padding=10
 # padding_bar=$((20+0+$padding))
 
 bspc config window_gap            10
@@ -40,10 +40,10 @@ if [ $HOSTNAME == "olo" ]; then
     # bspc monitor DP-2 -d q w e r t
     bspc monitor DP-2 -d q w e r t
     bspc monitor DP-4 -d 1 2 3 4 5
-    $HOME/.config/polybar/launch.sh left right
-    sleep 2
-    hideIt.sh --name '^polybar-right_DP-4$' -H -d top --peek 10 &
-    hideIt.sh --name '^polybar-left_DP-2$'  -H -d top --peek 10 &
+    $HOME/.config/polybar/launch.sh leftL leftM leftR rightM
+
+    # hideIt.sh --name '^polybar-right_DP-4$' -H -d top --peek 10 &
+    # hideIt.sh --name '^polybar-left_DP-2$'  -H -d top --peek 10 &
 else
     bspc monitor -d q w e r t z u i o p
     $HOME/.config/polybar/launch.sh laptop
@@ -52,7 +52,7 @@ fi
 bspc rule -a qutebrowser           desktop=^1
 bspc rule -a code-oss              desktop=^5  follow=off
 bspc rule -a "Gimp-2.10"           desktop=^4  follow=off
-bspc rule -a DDNet                 desktop=^10 follow=off state=fullscreen
+bspc rule -a DDNet                 desktop=^10 follow=on state=fullscreen
 bspc rule -a discord               desktop=^7  follow=off
 bspc rule -a ts3client_linux_amd64 desktop=^7
 bspc rule -a Zathura               state=tiled

@@ -1,23 +1,22 @@
 configuration {
-	show-icons:         false;
+	show-icons:         true;
 	icon-theme:         "Tela";
 	cycle:              true;
 	hide-scrollbar:     true;
 	disable-history:    false;
 	lines: 3;
-	columns: 1;
+	columns: 2;
 	bw: 0;
 
-	modi:             "combi";
-	combi-modi:       "window,drun";
-	modi:             "combi,windowcd,run";
+	combi-modi:       "drun,window,ssh";
+	modi:             "combi,windowcd,drun";
 	display-window:   "";
 	display-windowcd: "";
 	display-run:      "";
 	display-ssh:      "";
 	/* display-drun:     ""; */
-	display-drun:      "";
-	display-combi:    "";
+	display-drun:      "";
+	display-combi:    "";
 
 	dpi: 138;
 	fake-transparency: false;
@@ -25,12 +24,12 @@ configuration {
 }
 
 * {
-	font: "SF Pro Text Bold 22";
+	font: "SF Pro Text 22";
 	padding: 5px 10px;
 	/* background-color: @background; */
 	/* background-color: #000000ee; */
 	background-color: transparent;
-	color: @color8;
+	color: #5e5e5e;
 }
 
 window {
@@ -43,7 +42,7 @@ window {
 }
 
 prompt {
-	color: @color7;
+	color: @2e2e2e;
 	/* enabled: false; */
 }
 
@@ -55,8 +54,8 @@ listview {
 }
 
 element selected {
-	text-color: @color7;
+	text-color: #fefefe;
 }
 
-@import "~/.cache/squash/colors.rasi"
+/* @import "~/.cache/squash/colors.rasi" */
 /* vim:ft=css
