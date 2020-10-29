@@ -109,12 +109,14 @@ set shortmess+=c
 " Hybrid line number
 set relativenumber number
 
-" Tabs
-set expandtab
+" Tabs & indents
+filetype plugin indent on
+set autoindent copyindent
 set smarttab
 set tabstop=4
 set shiftwidth=4
 set softtabstop=0
+set noexpandtab
 
 " Window
 set title
@@ -129,9 +131,6 @@ set noswapfile
 " undofile
 set undofile
 set undodir=~/.config/nvim/bak
-
-" Indents
-set autoindent copyindent
 
 " Search casing
 set ignorecase smartcase
@@ -164,7 +163,6 @@ set cmdheight=2
 " delays and poor user experience.
 set updatetime=300
 
-filetype plugin indent on
 
 " set cursor to last known position
 autocmd BufReadPost *
@@ -209,6 +207,22 @@ Plug 'tpope/vim-obsession'
 
 " Markdown
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+let g:mkdp_browser = 'qutebrowser'
+let g:mkdp_markdown_css = '/home/ritzo/dotfiles/nvim/.config/nvim/markdown.css'
+let g:mkdp_preview_options = {
+    \ 'mkit': {},
+    \ 'katex': {},
+    \ 'uml': {},
+    \ 'maid': {},
+    \ 'disable_sync_scroll': 0,
+    \ 'sync_scroll_type': 'middle',
+    \ 'hide_yaml_meta': 1,
+    \ 'sequence_diagrams': {},
+    \ 'flowchart_diagrams': {},
+    \ 'content_editable': v:false,
+    \ 'disable_filename': 1
+    \ }
+
 " Plug 'plasticboy/vim-markdown'
 " Plug 'vim-pandoc/vim-pandoc-syntax'
 
@@ -223,7 +237,6 @@ Plug 'junegunn/fzf', { 'do': 'yes \| ./install' }
 Plug 'junegunn/fzf.vim'
 
 " Code completion - COC
-Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc.nvim', {'branch': 'release'} |
            \ Plug 'antoinemadec/coc-fzf' |
            \ Plug 'wellle/tmux-complete.vim' " coc completion from open tmux panes
@@ -234,16 +247,17 @@ let g:coc_global_extensions = [
 			\ 'coc-git',
 			\ 'coc-html',
 			\ 'coc-json',
-			\ 'coc-markdownlint',
 			\ 'coc-pairs',
 			\ 'coc-snippets',
-			\ 'coc-spell-checker',
 			\ 'coc-flutter',
 			\ 'coc-sh',
 			\ 'coc-r-lsp',
 			\ 'coc-python',
+			\ 'coc-markdownlint',
 			\ ]
 
+			" \ 'coc-spell-checker',
+			" \ 'coc-cspell-dicts',
 " Utils
 Plug 'lambdalisue/suda.vim'
 Plug 'tpope/vim-surround'
@@ -263,8 +277,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
 " Statusline
-Plug 'itchyny/lightline.vim'
-Plug 'maximbaz/lightline-ale'
+" Plug 'itchyny/lightline.vim'
+" Plug 'maximbaz/lightline-ale'
 
 call plug#end()
 

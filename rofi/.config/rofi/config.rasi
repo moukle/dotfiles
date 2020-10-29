@@ -15,7 +15,8 @@ configuration {
 	display-run:      "";
 	display-ssh:      "";
 	/* display-drun:     ""; */
-	display-drun:      "";
+	/* display-drun:      ""; */
+	display-drun:      "";
 	display-combi:    "";
 
 	dpi: 138;

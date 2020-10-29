@@ -75,7 +75,7 @@ monitor = DP-4
 
 width = 30.5%
 height = 10
-offset-x = 30%
+offset-x = 35%
 offset-y = 0
 modules-center = bspwm
 

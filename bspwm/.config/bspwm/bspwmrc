@@ -20,7 +20,7 @@ padding=10
 bspc config window_gap            10
 bspc config border_width          3
 bspc config single_monocle        true
-bspc config border_radius         10
+bspc config border_radius         12
 bspc config top_padding           $padding
 bspc config bottom_padding        $padding
 bspc config right_padding         $padding
