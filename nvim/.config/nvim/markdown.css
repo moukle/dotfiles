@@ -86,6 +86,13 @@ a:hover {
 a img {
   border:none;
   }
+
+  img {
+	  max-width: 100%;
+	  max-height: 100%;
+	  border-radius: 4px;
+	  box-shadow: 0 0 10px $color-img-shadow
+  }
 h1 a, h1 a:hover {
   color: #333;
   text-decoration: none;

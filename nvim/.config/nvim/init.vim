@@ -88,6 +88,8 @@ inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
 inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
 imap <C-l> <Plug>(coc-snippets-expand)
 
+" Image paste in markdown files
+autocmd FileType markdown nmap <buffer><silent> <leader>p :call mdip#MarkdownClipboardImage()<CR>
 
 " easy align
 xmap ga <Plug>(EasyAlign)
@@ -223,6 +225,7 @@ let g:mkdp_preview_options = {
     \ 'disable_filename': 1
     \ }
 
+Plug 'ferrine/md-img-paste.vim'
 " Plug 'plasticboy/vim-markdown'
 " Plug 'vim-pandoc/vim-pandoc-syntax'
 
@@ -265,6 +268,7 @@ Plug 'tpope/vim-commentary'
 Plug 'wfxr/minimap.vim'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'junegunn/vim-easy-align'
+Plug 'chaoren/vim-wordmotion'
 
 Plug 'preservim/nerdcommenter'
 let NERDSpaceDelims = 1

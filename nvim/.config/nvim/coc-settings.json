@@ -2,6 +2,8 @@
 	"cSpell.language": "de,en",
 	"markdownlint.config": {
 		"default": true,
-		"line_length": false
+		"line_length": false,
+		"ul-indent": false,
+		"hard_tab": false
 	},
 }
