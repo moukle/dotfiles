@@ -18,7 +18,7 @@ padding=10
 # padding_bar=$((20+0+$padding))
 
 bspc config window_gap            10
-bspc config border_width          3
+bspc config border_width          2
 bspc config single_monocle        true
 bspc config border_radius         12
 bspc config top_padding           $padding

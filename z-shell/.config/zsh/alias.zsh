@@ -1,3 +1,5 @@
+alias discord='discocss'
+
 alias s='sudo '
 alias p='sudo pacman'
 alias e='$EDITOR'

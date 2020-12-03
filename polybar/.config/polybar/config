@@ -91,7 +91,7 @@ modules-center = bspwm
 inherit = section/settings
 dpi = 140
 monitor = DP-2
-radius = 10
+; radius = 10
 
 width = 3.9%
 modules-left   = shot darkmode 
@@ -111,7 +111,7 @@ modules-center = bspwm
 inherit = section/settings
 dpi = 140
 monitor = DP-2
-radius = 10
+; radius = 10
 
 width = 12%
 offset-x = 87.5%
