@@ -48,11 +48,21 @@ settings:
   statusbar.position:
     global: bottom
   statusbar.show:
-    global: always
+    global: in-mode
+  tabs.indicator.width:
+    global: 0
+  tabs.padding:
+    global:
+      bottom: 20
+      left: 15
+      right: 12
+      top: 20
   tabs.position:
     global: left
   tabs.show:
     global: always
+  tabs.width:
+    global: 73
   url.searchengines:
     global:
       DEFAULT: https://www.google.com/search?hl=en&q={}

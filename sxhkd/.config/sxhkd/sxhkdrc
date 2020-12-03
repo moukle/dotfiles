@@ -21,6 +21,16 @@ super + {_,shift} + {y,u,i,o,p}
 super + a
 	bspc node $(bspc query -N -d -n .hidden | head -n 1) -g hidden
 
+# increase / decrease padding
+super + {_,shift + } minus
+	min=0 ; \
+	npadding=$((`bspc config -d focused left_padding` {+,-} 50 )) ; \
+	padding=$(( $npadding > $min ? $npadding : $min )) ; \
+	bspc config -d focused left_padding   $padding ; \
+	bspc config -d focused right_padding  $padding ; \
+	bspc config -d focused top_padding    $padding ; \
+	bspc config -d focused bottom_padding $padding
+
 # toggle polybar
 alt + m
 	toggle_bar.sh

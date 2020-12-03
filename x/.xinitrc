@@ -1,10 +1,18 @@
 #! /bin/sh
 
 xsetroot -cursor_name left_ptr
-xset -b
+
+xset -b          # disable beep
+xset s 7200 7200 # screensaver after 60*120seconds
+xset dpms 0 0 0  # disable display powermngt
+
+# font stuff
 xset +fp ~/.fonts
 xset fp rehash
 xrdb ~/.Xresources
+
+# scrollspeed - restrict to buttons 4&5
+imwheel -b 45
 
 if [[ $HOSTNAME = "olo" ]]; then
 	setxkbmap us altgr-intl nodeadkeys

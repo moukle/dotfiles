@@ -21,6 +21,13 @@ white_bright   = ${xrdb:color15}
 
 transparent    = #50263238
 
+bg1="#22000000"
+bg2="#bb333333"
+bg4="#88333333"
+bg3="#ccfefefe"
+
+fg="#fefefe"
+
 [melon]
 bg_light   = #445967
 bg_dark    = #3C4F5B
@@ -47,7 +54,8 @@ font-0 = ${fonts.font_jetbrains}
 
 accent = ${colors.yellow_dark}
 background = ${colors.background}
-foreground = ${colors.foreground}
+; foreground = ${colors.foreground}
+foreground = ${colors.fg}
 
 height = 45
 width = 99%
@@ -153,14 +161,14 @@ type = custom/script
 exec = echo 
 click-left = ~/.local/bin/toggle_nightday.sh
 ; label-foreground = ${colors.white_bright}
-label-background = ${colors.black_dark}
+label-background = ${colors.bg2}
 label-padding=2
 
 [module/shot]
 type = custom/script
 exec = echo 
 click-left = flameshot gui &
-label-background = ${colors.black_dark}
+label-background = ${colors.bg2}
 label-padding=2
 
 [module/bspwm]
@@ -185,10 +193,14 @@ label-empty    = " "
 ; label-urgent   = ""
 ; label-empty    = "吏"
 
-label-focused-background  = ${colors.white_dark}
-label-occupied-background = ${colors.cyan_dark}
+label-focused-background  = ${colors.bg3}
+label-occupied-background = ${colors.bg2}
 label-urgent-background   = ${colors.red_dark}
-label-empty-background    = ${colors.black_dark}
+label-empty-background    = ${colors.bg1}
+; label-focused-background  = ${colors.white_dark}
+; label-occupied-background = ${colors.cyan_dark}
+; label-urgent-background   = ${colors.red_dark}
+; label-empty-background    = ${colors.black_dark}
 
 label-focused-foreground  = ${colors.black_dark}
 label-occupied-foreground = ${colors.white_dark}
@@ -205,7 +217,7 @@ type = internal/date
 
 label = %date% %time%
 label-padding = 1
-format-background = ${colors.red_dark}
+format-background = ${colors.bg2}
 
 time = "%H:%M"
 date = "%a, %d. %b "
@@ -219,7 +231,7 @@ use-ui-max = true
 
 format-volume-padding = 2
 format-volume = <ramp-volume>
-format-volume-background = ${colors.black_dark}
+format-volume-background = ${colors.bg4}
 ; format-volume-foreground = ${melon.gray}
 
 ramp-volume-0 = 奄
@@ -228,8 +240,8 @@ ramp-volume-2 = 墳
 ramp-volume-3 = 
 
 label-muted = 婢
-label-muted-background = ${colors.black_dark}
-label-muted-foreground = ${colors.black_bright}
+label-muted-background = ${colors.bg1}
+label-muted-foreground = ${colors.bg3}
 label-muted-padding = 2
 
 [module/wlan]
@@ -360,7 +372,7 @@ menu-4-0 = hibernate
 menu-4-0-exec = betterlockscreen -s dim
 
 format-spacing = 1
-format-background = ${colors.black_dark}
+format-background = ${colors.bg4}
 format-padding = 1
 
 label-open = 
