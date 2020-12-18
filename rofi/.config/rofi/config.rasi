@@ -11,10 +11,6 @@ configuration {
 }
 
 * {
-	/* bg:     @background; */
-	/* bg-alt: @color8; */
-	/* fg:     @foreground; */
-	/* fg-alt: @color7; */
 	background-color: @bg;
 
 	border: 0;
@@ -50,7 +46,7 @@ listview {
 	padding: 0.5em;
 	spacing: 0.1em;
 	border: 0.1em;
-	border-color: @color0;
+	border-color: @bg-alt2;
 }
 
 mainbox {
