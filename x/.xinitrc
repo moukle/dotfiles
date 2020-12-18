@@ -19,9 +19,14 @@ if [[ $HOSTNAME = "olo" ]]; then
 	# render: dpi = 192 # fuck gtk
 	# 4k:     dpi = 138
 	# 1080p:  dpi = 100
-	xrandr --dpi 192x192 \
-		--output DP-2 --mode 3840x2160 --primary --scale 1.39x1.39 \
-		--output DP-4 --mode 1920x1080 --rate 144 --scale 1.92x1.92 --pos 5338x464 # --right-of DP-2
+
+	# xrandr --dpi 192x192 \
+	# 	--output DP-2 --mode 3840x2160 --primary --scale 1.39x1.39 \
+	# 	--output DP-4 --mode 1920x1080 --rate 144 --scale 1.92x1.92 --pos 5338x464 # --right-of DP-2
+
+	xrandr --dpi 138x138 \
+		--output DP-2 --mode 3840x2160 --primary --scale 1.0x1.0 \
+		--output DP-4 --mode 1920x1080 --rate 144 --scale 1.38x1.38 --pos 3840x335 # --right-of DP-2
 
 
 	# xrandr --dpi 140 --fb 6528x2160 \

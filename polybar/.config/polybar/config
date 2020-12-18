@@ -82,18 +82,18 @@ wm-restack = bspwm
 ; ---------- bars --------------
 [bar/rightM]
 inherit = section/settings
-dpi = 192
+; dpi = 138
 monitor = DP-4
 
-width = 31%
+width = 20.5%
 height = 10
-offset-x = 34.5%
+offset-x = 39.5%
 offset-y = 0
 modules-center = bspwm
 
 [bar/leftL]
 inherit = section/settings
-dpi = 140
+; dpi = 100
 monitor = DP-2
 ; radius = 10
 
@@ -102,23 +102,23 @@ modules-left   = shot darkmode
 
 [bar/leftM]
 inherit = section/settings
-dpi = 140
+; dpi = 140
 monitor = DP-2
 
-width = 15%
+width = 14%
 height = 10
-offset-x = 42.5%
+offset-x = 43%
 offset-y = 0
 modules-center = bspwm
 
 [bar/leftR]
 inherit = section/settings
-dpi = 140
+; dpi = 140
 monitor = DP-2
 ; radius = 10
 
-width = 9%
-offset-x = 90.5%
+width = 8%
+offset-x = 91.5%
 modules-right   = pulseaudio powermenu date 
 
 [bar/left]

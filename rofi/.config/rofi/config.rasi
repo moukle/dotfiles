@@ -7,7 +7,7 @@ configuration {
 	/* font: "SF Pro Text 13"; */
 	modi: "window,run,drun,ssh,file-browser";
 	show-icons: true;
-	dpi: 192;
+	dpi: 138;
 }
 
 * {

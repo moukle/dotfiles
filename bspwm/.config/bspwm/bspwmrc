@@ -14,7 +14,7 @@ nitrogen --restore &
 
 wmname LG3D # for java
 
-padding=20
+padding=10
 # padding_bar=$((20+0+$padding))
 
 bspc config window_gap            10
