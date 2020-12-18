@@ -1,0 +1,61 @@
+configuration {
+	show-icons:         true;
+	icon-theme:         "Tela";
+	cycle:              true;
+	hide-scrollbar:     true;
+	disable-history:    false;
+	lines: 3;
+	columns: 2;
+	bw: 0;
+
+	combi-modi:       "drun,window,ssh";
+	modi:             "combi,windowcd,drun";
+	display-window:   "";
+	display-windowcd: "";
+	display-run:      "";
+	display-ssh:      "";
+	/* display-drun:     ""; */
+	/* display-drun:      ""; */
+	display-drun:      "";
+	display-combi:    "";
+
+	dpi: 138;
+	/* fake-transparency: false; */
+}
+
+* {
+	font: "SF Pro Text 22";
+	padding: 5px 10px;
+	/* background-color: @background; */
+	/* background-color: #000000ee; */
+	background-color: transparent;
+	color: #5e5e5e;
+}
+
+window {
+	fullscreen: true;
+	transparency: "real";
+	/* height: 20%; */
+	/* width: 20%; */
+	background-color: #000000ee;
+	padding: 30%;
+}
+
+prompt {
+	color: @2e2e2e;
+	/* enabled: false; */
+}
+
+listview {
+	/* padding: 1%; */
+	/* background-color: #000000ee; */
+	padding: 30px 10px 0px 10px;
+	spacing: 0.5em;
+}
+
+element selected {
+	text-color: #fefefe;
+}
+
+/* @import "~/.cache/squash/colors.rasi" */
+/* vim:ft=css

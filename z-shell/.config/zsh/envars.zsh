@@ -26,6 +26,6 @@ export JAVA_HOME='/usr/lib/jvm/java-8-openjdk/'
 # export JAVA_HOME='/usr/lib/jvm/java-11-openjdk/'
 export ANDROID_SDK_ROOT='/opt/android-sdk'
 
-
-# export QT_AUTO_SCREEN_SCALE_FACTOR=1.5
-# export GDK_SCALE=1.5
+export GDK_SCALE=2                       # renderDPI/96 = 192/96 = 2
+export GDK_DPI_SCALE=0.5                 # 1/GDK_SCALE = 1/2 = 0.5
+export QT_AUTO_SCREEN_SCALE_FACTOR=0     # 1=true, 0=false

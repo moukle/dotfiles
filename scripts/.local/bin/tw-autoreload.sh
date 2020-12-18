@@ -9,7 +9,7 @@ local_dir=$HOME/.teeworlds/maps/
 mkfifo $fifofile
 
 while true; do
-	file=$(inotifywait -q -e modify --format %f $local_dir)
+	file=$(inotifywait --recursive -q -e modify --format %f $local_dir)
 	if [ ! -z $file ]
 	then
 		echo "======= RELOAD ======="

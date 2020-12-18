@@ -8,35 +8,41 @@ config_version: 2
 settings:
   auto_save.session:
     global: true
+  colors.webpage.darkmode.algorithm:
+    global: lightness-cielab
+  colors.webpage.darkmode.enabled:
+    global: false
   content.geolocation:
     https://rocket.accso.de: false
   content.notifications:
     global: true
   fonts.completion.entry:
-    global: 13pt default_family
+    global: 10pt default_family
   fonts.debug_console:
-    global: 13pt default_family
+    global: 10pt default_family
   fonts.default_family:
     global:
-    - Iosevka
+    - JetBrains Mono
+  fonts.default_size:
+    global: 10pt
   fonts.downloads:
-    global: 13pt default_family
+    global: 10pt default_family
   fonts.hints:
     global: bold 12pt default_family
   fonts.keyhint:
-    global: 13pt default_family
+    global: 10pt default_family
   fonts.messages.error:
-    global: 13pt default_family
+    global: 10pt default_family
   fonts.messages.info:
-    global: 13pt default_family
+    global: 10pt default_family
   fonts.messages.warning:
-    global: 13pt default_family
+    global: 10pt default_family
   fonts.statusbar:
-    global: 13pt default_family
+    global: 10pt default_family
   fonts.tabs.selected:
-    global: 13pt default_family
+    global: 10pt default_family
   fonts.tabs.unselected:
-    global: 13pt default_family
+    global: 10pt default_family
   qt.highdpi:
     global: true
   statusbar.padding:
@@ -48,25 +54,33 @@ settings:
   statusbar.position:
     global: bottom
   statusbar.show:
-    global: in-mode
+    global: always
+  tabs.favicons.scale:
+    global: 1.0
+  tabs.indicator.padding:
+    global:
+      bottom: 2
+      left: 0
+      right: 4
+      top: 2
   tabs.indicator.width:
     global: 0
   tabs.padding:
     global:
-      bottom: 20
-      left: 15
-      right: 12
-      top: 20
+      bottom: 24
+      left: 28
+      right: 23
+      top: 23
   tabs.position:
     global: left
   tabs.show:
     global: always
   tabs.width:
-    global: 73
+    global: 90
   url.searchengines:
     global:
       DEFAULT: https://www.google.com/search?hl=en&q={}
       d: https://duckduckgo.com/?q={}
       wa: https://wiki.archlinux.org/?search={}
   zoom.default:
-    global: '140'
+    global: '100'

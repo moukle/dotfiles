@@ -1,62 +1,75 @@
 configuration {
-	show-icons:         true;
-	icon-theme:         "Tela";
-	cycle:              true;
-	hide-scrollbar:     true;
-	disable-history:    false;
-	lines: 3;
-	columns: 2;
-	bw: 0;
-
-	combi-modi:       "drun,window,ssh";
-	modi:             "combi,windowcd,drun";
-	display-window:   "";
-	display-windowcd: "";
-	display-run:      "";
-	display-ssh:      "";
-	/* display-drun:     ""; */
-	/* display-drun:      ""; */
-	display-drun:      "";
-	display-combi:    "";
-
-	dpi: 138;
-	fake-transparency: false;
-	/* dpi: 100; */
+	display-run:    " ";
+	display-drun:   "  ";
+	display-window: "  ";
+	drun-display-format: "{icon} {name}";
+	font: "JetBrainsMono Nerd Font Medium 13";
+	/* font: "SF Pro Text 13"; */
+	modi: "window,run,drun,ssh,file-browser";
+	show-icons: true;
+	dpi: 192;
 }
 
 * {
-	font: "SF Pro Text 22";
-	padding: 5px 10px;
-	/* background-color: @background; */
-	/* background-color: #000000ee; */
-	background-color: transparent;
-	color: #5e5e5e;
+	/* bg:     @background; */
+	/* bg-alt: @color8; */
+	/* fg:     @foreground; */
+	/* fg-alt: @color7; */
+	background-color: @bg;
+
+	border: 0;
+	margin: 0;
+	padding: 0;
+	spacing: 0;
 }
 
-window {
-	fullscreen: true;
-	transparency: "real";
-	/* height: 20%; */
-	/* width: 20%; */
-	background-color: #000000ee;
-	padding: 30%;
-}
-
-prompt {
-	color: @2e2e2e;
-	/* enabled: false; */
-}
-
-listview {
-	/* padding: 1%; */
-	/* background-color: #000000ee; */
-	padding: 30px 10px 0px 10px;
-	spacing: 0.5em;
+element {
+	padding: 12;
+	/* orientation: vertical; */
+	text-color: @bg-alt;
 }
 
 element selected {
-	text-color: #fefefe;
+	text-color: @fg;
 }
 
+entry {
+	background-color: @bg-alt;
+	padding: 12;
+	text-color: @fg;
+}
+
+inputbar {
+	children: [prompt, entry];
+}
+
+listview {
+	background-color: @bg;
+	columns: 3;
+	lines: 8;
+	padding: 0.5em;
+	spacing: 0.1em;
+	border: 0.1em;
+	border-color: @color0;
+}
+
+mainbox {
+	background-color: @bg;
+	children: [inputbar, listview];
+}
+
+prompt {
+	background-color: @bg-alt;
+	enabled: true;
+	font: "FontAwesome 12";
+	padding: 12 0 0 12;
+	text-color: @fg-alt;
+}
+
+window {
+	transparency: "real";
+}
+
+@import "~/.cache/wal/colors-rofi.rasi"
 /* @import "~/.cache/squash/colors.rasi" */
 /* vim:ft=css

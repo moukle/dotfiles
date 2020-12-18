@@ -125,7 +125,8 @@ super + Return
 
 ## rofi
 super + d
-	rofi -show combi
+	rofi -show drun
+	# rofi -show combi
 	# ~/.config/rofi/bins/appsmenu
 
 super + v

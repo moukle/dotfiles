@@ -1,6 +1,6 @@
 [colors]
-; background     = ${xrdb:background}
-background     = "#00112233"
+background     = ${xrdb:background}
+; background     = "#00112233"
 foreground     = ${xrdb:foreground}
 black_dark     = ${xrdb:color0}
 black_bright   = ${xrdb:color8}
@@ -21,10 +21,14 @@ white_bright   = ${xrdb:color15}
 
 transparent    = #50263238
 
-bg1="#22000000"
-bg2="#bb333333"
-bg4="#88333333"
-bg3="#ccfefefe"
+bg1=${colors.background}
+bg2=${colors.background}
+bg3=${colors.background}
+bg4=${colors.background}
+; bg1="#22000000"
+; bg2="#bb333333"
+; bg4="#88333333"
+; bg3="#ccfefefe"
 
 fg="#fefefe"
 
@@ -63,7 +67,7 @@ offset-x = 0.5%
 offset-y = 0.5%
 bottom = false
 
-line_size = 10
+line_size = 5
 border-bottom-size = 0
 border-color = ${colors.black_bright}
 
@@ -78,12 +82,12 @@ wm-restack = bspwm
 ; ---------- bars --------------
 [bar/rightM]
 inherit = section/settings
-dpi = 140
+dpi = 192
 monitor = DP-4
 
-width = 30.5%
+width = 31%
 height = 10
-offset-x = 35%
+offset-x = 34.5%
 offset-y = 0
 modules-center = bspwm
 
@@ -93,7 +97,7 @@ dpi = 140
 monitor = DP-2
 ; radius = 10
 
-width = 3.9%
+width = 2.8%
 modules-left   = shot darkmode 
 
 [bar/leftM]
@@ -101,9 +105,9 @@ inherit = section/settings
 dpi = 140
 monitor = DP-2
 
-width = 21%
+width = 15%
 height = 10
-offset-x = 39.5%
+offset-x = 42.5%
 offset-y = 0
 modules-center = bspwm
 
@@ -113,8 +117,8 @@ dpi = 140
 monitor = DP-2
 ; radius = 10
 
-width = 12%
-offset-x = 87.5%
+width = 9%
+offset-x = 90.5%
 modules-right   = pulseaudio powermenu date 
 
 [bar/left]
@@ -193,10 +197,10 @@ label-empty    = " "
 ; label-urgent   = ""
 ; label-empty    = "吏"
 
-label-focused-background  = ${colors.bg3}
-label-occupied-background = ${colors.bg2}
+label-focused-background  = ${colors.white_dark}
+label-occupied-background = ${colors.blue_dark}
 label-urgent-background   = ${colors.red_dark}
-label-empty-background    = ${colors.bg1}
+label-empty-background    = ${colors.background}
 ; label-focused-background  = ${colors.white_dark}
 ; label-occupied-background = ${colors.cyan_dark}
 ; label-urgent-background   = ${colors.red_dark}
@@ -217,7 +221,7 @@ type = internal/date
 
 label = %date% %time%
 label-padding = 1
-format-background = ${colors.bg2}
+format-background = ${colors.black_dark}
 
 time = "%H:%M"
 date = "%a, %d. %b "

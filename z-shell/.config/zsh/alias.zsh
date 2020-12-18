@@ -43,3 +43,5 @@ alias scf='e ~/.config/sxhkd/sxhkdrc'
 alias pcf='e ~/.config/polybar/config'
 alias acf='e ~/.config/alacritty/alacritty.yml'
 alias sqcf='e ~/.config/squash/themes/*'
+
+alias zoomid='bat /home/ritzo/Documents/h_da2/2020ws-datenschutz_ethik_big_data/zoom-id.md'

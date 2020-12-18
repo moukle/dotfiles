@@ -68,7 +68,7 @@ c.colors.downloads.system.bg = 'none'
 c.colors.downloads.system.fg = 'none'
 
 c.colors.hints.bg       = xresources['*.background']
-c.colors.hints.fg       = xresources['*.color8']
+c.colors.hints.fg       = xresources['*.color7']
 c.colors.hints.match.fg = xresources['*.color2']
 
 c.colors.messages.error.bg       = xresources['*.color1']
@@ -138,18 +138,18 @@ c.colors.tabs.selected.odd.fg  = xresources['*.foreground']
 
 
 # tabs left and only favicons
-c.tabs.padding = {"bottom":24, "left":11, "right":20, "top":23}
+c.tabs.padding = {"bottom":24, "left":23, "right":23, "top":23}
 c.tabs.position = "left"
 c.tabs.show = "multiple"
-c.tabs.title.format = "{index}"
-c.tabs.width = 80
+# c.tabs.title.format = "{index}"
+c.tabs.title.format = ""
+c.tabs.width = 70
 c.tabs.favicons.scale = 1.5
-c.tabs.indicator.width = 2
+c.tabs.indicator.width = 0
 c.tabs.indicator.padding = {"bottom":0, "left":0, "right":8, "top":0}
 
 # miscs
 c.tabs.background = True
-
 c.statusbar.padding = {"bottom":15, "left":3, "right":3, "top":15}
 
 c.scrolling.smooth = True
