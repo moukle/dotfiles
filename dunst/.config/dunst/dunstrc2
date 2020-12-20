@@ -1,0 +1,65 @@
+[global]
+	font = SF Pro Text 15
+	allow_markup = no
+
+	format = "<b>%s</b>\n%b"
+	sort = yes
+	indicate_hidden = yes
+	alignment = left
+	bounce_freq = 0
+	show_age_threshold = 60
+	word_wrap = yes
+	ignore_newline = no
+	geometry = "700x50-0+55"
+	shrink = yes
+	transparency = 0
+	idle_threshold = 120
+	monitor = 1
+	follow = none
+	sticky_history = yes
+	history_length = 20
+	show_indicators = yes
+	line_height = 5
+	separator_height = 5
+	separator_color = "#222b33"
+	padding = 10
+	horizontal_padding = 25
+	startup_notification = true
+	dmenu = /usr/bin/dmenu -p dunst:
+	browser = chromium
+	icon_position = left
+	icon_path = /usr/share/icons/eSuru++/apps/32/:/usr/share/icons/eSuru++/status/32/:/usr/share/icons/eSuru++/status/symbolic
+	max_icon_size = 100
+	frame_width = 5
+	frame_color = "#c4d0d8"
+	corner_radius = 0
+
+[shortcuts]
+	close = ctrl+space
+	close_all = ctrl+shift+space
+	history = ctrl+grave
+	context = ctrl+shift+period
+
+[urgency_low]
+	background = "#12171b"
+	foreground = "#c5c8c6"
+	timeout = 5
+
+[urgency_normal]
+	background = "#12171b"
+	foreground = "#c5c8c6"
+	timeout = 7
+
+[urgency_critical]
+	background = "#12171b"
+	foreground = "#c5c8c6"
+	timeout = 30
+
+[spotify]
+    appname = *Spotify*
+    #new_icon = Spotify
+	timeout = 20
+
+[telegram]
+    appname = *telegram-desktop*
+    new_icon = telegram

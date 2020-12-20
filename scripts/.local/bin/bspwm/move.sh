@@ -1,37 +1,48 @@
-#!/usr/bin/env bash
+#!/bin/sh
+# Originally by github.com/windelicato
+#   modified by github.com/6gk
 
-bspc config pointer_follows_focus true
+size=${2:-'40'}
 dir=$1
-node=$(bspc query -N -n)
-mon=$(bspc query -M -m)
 
-# are we floating? move a percentage of the monitor resolution.
-if bspc query -N -n $node.floating > /dev/null; then
-    percent=5
-    case $dir in
-        west)  targetProp=width; sign=-;;
-        east)  targetProp=width;;
-        north) targetProp=height; sign=-;;
-        south) targetProp=height;;
-    esac
+transplanter() { bspc node "$dir" -p south && bspc node -n "$dir"; }
+northplanter() { bspc node north -p north && bspc node -n north; }
 
-    moveArgs="$sign$(echo "$percent/100*$(bspc query -T -m | jq .rectangle.$targetProp)" | bc -l)"
-    [ $targetProp = "height"  ] && moveArgs="0 $moveArgs" || moveArgs="$moveArgs 0"
-    bspc node -v $moveArgs
-else
-    # we're tiled. TODO: re-evaluate this
-    if ! bspc node -f $dir.local; then
-        bspc node $node -m $dir
-        bspc monitor -f $dir
-    else
-        # bspc config focus_follows_pointer false
-        new_mon=$(bspc query -M -m)
-        [ "$new_mon" = "$mon" ] &&
-            bspc node -s $node  ||
-            bspc node $node -m $new_mon
-        # bspc config focus_follows_pointer true
-    fi
-    bspc node -f $node
+rootplanter() {
+	bspc node @/ -p "$dir" && bspc node -n @/ || bspc node -s next.local && bspc node -n @/
+	bspc node @/ -p cancel
+}
+
+# Find current window mode
+# If the window is floating, move it
+if bspc query -T -n | grep -q '"state":"floating"'; then
+	# only parse input if window is floating,tiled windows accept input as is
+	case "$dir" in
+		west) switch="-x"; sign="-";;
+		east) switch="-x"; sign="+";;
+		north) switch="-y"; sign="-";;
+		*) switch="-y"; sign="+";;
+	esac
+	xdo move $switch "$sign$size"
+else  # Otherwise, window is tiled: switch with window in given direction
+	if [ "$(bspc query -N -n .local.\!floating | wc -l)" != 2 ]; then
+		case "$dir" in
+			north) northplanter || rootplanter;;
+			*) transplanter || rootplanter
+		esac
+	else
+		case "$dir" in
+			east)  set -- east  west south;;
+			west)  set -- west  east north;;
+			south) set -- south north west;;
+			north) set -- north south west 270 90;;
+		esac
+	fi
+
+	bspc node -s "$1" || bspc query -N -n "$2".local ||
+	if bspc query -N -n "$3".local ; then
+		bspc node @/ -R "${4:-90}"
+	else
+		bspc node @/ -R "${5:-270}"
+	fi
 fi
-
-bspc config pointer_follows_focus false

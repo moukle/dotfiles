@@ -1,5 +1,6 @@
 export PATH="$PATH:$HOME/.local/bin/"
 export PATH="$PATH:$HOME/.local/bin/bspwm/"
+export PATH="$PATH:$HOME/.local/bin/bitwarden-rofi/"
 export PATH="$PATH:$HOME/.local/bin/colorlovers/"
 export PATH="$PATH:$HOME/.local/bin/nnn/"
 export PATH="$PATH:$HOME/.local/bin/discocss/"

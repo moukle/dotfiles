@@ -30,7 +30,7 @@ bg4=${colors.background}
 ; bg4="#88333333"
 ; bg3="#ccfefefe"
 
-fg="#fefefe"
+; fg="#fefefe"
 
 [melon]
 bg_light   = #445967
@@ -59,7 +59,7 @@ font-0 = ${fonts.font_jetbrains}
 accent = ${colors.yellow_dark}
 background = ${colors.background}
 ; foreground = ${colors.foreground}
-foreground = ${colors.fg}
+foreground = ${colors.foreground}
 
 height = 45
 width = 99%

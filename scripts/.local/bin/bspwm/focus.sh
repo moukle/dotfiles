@@ -1,26 +1,30 @@
-#!/usr/bin/env bash
-# todo: handle interop between floating and tiled better
+#!/bin/sh
+#  focus window
 
-dir=$1
+# exit when fullscreen
+bspc query -N -n focused.fullscreen && exit
 
-bspc config pointer_follows_monitor true
-bspc config pointer_follows_focus true
+case $1 in
+	east)  arg=xy; op=-gt;;
+	west)  arg=xy; op=-lt;;
+	north) arg=yx; op=-lt;;
+	south) arg=yx; op=-gt
+esac
 
-if bspc query -N -n .focused.local.fullscreen; then
-    bspc monitor -f $dir
-    exit
-fi
+# get the coordinates of all windows on the current desktop
+wattr "i$arg" $(targets.sh focused) $(targets.sh normal) | {
+	read -r cur cur_1 cur_2
 
-if ! bspc node -f $dir.local; then
-    # bspc config focus_follows_pointer false
-    if ! bspc monitor -f $dir; then
-      # assume we went up or down and failed, assume monocle, shuffle through style
-      [ "$dir" = "north" ] && bspc node -f next.local
-      [ "$dir" = "south" ] && bspc node -f prev.local
-    fi
+	# sort the coordinates to find the closest window
+	while read -r win win_1 win_2; do
+		[ "$win_1" "$op" "$cur_1" ] && {
+			win_1=$((win_1 - cur_1)); win_1=${win_1#-}
+			win_2=$((win_2 - cur_2)); win_2=${win_2#-}
 
-    # bspc config focus_follows_pointer true
-fi
+			[ $((! min_1 || win_1 < min_1 || win_1 == min_1 && win_2 < min_2)) -eq 1 ] &&
+				{ min_1=$win_1; min_2=$win_2; focus=$win; }
+		}
+	done
 
-bspc config pointer_follows_monitor false
-bspc config pointer_follows_focus false
+	bspc node "$focus" -f && cursor.sh
+}

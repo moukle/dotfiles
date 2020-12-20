@@ -138,7 +138,7 @@ c.colors.tabs.selected.odd.fg  = xresources['*.foreground']
 
 
 # tabs left and only favicons
-c.tabs.padding = {"bottom":24, "left":23, "right":23, "top":23}
+c.tabs.padding = {"bottom":24, "left":20, "right":23, "top":23}
 c.tabs.position = "left"
 c.tabs.show = "multiple"
 # c.tabs.title.format = "{index}"

@@ -380,7 +380,7 @@ let g:startify_custom_header = [
 	\ '   |  |_/|__/\__/  \/  |_/  |  |  |_/',
 	\ ' - - - - - - - - - - - - - - - - - - ',
 	\ ]
-let g:startify_files_number = 5
+let g:startify_files_number = 10
 let g:startify_bookmarks = [
 	\ '~/.config/nvim/init.vim',
 	\ '~/.config/bspwm/bspwmrc',
@@ -399,9 +399,9 @@ let g:startify_lists = [
 
 
 " hide splits
-hi VertSplit cterm=NONE
+hi VertSplit cterm=None
 " hide empty line tilde
-hi! EndOfBuffer ctermbg=None ctermfg=0 guibg=0 guifg=0
+hi! EndOfBuffer ctermbg=None ctermfg=None guibg=0 guifg=0
 " minimap
 hi MinimapCurrentLine ctermfg=1 ctermbg=NONE
 let g:minimap_highlight = 'MinimapCurrentLine'

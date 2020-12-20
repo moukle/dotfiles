@@ -12,6 +12,7 @@ configuration {
 
 * {
 	background-color: @bg;
+	foreground-color: @fg;
 
 	border: 0;
 	margin: 0;
@@ -49,9 +50,20 @@ listview {
 	border-color: @bg-alt2;
 }
 
+message {
+	border: 0.5em;
+	border-color: @bg-alt2;
+}
+
+textbox {
+	background-color: @bg-alt2;
+	color: @bg-alt;
+}
+
+
 mainbox {
 	background-color: @bg;
-	children: [inputbar, listview];
+	children: [inputbar, message, listview];
 }
 
 prompt {
@@ -67,5 +79,4 @@ window {
 }
 
 @import "~/.cache/wal/colors-rofi.rasi"
-/* @import "~/.cache/squash/colors.rasi" */
 /* vim:ft=css

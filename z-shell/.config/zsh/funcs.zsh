@@ -83,3 +83,8 @@ mdp() {
 	# rm $basename.html
 	pandoc --css ~/dotfiles/pandoc/pandoc.css --self-contained --mathjax -t html $filename > $basename.html
 }
+
+walr() {
+	wal $@
+	$HOME/.config/wal/done.sh
+}
