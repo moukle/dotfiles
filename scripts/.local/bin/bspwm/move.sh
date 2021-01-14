@@ -5,8 +5,8 @@
 size=${2:-'40'}
 dir=$1
 
-transplanter() { bspc node "$dir" -p south && bspc node -n "$dir"; }
-northplanter() { bspc node north -p north && bspc node -n north; }
+transplanter() { bspc node "$dir".local -p south && bspc node -n "$dir"; }
+northplanter() { bspc node north.local -p north && bspc node -n north; }
 
 rootplanter() {
 	bspc node @/ -p "$dir" && bspc node -n @/ || bspc node -s next.local && bspc node -n @/
@@ -39,7 +39,7 @@ else  # Otherwise, window is tiled: switch with window in given direction
 		esac
 	fi
 
-	bspc node -s "$1" || bspc query -N -n "$2".local ||
+	bspc node -s "$1".local || bspc query -N -n "$2".local ||
 	if bspc query -N -n "$3".local ; then
 		bspc node @/ -R "${4:-90}"
 	else

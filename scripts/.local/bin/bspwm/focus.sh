@@ -12,7 +12,7 @@ case $1 in
 esac
 
 # get the coordinates of all windows on the current desktop
-wattr "i$arg" $(targets.sh focused) $(targets.sh normal) | {
+wattr "i$arg" $(targets.sh focused) $(targets.sh normal) $(targets.sh other) | {
 	read -r cur cur_1 cur_2
 
 	# sort the coordinates to find the closest window
