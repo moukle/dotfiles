@@ -8,7 +8,7 @@
 	shrink = yes
 
     # Make the width 3740 (3840 - 100), have 50 left margin and 95 above
-    geometry = "700x50-20+65"
+    geometry = "700x50-20+20"
 
     # Seperator between multiple notifications
     separator_height = 1
@@ -21,7 +21,7 @@
     horizontal_padding = 10
 
     # The frame color and width of the notification
-    frame_color = "{color4}"
+    frame_color = "{color0}"
     frame_width = 5
 
     # How long a user needs to be idle for sticky notifications

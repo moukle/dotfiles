@@ -69,7 +69,7 @@ mainbox {
 prompt {
 	background-color: @bg-alt;
 	enabled: true;
-	font: "FontAwesome 12";
+	/* font: "FontAwesome 12"; */
 	padding: 12 0 0 12;
 	text-color: @fg-alt;
 }

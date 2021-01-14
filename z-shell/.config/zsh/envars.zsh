@@ -14,7 +14,7 @@ export BROWSER="qutebrowser"
 export READER="zathura"
 
 export PAGER="less"
-export MANPAGER="nvim -R -c 'set ft=man'"
+export MANPAGER="nvim +Man!"
 
 export FFF_COL2=6
 export FFF_FAV1=$HOME/Documents

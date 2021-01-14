@@ -13,10 +13,15 @@ super + Return
 super + d
 	rofi -show drun
 
+# default sink
+super + v
+	rofi_audio_set_default_sink.py
+
 # password manager
 super + p
 	bwmenu
 
+# screenshot
 super + z
 	scr.sh
 
@@ -35,6 +40,9 @@ XF86Audio{Lower,Raise}Volume
 XF86AudioMute
 	volumeControl.sh mute
 
+alt + b
+	hideIt.sh --name 'polybar-main_DP-2' --toggle && \
+    toggle_padding.sh
 
 # ------------------------------
 # bspwm keys
@@ -58,7 +66,7 @@ super + y
 
 # swap the current node and the biggest window
 super + g
-	bspc node -s biggest.window
+	bspc node -s biggest.local
 
 
 # ------------------------------
@@ -66,7 +74,7 @@ super + g
 # ------------------------------
 
 # set the window state
-super + {t,shift + t,s,f}
+super + {t,shift + t,s,shift + f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
 # set the node flags

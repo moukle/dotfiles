@@ -129,7 +129,7 @@ set smarttab
 set tabstop=4
 set shiftwidth=4
 set softtabstop=0
-set noexpandtab
+set expandtab
 
 " Window
 set title
@@ -160,15 +160,19 @@ set splitright
 set splitbelow
 set clipboard=unnamedplus
 set hidden
-    
+
 " Nvim native autocomplete
 set completeopt=menuone,noinsert
 
 " list chars
-" set listchars=tab:>-,trail:~,extends:>,precedes:<,space:.
-set list lcs=tab:\┊\  "draw tabline
+set list
+" set list lcs=tab:\┊\  "draw tabline
+set listchars=tab:│\ ,trail:━
 set fillchars+=vert:\  "draw verticle split
 set ve+=onemore "allow cursor to go to end of line
+
+" let g:indent_blankline_char = '│'
+" let g:indent_blankline_extra_indent_level = -1
 
 " Give more space for displaying messages.
 set cmdheight=2
@@ -221,6 +225,9 @@ Plug 'preservim/nerdtree'
 Plug 'rakr/vim-one'
 " Plug 'andreypopp/vim-colors-plain'
 Plug 'nerdypepper/vim-colors-plain', { 'branch': 'duotone' }
+
+" Plug 'lukas-reineke/indent-blankline.nvim'
+" Plug 'Yggdroot/indentLine'
 
 " Session
 Plug 'tpope/vim-obsession'
@@ -332,13 +339,11 @@ call plug#end()
 
 set background=dark
 " colorscheme one
-colorscheme wal
+colorscheme term
 " colorscheme plain
 
 " Vim cursor (for some terminals | pipe <==> block)
-let &t_SI = "\<Esc>[6 q"
-let &t_SR = "\<Esc>[4 q"
-let &t_EI = "\<Esc>[2 q"
+autocmd VimLeave * set guicursor=a:ver30-blinkoff0
 
 set lbr
 set wrap
