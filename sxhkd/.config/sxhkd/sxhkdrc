@@ -41,7 +41,7 @@ XF86AudioMute
 	volumeControl.sh mute
 
 alt + b
-	hideIt.sh --name 'polybar-main_DP-2' --toggle && \
+	hideIt.sh --name 'polybar-main_DP-0' --toggle && \
     toggle_padding.sh
 
 # ------------------------------
@@ -94,8 +94,12 @@ super + {_,shift} + {1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 
 # focus the node in the given direction
-super + {_,shift,alt} + {h,j,k,l}
-	{focus,move,resize}.sh {west,south,north,east}
+super + {h,j,k,l}
+	bspc node -f {west,south,north,east}
+
+# focus the node in the given direction
+super + {shift,alt} + {h,j,k,l}
+	{move,resize}.sh {west,south,north,east}
 
 # focus the node for the given path jump
 super + {m,b,comma,period}

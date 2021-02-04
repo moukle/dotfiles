@@ -2,12 +2,12 @@
 
 # desktops
 if [ $HOSTNAME == "olo" ]; then
-	bspc monitor DP-2 -d 1 2 3 4 5
+	bspc monitor DP-0 -d 1 2 3 4 5
 	bspc monitor DP-4 -d 6 7 8 9 0
 	# $HOME/.config/polybar/launch.sh leftM leftR rightM
 	$HOME/.config/polybar/launch.sh main workspacesL rightM
-	sleep 1
-	hideIt.sh --name 'polybar-main_DP-2' -d top --signal --peek -10 &
+	sleep 2
+	hideIt.sh --name 'polybar-main_DP-0' -d top --signal --peek -10 &
 else
 	bspc monitor -d q w e r t z u i o p
 	$HOME/.config/polybar/launch.sh laptop
@@ -35,11 +35,11 @@ c window_gap     10
 c single_monocle true
 
 # borders
-# c borderless_monocle    true
-c border_width          3
-c focused_border_color  $color15
+c borderless_monocle    true
+c border_width          10
+c focused_border_color  $color3
 c normal_border_color   $color0
-c active_border_color   $color0
+c active_border_color   $color7
 c presel_feedback_color $color2
 
 # mouse

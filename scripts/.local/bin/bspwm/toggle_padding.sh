@@ -1,9 +1,9 @@
 #!/bin/bash
 
-current=$(bspc config top_padding)
+current=$(bspc config -d ^1 top_padding)
 
-if [ $current != 60 ]; then
-    bspc config top_padding 60
+if [ $current == 0 ]; then
+    bspc config -d ^1 top_padding 50
 else
-    bspc config top_padding 20
+    bspc config -d ^1 top_padding 0
 fi

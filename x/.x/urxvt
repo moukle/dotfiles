@@ -16,7 +16,7 @@ URxvt.allow_bold:      true
 URxvt*letterSpace:     0
 URxvt.scrollStyle:     rxvt
 URxvt.scrollBar:       false
-URxvt.internalBorder:  20
+URxvt.internalBorder:  0
 
 URxvt.perl-lib:        /usr/lib/urxvt/perl/
 URxvt.perl-ext-common: default,matcher

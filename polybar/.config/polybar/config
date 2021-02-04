@@ -77,13 +77,12 @@ padding-right = 0
 module-margin-left  = 0
 module-margin-right = 0
 
-wm-restack        = bspwm
+; wm-restack        = bspwm
 ; override-redirect = false
 
 ; ---------- bars --------------
 [bar/rightM]
 inherit = section/settings
-; dpi = 138
 monitor = DP-4
 
 width = 19.8%
@@ -94,9 +93,7 @@ modules-center = bspwm
 
 [bar/leftL]
 inherit = section/settings
-; dpi = 100
 monitor = DP-2
-; radius = 10
 
 width = 2.8%
 modules-left   = shot darkmode 
@@ -104,7 +101,7 @@ modules-left   = shot darkmode
 [bar/leftM]
 inherit = section/settings
 ; dpi = 140
-monitor = DP-2
+monitor = DP-0
 
 width = 14%
 height = 10
@@ -115,7 +112,7 @@ modules-center = bspwm
 [bar/workspacesL]
 inherit = section/settings
 ; dpi = 140
-monitor = DP-2
+monitor = DP-0
 
 width = 13.68%
 height = 10
@@ -126,7 +123,7 @@ modules-center = bspwm
 [bar/main]
 inherit = section/settings
 ; dpi = 140
-monitor = DP-2
+monitor = DP-0
 ; radius = 10
 
 width = 13.68%
@@ -134,6 +131,10 @@ offset-x = 43%
 modules-left   = pulseaudio
 modules-center = date
 modules-right  = powermenu
+
+; tray-position   = right
+; tray-padding    = ${settings.spacing}
+; tray-background = ${colors.black_dark}
 
 [bar/leftR]
 inherit = section/settings
@@ -226,7 +227,7 @@ label-empty    = " "
 ; label-urgent   = ""
 ; label-empty    = "吏"
 
-label-focused-background  = ${colors.green_dark}
+label-focused-background  = ${colors.yellow_dark}
 label-occupied-background = ${colors.black_bright}
 label-urgent-background   = ${colors.red_dark}
 label-empty-background    = ${colors.black_dark}
