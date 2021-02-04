@@ -8,9 +8,12 @@ set guioptions "v"              # Show a "progress bar" when scrolling up/down
 set adjust-open "width"         # Make documents take up all the available space by default
 set statusbar-basename "true"   # When using the status bar, show the basename only
 
-set render-loading "false"  # Do not show the "loading" text
-set scroll-step    "120"    # Increase the scroll distance when using j/k
-set recolor        "true"   # Use our theme colors (<C-r> for the original document colors)
+set render-loading  "false"  # Do not show the " loading" text
+set scroll-step     "120"    # Increase the scroll distance when using j/k
+set recolor         "true"   # Use our theme colors (<C-r> for the original document colors)
+set recolor-keephue "true"
+
+set selection-clipboard clipboard # Use Primary Clipboard
 
 # [colors]
 set default-bg                     "{background}"
@@ -25,12 +28,14 @@ set notification-error-bg          "{background}"
 set notification-error-fg          "{foreground}"
 set notification-warning-bg        "{background}"
 set notification-warning-fg        "{foreground}"
-set highlight-color                "{color3}"
-set highlight-active-color         "{color4}"
-set completion-bg                  "{color8}"
+set highlight-color                "{color7}"
+set highlight-active-color         "{color15}"
+set completion-group-bg            "{color7}"
+set completion-group-fg            "{color0}"
+set completion-bg                  "{color0}"
 set completion-fg                  "{color15}"
-set completion-highlight-bg        "{color3}"
-set completion-highlight-fg        "{color4}"
+set completion-highlight-bg        "{color8}"
+set completion-highlight-fg        "{color7}"
 set recolor-lightcolor             "{background}"
 set recolor-darkcolor              "{foreground}"
 
