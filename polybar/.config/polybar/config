@@ -77,6 +77,8 @@ padding-right = 0
 module-margin-left  = 0
 module-margin-right = 0
 
+enable-ipc = true
+
 ; wm-restack        = bspwm
 ; override-redirect = false
 
@@ -96,7 +98,7 @@ inherit = section/settings
 monitor = DP-2
 
 width = 2.8%
-modules-left   = shot darkmode 
+modules-left   = shot darkmode
 
 [bar/leftM]
 inherit = section/settings
@@ -115,8 +117,10 @@ inherit = section/settings
 monitor = DP-0
 
 width = 13.68%
+; width = 25%
 height = 10
 offset-x = 43%
+; offset-x = 37.5%
 offset-y = 0
 modules-center = bspwm
 
@@ -128,9 +132,9 @@ monitor = DP-0
 
 width = 13.68%
 offset-x = 43%
-modules-left   = pulseaudio
+modules-left = bspnodes_ipc bspnodes
 modules-center = date
-modules-right  = powermenu
+modules-right  = pulseaudio powermenu
 
 ; tray-position   = right
 ; tray-padding    = ${settings.spacing}
@@ -204,6 +208,18 @@ exec = echo 
 click-left = flameshot gui &
 label-background = ${colors.bg2}
 label-padding=2
+
+[module/bspnodes_ipc]
+type = custom/ipc
+hook-0 = nodes_list.sh -m 1
+click-right = polybar-msg hook bspnodes_ipc 1
+; format-background = ${colors.black_dark}
+
+[module/bspnodes]
+type = custom/script
+exec = polybar-msg hook bspnodes_ipc 1
+interval = 5
+label = 
 
 [module/bspwm]
 type = internal/bspwm

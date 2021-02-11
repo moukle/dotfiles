@@ -1,9 +1,9 @@
 #!/bin/bash
 
-current=$(bspc config -d ^1 top_padding)
+current=$(bspc config -m ^1 top_padding)
 
-if [ $current == 0 ]; then
-    bspc config -d ^1 top_padding 50
+if [ $current == 10 ]; then
+    bspc config -m ^1 top_padding 55
 else
-    bspc config -d ^1 top_padding 0
+    bspc config -m ^1 top_padding 10
 fi
