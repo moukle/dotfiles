@@ -1,3 +1,14 @@
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias -- -='cd -'
+
+alias mkdir='mkdir -pv'
+alias cp='cp -vri'
+alias rm='rm -vi'
+alias rmf='rm -rf'
+alias path='echo -e ${PATH//:/\\n}'
+
 alias discord='discocss'
 
 alias s='sudo '
@@ -19,17 +30,18 @@ alias lla='ls -la'
 alias big20='du -ahx $pwd | sort -rh | head -20'
 # alias delete_old='find /path/to/directory/ -mindepth 1 -mtime +5 -delete'
 
-alias ..='cd ..'
-alias ...='cd ../..'
-alias mkd='mkdir -pv'
-alias cp='cp -rv'
-alias rm='rm --verbose'
-alias rmf='rm -rf'
-
 alias ende='trans en:de'
 alias deen='trans de:en'
 
+alias jc='journalctl -xe'
+alias sc=systemctl
+alias ssc='sudo systemctl'
+
+alias y='xclip -selection clipboard -in'
+alias p='xclip -selection clipboard -out'
+
 alias -g C='| xclip -selection clipboard'
+
 alias -g V='| vi -'
 alias -g L='| less'
 alias -g M='| more'
@@ -41,7 +53,3 @@ alias xcf='e ~/.xinitrc ~/.Xresources'
 alias bcf='e ~/.config/bspwm/bspwmrc'
 alias scf='e ~/.config/sxhkd/sxhkdrc'
 alias pcf='e ~/.config/polybar/config'
-alias acf='e ~/.config/alacritty/alacritty.yml'
-alias sqcf='e ~/.config/squash/themes/*'
-
-alias zoomid='cat /home/ritzo/Documents/h_da2/2020ws-datenschutz_ethik_big_data/zoom-id.md C'

@@ -19,52 +19,27 @@ cyan_bright    = ${xrdb:color14}
 white_dark     = ${xrdb:color7}
 white_bright   = ${xrdb:color15}
 
-transparent    = #50263238
-
-bg1=${colors.background}
-bg2=${colors.background}
-bg3=${colors.background}
-bg4=${colors.background}
-; bg1="#22000000"
-; bg2="#bb333333"
-; bg4="#88333333"
-; bg3="#ccfefefe"
-
-; fg="#fefefe"
-
-[melon]
-bg_light   = #445967
-bg_dark    = #3C4F5B
-blue_light = #72A7D3
-blue_dark  = #5394C9
-cyan       = #37BF8D
-white      = #ffffff
-gray       = #CCCCCC
-red        = #d37277
-
 [fonts]
 font_source = "Source Serif Pro:weight=semibold:size=18:antialias=true;3"
 font_Iosevka = "Iosevka Nerd Font:size=18:weight=regular:antialias=true;3"
-font_SF = "SF Pro Text:size=14:weight=bold:antialias=true;3"
+font_SF = "SF Pro Text:size=15:weight=bold:antialias=true;4"
 font_roboto = "Roboto:size=18:weight=medium:antialias=true;3"
-font_jetbrains = "JetBrainsMono Nerd Font Mono:size=20:weight=medium:antialias=true;5"
+font_jetbrains = "JetBrainsMono Nerd Font Mono:size=25:weight=medium:antialias=true;6"
 icon_typicons = "Typicons:size=20:weight=regular:antialias=true;2"
 icon_material = "Material Design Icons:size=15:weight=regular:antialias=true;4"
 
 [section/settings]
 font-0 = ${fonts.font_SF}
 font-1 = ${fonts.font_jetbrains}
-; font-2 = ${fonts.icon_material}
 
 accent = ${colors.yellow_dark}
 background = ${colors.background}
-; foreground = ${colors.foreground}
 foreground = ${colors.foreground}
 
-height = 45
-width = 99%
-offset-x = 0.5%
-offset-y = 10
+height = 55
+; width = 99%
+; offset-x = 0.5%
+; offset-y = 10
 bottom = false
 
 line_size = 5
@@ -72,57 +47,26 @@ border-bottom-size = 0
 border-color = ${colors.black_bright}
 
 spacing = 0
-padding-left = 0
-padding-right = 0
-module-margin-left  = 0
-module-margin-right = 0
+padding-left = 3
+padding-right = 3
+module-margin-left  = 2
+module-margin-right = 2
 
 enable-ipc = true
 
-; wm-restack        = bspwm
-; override-redirect = false
+wm-restack        = bspwm
+override-redirect = true
 
 ; ---------- bars --------------
 [bar/rightM]
 inherit = section/settings
 monitor = DP-4
 
-width = 19.8%
+width = 10.36%
 height = 10
-offset-x = 39.5%
+offset-x = 44.8%
 offset-y = 0
-modules-center = bspwm
-
-[bar/leftL]
-inherit = section/settings
-monitor = DP-2
-
-width = 2.8%
-modules-left   = shot darkmode
-
-[bar/leftM]
-inherit = section/settings
-; dpi = 140
-monitor = DP-0
-
-width = 14%
-height = 10
-offset-x = 43%
-offset-y = 0
-modules-center = bspwm
-
-[bar/workspacesL]
-inherit = section/settings
-; dpi = 140
-monitor = DP-0
-
-width = 13.68%
-; width = 25%
-height = 10
-offset-x = 43%
-; offset-x = 37.5%
-offset-y = 0
-modules-center = bspwm
+modules-center = bspwmbars
 
 [bar/main]
 inherit = section/settings
@@ -130,44 +74,13 @@ inherit = section/settings
 monitor = DP-0
 ; radius = 10
 
-width = 13.68%
-offset-x = 43%
-modules-left = bspnodes_ipc bspnodes
-modules-center = date
-modules-right  = pulseaudio powermenu
+modules-left = polywins
+modules-center = bspwm
+modules-right  = date pulseaudio powermenu
 
 ; tray-position   = right
 ; tray-padding    = ${settings.spacing}
 ; tray-background = ${colors.black_dark}
-
-[bar/leftR]
-inherit = section/settings
-; dpi = 140
-monitor = DP-2
-; radius = 10
-
-width = 8%
-offset-x = 91.5%
-modules-right   = pulseaudio powermenu date 
-
-; tray-maxsize = 20
-tray-position   = right
-tray-padding    = ${settings.spacing}
-tray-background = ${colors.blue_dark}
-
-[bar/left]
-inherit = section/settings
-dpi = 140
-monitor = DP-2
-
-modules-left   = shot darkmode
-modules-center = bspwm
-modules-right  = date pulseaudio powermenu
-
-tray-maxsize = 32
-tray-position   = right
-tray-padding    = 0
-tray-background = ${colors.black_dark}
 
 [bar/laptop]
 inherit = section/settings
@@ -209,10 +122,18 @@ click-left = flameshot gui &
 label-background = ${colors.bg2}
 label-padding=2
 
+[module/polywins]
+type = custom/script
+exec = ~/.config/polybar/polywins/polywins.sh 2>/dev/null
+format = <label>
+label = %output%
+label-padding = 1
+tail = true
+
 [module/bspnodes_ipc]
 type = custom/ipc
 hook-0 = nodes_list.sh -m 1
-click-right = polybar-msg hook bspnodes_ipc 1
+click-middle = polybar-msg hook bspnodes_ipc 1
 ; format-background = ${colors.black_dark}
 
 [module/bspnodes]
@@ -221,7 +142,7 @@ exec = polybar-msg hook bspnodes_ipc 1
 interval = 5
 label = 
 
-[module/bspwm]
+[module/bspwmbars]
 type = internal/bspwm
 pin-workspaces = true
 enable-click = true
@@ -237,53 +158,75 @@ label-empty    = " "
 ; label-occupied  = %name%
 ; label-urgent  = %name%
 ; label-empty  = %name%
-;
-; label-focused  = ""
-; label-occupied = "利"
-; label-urgent   = ""
-; label-empty    = "吏"
 
 label-focused-background  = ${colors.yellow_dark}
-label-occupied-background = ${colors.black_bright}
+label-occupied-background = ${colors.white_dark}
 label-urgent-background   = ${colors.red_dark}
 label-empty-background    = ${colors.black_dark}
+
+; label-focused-foreground  = ${colors.yellow_dark}
+; label-occupied-foreground = ${colors.white_dark}
+; label-urgent-foreground   = ${colors.red_bright}
+; label-empty-foreground    = ${colors.black_dark}
+
+label-focused-padding  = 5
+label-occupied-padding = 5
+label-urgent-padding   = 5
+label-empty-padding    = 5
+
+[module/bspwm]
+type = internal/bspwm
+pin-workspaces = true
+enable-click = true
+
+format = <label-state> <label-mode>
+
+; label-focused  = " "
+; label-occupied = " "
+; label-urgent   = " "
+; label-empty    = " "
+
+label-focused  = %name%
+label-occupied  = %name%
+label-urgent  = %name%
+label-empty  = %name%
 
 ; label-focused-background  = ${colors.white_dark}
 ; label-occupied-background = ${colors.cyan_dark}
 ; label-urgent-background   = ${colors.red_dark}
 ; label-empty-background    = ${colors.black_dark}
 
-label-focused-foreground  = ${colors.black_dark}
+label-focused-foreground  = ${colors.yellow_dark}
 label-occupied-foreground = ${colors.white_dark}
-label-urgent-foreground   = ${colors.white_dark}
-label-empty-foreground    = ${colors.black_bright}
+label-urgent-foreground   = ${colors.red_bright}
+label-empty-foreground    = ${colors.black_dark}
 
-label-focused-padding  = 10
-label-occupied-padding = 10
-label-urgent-padding   = 10
-label-empty-padding    = 10
+label-focused-padding  = 2
+label-occupied-padding = 2
+label-urgent-padding   = 2
+label-empty-padding    = 2
 
 [module/date]
 type = internal/date
 
-label = %date% %time%
+label = %date%  %time%
 label-padding = 1
 ; format-background = ${colors.black_dark}
 
 time = "%H:%M"
-date = "%a, %d. %b "
+date = "%d. %b"
 
 time-alt = "%H:%M:%S"
-date-alt = "%d.%m.%Y"
+date-alt = "%a, %d.%m.%Y"
 
 [module/pulseaudio]
 type = internal/pulseaudio
 use-ui-max = true
 
-format-volume-padding = 3
+; format-volume-padding = 3
 format-volume = <ramp-volume>
-format-volume-background = ${colors.black_dark}
-; format-volume-foreground = ${melon.gray}
+; format-volume-background = ${colors.black_dark}
+format-volume-foreground = ${colors.white_bright}
 
 ramp-volume-0 = 奄
 ramp-volume-1 = 奔
@@ -291,9 +234,9 @@ ramp-volume-2 = 墳
 ramp-volume-3 = 
 
 label-muted = 婢
-label-muted-background = ${colors.black_dark}
+; label-muted-background = ${colors.black_dark}
 label-muted-foreground = ${colors.red_dark}
-label-muted-padding = 3
+; label-muted-padding = 3
 
 [module/wlan]
 type = internal/network
@@ -423,8 +366,8 @@ menu-4-0 = hibernate
 menu-4-0-exec = betterlockscreen -s dim
 
 format-spacing = 1
-format-background = ${colors.black_dark}
-; format-foreground = ${colors.white_bright}
+; format-background = ${colors.black_dark}
+format-foreground = ${colors.white_bright}
 format-padding = 1
 
 label-open = 

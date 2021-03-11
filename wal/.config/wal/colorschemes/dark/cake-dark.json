@@ -1,0 +1,29 @@
+
+{
+    "alpha": "100",
+	"palleta": "https://www.colourlovers.com/palette/49963/let_them_eat_cake",
+
+    "special": {
+		"foreground": "#fefefe",
+		"cursor": "#fefefe",
+		"background": "#080808"
+    },
+    "colors": {
+		"color0": "#101010",
+		"color1": "#e08e79",
+		"color2": "#99b898",
+		"color3": "#fcc07e",
+		"color4": "#c5e0dc",
+		"color5": "#999999",
+		"color6": "#aaaaaa",
+		"color7": "#c1c1c1",
+		"color8": "#333333",
+		"color9": "#e08e79",
+		"color10": "#99b898",
+		"color11": "#fcc07e",
+		"color12": "#c5e0dc",
+		"color13": "#999999",
+		"color14": "#aaaaaa",
+		"color15": "#fefefe"
+	}
+}

@@ -20,5 +20,6 @@ redshift 51:10 > /dev/null & # blue filter
 dunst                      & # notifications
 nitrogen --restore         & # wallpaper
 # picom --config $HOME/.config/picom/picom.conf & # compositor
+imwheel -b 45
 
 exec bspwm

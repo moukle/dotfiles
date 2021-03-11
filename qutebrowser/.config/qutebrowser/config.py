@@ -1,6 +1,27 @@
 import subprocess
 import sys
 
+config.load_autoconfig()
+
+# general
+c.content.autoplay = False
+
+# adblocking
+# Use (superior) Brave adblock if available, or fall back to host blocking
+c.content.blocking.method = "auto"
+c.content.blocking.hosts.lists = [
+    'https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts',
+    'https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&mimetype=plaintext'
+    # 'https://www.malwaredomainlist.com/hostslist/hosts.txt',
+    # 'http://someonewhocares.org/hosts/hosts',
+    # 'http://winhelp2002.mvps.org/hosts.zip',
+    # 'http://malwaredomains.lehigh.edu/files/justdomains.zip',
+]
+# c.content.blocking.whitelist = []
+
+c.spellcheck.languages = ['en-US']
+
+# style
 def read_xresources(prefix):
     props = {}
     x = subprocess.run(['xrdb', '-query'], stdout=subprocess.PIPE)
@@ -40,7 +61,6 @@ melon['white']      = '#ffffff'
 melon['gray']       = '#CCCCCC'
 melon['red']        = '#d37277'
 
-config.load_autoconfig()
 
 c.colors.completion.fg                          = xresources['*.foreground']
 c.colors.completion.category.bg                 = xresources['*.background']
@@ -86,7 +106,7 @@ c.colors.prompts.border      = '1px solid gray'
 c.colors.prompts.fg          = xresources['*.color15']
 c.colors.prompts.selected.bg = xresources['*.color0']
 
-c.colors.statusbar.caret.bg             = xresources['*.color5']
+c.colors.statusbar.caret.bg             = xresources['*.color8']
 c.colors.statusbar.caret.fg             = xresources['*.color15']
 c.colors.statusbar.caret.selection.bg   = '#a12dff'
 c.colors.statusbar.caret.selection.fg   = xresources['*.color15']
@@ -94,12 +114,12 @@ c.colors.statusbar.command.bg           = xresources['*.color0']
 c.colors.statusbar.command.fg           = xresources['*.color15']
 c.colors.statusbar.command.private.bg   = xresources['*.color15']
 c.colors.statusbar.command.private.fg   = xresources['*.color15']
-c.colors.statusbar.insert.bg            = xresources['*.color2']
-c.colors.statusbar.insert.fg            = xresources['*.color15']
+c.colors.statusbar.insert.bg            = xresources['*.color8']
+c.colors.statusbar.insert.fg            = xresources['*.color2']
 c.colors.statusbar.normal.bg            = xresources['*.color0']
 c.colors.statusbar.normal.fg            = xresources['*.foreground']
-c.colors.statusbar.passthrough.bg       = xresources['*.color4']
-c.colors.statusbar.passthrough.fg       = xresources['*.color15']
+c.colors.statusbar.passthrough.bg       = xresources['*.color8']
+c.colors.statusbar.passthrough.fg       = xresources['*.color1']
 c.colors.statusbar.private.bg           = '#666666'
 c.colors.statusbar.private.fg           = xresources['*.foreground']
 c.colors.statusbar.progress.bg          = xresources['*.color15']
@@ -120,20 +140,20 @@ c.colors.statusbar.url.warn.fg          = xresources['*.color3']
 # c.colors.tabs.selected.odd.bg  = adjust(xresources['*.background'], 1.35)
 # c.colors.tabs.selected.odd.fg  = xresources['*.color3']
 
-c.colors.tabs.bar.bg           = xresources['*.color4']
+c.colors.tabs.bar.bg           = xresources['*.background']
 
 c.colors.tabs.indicator.error  = xresources['*.color1']
 c.colors.tabs.indicator.start  = xresources['*.color15']
-c.colors.tabs.indicator.stop  = xresources['*.color6']
+c.colors.tabs.indicator.stop   = xresources['*.color6']
 
-c.colors.tabs.even.bg          = xresources['*.color4']
+c.colors.tabs.even.bg          = xresources['*.background']
 c.colors.tabs.even.fg          = xresources['*.foreground']
-c.colors.tabs.odd.bg           = xresources['*.color4']
+c.colors.tabs.odd.bg           = xresources['*.background']
 c.colors.tabs.odd.fg           = xresources['*.foreground']
 
-c.colors.tabs.selected.even.bg = adjust(xresources['*.color4'], 1.20)
+c.colors.tabs.selected.even.bg = xresources['*.color0']
 c.colors.tabs.selected.even.fg = xresources['*.foreground']
-c.colors.tabs.selected.odd.bg  = adjust(xresources['*.color4'], 1.20)
+c.colors.tabs.selected.odd.bg  = xresources['*.color0']
 c.colors.tabs.selected.odd.fg  = xresources['*.foreground']
 
 

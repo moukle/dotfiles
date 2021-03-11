@@ -81,6 +81,36 @@ super + {t,shift + t,s,shift + f}
 super + ctrl + {x,y,z}
 	bspc node -g {locked,sticky,private}
 
+# ------------------------------
+# tabs
+# ------------------------------
+# Tab focused window
+super + ctrl + t; t
+	bsptab tab focused
+
+# Add windows to tabbed
+super + ctrl + t; {h,j,k,l}
+	bsptab add {west,south,north,east}.local focused
+
+# Add all windows to tabbed
+super + ctrl +t; a
+	bsptab add-all focused
+
+# Remove windows from tabbed
+super + ctrl + t; {_,shift + }r
+	bsptab remove{_,-all} focused
+
+# Move tab to desktop
+super + ctrl + t; {0-9}
+	bsptab remove-desktop focused {0-9}
+
+# Add next new window to tabbed
+super + ctrl + t; {_,shift + }n
+	bsptab add-{next,new} focused
+
+# Stop auto-tabbing windows
+super + ctrl + t; s
+	bsptab stop-add-new
 
 # ------------------------------
 # focus/swap
@@ -130,7 +160,7 @@ super + a
 # ------------------------------
 # increase / decrease padding
 super + {_,shift + } minus
-	padding.sh {+, -}50
+	padding.sh {+, -}200
 
 # rotate, balance
 super + {_,shift} + r

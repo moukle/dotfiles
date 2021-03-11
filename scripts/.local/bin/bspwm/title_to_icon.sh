@@ -3,17 +3,23 @@
 icon=$1
 
 case $1 in
-	zsh)
+	"kitty" | "zsh")
 		icon="  "
 		;;
-	*"browser"*)
+	*"browser")
 		icon=" 爵"
 		;;
-	*"zathura"*)
+	*"Chrome" | "Chromium")
+		icon=" "
+		;;
+	*"Typora")
+		icon=" "
+		;;
+	*"zathura"* | *".pdf" )
 		icon="  "
 		;;
 	*)
-		icon=${icon:0:3}..
+		icon=" "
 		;;
 esac
 

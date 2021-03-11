@@ -1,19 +1,25 @@
 configuration {
 	display-run:    " ";
-	display-drun:   "  ";
+	/* display-drun:   "  "; */
+	display-drun:   " ";
 	display-window: "  ";
-	drun-display-format: "{icon} {name}";
-	font: "JetBrainsMono Nerd Font Medium 13";
-	/* font: "SF Pro Text 13"; */
+	drun-display-format: "{icon} {name} [<span weight='light' size='small'><i>({generic})</i></span>]";
 	modi: "window,run,drun,ssh,file-browser";
 	show-icons: true;
-	icon-theme: "Tela";
+	icon-theme: "Paper";
 	dpi: 138;
 }
 
 * {
+	text-font: "SF Pro Text 15";
+	text-mono-font: "JetBrainsMono Nerd Font Medium 13";
+	icon-font: "Font Awesome 20";
+
 	background-color: @bg;
 	foreground-color: @fg;
+	border-color: @bg-alt;
+
+	font: @text-font;
 
 	border: 0;
 	margin: 0;
@@ -22,33 +28,43 @@ configuration {
 }
 
 element {
-	padding: 12;
+	padding: 15;
 	/* orientation: vertical; */
+	/* border: 0.03em; */
+	/* border-color: @bg-alt2; */
 	text-color: @bg-alt;
 }
 
 element selected {
+	background-color: @bg-alt2;
 	text-color: @fg;
 }
 
 entry {
-	background-color: @bg-alt2;
+	/* background-color: @bg-alt2; */
 	padding: 12;
 	text-color: @fg;
 }
 
 inputbar {
-	children: [prompt, entry];
+	children: [ prompt, entry ];
 }
 
 listview {
 	background-color: @bg;
-	columns: 3;
-	lines: 8;
-	padding: 0.5em;
-	spacing: 0.1em;
-	border: 0.1em;
-	border-color: @bg-alt2;
+	/* columns: 2; */
+	lines: 12;
+	padding: 0.3em 0 0;
+	/* border: 0.1em; */
+	/* border-color: @bg-alt2; */
+	scrollbar: true;
+}
+
+scrollbar {
+	handle-width: 0.1em;
+	background-color: @bg-alt;
+	handle-color: @fg;
+	border-color: @bg-alt;
 }
 
 message {
@@ -56,27 +72,32 @@ message {
 	border-color: @bg-alt2;
 }
 
-textbox {
-	background-color: @bg-alt2;
-	color: @bg-alt;
-}
-
-
 mainbox {
 	background-color: @bg;
 	children: [inputbar, message, listview];
 }
 
 prompt {
-	background-color: @bg-alt2;
-	enabled: true;
-	/* font: "FontAwesome 12"; */
-	padding: 12 0 0 12;
+	font: @icon-font;
 	text-color: @bg-alt;
+	/* background-color: @bg-alt2; */
+
+	enabled: true;
+	padding: 12 0 0 12;
+	padding: 11px;
+	expand: false;
+	border: 0 0.1em 0 0;
+	margin: 0 -0.2em 0 0;
 }
 
 window {
-	transparency: "real";
+	width:    1000px;
+	/* y-offset: -50px; */
+	/* anchor:   north; */
+	/* location: center; */
+	border: 0.05em;
+	/* border-radius: 6px 6px 0 0; */
+	children: [ inputbar, listview ];
 }
 
 @import "~/.cache/wal/colors-rofi.rasi"
