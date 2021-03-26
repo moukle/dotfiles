@@ -68,6 +68,8 @@ scrollbar {
 }
 
 message {
+	/* background-color: @bg-alt; */
+	/* text-color: @bg-alt; */
 	border: 0.5em;
 	border-color: @bg-alt2;
 }
@@ -97,7 +99,7 @@ window {
 	/* location: center; */
 	border: 0.05em;
 	/* border-radius: 6px 6px 0 0; */
-	children: [ inputbar, listview ];
+	children: [ inputbar, message, listview ];
 }
 
 @import "~/.cache/wal/colors-rofi.rasi"

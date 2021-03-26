@@ -55,7 +55,7 @@ module-margin-right = 2
 enable-ipc = true
 
 wm-restack        = bspwm
-override-redirect = true
+override-redirect = false
 
 ; ---------- bars --------------
 [bar/rightM]

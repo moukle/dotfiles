@@ -55,4 +55,10 @@ set shellopts '-eu:--shwordsplit'
 set ifs "\n"
 set filesep "\n"  # default already
 
+LFCD="$HOME/.config/lf/lfcd.sh"                                #  pre-built binary, make sure to use absolute path
+if [ -f "$LFCD" ]; then
+    source "$LFCD"
+	bindkey -s '^o' 'lfcd\n'  # zsh
+fi
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

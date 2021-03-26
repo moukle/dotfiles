@@ -173,7 +173,7 @@ c.tabs.background = True
 c.statusbar.padding = {"bottom":15, "left":3, "right":3, "top":15}
 
 c.scrolling.smooth = True
-c.colors.webpage.prefers_color_scheme_dark = True
+# c.colors.webpage.prefers_color_scheme_dark = True
 # c.colors.webpage.bg = "#ffffff"
 
 c.url.start_pages = "~/dotfiles/startpage/index.html"

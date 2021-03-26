@@ -57,6 +57,7 @@ R Pinentry    state=floating
 c external_rules_command "$HOME/.config/bspwm/external_rules" # Spotify
 
 # programs
+wmname LG3D # java
 s sxhkd
 
 # vim: set ft=sh :

@@ -1,22 +1,28 @@
 #! /bin/env sh
 
-icon=$1
+icon=""
+lower=${1,,}
 
-case $1 in
+# echo $lower
+
+case $lower in
 	"kitty" | "zsh")
 		icon="  "
 		;;
 	*"browser")
 		icon=" 爵"
 		;;
-	*"Chrome" | "Chromium")
+	*"chrome" | *"chromium")
 		icon=" "
 		;;
-	*"Typora")
+	*"typora")
 		icon=" "
 		;;
-	*"zathura"* | *".pdf" )
+	"pwmt" | "zathura" | *".pdf" )
 		icon="  "
+		;;
+	"code") 
+		icon=" "
 		;;
 	*)
 		icon=" "
