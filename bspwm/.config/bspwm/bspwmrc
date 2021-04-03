@@ -53,6 +53,7 @@ R Spotify     desktop=^8
 R DDNet       desktop=^10 follow=on state=fullscreen
 R Zathura     state=tiled
 R Pinentry    state=floating
+R Emacs       state=tiled
 
 c external_rules_command "$HOME/.config/bspwm/external_rules" # Spotify
 
