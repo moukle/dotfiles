@@ -13,8 +13,8 @@ The following variables are used to tweak some of the configuration pieces for u
   ;;       in Emacs and init.el will be generated automatically!
 
   ;; You will most likely need to adjust this font size for your system!
-  (defvar efs/default-font-size 160)
-  (defvar efs/default-variable-font-size 160)
+  (defvar efs/default-font-size 150)
+  (defvar efs/default-variable-font-size 150)
 
   ;; Make frame transparency overridable
   (defvar efs/frame-transparency '(90 . 90))
@@ -182,13 +182,13 @@ I am using the [[https://github.com/tonsky/FiraCode][Fira Code]] and [[https://f
 
 #+begin_src emacs-lisp
 
-(set-face-attribute 'default nil :font "Fira Code Retina" :height efs/default-font-size)
+  (set-face-attribute 'default nil :font "Fira Code Retina" :height efs/default-font-size)
 
-;; Set the fixed pitch face
-(set-face-attribute 'fixed-pitch nil :font "Fira Code Retina" :height efs/default-font-size)
+  ;; Set the fixed pitch face
+  (set-face-attribute 'fixed-pitch nil :font "Fira Code Retina" :height efs/default-font-size)
 
-;; Set the variable pitch face
-(set-face-attribute 'variable-pitch nil :font "Cantarell" :height efs/default-variable-font-size :weight 'regular)
+  ;; Set the variable pitch face
+  (set-face-attribute 'variable-pitch nil :font "Roboto Slab" :height efs/default-variable-font-size :weight 'regular)
 
 #+end_src
 
@@ -203,6 +203,7 @@ This configuration uses [[https://evil.readthedocs.io/en/latest/index.html][evil
 
   (use-package general
     :after evil
+    :hook (after-init . evil-mode)
     :config
     (general-create-definer efs/leader-keys
       :keymaps '(normal insert visual emacs)
@@ -236,7 +237,7 @@ This configuration uses [[https://evil.readthedocs.io/en/latest/index.html][evil
     :after evil
     :config
     (evil-collection-init))
-    
+
   ;; Align operators (gl & gL), emulating lion.vim
   (use-package evil-lion
     :after evil
@@ -246,10 +247,16 @@ This configuration uses [[https://evil.readthedocs.io/en/latest/index.html][evil
   (use-package evil-commentary
     :after evil
     :hook (evil-mode . evil-commentary-mode))
-    
+
   (use-package evil-surround
     :after evil
     :hook (evil-mode . global-evil-surround-mode))
+
+  (use-package evil-numbers
+    :after evil
+    :config
+    (define-key evil-normal-state-map (kbd "g=") 'evil-numbers/inc-at-pt)
+    (define-key evil-normal-state-map (kbd "g-") 'evil-numbers/dec-at-pt))
 
 #+end_src
 
@@ -270,10 +277,10 @@ This configuration uses [[https://evil.readthedocs.io/en/latest/index.html][evil
 
 [[https://github.com/hlissner/emacs-doom-themes][doom-themes]] is a great set of themes with a lot of variety and support for many different Emacs modes.  Taking a look at the [[https://github.com/hlissner/emacs-doom-themes/tree/screenshots][screenshots]] might help you decide which one you like best.  You can also run =M-x counsel-load-theme= to choose between them easily.
 
-#+begin_src emacs-lisp
+#+begin_src emacs-lisp :tangle no
 
-; (use-package doom-themes
-;  :init (load-theme 'doom-palenight t))
+  (use-package doom-themes
+   :init (load-theme 'doom-palenight t))
 
 #+end_src
 
@@ -285,27 +292,32 @@ This configuration uses [[https://evil.readthedocs.io/en/latest/index.html][evil
 
 #+begin_src emacs-lisp
 
-(use-package all-the-icons)
+  (use-package all-the-icons)
 
-;(use-package doom-modeline
-;  :init (doom-modeline-mode 1)
-;  :custom ((doom-modeline-height 15)))
+#+end_src
+
+#+begin_src emacs-lisp :tangle no
+
+  (use-package doom-modeline
+   :init (doom-modeline-mode 1)
+   :custom ((doom-modeline-height 15)))
 
 #+end_src
 
 *** Rose Pine
 
-#+begin_src emacs-lisp
+#+begin_src emacs-lisp :tangle no
 
-(use-package autothemer :ensure t)
+  (use-package autothemer :ensure t)
 
-(straight-use-package
- '(rose-pine-emacs
-   :host github
-   :repo "Caelie/rose-pine-emacs"
-   :branch "master"))
-(load-theme 'rose-pine-dawn t)
-;(load-theme 'rose-pine-{color-moon-dawn} t)
+  (straight-use-package
+   '(rose-pine-emacs
+     :host github
+     :repo "Caelie/rose-pine-emacs"
+     :branch "master"))
+  (load-theme 'rose-pine-color t)
+  ;; (load-theme 'rose-pine-dawn t)
+  ;; (load-theme 'rose-pine-{color-moon-dawn} t)
 
 #+end_src
 
@@ -317,18 +329,19 @@ This configuration uses [[https://evil.readthedocs.io/en/latest/index.html][evil
   (require 'nano-colors)
   (require 'nano-faces)
   (require 'nano-theme)
-  ; (require 'nano-theme-dark)
-  ; (require 'nano-theme-light)
+  (require 'nano-theme-dark)
+  ;; (require 'nano-theme-light)
   (require 'nano-modeline)
   ; (require 'nano-writer)
   (require 'nano-layout)
-  
+
   (nano-faces)
   (nano-theme)
 
 #+end_src
 
-** Which Key
+** Editor helper
+*** Which Key
 
 [[https://github.com/justbur/emacs-which-key][which-key]] is a useful UI panel that appears when you start pressing any key binding in Emacs to offer you all possible completions for the prefix.  For example, if you press =C-c= (hold control and press the letter =c=), a panel will appear at the bottom of the frame displaying all of the bindings under that prefix and which command they run.  This is very useful for learning the possible key bindings in the mode of your current buffer.
 
@@ -343,7 +356,7 @@ This configuration uses [[https://evil.readthedocs.io/en/latest/index.html][evil
 
 #+end_src
 
-** Ivy and Counsel
+*** Ivy and Counsel
 
 [[https://oremacs.com/swiper/][Ivy]] is an excellent completion framework for Emacs.  It provides a minimal yet powerful selection menu that appears when you open files, switch buffers, and for many other tasks in Emacs.  Counsel is a customized set of commands to replace `find-file` with `counsel-find-file`, etc which provide useful commands for each of the default completion commands.
 
@@ -385,7 +398,7 @@ This configuration uses [[https://evil.readthedocs.io/en/latest/index.html][evil
 
 #+end_src
 
-*** Improved Candidate Sorting with prescient.el
+**** Improved Candidate Sorting with prescient.el
 
 prescient.el provides some helpful behavior for sorting Ivy completion candidates based on how recently or frequently you select them.  This can be especially helpful when using =M-x= to run commands that you don't have bound to a key but still need to access occasionally.
 
@@ -404,7 +417,7 @@ This Prescient configuration is optimized for use in System Crafters videos and 
 
 #+end_src
 
-** Helpful Help Commands
+*** Helpful Help Commands
 
 [[https://github.com/Wilfred/helpful][Helpful]] adds a lot of very helpful (get it?) information to Emacs' =describe-= command buffers.  For example, if you use =describe-function=, you will not only get the documentation about the function, you will also see the source code of the function and where it gets used in other places in the Emacs configuration.  It is very useful for figuring out how things work in Emacs.
 
@@ -423,7 +436,7 @@ This Prescient configuration is optimized for use in System Crafters videos and 
 
 #+end_src
 
-** Text Scaling
+*** Text Scaling
 
 This is an example of using [[https://github.com/abo-abo/hydra][Hydra]] to design a transient key binding for quickly adjusting the scale of the text on screen.  We define a hydra that is bound to =C-s t s= and, once activated, =j= and =k= increase and decrease the text scale.  You can press any other key (or =f= specifically) to exit the transient key map.
 
@@ -468,7 +481,9 @@ The =efs/org-font-setup= function configures various text faces to tweak the siz
                     (org-level-6 . 1.1)
                     (org-level-7 . 1.1)
                     (org-level-8 . 1.1)))
-      (set-face-attribute (car face) nil :font "Cantarell" :weight 'regular :height (cdr face)))
+      (set-face-attribute (car face) nil :font "Roboto Slab" :weight 'regular :height (cdr face)))
+
+      ;; (set-face-attribute (car face) nil :font "Cantarell" :weight 'regular :height (cdr face)))
 
     ;; Ensure that anything that should be fixed-pitch in Org files appears that way
     (set-face-attribute 'org-block nil    :foreground nil :inherit 'fixed-pitch)
@@ -486,14 +501,14 @@ The =efs/org-font-setup= function configures various text faces to tweak the siz
   (defun efs/org-block-setup ()
     (require 'color)
     (set-face-attribute 'org-block-begin-line nil :background
-			(color-darken-name
-			(face-attribute 'default :background) 2))
+                        (color-darken-name
+                        (face-attribute 'default :background) 3))
     (set-face-attribute 'org-block nil :background
-			(color-darken-name
-			(face-attribute 'default :background) 3))
+                        (color-darken-name
+                        (face-attribute 'default :background) 3))
     (set-face-attribute 'org-block-end-line nil :background
-			(color-darken-name
-			(face-attribute 'default :background) 2)))
+                        (color-darken-name
+                        (face-attribute 'default :background) 3)))
 #+end_src
 
 ** Basic Config
@@ -715,10 +730,20 @@ This snippet adds a hook to =org-mode= buffers so that =efs/org-babel-tangle-con
 
 #+end_src
 
+** Evil-Org-Mode
+#+begin_src emacs-lisp
+(use-package evil-org
+  :ensure t
+  :after org
+  :hook (org-mode . (lambda () evil-org-mode))
+  :config
+  (require 'evil-org-agenda)
+  (setq evil-want-C-i-jump nil)
+  (evil-org-agenda-set-keys))
+#+end_src
+
 * Development
-
 ** Languages
-
 *** IDE Features with lsp-mode
 
 **** lsp-mode
@@ -731,16 +756,12 @@ The =which-key= integration adds helpful descriptions of the various keys so you
 
 #+begin_src emacs-lisp
 
-  (defun efs/lsp-mode-setup ()
-    (setq lsp-headerline-breadcrumb-segments '(path-up-to-project file symbols))
-    (lsp-headerline-breadcrumb-mode))
-
   (use-package lsp-mode
     :commands (lsp lsp-deferred)
-    :hook (lsp-mode . efs/lsp-mode-setup)
     :init
     (setq lsp-keymap-prefix "C-c l")  ;; Or 'C-l', 's-l'
     :config
+    (setq lsp-headerline-breadcrumb-enable nil)
     (lsp-enable-which-key-integration t))
 
 #+end_src
@@ -881,6 +902,39 @@ You can use the pyvenv package to use =virtualenv= environments in Emacs.  The =
     :after python-mode
     :config
     (pyvenv-mode 1))
+
+#+end_src
+
+*** Julia
+
+Make sure you have the language server installed:
+#+begin_src julia :tangle no
+    Pkg.add("LanguageServer")
+#+end_src
+
+Add Julia mode:
+#+begin_src emacs-lisp
+  (use-package julia-mode
+    :ensure t
+    :hook (julia-mode . lsp-deferred))
+#+end_src
+
+Configure the Julia REPL:
+#+begin_src emacs-lisp
+(use-package julia-repl
+  :preface (defvar +julia-repl-start-hook nil)
+  :hook (julia-mode . julia-repl-mode)
+  :hook (+julia-repl-start . +julia-override-repl-escape-char-h)
+  :hook (+julia-repl-start . julia-repl-use-emacsclient))
+#+end_src
+
+Add LSP support:
+#+begin_src emacs-lisp
+
+  (use-package lsp-julia
+    :after julia-mode
+    :config
+    (setq lsp-julia-default-environment "~/.julia/environments/v1.5"))
 
 #+end_src
 
@@ -1101,7 +1155,7 @@ For more thoughts on Eshell, check out these articles by Pierre Neidhardt:
 
     (with-eval-after-load 'esh-opt
       (setq eshell-destroy-buffer-when-process-dies t)
-      (setq eshell-visual-commands '("htop" "zsh" "vim")))
+      (setq eshell-visual-commands '("htop" "zsh" "vim" "julia")))
 
     (eshell-git-prompt-use-theme 'powerline))
 
@@ -1179,6 +1233,7 @@ Dired is a built-in file manager for Emacs that does some pretty amazing things!
   (use-package dired
     :ensure nil
     :commands (dired dired-jump)
+    :hook (dired-mode . dired-hide-details-mode)
     :bind (("C-x C-j" . dired-jump))
     :custom ((dired-listing-switches "-agho --group-directories-first"))
     :config
@@ -1209,8 +1264,146 @@ Dired is a built-in file manager for Emacs that does some pretty amazing things!
 
 #+end_src
 
-* Applications
+* Mail / mu4e
+** mbsync
+- Install mbsync / [[https://wiki.archlinux.org/index.php/Isync][Isync]] and mu
+#+begin_src shell :tangle no
+sudo pacman -S isync # mbsync
+yay -S mu            # maildir indexer
+#+end_src
 
+#+begin_src conf :tangle ~/.mbsyncrc
+  IMAPAccount tumail
+  Host imap.stud.tu-darmstadt.de
+  Port 993
+  # User moritz.klein@stud.tu-darmstadt.de
+  User mk22kofo
+  PassCmd "pass TU/HRZ/mk22kofo"
+  # PassCmd "gpg --quiet --decrypt ~/.mbsync-pw-mailbox.gpg"
+  SSLType IMAPS
+  # SSLVersions TLSv1.2
+  # CertificateFile ~/.config/protonmail/bridge/cert.pem
+  CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+  # Define the remote from which mail will be synced
+  IMAPStore tumail-remote
+  Account tumail
+
+  # Define where mail will be stored
+  MaildirStore tumail-local
+  Path ~/Mail/Tumail/
+  Inbox ~/Mail/Tumail/INBOX/
+  Trash ~/Mail/Tumail/Trash/
+  SubFolders Verbatim
+
+  # Connect the remote and the local maildir
+  Channel tumail
+  Master :tumail-remote:
+  Slave :tumail-local:
+  Patterns * !Archives
+  CopyArrivalDate yes
+  Sync All
+  Create Both
+  Expunge Both
+  SyncState *
+#+end_src
+
+#+begin_src shell :tangle no
+mbsync -a
+mu init --maildir=~/Mail \
+        --my-address=moritz.klein@stud.tu-darmstadt.de
+mu index
+#+end_src
+
+** mu4e
+#+begin_src emacs-lisp
+
+  (use-package mu4e
+    :ensure nil
+    :defer 20 ; Wait until 20 seconds after startup
+    :config
+
+    ;; Load org-mode integration
+    (require 'org-mu4e)
+
+    ;; Refresh mail using isync every 10 minutes
+    (setq mu4e-update-interval (* 10 60))
+    (setq mu4e-get-mail-command "mbsync -a")
+    (setq mu4e-maildir "~/Mail")
+
+    ;; Use Ivy for mu4e completions (maildir folders, etc)
+    (setq mu4e-completing-read-function #'ivy-completing-read)
+
+    ;; Make sure that moving a message (like to Trash) causes the
+    ;; message to get a new file name.  This helps to avoid the
+    ;; dreaded "UID is N beyond highest assigned" error.
+    ;; See this link for more info: https://stackoverflow.com/a/43461973
+    (setq mu4e-change-filenames-when-moving t)
+
+    ;; Set up contexts for email accounts
+    (setq mu4e-contexts
+          `(,(make-mu4e-context
+              :name "Univerisity"
+              :match-func (lambda (msg) (when msg
+                  (string-prefix-p "/Tumail" (mu4e-message-field msg :maildir))))
+              :vars '(
+                      (user-full-name . "Moritz Klein")
+                      (user-mail-address . "moritz.klein@stud.tu-darmstadt.de")
+                      (mu4e-sent-folder . "/Tumail/Sent Items")
+                      (mu4e-trash-folder . "/Tumail/Trash")
+                      (mu4e-drafts-folder . "/Tumail/Drafts")
+                      (mu4e-refile-folder . "/Tumail/Archive")
+                      (mu4e-sent-messages-behavior . sent)
+                      ))
+            ,(make-mu4e-context
+              :name "Test"
+              :match-func (lambda (msg) (when msg
+                  (string-prefix-p "/Test" (mu4e-message-field msg :maildir))))
+              :vars '(
+                      (mu4e-sent-folder . "/Test/Sent")
+                      (mu4e-trash-folder . "/Test/Deleted")
+                      (mu4e-refile-folder . "/Test/Archive")
+                      ))
+           ))
+    ;; (setq mu4e-context-policy 'pick-first)
+    )
+
+#+end_src
+
+*** Dashboard
+
+#+begin_src emacs-lisp
+  (use-package mu4e-dashboard
+    :straight (:host github :repo "rougier/mu4e-dashboard")
+    :after mu4e
+    :init
+    (require 'mu4e-dashboard)
+    :config
+    (evil-set-initial-state 'mu4e-dashboard-mode 'emacs))
+#+end_src
+
+** org-mime
+#+begin_src emacs-lisp
+    (use-package org-mime
+    :ensure t
+    :after mu4e
+    :config
+    (setq org-mime-export-options '(:section-numbers nil
+                                    :with-author nil
+                                    :with-toc nil))
+    (add-hook 'org-mime-html-hook
+                (lambda ()
+                (org-mime-change-element-style
+                "pre" (format "color: %s; background-color: %s; padding: 0.5em;"
+                                "#E6E1DC" "#232323"))))
+
+    (add-hook 'message-send-hook 'org-mime-htmlize)
+    ;; Alternatively if you just want be reminded when you didn’t use HTML:
+    (add-hook 'message-send-hook 'org-mime-confirm-when-no-multipart)
+    )
+#+end_src
+
+* Applications
 ** Some App
 
 This is an example of configuring another non-Emacs application using org-mode.  Not only do we write out the configuration at =.config/some-app/config=, we also compute the value that gets stored in this configuration from the Emacs Lisp block above it.
@@ -1240,3 +1433,4 @@ Dial the GC threshold back down so that garbage collection happens more frequent
   (setq gc-cons-threshold (* 2 1000 1000))
 
 #+end_src
+
