@@ -304,23 +304,6 @@ This configuration uses [[https://evil.readthedocs.io/en/latest/index.html][evil
 
 #+end_src
 
-*** Rose Pine
-
-#+begin_src emacs-lisp :tangle no
-
-  (use-package autothemer :ensure t)
-
-  (straight-use-package
-   '(rose-pine-emacs
-     :host github
-     :repo "Caelie/rose-pine-emacs"
-     :branch "master"))
-  ;; (load-theme 'rose-pine-color t)
-  ;; (load-theme 'rose-pine-dawn t)
-  ;; (load-theme 'rose-pine-{color-moon-dawn} t)
-
-#+end_src
-
 *** N Λ N O
 
 #+begin_src emacs-lisp
@@ -329,16 +312,21 @@ This configuration uses [[https://evil.readthedocs.io/en/latest/index.html][evil
   (require 'nano-colors)
   (require 'nano-faces)
   (require 'nano-theme)
-  (require 'nano-theme-dark)
+  ;; (require 'nano-theme-dark)
   ;; (require 'nano-theme-light)
   (require 'nano-modeline)
   ; (require 'nano-writer)
   (require 'nano-layout)
 
+  ;; (require 'nano-theme-light-rose)
+  (require 'nano-theme-dark-cake)
+
   (nano-faces)
   (nano-theme)
 
 #+end_src
+
+#+RESULTS:
 
 *** Ligatures
 
@@ -359,6 +347,9 @@ This configuration uses [[https://evil.readthedocs.io/en/latest/index.html][evil
                                        "<~" "<~~" "</" "</>" "~@" "~-" "~>" "~~" "~~>" "%%"))
       (global-ligature-mode t))
 #+end_src
+
+#+RESULTS:
+: t
 
 ** Editor helper
 *** Which Key
