@@ -1,5 +1,5 @@
 #+title: Emacs Configuration
-#+PROPERTY: header-args:emacs-lisp :tangle ./init.el :mkdirp yes
+#+PROPERTY: header-args:emacs-lisp :tangle ~/.emacs.d/init.el :mkdirp yes
 
 * Welcome!
 
@@ -213,7 +213,7 @@ This configuration uses [[https://evil.readthedocs.io/en/latest/index.html][evil
     (efs/leader-keys
       "t"  '(:ignore t :which-key "toggles")
       "tt" '(counsel-load-theme :which-key "choose theme")
-      "fde" '(lambda () (interactive) (find-file (expand-file-name "~/.emacs.d/Emacs.org")))))
+      "fde" '(lambda () (interactive) (find-file (expand-file-name "~/dotfiles/Emacs.org")))))
 
   (use-package evil
     :init
@@ -272,7 +272,7 @@ This configuration uses [[https://evil.readthedocs.io/en/latest/index.html][evil
 
 #+end_src
 
-** Color Theme
+** Appearance
 *** Doom
 
 [[https://github.com/hlissner/emacs-doom-themes][doom-themes]] is a great set of themes with a lot of variety and support for many different Emacs modes.  Taking a look at the [[https://github.com/hlissner/emacs-doom-themes/tree/screenshots][screenshots]] might help you decide which one you like best.  You can also run =M-x counsel-load-theme= to choose between them easily.
@@ -315,7 +315,7 @@ This configuration uses [[https://evil.readthedocs.io/en/latest/index.html][evil
      :host github
      :repo "Caelie/rose-pine-emacs"
      :branch "master"))
-  (load-theme 'rose-pine-color t)
+  ;; (load-theme 'rose-pine-color t)
   ;; (load-theme 'rose-pine-dawn t)
   ;; (load-theme 'rose-pine-{color-moon-dawn} t)
 
@@ -338,6 +338,26 @@ This configuration uses [[https://evil.readthedocs.io/en/latest/index.html][evil
   (nano-faces)
   (nano-theme)
 
+#+end_src
+
+*** Ligatures
+
+#+begin_src emacs-lisp
+
+  (use-package ligature
+      :straight (:host github :repo "mickeynp/ligature.el")
+      :config
+      (ligature-set-ligatures 'prog-mode '("www" "**" "***" "**/" "*>" "*/" "\\\\" "\\\\\\" "{-" "::"
+                                       ":::" ":=" "!!" "!=" "!==" "-}" "----" "-->" "->" "->>"
+                                       "-<" "-<<" "-~" "#{" "#[" "##" "###" "####" "#(" "#?" "#_"
+                                       "#_(" ".-" ".=" ".." "..<" "..." "?=" "??" ";;" "/*" "/**"
+                                       "/=" "/==" "/>" "//" "///" "&&" "||" "||=" "|=" "|>" "^=" "$>"
+                                       "++" "+++" "+>" "=:=" "==" "===" "==>" "=>" "=>>" "<="
+                                       "=<<" "=/=" ">-" ">=" ">=>" ">>" ">>-" ">>=" ">>>" "<*"
+                                       "<*>" "<|" "<|>" "<$" "<$>" "<!--" "<-" "<--" "<->" "<+"
+                                       "<+>" "<=" "<==" "<=>" "<=<" "<>" "<<" "<<-" "<<=" "<<<"
+                                       "<~" "<~~" "</" "</>" "~@" "~-" "~>" "~~" "~~>" "%%"))
+      (global-ligature-mode t))
 #+end_src
 
 ** Editor helper
@@ -482,8 +502,9 @@ The =efs/org-font-setup= function configures various text faces to tweak the siz
                     (org-level-7 . 1.1)
                     (org-level-8 . 1.1)))
       (set-face-attribute (car face) nil :font "Roboto Slab" :weight 'regular :height (cdr face)))
-
       ;; (set-face-attribute (car face) nil :font "Cantarell" :weight 'regular :height (cdr face)))
+
+    (set-face-attribute 'variable-pitch nil :font "Roboto Slab" :weight 'light :height 1.0)
 
     ;; Ensure that anything that should be fixed-pitch in Org files appears that way
     (set-face-attribute 'org-block nil    :foreground nil :inherit 'fixed-pitch)
@@ -502,13 +523,13 @@ The =efs/org-font-setup= function configures various text faces to tweak the siz
     (require 'color)
     (set-face-attribute 'org-block-begin-line nil :background
                         (color-darken-name
-                        (face-attribute 'default :background) 3))
+                        (face-attribute 'default :background) 2))
     (set-face-attribute 'org-block nil :background
                         (color-darken-name
-                        (face-attribute 'default :background) 3))
+                        (face-attribute 'default :background) 2))
     (set-face-attribute 'org-block-end-line nil :background
                         (color-darken-name
-                        (face-attribute 'default :background) 3)))
+                        (face-attribute 'default :background) 2)))
 #+end_src
 
 ** Basic Config
@@ -720,8 +741,8 @@ This snippet adds a hook to =org-mode= buffers so that =efs/org-babel-tangle-con
 
   ;; Automatically tangle our Emacs.org config file when we save it
   (defun efs/org-babel-tangle-config ()
-    (when (string-equal (file-name-directory (buffer-file-name))
-                        (expand-file-name user-emacs-directory))
+    (when (string-equal (buffer-file-name)
+                        (expand-file-name "~/dotfiles/Emacs.org"))
       ;; Dynamic scoping to the rescue
       (let ((org-confirm-babel-evaluate nil))
         (org-babel-tangle))))
