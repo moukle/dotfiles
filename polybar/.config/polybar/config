@@ -1,6 +1,6 @@
 [colors]
 background     = ${xrdb:background}
-; background     = "#00112233"
+; background     = "#e0fffaf3"
 foreground     = ${xrdb:foreground}
 black_dark     = ${xrdb:color0}
 black_bright   = ${xrdb:color8}

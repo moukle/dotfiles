@@ -13,20 +13,26 @@ The following variables are used to tweak some of the configuration pieces for u
   ;;       in Emacs and init.el will be generated automatically!
 
   ;; You will most likely need to adjust this font size for your system!
-  (defvar efs/default-font-size 150)
-  (defvar efs/default-variable-font-size 150)
+  (defvar efs/default-font-size 130)
+  (defvar efs/default-variable-font-size 130)
 
   ;; Make frame transparency overridable
   (defvar efs/frame-transparency '(90 . 90))
 
 #+end_src
 
-#+RESULTS:
-: efs/frame-transparency
-
 * Tips for Use
 
 In this document I've added links in many places that lead you to documentation for the various packages we use.  If you're looking at this file in Emacs, you can put your cursor on a link and press =C-c C-o= or run =M-x org-open-at-point= to open the link in your web browser.
+
+* Basics
+** Just use ‘y’ or ‘n’ instead of ‘yes’ or ‘no’
+
+You’ll find yes-or-no prompts coming up in Emacs a lot. I’d much rather just type y or n than yes or no every time…
+
+#+begin_src emacs-lisp
+(fset 'yes-or-no-p 'y-or-n-p)
+#+end_src
 
 * Startup Performance
 
@@ -158,6 +164,7 @@ This section configures basic UI settings that remove unneeded elements to make 
   (setq visible-bell 'nil)
 
   (column-number-mode)
+  (setq display-line-numbers-type 'relative)
   (global-display-line-numbers-mode t)
 
   ;; Set frame transparency
@@ -168,6 +175,7 @@ This section configures basic UI settings that remove unneeded elements to make 
 
   ;; Disable line numbers for some modes
   (dolist (mode '(org-mode-hook
+                  vterm-mode-hook
                   term-mode-hook
                   shell-mode-hook
                   treemacs-mode-hook
@@ -318,19 +326,17 @@ This configuration uses [[https://evil.readthedocs.io/en/latest/index.html][evil
   ; (require 'nano-writer)
   (require 'nano-layout)
 
-  ;; (require 'nano-theme-light-rose)
-  (require 'nano-theme-dark-cake)
+  (require 'nano-theme-light-rose)
+  ;; (require 'nano-theme-dark-cake)
 
   (nano-faces)
   (nano-theme)
 
 #+end_src
 
-#+RESULTS:
-
 *** Ligatures
 
-#+begin_src emacs-lisp
+#+begin_src emacs-lisp :tangle no
 
   (use-package ligature
       :straight (:host github :repo "mickeynp/ligature.el")
@@ -348,9 +354,13 @@ This configuration uses [[https://evil.readthedocs.io/en/latest/index.html][evil
       (global-ligature-mode t))
 #+end_src
 
-#+RESULTS:
-: t
-
+*** Indent Line
+#+begin_src emacs-lisp
+  (use-package highlight-indent-guides
+    :hook (prog-mode . highlight-indent-guides-mode)
+    :config
+    (setq highlight-indent-guides-method 'character))
+#+end_src
 ** Editor helper
 *** Which Key
 
@@ -380,6 +390,7 @@ This configuration uses [[https://evil.readthedocs.io/en/latest/index.html][evil
     :bind (("C-s" . swiper)
            :map ivy-minibuffer-map
            ("TAB" . ivy-alt-done)
+           ("C-f" . ivy-alt-done)
            ("C-l" . ivy-alt-done)
            ("C-j" . ivy-next-line)
            ("C-k" . ivy-previous-line)
@@ -467,6 +478,25 @@ This is an example of using [[https://github.com/abo-abo/hydra][Hydra]] to desig
 
 #+end_src
 
+* Editing
+** Clean Whitespaces
+
+#+begin_src emacs-lisp
+
+  (use-package ws-butler
+    :hook ((text-mode . ws-butler-mode)
+           (prog-mode . ws-butler-mode)))
+
+#+end_src
+
+** Origami for Folding
+
+#+begin_src emacs-lisp
+
+  (use-package origami
+    :hook (prog-mode . origami-mode))
+
+#+end_src
 * Org Mode
 
 [[https://orgmode.org/][Org Mode]] is one of the hallmark features of Emacs.  It is a rich document editor, project planner, task and time tracker, blogging engine, and literate coding utility all wrapped up in one package.
@@ -495,7 +525,7 @@ The =efs/org-font-setup= function configures various text faces to tweak the siz
       (set-face-attribute (car face) nil :font "Roboto Slab" :weight 'regular :height (cdr face)))
       ;; (set-face-attribute (car face) nil :font "Cantarell" :weight 'regular :height (cdr face)))
 
-    (set-face-attribute 'variable-pitch nil :font "Roboto Slab" :weight 'light :height 1.0)
+    ;; (set-face-attribute 'variable-pitch nil :font "Roboto Slab" :weight 'light :height 1.0)
 
     ;; Ensure that anything that should be fixed-pitch in Org files appears that way
     (set-face-attribute 'org-block nil    :foreground nil :inherit 'fixed-pitch)
@@ -658,7 +688,7 @@ This section contains the basic configuration for =org-mode= plus the configurat
 
     (efs/org-font-setup)
     (efs/org-block-setup))
-    
+
 #+end_src
 
 *** Nicer Heading Bullets
@@ -918,29 +948,38 @@ You can use the pyvenv package to use =virtualenv= environments in Emacs.  The =
 #+end_src
 
 *** Julia
+**** Setup
 
 Make sure you have the language server installed:
 #+begin_src julia :tangle no
     Pkg.add("LanguageServer")
 #+end_src
 
-Add Julia mode:
+**** Add Julia mode
 #+begin_src emacs-lisp
   (use-package julia-mode
     :ensure t
     :hook (julia-mode . lsp-deferred))
 #+end_src
 
-Configure the Julia REPL:
-#+begin_src emacs-lisp
-(use-package julia-repl
-  :preface (defvar +julia-repl-start-hook nil)
-  :hook (julia-mode . julia-repl-mode)
-  :hook (+julia-repl-start . +julia-override-repl-escape-char-h)
-  :hook (+julia-repl-start . julia-repl-use-emacsclient))
+**** Configure the Julia REPL
+#+begin_src emacs-lisp :tangle no
+  (use-package julia-repl
+    ;; :after julia-mode
+    :preface (defvar +julia-repl-start-hook nil)
+    :hook (julia-mode . julia-repl-mode)
+    :hook (+julia-repl-start . +julia-override-repl-escape-char-h)
+    :hook (+julia-repl-start . julia-repl-use-emacsclient))
 #+end_src
 
-Add LSP support:
+#+begin_src emacs-lisp
+  (use-package julia-snail
+    :ensure t
+    :requires vterm
+    :hook (julia-mode . julia-snail-mode))
+#+end_src
+
+**** Add LSP support
 #+begin_src emacs-lisp
 
   (use-package lsp-julia
@@ -950,6 +989,36 @@ Add LSP support:
 
 #+end_src
 
+** EIN
+
+#+begin_src emacs-lisp :tangle no
+
+  (use-package ein
+    :after org)
+
+#+end_src
+
+** Jupyter
+#+begin_src emacs-lisp :tangle no
+
+  (use-package jupyter
+    :after org
+    :config
+    (org-babel-do-load-languages
+    'org-babel-load-languages
+    '((emacs-lisp . t)
+      (julia . t)
+      (python . t)
+      (jupyter . t))))
+
+  (with-eval-after-load 'org
+    (org-babel-do-load-languages
+    'org-babel-load-languages
+    '((jupyter . t)))
+    (add-to-list 'org-structure-template-alist '("jl" . "src jupyter-julia"))
+    (setq org-babel-default-header-args:jupyter-julia '((:async . "yes")
+                                                        (:session . "jl"))))
+#+end_src
 ** Company Mode
 
 [[http://company-mode.github.io/][Company Mode]] provides a nicer in-buffer completion interface than =completion-at-point= which is more reminiscent of what you would expect from an IDE.  We add a simple configuration to make the keybindings a little more useful (=TAB= now completes the selection and initiates completion at the current location if needed).
@@ -988,8 +1057,8 @@ We also use [[https://github.com/sebastiencs/company-box][company-box]] to furth
     ("C-c p" . projectile-command-map)
     :init
     ;; NOTE: Set this to the folder where you keep your Git repos!
-    (when (file-directory-p "~/Projects/Code")
-      (setq projectile-project-search-path '("~/Projects/Code")))
+    (when (file-directory-p "~/Development")
+      (setq projectile-project-search-path '("~/Development")))
     (setq projectile-switch-project-action #'projectile-dired))
 
   (use-package counsel-projectile
@@ -1093,8 +1162,9 @@ Make sure that you have the [[https://github.com/akermu/emacs-libvterm/#requirem
   (use-package vterm
     :commands vterm
     :config
-    (setq term-prompt-regexp "^[^#$%>\n]*[#$%>] *")  ;; Set this to match your custom shell prompt
-    ;;(setq vterm-shell "zsh")                       ;; Set this to customize the shell to launch
+    ;; (setq term-prompt-regexp "^[^#$%>\n]*[#$%>] *")  ;; Set this to match your custom shell prompt
+    (setq vterm-shell "bash")                       ;; Set this to customize the shell to launch
+    ;; (define-key vterm-mode-map [return] #'vterm-send-return)
     (setq vterm-max-scrollback 10000))
 
 #+end_src
@@ -1278,13 +1348,18 @@ Dired is a built-in file manager for Emacs that does some pretty amazing things!
 
 * Mail / mu4e
 ** mbsync
-- Install mbsync / [[https://wiki.archlinux.org/index.php/Isync][Isync]] and mu
+
+Install mbsync / [[https://wiki.archlinux.org/index.php/Isync][Isync]] and mu
+
 #+begin_src shell :tangle no
+
 sudo pacman -S isync # mbsync
 yay -S mu            # maildir indexer
+
 #+end_src
 
 #+begin_src conf :tangle ~/.mbsyncrc
+
   IMAPAccount tumail
   Host imap.stud.tu-darmstadt.de
   Port 993
@@ -1318,13 +1393,16 @@ yay -S mu            # maildir indexer
   Create Both
   Expunge Both
   SyncState *
+
 #+end_src
 
 #+begin_src shell :tangle no
+
 mbsync -a
 mu init --maildir=~/Mail \
         --my-address=moritz.klein@stud.tu-darmstadt.de
 mu index
+
 #+end_src
 
 ** mu4e
@@ -1332,7 +1410,7 @@ mu index
 
   (use-package mu4e
     :ensure nil
-    :defer 20 ; Wait until 20 seconds after startup
+    :defer 1 ; Wait until 20 seconds after startup
     :config
 
     ;; Load org-mode integration
@@ -1385,13 +1463,16 @@ mu index
 *** Dashboard
 
 #+begin_src emacs-lisp
-  (use-package mu4e-dashboard
-    :straight (:host github :repo "rougier/mu4e-dashboard")
-    :after mu4e
-    :init
-    (require 'mu4e-dashboard)
-    :config
-    (evil-set-initial-state 'mu4e-dashboard-mode 'emacs))
+    (use-package mu4e-dashboard
+      :straight (:host github :repo "rougier/mu4e-dashboard")
+      :after mu4e
+      :init
+      (require 'mu4e-dashboard)
+      :config
+      (evil-set-initial-state 'mu4e-dashboard-mode 'emacs)) ;; this one doesn't work :(
+    
+  ;; TODO: fixed font for this mode
+
 #+end_src
 
 ** org-mime

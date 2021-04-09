@@ -25,7 +25,7 @@ s() { pkill -x "$1"; { sleep 0.1; "$@" & }; }
 # c ignore_ewmh_focus true
 
 # padding
-c top_padding    3 # 55
+c top_padding    55
 c bottom_padding 3
 c right_padding  3
 c left_padding   3
@@ -54,6 +54,7 @@ R DDNet       desktop=^10 follow=on state=fullscreen
 R Zathura     state=tiled
 R Pinentry    state=floating
 R Emacs       state=tiled
+R Emacs|Question state=floating
 
 c external_rules_command "$HOME/.config/bspwm/external_rules" # Spotify
 
