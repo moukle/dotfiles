@@ -164,7 +164,7 @@ This section configures basic UI settings that remove unneeded elements to make 
   (setq visible-bell 'nil)
 
   (column-number-mode)
-  (setq display-line-numbers-type 'relative)
+  (setq display-line-numbers-type 'visual)
   (global-display-line-numbers-mode t)
 
   ;; Set frame transparency
@@ -478,14 +478,33 @@ This is an example of using [[https://github.com/abo-abo/hydra][Hydra]] to desig
 
 #+end_src
 
-* Editing
-** Clean Whitespaces
+* General Configuration
+** Remove Whitespaces
 
 #+begin_src emacs-lisp
 
   (use-package ws-butler
     :hook ((text-mode . ws-butler-mode)
            (prog-mode . ws-butler-mode)))
+
+#+end_src
+
+** Workspaces
+
+#+begin_src emacs-lisp
+
+ (use-package perspective
+  :demand t
+  :bind (("C-M-j" . persp-counsel-switch-buffer)
+         ("C-M-k" . persp-switch)
+         ("C-M-n" . persp-next)
+         ("C-x k" . persp-kill-buffer*))
+  :custom
+  (persp-initial-frame-name "Main")
+  :config
+  ;; Running `persp-mode' multiple times resets the perspective list...
+  (unless (equal persp-mode t)
+    (persp-mode)))
 
 #+end_src
 
@@ -497,6 +516,7 @@ This is an example of using [[https://github.com/abo-abo/hydra][Hydra]] to desig
     :hook (prog-mode . origami-mode))
 
 #+end_src
+
 * Org Mode
 
 [[https://orgmode.org/][Org Mode]] is one of the hallmark features of Emacs.  It is a rich document editor, project planner, task and time tracker, blogging engine, and literate coding utility all wrapped up in one package.
@@ -544,13 +564,13 @@ The =efs/org-font-setup= function configures various text faces to tweak the siz
     (require 'color)
     (set-face-attribute 'org-block-begin-line nil :background
                         (color-darken-name
-                        (face-attribute 'default :background) 2))
+                        (face-attribute 'default :background) 1))
     (set-face-attribute 'org-block nil :background
                         (color-darken-name
-                        (face-attribute 'default :background) 2))
+                        (face-attribute 'default :background) 1))
     (set-face-attribute 'org-block-end-line nil :background
                         (color-darken-name
-                        (face-attribute 'default :background) 2)))
+                        (face-attribute 'default :background) 1)))
 #+end_src
 
 ** Basic Config
