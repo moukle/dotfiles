@@ -318,6 +318,7 @@ This configuration uses [[https://evil.readthedocs.io/en/latest/index.html][evil
 *** N Λ N O
 
 #+begin_src emacs-lisp
+
   (add-to-list 'load-path "~/.emacs.d/nano-emacs")
   (require 'nano-base-colors)
   (require 'nano-colors)
@@ -325,13 +326,11 @@ This configuration uses [[https://evil.readthedocs.io/en/latest/index.html][evil
   (require 'nano-theme)
   ;; (require 'nano-theme-dark)
   ;; (require 'nano-theme-light)
+  (require 'nano-theme-dark-cake)
+  ;; (require 'nano-theme-light-rose)
   (require 'nano-modeline)
   (require 'nano-writer)
   (require 'nano-layout)
-
-  (require 'nano-theme-light-rose)
-  ;; (require 'nano-theme-dark-cake)
-
   (nano-faces)
   (nano-theme)
 
@@ -844,6 +843,7 @@ This snippet adds a hook to =org-mode= buffers so that =efs/org-babel-tangle-con
     :config
     (setq org-latex-create-formula-image-program 'dvisvgm)
     (setq org-format-latex-options (plist-put org-format-latex-options :scale 1.5))
+    (plist-put org-format-latex-options :background nano-color-background)
   )
 #+end_src
 
@@ -854,7 +854,19 @@ This snippet adds a hook to =org-mode= buffers so that =efs/org-babel-tangle-con
 
 ** Screenshots
 #+begin_src emacs-lisp
-(use-package org-attach-screenshot)
+  ;; (use-package org-attach-screenshot)
+
+  (use-package org-download
+    :after org
+    :hook (dired-mode . org-download-enable)
+    :hook (org-mode . org-download-enable)
+    ;; :bind (("C-M-z" . org-download-screenshot))
+    :bind (("C-M-z" . (lambda () (interactive) (org-download-screenshot) (org-download-rename-last-file))))
+    :config
+    (setq org-download-image-dir "./images")
+    (setq org-download-screenshot-method "scrot -s %s")
+  )
+
 #+end_src
 
 ** Evil-Org-Mode
