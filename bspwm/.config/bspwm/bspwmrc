@@ -2,8 +2,9 @@
 
 # desktops
 if [ $HOSTNAME == "olo" ]; then
-	bspc monitor DP-0 -d 1 2 3 4 5
-	bspc monitor DP-4 -d 6 7 8 9 0
+	bspc monitor DP-0 -d 1 2 3 4 5 6 7 8 9 0
+	# bspc monitor DP-4 -d 6 7 8 9 0
+	bspc monitor DP-4 -d a s d f g
 	# $HOME/.config/polybar/launch.sh leftM leftR rightM
 	$HOME/.config/polybar/launch.sh main rightM
 	# sleep 2

@@ -13,8 +13,8 @@ The following variables are used to tweak some of the configuration pieces for u
   ;;       in Emacs and init.el will be generated automatically!
 
   ;; You will most likely need to adjust this font size for your system!
-  (defvar efs/default-font-size 130)
-  (defvar efs/default-variable-font-size 130)
+  (defvar efs/default-font-size 140)
+  (defvar efs/default-variable-font-size 140)
 
   ;; Make frame transparency overridable
   (defvar efs/frame-transparency '(90 . 90))
@@ -174,12 +174,14 @@ This section configures basic UI settings that remove unneeded elements to make 
   (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
   ;; Disable line numbers for some modes
-  (dolist (mode '(org-mode-hook
+  (dolist (mode '(
+                  org-mode-hook
                   vterm-mode-hook
                   term-mode-hook
                   shell-mode-hook
                   treemacs-mode-hook
-                  eshell-mode-hook))
+                  eshell-mode-hook)
+                 )
     (add-hook mode (lambda () (display-line-numbers-mode 0))))
 
 #+end_src
@@ -229,6 +231,7 @@ This configuration uses [[https://evil.readthedocs.io/en/latest/index.html][evil
     (setq evil-want-keybinding nil)
     (setq evil-want-C-u-scroll t)
     (setq evil-want-C-i-jump nil)
+    (setq evil-want-Y-yank-to-eol t)
     :config
     (evil-mode 1)
     (define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state)
@@ -323,7 +326,7 @@ This configuration uses [[https://evil.readthedocs.io/en/latest/index.html][evil
   ;; (require 'nano-theme-dark)
   ;; (require 'nano-theme-light)
   (require 'nano-modeline)
-  ; (require 'nano-writer)
+  (require 'nano-writer)
   (require 'nano-layout)
 
   (require 'nano-theme-light-rose)
@@ -354,6 +357,15 @@ This configuration uses [[https://evil.readthedocs.io/en/latest/index.html][evil
       (global-ligature-mode t))
 #+end_src
 
+*** Line-Numbers color
+#+begin_src emacs-lisp
+        ;; (set-face-attribute 'line-number nil :family "Menlo" :height 100)
+        ;; (set-face-attribute 'line-number-current-line nil :family "Menlo" :height 100)
+  (set-window-margins nil 1)
+  (setq-default left-fringe-width  30)
+  (setq-default right-fringe-width  0)
+  (setq linum-format "%d    ")
+#+end_src
 *** Indent Line
 #+begin_src emacs-lisp
   (use-package highlight-indent-guides
@@ -517,6 +529,35 @@ This is an example of using [[https://github.com/abo-abo/hydra][Hydra]] to desig
 
 #+end_src
 
+** Flycheck
+#+begin_src emacs-lisp
+  (use-package flycheck
+    :defer t
+    :hook (lsp-mode . flycheck-mode))
+#+end_src
+
+** Spelling
+#+begin_src emacs-lisp
+  (with-eval-after-load "ispell"
+    ;; Configure `LANG`, otherwise ispell.el cannot find a 'default
+    ;; dictionary' even though multiple dictionaries will be configured
+    ;; in next line.
+    (setenv "LANG" "en_US.UTF-8")
+    (setq ispell-program-name "hunspell")
+    ;; Configure German, Swiss German, and two variants of English.
+    (setq ispell-dictionary "de_DE,en_GB,en_US")
+    ;; ispell-set-spellchecker-params has to be called
+    ;; before ispell-hunspell-add-multi-dic will work
+    (ispell-set-spellchecker-params)
+    (ispell-hunspell-add-multi-dic "de_DE,en_GB,en_US"))
+
+  (use-package flyspell-correct
+    :after flyspell
+    :bind (:map flyspell-mode-map ("C-;" . flyspell-correct-wrapper)))
+
+  (use-package flyspell-correct-ivy
+    :after flyspell-correct)
+#+end_src
 * Org Mode
 
 [[https://orgmode.org/][Org Mode]] is one of the hallmark features of Emacs.  It is a rich document editor, project planner, task and time tracker, blogging engine, and literate coding utility all wrapped up in one package.
@@ -530,47 +571,48 @@ The =efs/org-font-setup= function configures various text faces to tweak the siz
   (defun efs/org-font-setup ()
     ;; Replace list hyphen with dot
     (font-lock-add-keywords 'org-mode
-                            '(("^ *\\([-]\\) "
-                               (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
+			    '(("^ *\\([-]\\) "
+			       (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
 
     ;; Set faces for heading levels
     (dolist (face '((org-level-1 . 1.2)
-                    (org-level-2 . 1.1)
-                    (org-level-3 . 1.05)
-                    (org-level-4 . 1.0)
-                    (org-level-5 . 1.1)
-                    (org-level-6 . 1.1)
-                    (org-level-7 . 1.1)
-                    (org-level-8 . 1.1)))
-      (set-face-attribute (car face) nil :font "Roboto Slab" :weight 'regular :height (cdr face)))
-      ;; (set-face-attribute (car face) nil :font "Cantarell" :weight 'regular :height (cdr face)))
+		    (org-level-2 . 1.1)
+		    (org-level-3 . 1.05)
+		    (org-level-4 . 1.0)
+		    (org-level-5 . 1.1)
+		    (org-level-6 . 1.1)
+		    (org-level-7 . 1.1)
+		    (org-level-8 . 1.1)))
+      ;; (set-face-attribute (car face) nil :font "Roboto Slab" :weight 'regular :height (cdr face)))
+      (set-face-attribute (car face) nil :font "Cantarell" :weight 'regular :height (cdr face)))
 
     ;; (set-face-attribute 'variable-pitch nil :font "Roboto Slab" :weight 'light :height 1.0)
 
     ;; Ensure that anything that should be fixed-pitch in Org files appears that way
-    (set-face-attribute 'org-block nil    :foreground nil :inherit 'fixed-pitch)
-    (set-face-attribute 'org-table nil    :inherit 'fixed-pitch)
-    (set-face-attribute 'org-formula nil  :inherit 'fixed-pitch)
-    (set-face-attribute 'org-code nil     :inherit '(shadow fixed-pitch))
-    (set-face-attribute 'org-table nil    :inherit '(shadow fixed-pitch))
-    (set-face-attribute 'org-verbatim nil :inherit '(shadow fixed-pitch))
-    (set-face-attribute 'org-special-keyword nil :inherit '(font-lock-comment-face fixed-pitch))
-    (set-face-attribute 'org-meta-line nil :inherit '(font-lock-comment-face fixed-pitch))
-    (set-face-attribute 'org-checkbox nil  :inherit 'fixed-pitch)
-    (set-face-attribute 'line-number nil :inherit 'fixed-pitch)
-    (set-face-attribute 'line-number-current-line nil :inherit 'fixed-pitch))
+    ;; (set-face-attribute 'org-block nil    :foreground nil :inherit 'fixed-pitch)
+    ;; (set-face-attribute 'org-table nil    :inherit 'fixed-pitch)
+    ;; (set-face-attribute 'org-formula nil  :inherit 'fixed-pitch)
+    ;; (set-face-attribute 'org-code nil     :inherit '(shadow fixed-pitch))
+    ;; (set-face-attribute 'org-table nil    :inherit '(shadow fixed-pitch))
+    ;; (set-face-attribute 'org-verbatim nil :inherit '(shadow fixed-pitch))
+    ;; (set-face-attribute 'org-special-keyword nil :inherit '(font-lock-comment-face fixed-pitch))
+    ;; (set-face-attribute 'org-meta-line nil :inherit '(font-lock-comment-face fixed-pitch))
+    ;; (set-face-attribute 'org-checkbox nil  :inherit 'fixed-pitch)
+    ;; (set-face-attribute 'line-number nil :inherit 'fixed-pitch)
+    ;; (set-face-attribute 'line-number-current-line nil :inherit 'fixed-pitch))
+  )
 
   (defun efs/org-block-setup ()
     (require 'color)
     (set-face-attribute 'org-block-begin-line nil :background
-                        (color-darken-name
-                        (face-attribute 'default :background) 1))
+			(color-darken-name
+			(face-attribute 'default :background) 1))
     (set-face-attribute 'org-block nil :background
-                        (color-darken-name
-                        (face-attribute 'default :background) 1))
+			(color-darken-name
+			(face-attribute 'default :background) 1))
     (set-face-attribute 'org-block-end-line nil :background
-                        (color-darken-name
-                        (face-attribute 'default :background) 1)))
+			(color-darken-name
+			(face-attribute 'default :background) 1)))
 #+end_src
 
 ** Basic Config
@@ -792,6 +834,29 @@ This snippet adds a hook to =org-mode= buffers so that =efs/org-babel-tangle-con
 
 #+end_src
 
+** LaTeX
+
+#+begin_src emacs-lisp
+  (use-package org-fragtog
+    :ensure t
+    :hook (org-mode . org-fragtog-mode)
+    :after org
+    :config
+    (setq org-latex-create-formula-image-program 'dvisvgm)
+    (setq org-format-latex-options (plist-put org-format-latex-options :scale 1.5))
+  )
+#+end_src
+
+** Images max size
+#+begin_src emacs-lisp
+  (setq org-image-actual-width (/ (display-pixel-width) 8))
+#+end_src
+
+** Screenshots
+#+begin_src emacs-lisp
+(use-package org-attach-screenshot)
+#+end_src
+
 ** Evil-Org-Mode
 #+begin_src emacs-lisp
 (use-package evil-org
@@ -803,6 +868,7 @@ This snippet adds a hook to =org-mode= buffers so that =efs/org-babel-tangle-con
   (setq evil-want-C-i-jump nil)
   (evil-org-agenda-set-keys))
 #+end_src
+
 
 * Development
 ** Languages
@@ -1489,9 +1555,8 @@ mu index
       :init
       (require 'mu4e-dashboard)
       :config
+      (add-to-list 'evil-emacs-state-modes 'mu4e-dashboard-mode)
       (evil-set-initial-state 'mu4e-dashboard-mode 'emacs)) ;; this one doesn't work :(
-    
-  ;; TODO: fixed font for this mode
 
 #+end_src
 
