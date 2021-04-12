@@ -326,8 +326,8 @@ This configuration uses [[https://evil.readthedocs.io/en/latest/index.html][evil
   (require 'nano-theme)
   ;; (require 'nano-theme-dark)
   ;; (require 'nano-theme-light)
-  (require 'nano-theme-dark-cake)
-  ;; (require 'nano-theme-light-rose)
+  ;; (require 'nano-theme-dark-cake)
+  (require 'nano-theme-light-rose)
   (require 'nano-modeline)
   (require 'nano-writer)
   (require 'nano-layout)
@@ -1097,25 +1097,29 @@ Make sure you have the language server installed:
 #+end_src
 
 ** Jupyter
-#+begin_src emacs-lisp :tangle no
+#+begin_src emacs-lisp
 
-  (use-package jupyter
-    :after org
-    :config
-    (org-babel-do-load-languages
-    'org-babel-load-languages
-    '((emacs-lisp . t)
-      (julia . t)
-      (python . t)
-      (jupyter . t))))
+    (use-package jupyter
+      :after org
+      :config
+      (require 'jupyter-julia))
 
-  (with-eval-after-load 'org
-    (org-babel-do-load-languages
-    'org-babel-load-languages
-    '((jupyter . t)))
-    (add-to-list 'org-structure-template-alist '("jl" . "src jupyter-julia"))
-    (setq org-babel-default-header-args:jupyter-julia '((:async . "yes")
-                                                        (:session . "jl"))))
+    (with-eval-after-load 'org
+      (org-babel-do-load-languages
+       'org-babel-load-languages
+       '((emacs-lisp . t)
+         ;; (julia . t)
+         (python . t)
+         (jupyter . t)))
+
+      (add-to-list 'org-structure-template-alist '("jj" . "src jupyter-julia"))
+      (setq org-babel-default-header-args:jupyter-julia '((:async . "yes")
+                                                          (:session . "jl")
+                                                          (:kernel . "julia-1.5")
+                                                          (:exports . "both")
+                                                          (:results . "scalar")))
+  )
+
 #+end_src
 ** Company Mode
 
@@ -1149,7 +1153,10 @@ We also use [[https://github.com/sebastiencs/company-box][company-box]] to furth
 
   (use-package projectile
     :diminish projectile-mode
-    :config (projectile-mode)
+    :config
+    (projectile-mode)
+    ;; allow .projectile file to ignore extensions (not working in 'alien mode)
+    (setq projectile-enable-caching t) (setq projectile-indexing-method 'native)
     :custom ((projectile-completion-system 'ivy))
     :bind-keymap
     ("C-c p" . projectile-command-map)
