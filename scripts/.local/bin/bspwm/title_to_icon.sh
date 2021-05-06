@@ -10,10 +10,16 @@ case $lower in
 		icon="  "
 		;;
 	*"browser")
-		icon=" 爵"
+		icon="爵 "
+		;;
+	*"zoom")
+		icon=" "
 		;;
 	*"chrome" | *"chromium")
 		icon=" "
+		;;
+	*"emacs")
+		icon=" "
 		;;
 	*"typora")
 		icon=" "

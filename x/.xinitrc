@@ -16,10 +16,10 @@ for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
 	[ -x "$f" ] && . "$f"
 done; f=
 
-redshift 51:10 > /dev/null & # blue filter
+redshift -l 51:10 > /dev/null & # blue filter
 dunst                      & # notifications
 nitrogen --restore         & # wallpaper
-picom --config $HOME/.config/picom/picom.conf & # compositor
+# picom --config $HOME/.config/picom/picom.conf & # compositor
 imwheel -b 45
 
 exec bspwm

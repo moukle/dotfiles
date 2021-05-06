@@ -38,7 +38,7 @@ c single_monocle true
 # borders
 c borderless_monocle    false
 c border_width          3
-c focused_border_color  $color8
+c focused_border_color  $color3
 c normal_border_color   $color0
 c active_border_color   $color8
 c presel_feedback_color $color2
@@ -51,7 +51,8 @@ c focus_follows_pointer false
 R qutebrowser desktop=^1
 R discord     desktop=^7  follow=off
 R Spotify     desktop=^8
-R DDNet       desktop=^10 follow=on state=fullscreen
+# R DDNet       desktop=^15 follow=on state=fullscreen
+R DDNet       monitor=^2 follow=on state=fullscreen
 R Zathura     state=tiled
 R Pinentry    state=floating
 R Emacs       state=tiled

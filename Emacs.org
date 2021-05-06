@@ -791,8 +791,11 @@ To execute or export code in =org-mode= code blocks, you'll need to set up =org-
     (org-babel-do-load-languages
         'org-babel-load-languages
         '((emacs-lisp . t)
-        (python . t)))
-
+          (python . t)
+          (R . t)))
+    (setq org-confirm-babel-evaluate nil)
+    (add-hook 'org-babel-after-execute-hook 'org-display-inline-images)
+    (add-hook 'org-mode-hook 'org-display-inline-images)
     (push '("conf-unix" . conf-unix) org-src-lang-modes))
 
 #+end_src
@@ -805,13 +808,14 @@ You can add more =src= block templates below by copying one of the lines and cha
 
 #+begin_src emacs-lisp
 
-  (with-eval-after-load 'org
-    ;; This is needed as of Org 9.2
-    (require 'org-tempo)
+    (with-eval-after-load 'org
+      ;; This is needed as of Org 9.2
+      (require 'org-tempo)
 
-    (add-to-list 'org-structure-template-alist '("sh" . "src shell"))
-    (add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
-    (add-to-list 'org-structure-template-alist '("py" . "src python")))
+      (add-to-list 'org-structure-template-alist '("sh" . "src shell"))
+      (add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
+      (add-to-list 'org-structure-template-alist '("r"  . "src R"))
+      (add-to-list 'org-structure-template-alist '("py" . "src python")))
 
 #+end_src
 
@@ -1016,6 +1020,16 @@ pip install --user "python-language-server[all]"
 
 #+end_src
 
+Just use elpy:
+
+#+begin_src emacs-lisp :tangle no
+
+  (use-package elpy
+  :init
+  (elpy-enable))
+
+#+end_src
+
 There are a number of other language servers for Python so if you find that =pyls= doesn't work for you, consult the =lsp-mode= [[https://emacs-lsp.github.io/lsp-mode/page/languages/][language configuration documentation]] to try the others!
 
 #+begin_src emacs-lisp
@@ -1085,6 +1099,12 @@ Make sure you have the language server installed:
     :config
     (setq lsp-julia-default-environment "~/.julia/environments/v1.5"))
 
+#+end_src
+
+*** R / ESS
+
+#+begin_src emacs-lisp
+  (use-package ess)
 #+end_src
 
 ** EIN
@@ -1439,9 +1459,11 @@ Dired is a built-in file manager for Emacs that does some pretty amazing things!
     :commands (dired dired-jump)
     :config
     ;; Doesn't work as expected!
-    ;;(add-to-list 'dired-open-functions #'dired-open-xdg t)
+    ;; (add-to-list 'dired-open-functions #'dired-open-xdg t)
     (setq dired-open-extensions '(("png" . "feh")
-                                  ("mkv" . "mpv"))))
+                                  ("mkv" . "mpv")
+                                  ("pdf" . "zathura")
+                                  ("html" . "qutebrowser"))))
 
   (use-package dired-hide-dotfiles
     :hook (dired-mode . dired-hide-dotfiles-mode)
@@ -1483,9 +1505,9 @@ yay -S mu            # maildir indexer
 
   # Define where mail will be stored
   MaildirStore tumail-local
-  Path ~/Mail/Tumail/
-  Inbox ~/Mail/Tumail/INBOX/
-  Trash ~/Mail/Tumail/Trash/
+  Path ~/.mail/Tumail/
+  Inbox ~/.mail/Tumail/INBOX/
+  Trash ~/.mail/Tumail/Trash/
   SubFolders Verbatim
 
   # Connect the remote and the local maildir
@@ -1504,7 +1526,7 @@ yay -S mu            # maildir indexer
 #+begin_src shell :tangle no
 
 mbsync -a
-mu init --maildir=~/Mail \
+mu init --maildir=~/.mail \
         --my-address=moritz.klein@stud.tu-darmstadt.de
 mu index
 
@@ -1524,7 +1546,7 @@ mu index
     ;; Refresh mail using isync every 10 minutes
     (setq mu4e-update-interval (* 10 60))
     (setq mu4e-get-mail-command "mbsync -a")
-    (setq mu4e-maildir "~/Mail")
+    (setq mu4e-maildir "~/.mail")
 
     ;; Use Ivy for mu4e completions (maildir folders, etc)
     (setq mu4e-completing-read-function #'ivy-completing-read)

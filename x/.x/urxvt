@@ -30,3 +30,5 @@ URxvt.pointerBlank:    true
 
 URxvt.font:xft:JetBrainsMono Nerd Font:size=13
 URxvt.boldFont:xft:JetBrainsMono Nerd Font:size=13
+
+URxvt.inputMethod: ibus

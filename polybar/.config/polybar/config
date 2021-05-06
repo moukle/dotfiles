@@ -27,10 +27,12 @@ font_roboto = "Roboto:size=18:weight=medium:antialias=true;3"
 font_jetbrains = "JetBrainsMono Nerd Font Mono:size=25:weight=medium:antialias=true;6"
 icon_typicons = "Typicons:size=20:weight=regular:antialias=true;2"
 icon_material = "Material Design Icons:size=15:weight=regular:antialias=true;4"
+icon_awesome="Font Awesome:size=15:weight=regular:antialias=true;4"
 
 [section/settings]
 font-0 = ${fonts.font_SF}
 font-1 = ${fonts.font_jetbrains}
+font-2 = ${fonts.icon_awesome}
 
 accent = ${colors.yellow_dark}
 background = ${colors.background}
@@ -78,9 +80,9 @@ modules-left = polywins
 modules-center = bspwm
 modules-right  = date pulseaudio powermenu
 
-; tray-position   = right
-; tray-padding    = ${settings.spacing}
-; tray-background = ${colors.black_dark}
+tray-position   = right
+tray-padding    = ${settings.spacing}
+tray-background = ${colors.black_dark}
 
 [bar/laptop]
 inherit = section/settings
