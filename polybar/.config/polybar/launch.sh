@@ -9,7 +9,7 @@ while pgrep -x polybar >/dev/null; do sleep 0.1; done
 # Launch bar1 and bar2
 for bar in "$@"
 do
-	polybar $bar &
+		polybar $bar &
 done
 
 echo "Bars launched..."

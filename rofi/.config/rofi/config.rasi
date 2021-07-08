@@ -1,9 +1,9 @@
 configuration {
     display-run:    " ";
-    /* display-drun:   "  "; */
-    display-drun:   " ";
+	display-drun: 					"";
     display-window: "  ";
     drun-display-format: "{icon} {name} [<span weight='light' size='small'><i>({generic})</i></span>]";
+	drun-display-format:            "{name}";
     modi: "window,run,drun,ssh,file-browser";
     show-icons: true;
     icon-theme: "Paper";
@@ -12,7 +12,7 @@ configuration {
 
 * {
     text-font: "SF Pro Text 15";
-    text-mono-font: "JetBrainsMono Nerd Font Medium 13";
+    text-mono-font: "JetBrainsMono Nerd Font Medium 10";
     icon-font: "Font Awesome 20";
 
     background-color: @bg;
@@ -41,9 +41,9 @@ element selected {
 }
 
 entry {
-    /* background-color: @bg-alt2; */
-    padding: 12;
-    text-color: @fg;
+    padding: 0.8em;
+    text-color: @bg;
+    background-color: @fg;
 }
 
 inputbar {
@@ -51,9 +51,9 @@ inputbar {
 }
 
 listview {
-    background-color: @bg;
+    /* background-color: @fg; */
     /* columns: 2; */
-    lines: 12;
+    lines: 7;
     padding: 0.3em 0 0;
     /* border: 0.1em; */
     /* border-color: @bg-alt2; */
@@ -73,8 +73,8 @@ mainbox {
 }
 
 message {
-    /* background-color: @bg-alt2; */
-    padding: 12;
+    font: @text-mono-font;
+    padding: 0.3em;
 }
 
 textbox {
@@ -87,24 +87,26 @@ textbox {
 }
 
 prompt {
+    text-color: @bg-alt2;
+    background-color: @fg;
     font: @icon-font;
-    text-color: @bg-alt;
-    /* background-color: @bg-alt2; */
     enabled: true;
-    padding: 12 0 0 12;
-    padding: 11px;
+    padding: 0.8em 0.1em 0 0.8em;
     expand: false;
     border: 0 0.1em 0 0;
     margin: 0 -0.2em 0 0;
 }
 
 window {
-    width:    1000px;
+	width: 15%;
+	/* max-height: 15%; */
+	/* height: 25%; */
+    /* max-width:    200px; */
     /* y-offset: -50px; */
     /* anchor:   north; */
     /* location: center; */
     border: 0.05em;
-    /* border-radius: 6px 6px 0 0; */
+    border-radius: 6px 6px 6px 6px;
     /* children: [ inputbar, message, listview ]; */
 }
 

@@ -1,20 +1,27 @@
 #! /bin/sh
 
+source ~/.cache/wal/colors.sh
+# export bg_alpha="#22${background/'#'}"
+
 # desktops
 if [ $HOSTNAME == "olo" ]; then
 	bspc monitor DP-0 -d 1 2 3 4 5 6 7 8 9 0
 	# bspc monitor DP-4 -d 6 7 8 9 0
 	bspc monitor DP-4 -d a s d f g
 	# $HOME/.config/polybar/launch.sh leftM leftR rightM
-	$HOME/.config/polybar/launch.sh main rightM
-	# sleep 2
-	# hideIt.sh --name 'polybar-main_DP-0' -d top --signal --peek -10 &
+
+	$HOME/.config/polybar/launch.sh main main_min rightM
+	sleep 2
+	xdo raise -a 'polybar-main_min-DP-0'
+	pkill -f hideIt.sh
+	hideIt.sh --name 'polybar-main_DP-0' -d top --signal --peek -10 & # toggle with keybind [alt+b]
+	hideIt.sh --name 'Polybar tray window' -d top --signal --peek -10 & # toggle with keybind [alt+b]
+	# hideIt.sh -w --name "polybar-main_DP-0" -d top -H -p 1 & disown >> /dev/null
+
 else
 	bspc monitor -d q w e r t z u i o p
 	$HOME/.config/polybar/launch.sh laptop
 fi
-
-source $HOME/.cache/wal/colors.sh
 
 # wrappers
 c() { bspc config "$@";  }
@@ -26,20 +33,21 @@ s() { pkill -x "$1"; { sleep 0.1; "$@" & }; }
 # c ignore_ewmh_focus true
 
 # padding
-c top_padding    55
-c bottom_padding 3
-c right_padding  3
-c left_padding   3
+# c top_padding    73
+c top_padding    8
+c bottom_padding 8
+c right_padding  8
+c left_padding   8
 
 # gaps
-c window_gap     -3
+c window_gap     15
 c single_monocle true
 
 # borders
-c borderless_monocle    false
-c border_width          3
-c focused_border_color  $color3
-c normal_border_color   $color0
+c borderless_monocle    true
+c border_width          5
+c focused_border_color  $color15
+c normal_border_color   $background
 c active_border_color   $color8
 c presel_feedback_color $color2
 

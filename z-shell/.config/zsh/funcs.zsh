@@ -77,6 +77,14 @@ fkill() {
 	fi
 }
 
+function swap()
+{
+    local TMPFILE=tmp.$$
+    mv "$1" $TMPFILE
+    mv "$2" "$1"
+    mv $TMPFILE "$2"
+}
+
 mdp() {
 	filename=$1
 	basename="${filename%.*}"
@@ -87,4 +95,18 @@ mdp() {
 walr() {
 	wal $@
 	$HOME/.config/wal/done.sh
+}
+
+walD() {
+	rm -f $HOME/.config/nitrogen/bg-saved.cfg
+	cp $HOME/.config/nitrogen/bg-dark.cfg $HOME/.config/nitrogen/bg-saved.cfg
+	walr --theme base16-onedark
+	nitrogen --restore
+}
+
+walL() {
+	rm -f $HOME/.config/nitrogen/bg-saved.cfg
+	cp $HOME/.config/nitrogen/bg-light.cfg $HOME/.config/nitrogen/bg-saved.cfg
+	walr --theme rose-pine -l
+	nitrogen --restore
 }

@@ -1,6 +1,8 @@
 [colors]
 background     = ${xrdb:background}
-; background     = "#e0fffaf3"
+; background     = ${env:bg_alpha}
+; background     = "#20fffaf3"
+; background     = "#10000000"
 foreground     = ${xrdb:foreground}
 black_dark     = ${xrdb:color0}
 black_bright   = ${xrdb:color8}
@@ -24,7 +26,7 @@ font_source = "Source Serif Pro:weight=semibold:size=18:antialias=true;3"
 font_Iosevka = "Iosevka Nerd Font:size=18:weight=regular:antialias=true;3"
 font_SF = "SF Pro Text:size=15:weight=bold:antialias=true;4"
 font_roboto = "Roboto:size=18:weight=medium:antialias=true;3"
-font_jetbrains = "JetBrainsMono Nerd Font Mono:size=25:weight=medium:antialias=true;6"
+font_jetbrains = "JetBrainsMono Nerd Font Mono:size=30:weight=medium:antialias=true;6"
 icon_typicons = "Typicons:size=20:weight=regular:antialias=true;2"
 icon_material = "Material Design Icons:size=15:weight=regular:antialias=true;4"
 icon_awesome="Font Awesome:size=15:weight=regular:antialias=true;4"
@@ -38,7 +40,7 @@ accent = ${colors.yellow_dark}
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-height = 55
+height = 65
 ; width = 99%
 ; offset-x = 0.5%
 ; offset-y = 10
@@ -70,6 +72,16 @@ offset-x = 44.8%
 offset-y = 0
 modules-center = bspwmbars
 
+[bar/main_min]
+inherit = section/settings
+monitor = DP-0
+
+width = 14.32%
+height = 10
+offset-x = 44.8%
+offset-y = 0
+modules-center = bspwmbars
+
 [bar/main]
 inherit = section/settings
 ; dpi = 140
@@ -77,12 +89,14 @@ monitor = DP-0
 ; radius = 10
 
 modules-left = polywins
-modules-center = bspwm
+; modules-center = bspwm
 modules-right  = date pulseaudio powermenu
+
+border-bottom-size = 2
 
 tray-position   = right
 tray-padding    = ${settings.spacing}
-tray-background = ${colors.black_dark}
+tray-background = ${colors.background}
 
 [bar/laptop]
 inherit = section/settings
@@ -161,8 +175,8 @@ label-empty    = " "
 ; label-urgent  = %name%
 ; label-empty  = %name%
 
-label-focused-background  = ${colors.yellow_dark}
-label-occupied-background = ${colors.white_dark}
+label-focused-background  = ${colors.blue_dark}
+label-occupied-background = ${colors.foreground}
 label-urgent-background   = ${colors.red_dark}
 label-empty-background    = ${colors.black_dark}
 
@@ -228,7 +242,7 @@ use-ui-max = true
 ; format-volume-padding = 3
 format-volume = <ramp-volume>
 ; format-volume-background = ${colors.black_dark}
-format-volume-foreground = ${colors.white_bright}
+format-volume-foreground = ${colors.white_dark}
 
 ramp-volume-0 = 奄
 ramp-volume-1 = 奔
@@ -369,7 +383,7 @@ menu-4-0-exec = betterlockscreen -s dim
 
 format-spacing = 1
 ; format-background = ${colors.black_dark}
-format-foreground = ${colors.white_bright}
+format-foreground = ${colors.white_dark}
 format-padding = 1
 
 label-open = 

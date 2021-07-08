@@ -15,6 +15,9 @@ case $lower in
 	*"zoom")
 		icon=" "
 		;;
+	*"firefox")
+		icon=" "
+		;;
 	*"chrome" | *"chromium")
 		icon=" "
 		;;
@@ -27,11 +30,14 @@ case $lower in
 	"pwmt" | "zathura" | *".pdf" )
 		icon="  "
 		;;
+	"bitwarden")
+		icon=" "
+		;;
 	"code") 
-		icon=" "
+		icon=" "
 		;;
 	*)
-		icon=" "
+		icon=" "
 		;;
 esac
 

@@ -7,6 +7,7 @@ set font "JetBrains Mono 12"              # Use Hack as our font of choice
 set guioptions "vs"              # Show a "progress bar" when scrolling up/down
 set adjust-open "width"         # Make documents take up all the available space by default
 set statusbar-basename "true"   # When using the status bar, show the basename only
+set window-title-basename "true" # useful when using tabbed mode
 
 set render-loading  "false"  # Do not show the " loading" text
 set scroll-step     "120"    # Increase the scroll distance when using j/k
@@ -22,12 +23,12 @@ set statusbar-bg                   "{color0}"
 set statusbar-fg                   "{color15}"
 set inputbar-bg                    "{color0}"
 set inputbar-fg                    "{foreground}"
-set notification-bg                "{background}"
-set notification-fg                "{foreground}"
+set notification-bg                "{color15}"
+set notification-fg                "{color0}"
 set notification-error-bg          "{background}"
-set notification-error-fg          "{foreground}"
+set notification-error-fg          "{color2}"
 set notification-warning-bg        "{background}"
-set notification-warning-fg        "{foreground}"
+set notification-warning-fg        "{color3}"
 set highlight-color                "{color7}"
 set highlight-active-color         "{color15}"
 set completion-group-bg            "{color7}"
