@@ -9,7 +9,7 @@ alias rm='rm -vi'
 alias rmf='rm -rf'
 alias path='echo -e ${PATH//:/\\n}'
 
-alias discord='discocss'
+# alias discord='discocss'
 
 alias s='sudo '
 alias p='sudo pacman'

@@ -9,7 +9,7 @@ case $lower in
 	"kitty" | "zsh")
 		icon="  "
 		;;
-	*"browser")
+	*"browser" | "min")
 		icon="爵 "
 		;;
 	*"zoom")

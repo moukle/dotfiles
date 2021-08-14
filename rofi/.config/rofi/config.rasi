@@ -12,7 +12,7 @@ configuration {
 
 * {
     text-font: "SF Pro Text 15";
-    text-mono-font: "JetBrainsMono Nerd Font Medium 10";
+    text-mono-font: "JetBrainsMono Nerd Font Medium 11";
     icon-font: "Font Awesome 20";
 
     background-color: @bg;
@@ -79,7 +79,7 @@ message {
 
 textbox {
     font: @text-mono-font;
-    border: 0.1em;
+    /* border: 0.1em; */
     border-color: @bg-alt;
     padding: 12;
     background-color: @bg-alt2;
@@ -93,8 +93,8 @@ prompt {
     enabled: true;
     padding: 0.8em 0.1em 0 0.8em;
     expand: false;
-    border: 0 0.1em 0 0;
-    margin: 0 -0.2em 0 0;
+    /* border: 0 0.1em 0 0; */
+    /* margin: 0 -0.2em 0 0; */
 }
 
 window {
@@ -105,8 +105,9 @@ window {
     /* y-offset: -50px; */
     /* anchor:   north; */
     /* location: center; */
-    border: 0.05em;
-    border-radius: 6px 6px 6px 6px;
+    /* border: 0.05em; */
+    /* border-radius: 6px 6px 6px 6px; */
+    /* border-radius: 1.1em; */
     /* children: [ inputbar, message, listview ]; */
 }
 

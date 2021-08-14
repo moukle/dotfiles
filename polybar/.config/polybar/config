@@ -21,18 +21,22 @@ cyan_bright    = ${xrdb:color14}
 white_dark     = ${xrdb:color7}
 white_bright   = ${xrdb:color15}
 
+transparent    = "#00000000"
+
 [fonts]
 font_source = "Source Serif Pro:weight=semibold:size=18:antialias=true;3"
 font_Iosevka = "Iosevka Nerd Font:size=18:weight=regular:antialias=true;3"
-font_SF = "SF Pro Text:size=15:weight=bold:antialias=true;4"
+font_SF = "SF Pro Text:size=18:weight=medium:antialias=true;6"
 font_roboto = "Roboto:size=18:weight=medium:antialias=true;3"
-font_jetbrains = "JetBrainsMono Nerd Font Mono:size=30:weight=medium:antialias=true;6"
+font_roboto_slab = "Roboto Slab:size=18:weight=medium:antialias=true;4"
+font_jetbrains = "JetBrainsMono Nerd Font Mono:size=30:weight=medium:antialias=true;8"
 icon_typicons = "Typicons:size=20:weight=regular:antialias=true;2"
 icon_material = "Material Design Icons:size=15:weight=regular:antialias=true;4"
 icon_awesome="Font Awesome:size=15:weight=regular:antialias=true;4"
 
 [section/settings]
 font-0 = ${fonts.font_SF}
+; font-0 = ${fonts.font_roboto_slab}
 font-1 = ${fonts.font_jetbrains}
 font-2 = ${fonts.icon_awesome}
 
@@ -40,7 +44,7 @@ accent = ${colors.yellow_dark}
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-height = 65
+height = 55
 ; width = 99%
 ; offset-x = 0.5%
 ; offset-y = 10
@@ -48,7 +52,7 @@ bottom = false
 
 line_size = 5
 border-bottom-size = 0
-border-color = ${colors.black_bright}
+border-color = ${colors.black_dark}
 
 spacing = 0
 padding-left = 3
@@ -76,11 +80,16 @@ modules-center = bspwmbars
 inherit = section/settings
 monitor = DP-0
 
-width = 14.32%
+bottom = true
+
+; width = 14.32%
+; width = 14.32%
 height = 10
-offset-x = 44.8%
-offset-y = 0
+; offset-x = 44.8%
+; offset-x = 44.8%
+; offset-y = 0
 modules-center = bspwmbars
+background = ${colors.transparent}
 
 [bar/main]
 inherit = section/settings
@@ -88,11 +97,15 @@ inherit = section/settings
 monitor = DP-0
 ; radius = 10
 
-modules-left = polywins
-; modules-center = bspwm
-modules-right  = date pulseaudio powermenu
+width = 33%
+offset-x = 33%
+offset-y = 8
 
-border-bottom-size = 2
+modules-left = polywins
+modules-center   = date
+modules-right  = pulseaudio powermenu
+
+border-bottom-size = 3
 
 tray-position   = right
 tray-padding    = ${settings.spacing}
@@ -175,8 +188,8 @@ label-empty    = " "
 ; label-urgent  = %name%
 ; label-empty  = %name%
 
-label-focused-background  = ${colors.blue_dark}
-label-occupied-background = ${colors.foreground}
+label-focused-background  = ${colors.white_bright}
+label-occupied-background = ${colors.white_dark}
 label-urgent-background   = ${colors.red_dark}
 label-empty-background    = ${colors.black_dark}
 

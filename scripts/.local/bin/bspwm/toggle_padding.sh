@@ -2,8 +2,8 @@
 
 current=$(bspc config -m ^1 top_padding)
 
-if [ $current == 8 ]; then
-    bspc config -m ^1 top_padding 73
+if [ $current == 10 ]; then
+    bspc config -m ^1 top_padding 63
 else
-    bspc config -m ^1 top_padding 8
+    bspc config -m ^1 top_padding 10
 fi

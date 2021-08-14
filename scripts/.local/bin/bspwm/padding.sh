@@ -5,5 +5,6 @@ padding=$(( $npadding > 0 ? $npadding : 0 ))
 
 bspc config -d focused left_padding   $padding
 bspc config -d focused right_padding  $padding
-bspc config -d focused top_padding    $padding
-bspc config -d focused bottom_padding $padding
+
+bspc config -d focused top_padding    $((padding/2))
+bspc config -d focused bottom_padding $((padding/2))

@@ -12,7 +12,7 @@ export PATH="$PATH:$HOME/.emacs.d/bin"
 
 export EDITOR="nvim"
 export TERMINAL="kitty"
-export BROWSER="qutebrowser"
+export BROWSER="min"
 export READER="zathura"
 
 export PAGER="less"

@@ -13,16 +13,17 @@
 ;;
 ;;; UI
 
-(setq doom-font (font-spec :family "Iosevka" :size 24 :weight 'regular)
+(setq doom-font (font-spec :family "Cascadia Code" :size 24 :weight 'regular)
       doom-variable-pitch-font (font-spec :family "Iosevka Aile")
       doom-unicode-font (font-spec :family "DejaVu Math TeX Gyre"))
 
-;; (setq doom-theme 'doom-one
-;;       doom-one-padded-modeline t)
+;; (setq doom-theme 'doom-plain)
+(setq doom-theme 'doom-one
+      doom-one-padded-modeline t)
 ;; (setq doom-theme 'doom-flatwhite)
 ;; (setq doom-theme 'doom-solarized-light)
-(setq doom-theme 'doom-rose-pine-light
-      doom-rose-pine-light-padded-modeline t)
+;; (setq doom-theme 'doom-rose-pine-light
+;;       doom-rose-pine-light-padded-modeline t)
 
 ;;; :ui doom-dashboard
 (setq fancy-splash-image (concat doom-private-dir "splash.png"))
