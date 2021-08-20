@@ -6,17 +6,8 @@ source ~/.cache/wal/colors.sh
 # desktops
 if [ $HOSTNAME == "olo" ]; then
 	bspc monitor DP-0 -d 1 2 3 4 5 6 7 8 9 0
-	# bspc monitor DP-4 -d 6 7 8 9 0
 	bspc monitor DP-4 -d a s d f g
-	# $HOME/.config/polybar/launch.sh leftM leftR rightM
-
-	$HOME/.config/polybar/launch.sh main main_min rightM
-	sleep 2
-	xdo raise -a 'polybar-main_min-DP-0'
-	pkill -f hideIt.sh
-	hideIt.sh --name 'polybar-main_DP-0' -d top --signal --peek -10 & # toggle with keybind [alt+b]
-	hideIt.sh --name 'Polybar tray window' -d top --signal --peek -10 & # toggle with keybind [alt+b]
-	# hideIt.sh -w --name "polybar-main_DP-0" -d top -H -p 1 & disown >> /dev/null
+	$HOME/.config/polybar/launch.sh main rightM
 else
 	bspc monitor -d q w e r t z u i o p
 	$HOME/.config/polybar/launch.sh laptop
@@ -33,21 +24,20 @@ s() { pkill -x "$1"; { sleep 0.1; "$@" & }; }
 # c ignore_ewmh_focus true
 
 # padding
-# c top_padding    73
-c top_padding    10
+c top_padding    65
 c bottom_padding 10
 c right_padding  10
 c left_padding   10
 
 # gaps
-c window_gap     15
+c window_gap     -10
 c single_monocle true
 
 # borders
 c borderless_monocle    true
-c border_width          8
-c focused_border_color  $color15
-c normal_border_color   $background
+c border_width          10
+c focused_border_color  $color7
+c normal_border_color   $color0
 c active_border_color   $color8
 c presel_feedback_color $color2
 

@@ -9,9 +9,8 @@ xset fp rehash     # font stuff
 
 xrdb ~/.Xresources # X settings
 .x/keyboard.sh     # keyboard settings
-# .x/xrandr.sh	   # display settings
-.x/xrandr.sh game       # display settings
-# autorandr --load main
+.x/xrandr.sh	   # display settings
+# .x/xrandr.sh game       # display settings
 
 # start some nice programs
 for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
@@ -23,11 +22,7 @@ dunst                      & # notifications
 nitrogen --restore         & # wallpaper
 imwheel -b 45              &
 
-picom & # compositor
+# picom & # compositor
 # picom --experimental-backends &
 
 exec bspwm
-
-# export XDG_SESSION_TYPE=x11
-# export GDK_BACKEND=x11
-# exec gnome-session

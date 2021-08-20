@@ -9,21 +9,21 @@
 	# corner_radius = 8
 
     # Make the width 3740 (3840 - 100), have 50 left margin and 95 above
-    geometry = "700x50-8+8"
+    geometry = "700x50-0+58"
 
     # Seperator between multiple notifications
     separator_height = 1
     separator_color = {color0}
 
     # Add vertical padding to the inside of the notification
-    padding = 10
+    padding = 15
 
     # Add horizontal padding for when the text gets long enough
     horizontal_padding = 10
 
     # The frame color and width of the notification
-    frame_color = "{color8}"
-    frame_width = 0
+    frame_color = "{color0}"
+    frame_width = 10
 
     # How long a user needs to be idle for sticky notifications
     idle_threshold = 120

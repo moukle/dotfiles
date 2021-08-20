@@ -1,9 +1,9 @@
 configuration {
     display-run:    " ";
-	display-drun: 					"";
+	display-drun:   "";
     display-window: "  ";
     drun-display-format: "{icon} {name} [<span weight='light' size='small'><i>({generic})</i></span>]";
-	drun-display-format:            "{name}";
+	drun-display-format: "{name}";
     modi: "window,run,drun,ssh,file-browser";
     show-icons: true;
     icon-theme: "Paper";
@@ -11,15 +11,16 @@ configuration {
 }
 
 * {
-    text-font: "SF Pro Text 15";
+    text-font:      "SF Pro Text 15";
+    text-bold:      "SF Pro Text Bold 15";
     text-mono-font: "JetBrainsMono Nerd Font Medium 11";
-    icon-font: "Font Awesome 20";
+    icon-font:      "Font Awesome 20";
+
+    font: @text-font;
 
     background-color: @bg;
     foreground-color: @fg;
     border-color: @bg-alt;
-
-    font: @text-font;
 
     border: 0;
     margin: 0;
@@ -29,15 +30,13 @@ configuration {
 
 element {
     padding: 15;
-    /* orientation: vertical; */
-    /* border: 0.03em; */
-    /* border-color: @bg-alt2; */
     text-color: @bg-alt;
 }
 
 element selected {
-    background-color: @bg-alt2;
+    /* background-color: @bg-alt2; */
     text-color: @fg;
+	font: "SF Pro Text Bold 15";
 }
 
 entry {
@@ -99,16 +98,7 @@ prompt {
 
 window {
 	width: 15%;
-	/* max-height: 15%; */
-	/* height: 25%; */
-    /* max-width:    200px; */
-    /* y-offset: -50px; */
-    /* anchor:   north; */
-    /* location: center; */
-    /* border: 0.05em; */
-    /* border-radius: 6px 6px 6px 6px; */
-    /* border-radius: 1.1em; */
-    /* children: [ inputbar, message, listview ]; */
+    border: 0.05em;
 }
 
 @import "~/.cache/wal/colors-rofi.rasi"

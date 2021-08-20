@@ -40,10 +40,10 @@ XF86Audio{Lower,Raise}Volume
 XF86AudioMute
 	volumeControl.sh mute
 
-alt + b
-	hideIt.sh --name 'polybar-main_DP-0' --toggle && \
-	hideIt.sh --name 'Polybar tray window' --toggle && \
-    toggle_padding.sh
+# alt + b
+# 	hideIt.sh --name 'polybar-main_DP-0' --toggle && \
+# 	hideIt.sh --name 'Polybar tray window' --toggle && \
+#     toggle_padding.sh
 
 # ------------------------------
 # bspwm keys
@@ -85,6 +85,7 @@ super + ctrl + {x,y,z}
 # ------------------------------
 # tabs
 # ------------------------------
+
 # Tab focused window
 super + ctrl + t; t
 	bsptab tab focused
