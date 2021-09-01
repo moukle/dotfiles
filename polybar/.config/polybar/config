@@ -27,14 +27,14 @@ transparent    = "#00000000"
 font_source = "Source Serif Pro:weight=medium:size=24:antialias=true;4"
 font_Iosevka = "Iosevka Nerd Font:size=18:weight=regular:antialias=true;3"
 
-font_SF = "SF Pro Text:size=18:weight=medium:antialias=true;4"
+font_SF = "SF Pro Text:size=28:weight=medium:antialias=true;8"
 font_SF2 = "SF Pro Text:size=18:weight=bold:antialias=true;4"
 font_SF3 = "SF Pro Text:size=18:weight=light:antialias=true;4"
 
 font_roboto = "Roboto:size=18:weight=medium:antialias=true;3"
 font_roboto_slab = "Roboto Slab:size=18:weight=medium:antialias=true;4"
 
-font_jetbrains = "JetBrainsMono Nerd Font Mono:size=20:weight=regular:antialias=true;5"
+font_jetbrains = "JetBrainsMono Nerd Font Mono:size=28:weight=regular:antialias=true;8"
 icon_typicons = "Typicons:size=20:weight=regular:antialias=true;2"
 icon_material = "Material Design Icons:size=15:weight=regular:antialias=true;4"
 icon_awesome="Font Awesome:size=15:weight=regular:antialias=true;4"
@@ -50,7 +50,7 @@ accent = ${colors.yellow_dark}
 background = ${colors.background}
 foreground = ${colors.white_bright}
 
-height = 55
+height = 65
 ; width = 99%
 ; offset-x = 0.5%
 ; offset-y = 10
@@ -213,10 +213,15 @@ format = <label-state> <label-mode>
 ; label-urgent   = " "
 ; label-empty    = " "
 
-label-focused  = %{T2}%name%%{T-}
-label-occupied  = %name%
-label-urgent  = %name%
-label-empty  = %{T3}%name%%{T-}
+; label-focused  = %{T2}%name%%{T-}
+; label-occupied  = %name%
+; label-urgent  = %name%
+; label-empty  = %{T3}%name%%{T-}
+
+label-focused  =  
+label-occupied  =  
+label-urgent  = ⚡ 
+label-empty  =  
 
 ; label-focused-background  = ${colors.white_dark}
 ; label-occupied-background = ${colors.cyan_dark}
@@ -236,7 +241,7 @@ label-empty-padding    = 2
 [module/date]
 type = internal/date
 
-label = %date%  %time%
+label = %time%
 label-padding = 1
 ; format-background = ${colors.black_dark}
 
@@ -370,7 +375,7 @@ type = custom/menu
 
 expand-right = true
 
-menu-0-0 = ﰇ
+menu-0-0 =  
 menu-0-0-exec = menu-open-1
 menu-0-1 = 
 menu-0-1-exec = menu-open-2
@@ -397,8 +402,8 @@ format-spacing = 1
 format-foreground = ${colors.white_dark}
 format-padding = 1
 
-label-open = 
-label-close = 
+label-open =  
+label-close =  
 label-separator = " "
 
 label-close-padding = 2

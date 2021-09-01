@@ -24,18 +24,18 @@ s() { pkill -x "$1"; { sleep 0.1; "$@" & }; }
 # c ignore_ewmh_focus true
 
 # padding
-c top_padding    65
-c bottom_padding 10
-c right_padding  10
-c left_padding   10
+c top_padding    68
+c bottom_padding 3
+c right_padding  3
+c left_padding   3
 
 # gaps
-c window_gap     -10
+c window_gap     -3
 c single_monocle true
 
 # borders
 c borderless_monocle    true
-c border_width          10
+c border_width          3
 c focused_border_color  $color7
 c normal_border_color   $color0
 c active_border_color   $color8
