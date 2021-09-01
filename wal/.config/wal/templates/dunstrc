@@ -9,7 +9,7 @@
 	# corner_radius = 8
 
     # Make the width 3740 (3840 - 100), have 50 left margin and 95 above
-    geometry = "700x50-0+58"
+    geometry = "700x50-0+55"
 
     # Seperator between multiple notifications
     separator_height = 1
