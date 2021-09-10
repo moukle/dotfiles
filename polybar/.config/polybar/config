@@ -98,18 +98,6 @@ tray-padding    = ${settings.spacing}
 tray-background = ${colors.black_dark}
 
 ; ---------- modules --------------
-[module/notification]
-type = custom/script
-click-left = kill -s USR1 $(pidof deadd-notification-center)
-exec = echo "    "
-label-background = ${colors.black_dark}
-
-[module/launcher]
-type = custom/script
-click-left = ~/.config/rofi/bins/appsmenu
-exec = echo "      "
-label-background = ${colors.black_dark}
-
 [module/darkmode]
 type = custom/script
 exec = echo 

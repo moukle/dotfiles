@@ -95,6 +95,7 @@ mainbox {
 message {
     font: @text-mono-font;
     padding: 0.3em;
+    border: 0;
 }
 
 textbox {
