@@ -9,8 +9,8 @@ xset fp rehash     # font stuff
 
 xrdb ~/.Xresources # X settings
 .x/keyboard.sh     # keyboard settings
-.x/xrandr.sh	   # display settings
-# .x/xrandr.sh game       # display settings
+# .x/xrandr.sh	   # display settings
+.x/xrandr.sh game       # display settings
 
 # start some nice programs
 for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
@@ -18,11 +18,9 @@ for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
 done; f=
 
 redshift -l 51:10 > /dev/null & # blue filter
-dunst                      & # notifications
-nitrogen --restore         & # wallpaper
-imwheel -b 45              &
-
-# picom & # compositor
-# picom --experimental-backends &
+dunst                      &    # notifications
+hsetroot -solid "#363636"       # wallpaper
+# nitrogen --restore         &   # wallpaper
+# imwheel -b 45              &
 
 exec bspwm

@@ -1,4 +1,4 @@
-if [[ $HOSTNAME = "olo" ]]; then
+if [[ $HOSTNAME = "toaster" ]]; then
 	if [[ $1 = "game" ]]; then
 		xrandr --dpi 138x138 \
 			--output DP-0 --mode 3840x2160 --primary --scale 1.0x1.0 \

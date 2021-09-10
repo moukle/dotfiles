@@ -24,36 +24,24 @@ white_bright   = ${xrdb:color15}
 transparent    = "#00000000"
 
 [fonts]
-font_source = "Source Serif Pro:weight=medium:size=24:antialias=true;4"
-font_Iosevka = "Iosevka Nerd Font:size=18:weight=regular:antialias=true;3"
-
+font_nerd = "Iosevka Nerd Font:size=18:weight=regular:antialias=true;5"
 font_SF = "SF Pro Text:size=28:weight=medium:antialias=true;8"
-font_SF2 = "SF Pro Text:size=18:weight=bold:antialias=true;4"
-font_SF3 = "SF Pro Text:size=18:weight=light:antialias=true;4"
 
 font_roboto = "Roboto:size=18:weight=medium:antialias=true;3"
 font_roboto_slab = "Roboto Slab:size=18:weight=medium:antialias=true;4"
 
 font_jetbrains = "JetBrainsMono Nerd Font Mono:size=28:weight=regular:antialias=true;8"
-icon_typicons = "Typicons:size=20:weight=regular:antialias=true;2"
-icon_material = "Material Design Icons:size=15:weight=regular:antialias=true;4"
-icon_awesome="Font Awesome:size=15:weight=regular:antialias=true;4"
+font_casc = "Cascadia Code:size=28:weight=regular:antialias=true;8"
 
 [section/settings]
 font-0 = ${fonts.font_SF}
-font-1 = ${fonts.font_SF2}
-font-2 = ${fonts.font_SF3}
-font-3 = ${fonts.font_jetbrains}
-font-4 = ${fonts.icon_awesome}
+font-1 = ${fonts.font_nerd}
 
 accent = ${colors.yellow_dark}
 background = ${colors.background}
 foreground = ${colors.white_bright}
 
 height = 65
-; width = 99%
-; offset-x = 0.5%
-; offset-y = 10
 bottom = false
 
 line_size = 5
@@ -76,27 +64,15 @@ override-redirect = false
 inherit = section/settings
 monitor = DP-4
 
-; width = 10.36%
 height = 10
-; offset-x = 44.8%
 offset-y = 0
-modules-center = bspwmbars
-background = ${colors.transparent}
 bottom = true
-
-[bar/main_min]
-inherit = section/settings
-monitor = DP-0
-
-bottom = true
-
-height = 10
-modules-center = bspwmbars
 background = ${colors.transparent}
+
+modules-center = bspwmbars
 
 [bar/main]
 inherit = section/settings
-; dpi = 140
 monitor = DP-0
 
 modules-left = polywins
@@ -106,7 +82,7 @@ modules-right  = date pulseaudio powermenu
 border-bottom-size = 3
 
 tray-position   = right
-tray-padding    = ${settings.spacing}
+tray-padding    = 0
 tray-background = ${colors.background}
 
 [bar/laptop]
@@ -157,18 +133,6 @@ label = %output%
 label-padding = 1
 tail = true
 
-[module/bspnodes_ipc]
-type = custom/ipc
-hook-0 = nodes_list.sh -m 1
-click-middle = polybar-msg hook bspnodes_ipc 1
-; format-background = ${colors.black_dark}
-
-[module/bspnodes]
-type = custom/script
-exec = polybar-msg hook bspnodes_ipc 1
-interval = 5
-label = 
-
 [module/bspwmbars]
 type = internal/bspwm
 pin-workspaces = true
@@ -181,20 +145,10 @@ label-occupied = " "
 label-urgent   = " "
 label-empty    = " "
 
-; label-focused  = %name%
-; label-occupied  = %name%
-; label-urgent  = %name%
-; label-empty  = %name%
-
 label-focused-background  = ${colors.white_bright}
 label-occupied-background = ${colors.white_dark}
 label-urgent-background   = ${colors.red_dark}
 label-empty-background    = ${colors.black_dark}
-
-; label-focused-foreground  = ${colors.yellow_dark}
-; label-occupied-foreground = ${colors.white_dark}
-; label-urgent-foreground   = ${colors.red_bright}
-; label-empty-foreground    = ${colors.black_dark}
 
 label-focused-padding  = 5
 label-occupied-padding = 5
@@ -208,11 +162,6 @@ enable-click = true
 
 format = <label-state> <label-mode>
 
-; label-focused  = " "
-; label-occupied = " "
-; label-urgent   = " "
-; label-empty    = " "
-
 ; label-focused  = %{T2}%name%%{T-}
 ; label-occupied  = %name%
 ; label-urgent  = %name%
@@ -222,11 +171,6 @@ label-focused  = 
 label-occupied  =  
 label-urgent  = ⚡ 
 label-empty  =  
-
-; label-focused-background  = ${colors.white_dark}
-; label-occupied-background = ${colors.cyan_dark}
-; label-urgent-background   = ${colors.red_dark}
-; label-empty-background    = ${colors.black_dark}
 
 label-focused-foreground  = ${colors.white_bright}
 label-occupied-foreground = ${colors.white_dark}
@@ -243,7 +187,6 @@ type = internal/date
 
 label = %time%
 label-padding = 1
-; format-background = ${colors.black_dark}
 
 time = "%H:%M"
 date = "%d %b"
@@ -255,9 +198,7 @@ date-alt = "%a, %d.%m.%Y"
 type = internal/pulseaudio
 use-ui-max = true
 
-; format-volume-padding = 3
 format-volume = <ramp-volume>
-; format-volume-background = ${colors.black_dark}
 format-volume-foreground = ${colors.white_dark}
 
 ramp-volume-0 = 奄
@@ -266,9 +207,7 @@ ramp-volume-2 = 墳
 ramp-volume-3 = 
 
 label-muted = 婢
-; label-muted-background = ${colors.black_dark}
 label-muted-foreground = ${colors.red_dark}
-; label-muted-padding = 3
 
 [module/wlan]
 type = internal/network

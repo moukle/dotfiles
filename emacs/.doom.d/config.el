@@ -14,12 +14,12 @@
 ;;; UI
 
 (setq doom-font (font-spec :family "Cascadia Code" :size 24 :weight 'regular)
-      doom-variable-pitch-font (font-spec :family "Iosevka Aile")
+      doom-variable-pitch-font (font-spec :family "SF Pro Text")
       doom-unicode-font (font-spec :family "DejaVu Math TeX Gyre"))
 
-;; (setq doom-theme 'doom-plain-dark)
-(setq doom-theme 'doom-lena
-      doom-lena-padded-modeline t)
+(setq doom-theme 'doom-plain-dark)
+;; (setq doom-theme 'doom-lena
+;;       doom-lena-padded-modeline t)
 ;; (setq doom-theme 'doom-one
 ;;       doom-one-padded-modeline t)
 ;; (setq doom-theme 'doom-flatwhite)

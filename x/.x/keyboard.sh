@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [[ $HOSTNAME = "olo" ]]; then
+if [[ $HOSTNAME = "toaster" ]]; then
 	setxkbmap us altgr-intl nodeadkeys
 	numlockx
 else

@@ -28,3 +28,7 @@ bspc wm -r             # bspwm
 if pgrep -x "qutebrowser" > /dev/null; then
 	qutebrowser :restart &
 fi
+
+# set background
+source $HOME/.cache/wal/colors.sh
+hsetroot -solid $color0

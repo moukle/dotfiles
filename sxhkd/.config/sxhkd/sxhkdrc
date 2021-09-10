@@ -11,7 +11,8 @@ super + Return
 
 # rofi
 super + d
-	rofi -show drun
+	$HOME/.config/rofi/bin/launcher_colorful
+	# rofi -show drun
 
 # default sink
 super + v
@@ -118,8 +119,8 @@ super + ctrl + t; s
 # focus/swap
 # ------------------------------
 # focus next monitor
-super + x
-	bspc monitor -f next
+super + {_,shift} + x
+	bspc {monitor -f, node -m} next
 
 # send node to desktop on current monitor index
 super + {_,shift} + {1-9,0}
