@@ -1,10 +1,12 @@
+/* -*- mode: css; -*- */
 configuration {
     display-run:    " ";
-	display-drun:   "";
+    display-drun:   "";
     display-window: "  ";
-    drun-display-format: "{icon} {name} [<span weight='light' size='small'><i>({generic})</i></span>]";
-	drun-display-format: "{name}";
-    modi: "window,run,drun,ssh,file-browser";
+
+    /* drun-display-format: "{icon} {name} [<span weight='light' size='small'><i>({generic})</i></span>]"; */
+    drun-display-format: "{name}";
+
     show-icons: true;
     icon-theme: "Paper";
     dpi: 138;
@@ -13,14 +15,14 @@ configuration {
 * {
     text-font:      "SF Pro Text 15";
     text-bold:      "SF Pro Text Bold 15";
-    text-mono-font: "JetBrainsMono Nerd Font Medium 11";
+    text-mono-font: "Cascadia Mono Medium 11";
     icon-font:      "Font Awesome 20";
 
     font: @text-font;
 
     background-color: @bg;
     foreground-color: @fg;
-    border-color: @bg-alt;
+    border-color: @bg;
 
     border: 0;
     margin: 0;
@@ -28,15 +30,44 @@ configuration {
     spacing: 0;
 }
 
+/* Layout */
+window {
+    width: 15%;
+    border: 0.05em;
+    y-offset: -200px;
+}
+
+listview {
+    border: 0;
+    lines: 7;
+    fixed-height: false;
+    /* reverse: true; */
+    columns: 1;
+    scrollbar: true;
+    spacing: 1px;
+    /* Remove strange gap between listview and inputbar */
+    margin: -2px 0 0;
+    padding: 0.3em 0 0;
+}
+
+/* Colors .. */
 element {
     padding: 15;
     text-color: @bg-alt;
+    background-color: @bg;
 }
 
-element selected {
-    /* background-color: @bg-alt2; */
+element normal.normal {
+    background-color: @bg;
+}
+
+element alternate.normal {
+    background-color: @bg;
+}
+
+element selected.normal {
+    background-color: @bg-alt2;
     text-color: @fg;
-	font: "SF Pro Text Bold 15";
 }
 
 entry {
@@ -47,16 +78,6 @@ entry {
 
 inputbar {
     children: [ prompt, entry ];
-}
-
-listview {
-    /* background-color: @fg; */
-    /* columns: 2; */
-    lines: 7;
-    padding: 0.3em 0 0;
-    /* border: 0.1em; */
-    /* border-color: @bg-alt2; */
-    scrollbar: true;
 }
 
 scrollbar {
@@ -96,10 +117,7 @@ prompt {
     /* margin: 0 -0.2em 0 0; */
 }
 
-window {
-	width: 15%;
-    border: 0.05em;
-}
+
 
 @import "~/.cache/wal/colors-rofi.rasi"
 /* vim:ft=css

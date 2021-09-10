@@ -11,8 +11,8 @@ super + Return
 
 # rofi
 super + d
-	$HOME/.config/rofi/bin/launcher_colorful
-	# rofi -show drun
+	rofi -show drun
+	# $HOME/.config/rofi/bin/launcher_colorful
 
 # default sink
 super + v
