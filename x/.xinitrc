@@ -21,6 +21,6 @@ redshift -l 51:10 > /dev/null & # blue filter
 dunst                      &    # notifications
 hsetroot -solid "#363636"       # wallpaper
 # nitrogen --restore         &   # wallpaper
-# imwheel -b 45              &
+imwheel -b 45              &
 
 exec bspwm

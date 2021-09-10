@@ -32,7 +32,7 @@ configuration {
 
 /* Layout */
 window {
-    width: 15%;
+    width: 25%;
     border: 0.05em;
     y-offset: -200px;
 }
