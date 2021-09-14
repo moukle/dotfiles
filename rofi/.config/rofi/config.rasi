@@ -59,10 +59,12 @@ element {
 
 element normal.normal {
     background-color: @bg;
+    text-color: @fg;
 }
 
 element alternate.normal {
     background-color: @bg;
+    text-color: @fg;
 }
 
 element selected.normal {

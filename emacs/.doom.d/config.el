@@ -82,6 +82,9 @@
   )
 
 (after! org
+  ;; (org-babel-do-load-languages
+  ;;  'org-babel-load-languages
+  ;;  '((ein . t)))
   ;; fix color handling in org-preview-latex-fragment
   (let ((dvipng--plist (alist-get 'dvipng org-preview-latex-process-alist)))
     (plist-put dvipng--plist :use-xcolor t)

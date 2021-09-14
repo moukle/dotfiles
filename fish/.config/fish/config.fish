@@ -6,3 +6,4 @@ source ~/.cache/wal/colors.fish
 
 # set PATH $HOME/.local/bin $PATH
 # set PATH $HOME/.local/bin/bspwm $PATH
+fish_vi_key_bindings

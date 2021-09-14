@@ -16,7 +16,8 @@ super + d
 
 # default sink
 super + v
-	rofi_audio_set_default_sink.py
+	  rofi-pulse.sh sink
+	# rofi_audio_set_default_sink.py
 
 # password manager
 super + p

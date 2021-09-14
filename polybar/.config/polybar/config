@@ -318,11 +318,12 @@ menu-2-0 = shutdown
 menu-2-0-exec = systemctl poweroff
 
 menu-3-0 = lock
-menu-3-0-exec = betterlockscreen -l dim
+menu-3-0-exec = slock
+; menu-3-0-exec = betterlockscreen -l dim
 
 menu-4-0 = hibernate
-; menu-4-0-exec = systemctl suspend && slock
-menu-4-0-exec = betterlockscreen -s dim
+menu-4-0-exec = systemctl suspend && slock
+; menu-4-0-exec = betterlockscreen -s dim
 
 format-spacing = 1
 ; format-background = ${colors.black_dark}

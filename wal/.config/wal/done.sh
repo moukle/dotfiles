@@ -31,4 +31,4 @@ fi
 
 # set background
 source $HOME/.cache/wal/colors.sh
-hsetroot -solid $color0
+hsetroot -solid $color8
