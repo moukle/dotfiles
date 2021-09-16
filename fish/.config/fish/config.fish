@@ -7,8 +7,9 @@ starship init fish | source
 # set colors
 source ~/.cache/wal/colors.fish
 
-# use sh for sxhkd keybindings
-set -U SXHKD_SHELL sh
+# set shell for sxhkd keybindings
+# set -U SXHKD_SHELL sh
+set -U SXHKD_SHELL /usr/bin/bash
 
 # enable vim bindings
 fish_vi_key_bindings

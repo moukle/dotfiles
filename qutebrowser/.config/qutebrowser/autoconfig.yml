@@ -10,6 +10,8 @@ settings:
     global: true
   content.notifications.enabled:
     https://www.youtube.com: false
+  content.user_stylesheets:
+    global: null
   url.searchengines:
     global:
       DEFAULT: https://www.google.com/search?hl=en&q={}

@@ -52,6 +52,9 @@ config.bind('<Ctrl+E>',    'edit-text', mode='insert')
 config.bind('<Ctrl+E>',    'hint inputs --first ;; edit-text', mode='normal')
 config.bind('<Shift+Ins>', 'fake-key <Ctrl+V>', mode='insert')
 
+config.bind('<Ctrl-R>',
+            'config-cycle content.user_stylesheets "~/development/solarized-everything-css/css/wal-dark/wal-dark-all-sites.css" ""')
+
 ## Load theme
 for path in glob.glob(os.path.expanduser('~/.config/qutebrowser/extra/*.py')):
     config.source(path)
