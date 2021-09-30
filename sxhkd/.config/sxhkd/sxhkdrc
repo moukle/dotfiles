@@ -156,7 +156,7 @@ super + {Left,Down,Up,Right}
 
 # hide current node, or restore a queried hidden node
 super + a
-	bspc node $(bspc query -N -d -n .hidden | head -n 1) -g hidden
+	bspc node (bspc query -N -d -n .hidden | head -n 1) -g hidden
 
 
 # ------------------------------

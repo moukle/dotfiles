@@ -22,8 +22,8 @@ dunst                         & # notifications
 imwheel -b 45                 & # mousewheel speed
 
 # set background
-source ~/.cache/wal/colors.sh
-hsetroot -solid $color8      &
-# nitrogen --restore         &   # wallpaper
+# source ~/.cache/wal/colors.sh
+# hsetroot -solid $color8      &
+nitrogen --restore         &   # wallpaper
 
 exec bspwm

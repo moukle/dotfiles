@@ -30,7 +30,7 @@ c right_padding  3
 c left_padding   3
 
 # gaps
-c window_gap     -3
+c window_gap     15
 c single_monocle true
 
 # borders
@@ -55,6 +55,7 @@ R Spotify desktop=^8
 R Zathura        state=tiled
 R Pinentry       state=floating
 R Emacs          state=tiled
+R Signal         state=tiled
 R Emacs|Question state=floating
 
 R DDNet monitor=^2  follow=on state=fullscreen

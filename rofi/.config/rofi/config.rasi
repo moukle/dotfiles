@@ -1,5 +1,6 @@
 /* -*- mode: css; -*- */
 configuration {
+    border: 0;
     display-run:    " ";
     display-drun:   "";
     display-window: "  ";
@@ -74,8 +75,8 @@ element selected.normal {
 
 entry {
     padding: 0.8em;
-    text-color: @bg;
-    background-color: @fg;
+    text-color: @fg;
+    background-color: @bg-alt2;
 }
 
 inputbar {
@@ -110,8 +111,8 @@ textbox {
 }
 
 prompt {
-    text-color: @bg-alt2;
-    background-color: @fg;
+    text-color: @bg-alt;
+    background-color: @bg-alt2;
     font: @icon-font;
     enabled: true;
     padding: 0.8em 0.1em 0 0.8em;
@@ -121,6 +122,12 @@ prompt {
 }
 
 
+window {
+    transparency: "real";
+    background-color: @bg;
+    text-color: @fg;
+    border: 0.05em;
+    border-color: @fg;
+}
 
 @import "~/.cache/wal/colors-rofi.rasi"
-/* vim:ft=css
