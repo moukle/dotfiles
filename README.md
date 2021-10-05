@@ -12,13 +12,15 @@
 | **Terminal:** | kitty |
 | **Launcher:** | rofi |
 | **Browser:** | qutebrowser |
+| **Notifications:** | dunst |
+
 
 
 ## Install
 
 Managed with [GNU Stow][gnu-stow].
 
-To *install* i.e. `bspwm` simply call
+To symlink for example `bspwm` config simply call:
 
 ``` sh
 stow bspwm
