@@ -1,6 +1,7 @@
 # Dotfiles - my personal configuration files
 
-<img src=".screens/shot.png" width="100%" />
+<img src=".screens/dark.png" width="100%" />
+<img src=".screens/light.png" width="100%" />
 
 ## Tools
 
@@ -13,7 +14,6 @@
 | **Launcher:** | rofi |
 | **Browser:** | qutebrowser |
 | **Notifications:** | dunst |
-
 
 
 ## Install
