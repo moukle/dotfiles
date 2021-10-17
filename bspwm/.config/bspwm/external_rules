@@ -12,6 +12,7 @@ window_title="$(xprop WM_NAME -id "$id" | cut -d\" -f2)"
 # desktop
 case $class in
 	(Spotify) echo desktop=^8;;
+	(gaime_server) echo hidden=on;;
 	(TelegramDesktop) echo desktop=^9;;
 	('')
 		case $(ps -p "$(xdo pid $id)" -o comm= 2>/dev/null) in

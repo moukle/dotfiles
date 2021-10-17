@@ -35,7 +35,7 @@ c single_monocle true
 
 # borders
 c borderless_monocle    true
-c border_width          3
+c border_width          5
 c focused_border_color  $color7
 c normal_border_color   $color0
 c active_border_color   $color8
@@ -57,6 +57,7 @@ R Pinentry       state=floating
 R Emacs          state=tiled
 R Signal         state=tiled
 R Emacs|Question state=floating
+R "gaime_server (DEBUG)" hidden=on
 
 R DDNet monitor=^2  follow=on state=fullscreen
 # R DDNet desktop=^15 follow=on state=fullscreen

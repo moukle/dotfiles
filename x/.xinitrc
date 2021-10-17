@@ -20,6 +20,7 @@ done; f=
 redshift -l 51:10 > /dev/null & # blue filter
 dunst                         & # notifications
 imwheel -b 45                 & # mousewheel speed
+emacs --daemon                & # start emacs daemon (connect via emacsclient)
 
 # set background
 # source ~/.cache/wal/colors.sh

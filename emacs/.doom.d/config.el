@@ -17,16 +17,10 @@
       doom-variable-pitch-font (font-spec :family "SF Pro Text")
       doom-unicode-font (font-spec :family "DejaVu Math TeX Gyre"))
 
-;; (setq doom-theme 'doom-plain-dark)
-;; (setq doom-theme 'doom-plain)
-;; (setq doom-theme 'doom-lena
-;;       doom-lena-padded-modeline t)
-(setq doom-theme 'doom-one
-      doom-one-padded-modeline t)
-;; (setq doom-theme 'doom-flatwhite)
-;; (setq doom-theme 'doom-solarized-light)
-;; (setq doom-theme 'doom-rose-pine-light
-;;       doom-rose-pine-light-padded-modeline t)
+;; (setq doom-theme 'doom-one
+;;       doom-one-padded-modeline t)
+(setq doom-theme 'doom-rose-pine-light
+      doom-rose-pine-light-padded-modeline t)
 
 ;;; :ui doom-dashboard
 (setq fancy-splash-image (concat doom-private-dir "splash.png"))

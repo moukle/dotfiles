@@ -37,4 +37,11 @@
     "editor.lineNumbers": "relative",
     "notebook.lineNumbers": "on",
     "notebook.output.textLineLimit": 15,
+    "gitlens.hovers.currentLine.over": "line",
+    "gitlens.currentLine.enabled": false,
+    "gitlens.codeLens.enabled": false,
+    "gitlens.statusBar.enabled": false,
+    "gitlens.views.commits.avatars": false,
+    "gitlens.views.commits.showBranchComparison": false,
+    "gitlens.views.showRelativeDateMarkers": false,
 }
