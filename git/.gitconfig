@@ -1,7 +1,10 @@
 [user]
 	name = Moritz Klein
-	email = 4622472+moukle@users.noreply.github.com
+	email = moritz.klein@pm.me
+	signingkey = A4C3D3DDBAA80F231A09C4EF609D8B1E82E4C671
 [init]
 	defaultBranch = main
 [github]
 	user = moukle
+[commit]
+	gpgsign = true

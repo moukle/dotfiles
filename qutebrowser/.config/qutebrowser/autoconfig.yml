@@ -10,6 +10,8 @@ settings:
     global: true
   content.notifications.enabled:
     https://www.youtube.com: false
+  content.pdfjs:
+    global: false
   content.user_stylesheets:
     global: null
   url.searchengines:

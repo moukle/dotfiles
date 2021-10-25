@@ -173,14 +173,15 @@ label-empty-padding    = 2
 [module/date]
 type = internal/date
 
-label = %time%
+label = %date% %time%
 label-padding = 1
 
 time = "%H:%M"
-date = "%d %b"
+; date = "%d %b"
+date = ""
 
 time-alt = "%H:%M:%S"
-date-alt = "%a, %d.%m.%Y"
+date-alt = "%d %b,"
 
 [module/pulseaudio]
 type = internal/pulseaudio

@@ -23,7 +23,7 @@
       doom-rose-pine-light-padded-modeline t)
 
 ;;; :ui doom-dashboard
-(setq fancy-splash-image (concat doom-private-dir "splash.png"))
+;; (setq fancy-splash-image (concat doom-private-dir "splash.png"))
 ;; Hide the menu for as minimalistic a startup screen as possible.
 ;; (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-shortmenu)
 
@@ -49,13 +49,17 @@
 (setq evil-split-window-below t
       evil-vsplit-window-right t)
 
-;; (with-eval-after-load "ispell"
-;;   (setq ispell-program-name "hunspell")
-;;   (setq ispell-dictionary "en_GB,de_DE,vi_VN")
-;;   ;; ispell-set-spellchecker-params has to be called
-;;   ;; before ispell-hunspell-add-multi-dic will work
-;;   (ispell-set-spellchecker-params)
-;;   (ispell-hunspell-add-multi-dic "en_GB,de_DE,vi_VN"))
+(with-eval-after-load "ispell"
+  (setenv "DICPATH" "/usr/share/hunspell/")
+  ;; (setq ispell-hunspell-dict-paths-alist
+  ;;       '(("de_DE" "/usr/share/hunspell/de_DE.aff")
+  ;;         ("en_GB" "/usr/share/hunspell/en_GB.aff")))
+  (setq ispell-program-name "hunspell")
+  ;; (ispell-hunspell-add-multi-dic "en_GB,de_DE")
+  (setq ispell-dictionary "de_DE"))
+  ;; ispell-set-spellchecker-params has to be called
+  ;; before ispell-hunspell-add-multi-dic will work
+  ;; (ispell-set-spellchecker-params)
 
 
 ;;

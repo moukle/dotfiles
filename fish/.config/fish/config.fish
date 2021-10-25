@@ -1,3 +1,6 @@
+. ~/.config/fish/aliases.fish
+
+
 # disable greeting
 set fish_greeting
 
@@ -19,5 +22,4 @@ fish_vi_key_bindings
 ssh-add -q ~/.ssh/moritz
 
 # set paths (currently done in ~/.profile)
-# set PATH $HOME/.local/bin $PATH
-# set PATH $HOME/.local/bin/bspwm $PATH
+fenv source ~/.profile

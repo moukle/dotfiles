@@ -59,6 +59,7 @@ R Signal         state=tiled
 R Emacs|Question state=floating
 R "gaime_server (DEBUG)" hidden=on
 
+R zoom desktop=^5  state=tiled
 R DDNet monitor=^2  follow=on state=fullscreen
 # R DDNet desktop=^15 follow=on state=fullscreen
 

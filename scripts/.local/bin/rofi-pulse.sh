@@ -23,6 +23,21 @@ default=$(ponymix defaults | formatlist)
 # line number of default in list (note: row starts at 0)
 default_row=$(echo "$list" | grep -nr "$default" - | cut -f1 -d: | awk '{print $0-1}')
 
+
+# TODO: remove entries which should be hidden
+# declare -a hide_sinks=("sink 12: LADSPA Plugin NoiseTorch rnnoise ladspa module on Null Output"
+#                        "sink 10: Null Output")
+#
+# for i in "${!list[@]}"; do
+#     for j in "${!hide_sinks[@]}"; do
+#         if [[ ${list[i]} = ${hide_sinks[j]} ]]; then
+#             unset 'list[i]'
+#         fi
+#         echo ${list[i]}
+#         echo ${hide_sinks[j]}
+#     done
+# done
+
 device=$(
     echo "$list" \
         | rofi -dmenu -p "pulseaudio $type:" -selected-row $default_row \
