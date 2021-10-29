@@ -21,7 +21,7 @@ super + v
 
 # password manager
 super + p
-	~/development/bitwarden-rofi/bwmenu
+	~/dev/bitwarden-rofi/bwmenu
 
 # screenshot
 super + z

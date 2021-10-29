@@ -73,7 +73,7 @@ modules-center = bspwmbars
 
 [bar/main]
 inherit = section/settings
-monitor = DP-0
+monitor = HDMI2
 
 modules-left = polywins
 modules-center   = bspwm
@@ -88,13 +88,13 @@ tray-background = ${colors.background}
 [bar/laptop]
 inherit = section/settings
 
-modules-left   = launcher shot bspwm
-modules-center = date
-modules-right  = pulseaudio wlan backlight bat0 bat1 darkmode powermenu
+modules-left   = date
+modules-center = bspwm
+modules-right  = pulseaudio wlan backlight bat0 bat1 powermenu
 
 tray-maxsize = 20
 tray-position   = right
-tray-padding    = ${settings.spacing}
+; tray-padding    = ${settings.spacing}
 tray-background = ${colors.black_dark}
 
 ; ---------- modules --------------
@@ -206,21 +206,16 @@ interval = 3.0
 ; format-connected = <ramp-signal>
 format-connected = %{}  <ramp-signal>  %{}
 ; format-connected-prefix = 
-format-connected-prefix-foreground = ${settings.accent}
-format-connected-background = ${melon.bg_dark}
 
 label-connected = " %essid%"
 
-ramp-signal-0 = 冷
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
+ramp-signal-0 = 說
+ramp-signal-1 = 說
 
 format-disconnected = <label-disconnected>
-format-disconnected-prefix = 
-format-disconnected-foreground = ${melon.red}
-format-disconnected-background = ${melon.bg_dark}
+format-disconnected-prefix = ﲁ
+; format-disconnected-foreground = ${melon.red}
+; format-disconnected-background = ${melon.bg_dark}
 
 label-disconnected = %{}
 
@@ -229,11 +224,11 @@ type = internal/battery
 adapter = ADP1
 full-at = 96
 
-format-charging-background    = ${colors.black_dark}
-format-discharging-background = ${colors.yellow_dark}
-format-full-background        = ${colors.black_dark}
+; format-charging-background    = ${colors.black_dark}
+; format-discharging-background = ${colors.yellow_dark}
+; format-full-background        = ${colors.black_dark}
 
-format-charging-foreground    = ${colors.white_dark}
+format-charging-foreground    = ${colors.yellow_dark}
 format-discharging-foreground = ${colors.white_dark}
 label-full-foreground         = ${colors.white_dark}
 
@@ -279,12 +274,15 @@ type = internal/xbacklight
 format = %{}  <ramp>  %{}
 label = %percentage%
 ; format-prefix = 
-format-foreground = ${melon.white}
-format-background = ${melon.bg_dark}
+; format-foreground = ${melon.white}
+; format-background = ${melon.bg_dark}
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 🌓
 
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
+; ramp-0 = 
+; ramp-1 = 
+; ramp-2 = 
 ; ramp-3 = 
 ; ramp-4 = 
 ; ramp-5 = 

@@ -9,8 +9,9 @@ if [ $HOSTNAME == "toaster" ]; then
 	bspc monitor DP-4 -d a s d f g
 	$HOME/.config/polybar/launch.sh main rightM
 else
-	bspc monitor -d q w e r t z u i o p
-	$HOME/.config/polybar/launch.sh laptop
+	bspc monitor HDMI2 -d 1 2 3 4 5 6 7 8 9 0
+	bspc monitor eDP1  -d a s d f g
+	$HOME/.config/polybar/launch.sh main laptop
 fi
 
 # wrappers

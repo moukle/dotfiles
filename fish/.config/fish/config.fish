@@ -19,7 +19,7 @@ fish_vi_key_bindings
 
 # add ssh-key (quiet)
 # also: https://github.com/ivakyb/fish_ssh_agent
-ssh-add -q ~/.ssh/moritz
+# ssh-add -q ~/.ssh/moritz
 
 # set paths (currently done in ~/.profile)
 fenv source ~/.profile

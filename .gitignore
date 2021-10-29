@@ -10,3 +10,8 @@ teeworlds/.teeworlds/*
 !teeworlds/.teeworlds/console.png
 !teeworlds/.teeworlds/console_bar.png
 !teeworlds/.teeworlds/settings_ddnet.cfg
+
+fish/.config/fish/completions/
+fish/.config/fish/conf.d/
+fish/.config/fish/fish_variables
+fish/.config/fish/functions/
