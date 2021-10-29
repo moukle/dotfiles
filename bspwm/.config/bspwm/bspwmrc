@@ -11,7 +11,7 @@ if [ $HOSTNAME == "toaster" ]; then
 else
 	bspc monitor HDMI2 -d 1 2 3 4 5 6 7 8 9 0
 	bspc monitor eDP1  -d a s d f g
-	$HOME/.config/polybar/launch.sh main laptop
+	$HOME/.config/polybar/launch.sh laptop laptopExt
 fi
 
 # wrappers
@@ -25,7 +25,7 @@ s() { pkill -x "$1"; { sleep 0.1; "$@" & }; }
 # c ignore_ewmh_focus true
 
 # padding
-c top_padding    68
+c top_padding    3
 c bottom_padding 3
 c right_padding  3
 c left_padding   3

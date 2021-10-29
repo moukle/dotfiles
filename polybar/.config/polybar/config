@@ -73,7 +73,7 @@ modules-center = bspwmbars
 
 [bar/main]
 inherit = section/settings
-monitor = HDMI2
+monitor = DP-2
 
 modules-left = polywins
 modules-center   = bspwm
@@ -85,8 +85,23 @@ tray-position   = right
 tray-padding    = 0
 tray-background = ${colors.background}
 
+[bar/laptopExt]
+inherit = section/settings
+monitor = HDMI2
+
+height = 15
+
+; modules-left = date
+modules-center   = bspwmbars
+; modules-right  = date pulseaudio powermenu
+
+tray-position   = right
+tray-padding    = 0
+tray-background = ${colors.background}
+
 [bar/laptop]
 inherit = section/settings
+monitor = eDP1
 
 modules-left   = date
 modules-center = bspwm
@@ -138,10 +153,10 @@ label-occupied-background = ${colors.white_dark}
 label-urgent-background   = ${colors.red_dark}
 label-empty-background    = ${colors.black_dark}
 
-label-focused-padding  = 5
-label-occupied-padding = 5
-label-urgent-padding   = 5
-label-empty-padding    = 5
+label-focused-padding  = 19
+label-occupied-padding = 19
+label-urgent-padding   = 19
+label-empty-padding    = 19
 
 [module/bspwm]
 type = internal/bspwm
@@ -229,8 +244,8 @@ full-at = 96
 ; format-full-background        = ${colors.black_dark}
 
 format-charging-foreground    = ${colors.yellow_dark}
-format-discharging-foreground = ${colors.white_dark}
-label-full-foreground         = ${colors.white_dark}
+; format-discharging-foreground = ${colors.white_dark}
+; label-full-foreground         = ${colors.white_dark}
 
 format-charging    = %{}  <ramp-capacity>  %{}
 format-discharging = %{}  <ramp-capacity>  %{}
@@ -273,28 +288,14 @@ type = internal/xbacklight
 
 format = %{}  <ramp>  %{}
 label = %percentage%
+
 ; format-prefix = 
 ; format-foreground = ${melon.white}
 ; format-background = ${melon.bg_dark}
+;
 ramp-0 = 
 ramp-1 = 
 ramp-2 = 🌓
-
-; ramp-0 = 
-; ramp-1 = 
-; ramp-2 = 
-; ramp-3 = 
-; ramp-4 = 
-; ramp-5 = 
-; ramp-6 = 
-; ramp-7 = 
-; ramp-8 = 
-; ramp-9 = 
-; ramp-10 = 
-; ramp-11 = 
-; ramp-12 = 
-; ramp-13 = 
-; ramp-14 = 
 
 [module/powermenu]
 type = custom/menu

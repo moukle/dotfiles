@@ -19,8 +19,10 @@
 
 ;; (setq doom-theme 'doom-one
 ;;       doom-one-padded-modeline t)
-(setq doom-theme 'doom-rose-pine-light
-      doom-rose-pine-light-padded-modeline t)
+;; (setq doom-theme 'doom-rose-pine-light
+;;       doom-rose-pine-light-padded-modeline t)
+(setq doom-theme 'doom-gruvbox
+      doom-gruvbox-padded-modeline t)
 
 ;;; :ui doom-dashboard
 ;; (setq fancy-splash-image (concat doom-private-dir "splash.png"))
