@@ -13,16 +13,16 @@
 ;;
 ;;; UI
 
-(setq doom-font (font-spec :family "Cascadia Code" :size 24 :weight 'regular)
+(setq doom-font (font-spec :family "Cascadia Code" :size 20 :weight 'regular)
       doom-variable-pitch-font (font-spec :family "SF Pro Text")
       doom-unicode-font (font-spec :family "DejaVu Math TeX Gyre"))
 
-;; (setq doom-theme 'doom-one
-;;       doom-one-padded-modeline t)
+(setq doom-theme 'doom-one
+      doom-one-padded-modeline t)
 ;; (setq doom-theme 'doom-rose-pine-light
 ;;       doom-rose-pine-light-padded-modeline t)
-(setq doom-theme 'doom-gruvbox
-      doom-gruvbox-padded-modeline t)
+;; (setq doom-theme 'doom-gruvbox
+;;       doom-gruvbox-padded-modeline t)
 
 ;;; :ui doom-dashboard
 ;; (setq fancy-splash-image (concat doom-private-dir "splash.png"))

@@ -9,4 +9,5 @@ export LD_LIBRARY_PATH="/opt/cuda/targets/x86_64-linux/lib/:$LD_LIBRARY_PATH"
 
 # Programs
 export EDITOR="nvim"
-export EXA_ICON_SPACING=2
+export EXA_ICON_SPACING=1
+export BROWSER="qutebrowser"

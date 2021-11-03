@@ -12,5 +12,5 @@ else
 	xrandr -q &> ${HOME}/.xinitrc.log # have to pull this first, idk why
 	xrandr --dpi 140 \
 		--output eDP1 --mode 1920x1080 \
-		--output HDMI2 --mode 3840x2160 --above eDP1 --primary
+		--output HDMI2 --mode 3840x2160 --left-of eDP1 --primary
 fi

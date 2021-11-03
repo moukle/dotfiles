@@ -50,7 +50,7 @@ c focus_follows_pointer false
 R qutebrowser desktop=^1
 R firefox     desktop=^1
 
-R discord desktop=^7 follow=off
+R discord desktop=^7 follow=off focus=off
 R Spotify desktop=^8
 
 R Zathura        state=tiled

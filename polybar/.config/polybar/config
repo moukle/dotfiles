@@ -25,7 +25,7 @@ transparent    = "#00000000"
 
 [fonts]
 font_nerd = "Iosevka Nerd Font:size=18:weight=regular:antialias=true;5"
-font_SF = "SF Pro Text:size=28:weight=medium:antialias=true;8"
+font_SF = "SF Pro Text:size=18:weight=medium:antialias=true;5"
 
 font_roboto = "Roboto:size=18:weight=medium:antialias=true;3"
 font_roboto_slab = "Roboto Slab:size=18:weight=medium:antialias=true;4"
@@ -41,8 +41,8 @@ accent = ${colors.yellow_dark}
 background = ${colors.background}
 foreground = ${colors.white_bright}
 
-height = 65
-bottom = false
+height = 45
+bottom = true
 
 line_size = 5
 border-bottom-size = 0
@@ -95,17 +95,13 @@ height = 15
 modules-center   = bspwmbars
 ; modules-right  = date pulseaudio powermenu
 
-tray-position   = right
-tray-padding    = 0
-tray-background = ${colors.background}
-
 [bar/laptop]
 inherit = section/settings
 monitor = eDP1
 
 modules-left   = date
 modules-center = bspwm
-modules-right  = pulseaudio wlan backlight bat0 bat1 powermenu
+modules-right  = backlight pulseaudio wlan bat0 bat1 powermenu
 
 tray-maxsize = 20
 tray-position   = right
@@ -153,10 +149,10 @@ label-occupied-background = ${colors.white_dark}
 label-urgent-background   = ${colors.red_dark}
 label-empty-background    = ${colors.black_dark}
 
-label-focused-padding  = 19
-label-occupied-padding = 19
-label-urgent-padding   = 19
-label-empty-padding    = 19
+label-focused-padding  = 27
+label-occupied-padding = 27
+label-urgent-padding   = 27
+label-empty-padding    = 27
 
 [module/bspwm]
 type = internal/bspwm
@@ -203,7 +199,7 @@ type = internal/pulseaudio
 use-ui-max = true
 
 format-volume = <ramp-volume>
-format-volume-foreground = ${colors.white_dark}
+; format-volume-foreground = ${colors.white_dark}
 
 ramp-volume-0 = 奄
 ramp-volume-1 = 奔
@@ -219,7 +215,7 @@ interface = wlp4s0
 interval = 3.0
 
 ; format-connected = <ramp-signal>
-format-connected = %{}  <ramp-signal>  %{}
+format-connected = <ramp-signal>
 ; format-connected-prefix = 
 
 label-connected = " %essid%"
@@ -247,25 +243,25 @@ format-charging-foreground    = ${colors.yellow_dark}
 ; format-discharging-foreground = ${colors.white_dark}
 ; label-full-foreground         = ${colors.white_dark}
 
-format-charging    = %{}  <ramp-capacity>  %{}
-format-discharging = %{}  <ramp-capacity>  %{}
-format-full        = %{}  <label-full>  %{}
+format-charging    = <ramp-capacity>
+format-discharging = <ramp-capacity>
+format-full        = <label-full>
 
 label-charging    = %percentage%
 label-discharging = %percentage%
 label-full        = ""
 
 ; hack nerd
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
-; ramp-capacity-5 = 
-; ramp-capacity-6 = 
-; ramp-capacity-7 = 
-; ramp-capacity-8 = 
-; ramp-capacity-9 = 
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-5 = 
+ramp-capacity-6 = 
+ramp-capacity-7 = 
+ramp-capacity-8 = 
+ramp-capacity-9 = 
 
 animation-charging-0 = 
 animation-charging-1 = 
@@ -286,7 +282,7 @@ battery = BAT1
 [module/backlight]
 type = internal/xbacklight
 
-format = %{}  <ramp>  %{}
+format = <ramp>
 label = %percentage%
 
 ; format-prefix = 
@@ -302,7 +298,7 @@ type = custom/menu
 
 expand-right = true
 
-menu-0-0 =  
+menu-0-0 = ﰇ
 menu-0-0-exec = menu-open-1
 menu-0-1 = 
 menu-0-1-exec = menu-open-2
@@ -325,16 +321,16 @@ menu-4-0 = hibernate
 menu-4-0-exec = systemctl suspend && slock
 ; menu-4-0-exec = betterlockscreen -s dim
 
-format-spacing = 1
+format-spacing = 0
 ; format-background = ${colors.black_dark}
-format-foreground = ${colors.white_dark}
-format-padding = 1
+; format-foreground = ${colors.white_dark}
+format-padding = 0
 
 label-open =  
 label-close =  
-label-separator = " "
+label-separator = "   "
 
 label-close-padding = 2
-label-open-padding = 2
+label-open-padding = 0
 
 ; vim:ft=dosini

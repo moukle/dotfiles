@@ -40,7 +40,7 @@ default_row=$(echo "$list" | grep -nr "$default" - | cut -f1 -d: | awk '{print $
 
 device=$(
     echo "$list" \
-        | rofi -dmenu -p "pulseaudio $type:" -selected-row $default_row \
+        | rofi -dmenu -p "" -selected-row $default_row \
         | grep -Po '[0-9]+(?=:)'
 )
 
