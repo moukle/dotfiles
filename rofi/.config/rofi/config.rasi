@@ -11,6 +11,7 @@ configuration {
     show-icons: true;
     icon-theme: "Paper";
     dpi: 138;
+    dpi: 93;
 }
 
 * {

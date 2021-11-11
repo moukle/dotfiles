@@ -10,7 +10,10 @@ if [[ $HOSTNAME = "toaster" ]]; then
 	fi
 else
 	xrandr -q &> ${HOME}/.xinitrc.log # have to pull this first, idk why
-	xrandr --dpi 140 \
+		xrandr --dpi 93x93 \
 		--output eDP1 --mode 1920x1080 \
-		--output HDMI2 --mode 3840x2160 --left-of eDP1 --primary
+		--output HDMI2 --mode 2560x1440 --left-of eDP1 --primary
 fi
+
+
+		# --output HDMI2 --mode 3840x2160 --left-of eDP1 --primary

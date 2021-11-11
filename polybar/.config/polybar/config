@@ -88,8 +88,9 @@ tray-background = ${colors.background}
 [bar/laptopExt]
 inherit = section/settings
 monitor = HDMI2
+dpi = 93
 
-height = 15
+height = 8
 
 ; modules-left = date
 modules-center   = bspwmbars
@@ -149,10 +150,11 @@ label-occupied-background = ${colors.white_dark}
 label-urgent-background   = ${colors.red_dark}
 label-empty-background    = ${colors.black_dark}
 
-label-focused-padding  = 27
-label-occupied-padding = 27
-label-urgent-padding   = 27
-label-empty-padding    = 27
+; 27 for 140 dpi
+label-focused-padding  = 21
+label-occupied-padding = 21
+label-urgent-padding   = 21
+label-empty-padding    = 21
 
 [module/bspwm]
 type = internal/bspwm

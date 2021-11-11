@@ -20,4 +20,4 @@ settings:
       d: https://duckduckgo.com/?q={}
       wa: https://wiki.archlinux.org/?search={}
   zoom.default:
-    global: '150'
+    global: 100%

@@ -8,4 +8,5 @@ else
 	setxkbmap us altgr-intl nodeadkeys
 	setxkbmap -option caps:none
 	xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
+	numlockx
 fi
