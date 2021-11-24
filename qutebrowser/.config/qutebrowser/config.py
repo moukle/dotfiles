@@ -44,6 +44,7 @@ c.scrolling.smooth = True
 ## Keybindings
 config.bind('tm', 'tab-mute')
 config.bind(';V', 'hint links spawn mpv {hint-url}')
+config.bind('tt', 'set-cmd-text -s :tab-select ', mode='normal')
 
 # Use external editor
 c.editor.command = ['emacsclient', '-c', '-F', '((name . "qutebrowser-editor"))', '+{line}:{column}', '{}']
@@ -51,6 +52,7 @@ c.editor.command = ['emacsclient', '-c', '-F', '((name . "qutebrowser-editor"))'
 config.bind('<Ctrl+E>',    'edit-text', mode='insert')
 config.bind('<Ctrl+E>',    'hint inputs --first ;; edit-text', mode='normal')
 config.bind('<Shift+Ins>', 'fake-key <Ctrl+V>', mode='insert')
+
 
 config.bind('<Ctrl-R>', 'config-cycle content.user_stylesheets "~/development/solarized-everything-css/css/wal-dark/wal-dark-all-sites.css" ""')
 # c.content.user_stylesheets = glob.glob(os.path.expanduser('~/development/solarized-everything-css/css/wal-dark/*.css'))

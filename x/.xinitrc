@@ -23,8 +23,6 @@ imwheel -b 45                 & # mousewheel speed
 emacs --daemon                & # start emacs daemon (connect via emacsclient)
 
 # set background
-# source ~/.cache/wal/colors.sh
-# hsetroot -solid $color8      &
-nitrogen --restore         &   # wallpaper
+$HOME/.cache/wal/wallpaper.sh  & # set wallpaper
 
 exec bspwm

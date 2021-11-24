@@ -17,12 +17,12 @@
       doom-variable-pitch-font (font-spec :family "SF Pro Text")
       doom-unicode-font (font-spec :family "DejaVu Math TeX Gyre"))
 
-(setq doom-theme 'doom-plain-dark
-      doom-plain-dark-padded-modeline t)
+;; (setq doom-theme 'doom-plain-dark
+;;       doom-plain-dark-padded-modeline t)
 ;; (setq doom-theme 'doom-one
 ;;       doom-one-padded-modeline t)
-;; (setq doom-theme 'doom-rose-pine-light
-;;       doom-rose-pine-light-padded-modeline t)
+(setq doom-theme 'doom-rose-pine-light
+      doom-rose-pine-light-padded-modeline t)
 ;; (setq doom-theme 'doom-gruvbox
 ;;       doom-gruvbox-padded-modeline t)
 
@@ -122,16 +122,14 @@
                 \\usepackage{polyglossia}
                 \\usepackage{dsfont}
                 \\setmonofont{DejaVu Sans Mono}[Scale=MatchLowercase]
-                \\usepackage{physics}
-                \\usepackage{braket}
                 \\usepackage{framed}
                 \\usepackage[strict]{changepage}
                 \\usepackage{minted}"
-               ("\\section{%s}" . "\\section*{%s}")
-               ("\\subsection{%s}" . "\\subsection*{%s}")
-               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
-               ("\\paragraph{%s}" . "\\paragraph*{%s}")
-               ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+                 ("\\section{%s}" . "\\section*{%s}")
+                 ("\\subsection{%s}" . "\\subsection*{%s}")
+                 ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+                 ("\\paragraph{%s}" . "\\paragraph*{%s}")
+                 ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
   (add-to-list 'org-latex-classes
                '("tudav"
                  "\\documentclass[
@@ -145,9 +143,9 @@
                 \\usepackage{fontspec}
                 \\usepackage{polyglossia}
                 \\usepackage{lmodern}"
-               ("\\section{%s}" . "\\section*{%s}")
-               ("\\subsection{%s}" . "\\subsection*{%s}")
-               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
-               ("\\paragraph{%s}" . "\\paragraph*{%s}")
-               ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+                 ("\\section{%s}" . "\\section*{%s}")
+                 ("\\subsection{%s}" . "\\subsection*{%s}")
+                 ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+                 ("\\paragraph{%s}" . "\\paragraph*{%s}")
+                 ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
   )

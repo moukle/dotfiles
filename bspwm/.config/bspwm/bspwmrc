@@ -20,9 +20,12 @@ R() { bspc rule -a "$@"; }
 s() { pkill -x "$1"; { sleep 0.1; "$@" & }; }
 
 # ignore annoying defaults
-# c ignore_ewmh_fullscreen enter
-# c ignore_ewmh_fullscreen all
-# c ignore_ewmh_focus true
+c ignore_ewmh_fullscreen enter
+c ignore_ewmh_fullscreen all
+c ignore_ewmh_focus true
+
+c remove_disabled_monitors true
+c remove_unplugged_monitors true
 
 # padding
 c top_padding    3

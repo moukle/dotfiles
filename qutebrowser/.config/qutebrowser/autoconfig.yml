@@ -9,6 +9,7 @@ settings:
   auto_save.session:
     global: true
   content.notifications.enabled:
+    https://timer.town: true
     https://www.youtube.com: false
   content.pdfjs:
     global: false

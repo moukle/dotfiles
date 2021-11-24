@@ -146,9 +146,9 @@ label-urgent   = " "
 label-empty    = " "
 
 label-focused-background  = ${colors.white_bright}
-label-occupied-background = ${colors.white_dark}
+label-occupied-background = ${colors.black_bright}
 label-urgent-background   = ${colors.red_dark}
-label-empty-background    = ${colors.black_dark}
+label-empty-background    = ${colors.background}
 
 ; 27 for 140 dpi
 label-focused-padding  = 21

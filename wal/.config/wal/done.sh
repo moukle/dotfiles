@@ -15,8 +15,7 @@ ln -sf "${HOME}/.cache/wal/dunstrc"            "${HOME}/.config/dunst/dunstrc"
 # ln -sf "${HOME}/.cache/wal/colors-discord.css" "${HOME}/.config/discocss/colors-discord.css"
 
 # set background
-# source $HOME/.cache/wal/colors.sh
-# hsetroot -solid $color8
+$HOME/.cache/wal/wallpaper.sh
 
 # restart programs
 pkill dunst; dunst   & # dunst
