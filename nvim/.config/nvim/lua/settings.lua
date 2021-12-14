@@ -22,6 +22,8 @@ opt.relativenumber = true
 
 -- Show matching brackets when text indicator is over them
 opt.showmatch = true
+
+opt.showmode = false
 -- }}}
 -- Folding {{{
 opt.foldmethod = 'expr'

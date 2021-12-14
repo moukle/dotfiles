@@ -21,4 +21,5 @@ qutebrowser/.config/qutebrowser/qsettings/QtProject.conf
 
 nvim/.config/nvim/plugin/
 nvim/.config/nvim/backup/
+nvim/.config/nvim/swap/
 nvim/.config/nvim/undo/
