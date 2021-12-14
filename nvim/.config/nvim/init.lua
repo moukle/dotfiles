@@ -1,0 +1,5 @@
+require 'plugins'
+require 'functions'
+require 'foldtext'
+require 'mappings'
+require 'settings'

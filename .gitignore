@@ -18,3 +18,5 @@ fish/.config/fish/functions/
 
 qutebrowser/.config/qutebrowser/autoconfig.yml
 qutebrowser/.config/qutebrowser/qsettings/QtProject.conf
+
+nvim/.config/nvim/plugin/
