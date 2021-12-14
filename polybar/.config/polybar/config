@@ -42,11 +42,11 @@ background = ${colors.background}
 foreground = ${colors.white_bright}
 
 height = 45
-bottom = true
+bottom = false
 
 line_size = 5
 border-bottom-size = 0
-border-color = ${colors.black_dark}
+border-color = ${colors.background}
 
 spacing = 0
 padding-left = 3
@@ -54,32 +54,31 @@ padding-right = 3
 module-margin-left  = 3
 module-margin-right = 3
 
-enable-ipc = true
-
+; enable-ipc = true
+;
 wm-restack        = bspwm
-override-redirect = false
+override-redirect = true
 
 ; ---------- bars --------------
-[bar/rightM]
+[bar/main_bspwm]
 inherit = section/settings
-monitor = DP-4
+monitor = DP-0
 
 height = 10
-offset-y = 0
-bottom = true
-background = ${colors.transparent}
+offset-y = 55
 
 modules-center = bspwmbars
 
 [bar/main]
 inherit = section/settings
-monitor = DP-2
+monitor = DP-0
+bottom = false
 
 modules-left = polywins
-modules-center   = bspwm
+modules-center = 
 modules-right  = date pulseaudio powermenu
 
-border-bottom-size = 3
+border-top-size = 10
 
 tray-position   = right
 tray-padding    = 0
@@ -109,7 +108,31 @@ tray-position   = right
 ; tray-padding    = ${settings.spacing}
 tray-background = ${colors.black_dark}
 
+[bar/systray]
+width = 1
+height = 45
+offset-y = 15
+
+bottom = true
+
+# REQUIRED for us to be able to move the window
+override-redirect = true
+
+modules-right = placeholder
+
+tray-position = left
+tray-maxsize = 16
+tray-padding = 8
+tray-transparent = false
+tray-background = ${colors.black_dark}
+
+
 ; ---------- modules --------------
+[module/placeholder]
+# Just a dummy module as polybar always requires at least one amodule
+type = custom/script
+width = 1
+
 [module/darkmode]
 type = custom/script
 exec = echo 
@@ -151,10 +174,11 @@ label-urgent-background   = ${colors.red_dark}
 label-empty-background    = ${colors.background}
 
 ; 27 for 140 dpi
-label-focused-padding  = 21
-label-occupied-padding = 21
-label-urgent-padding   = 21
-label-empty-padding    = 21
+; 21 for 120 dpi
+label-focused-padding  = 10
+label-occupied-padding = 10
+label-urgent-padding   = 10
+label-empty-padding    = 10
 
 [module/bspwm]
 type = internal/bspwm
@@ -190,11 +214,10 @@ label = %date% %time%
 label-padding = 1
 
 time = "%H:%M"
-; date = "%d %b"
 date = ""
 
 time-alt = "%H:%M:%S"
-date-alt = "%d %b,"
+date-alt = "%A, %B %dth –"
 
 [module/pulseaudio]
 type = internal/pulseaudio

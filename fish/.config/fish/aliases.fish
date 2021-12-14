@@ -1,3 +1,5 @@
 alias vi "nvim"
 alias ls "exa --icons --group-directories-first"
+alias cat "bat --plain --theme='base16-256'"
 alias cp "rsync -avhW --no-compress --progress"
+alias gtop "gotop --nvidia"

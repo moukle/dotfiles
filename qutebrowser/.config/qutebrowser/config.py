@@ -54,7 +54,7 @@ config.bind('<Ctrl+E>',    'hint inputs --first ;; edit-text', mode='normal')
 config.bind('<Shift+Ins>', 'fake-key <Ctrl+V>', mode='insert')
 
 
-config.bind('<Ctrl-R>', 'config-cycle content.user_stylesheets "~/development/solarized-everything-css/css/wal-dark/wal-dark-all-sites.css" ""')
+config.bind('<Ctrl-R>', 'config-cycle content.user_stylesheets "~/dev/solarized-everything-css/css/wal-dark/wal-dark-all-sites.css" ""')
 # c.content.user_stylesheets = glob.glob(os.path.expanduser('~/development/solarized-everything-css/css/wal-dark/*.css'))
 
 ## Load theme

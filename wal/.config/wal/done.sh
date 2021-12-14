@@ -27,10 +27,10 @@ if pgrep -x "qutebrowser" > /dev/null; then
 fi
 
 # rebuild colors-everything stylus
-# ln -sf "${HOME}/.cache/wal/colors-everything-css.styl" "${HOME}/development/solarized-everything-css/themes/wal/colors.styl"
-# (cd ${HOME}/development/solarized-everything-css && \
-# 	make clean >> /dev/null && \
-# 	make >> /dev/null)
+ln -sf "${HOME}/.cache/wal/colors-everything-css.styl" "${HOME}/dev/solarized-everything-css/themes/wal/colors.styl"
+(cd ${HOME}/dev/solarized-everything-css && \
+	make clean >> /dev/null && \
+	make >> /dev/null)
 
 # rebuild tabbed
 # tabbed_dir=$(where tabbed | xargs dirname)

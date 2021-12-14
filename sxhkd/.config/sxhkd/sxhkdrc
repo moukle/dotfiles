@@ -10,6 +10,9 @@ super + Return
 	kitty
 
 # rofi
+# super + d
+#     rofi -show file-browser-extended -file-browser-depth 2
+
 super + d
 	rofi -show drun
 	# $HOME/.config/rofi/bin/launcher_colorful
@@ -43,9 +46,10 @@ XF86AudioMute
 	volumeControl.sh mute
 
 # alt + b
-# 	hideIt.sh --name 'polybar-main_DP-0' --toggle && \
-# 	hideIt.sh --name 'Polybar tray window' --toggle && \
+#     hideIt.sh --name 'polybar-main_DP-0' --toggle && \
 #     toggle_padding.sh
+# hideIt.sh --name '^Polybar tray window$' --toggle && \
+# hideIt.sh --name 'Polybar tray window' --toggle && \
 
 # ------------------------------
 # bspwm keys

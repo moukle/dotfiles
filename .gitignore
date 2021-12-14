@@ -15,3 +15,6 @@ fish/.config/fish/completions/
 fish/.config/fish/conf.d/
 fish/.config/fish/fish_variables
 fish/.config/fish/functions/
+
+qutebrowser/.config/qutebrowser/autoconfig.yml
+qutebrowser/.config/qutebrowser/qsettings/QtProject.conf

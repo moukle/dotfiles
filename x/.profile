@@ -10,6 +10,9 @@ export LD_LIBRARY_PATH="/opt/cuda/targets/x86_64-linux/lib/:$LD_LIBRARY_PATH"
 
 # Programs
 export EDITOR="nvim"
-export EXA_ICON_SPACING=2
+export EXA_ICON_SPACING=1
 export BROWSER="qutebrowser"
 export TERM=xterm-256color
+
+# Prompt
+export STARSHIP_CONFIG=~/.config/starship.toml

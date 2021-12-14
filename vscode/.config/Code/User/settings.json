@@ -1,5 +1,5 @@
 {
-    "workbench.colorTheme": "Ayu Light Bordered",
+    "workbench.colorTheme": "Ayu Mirage Bordered",
     "breadcrumbs.enabled": false,
     "breadcrumbs.icons": false,
     "editor.colorDecorators": false,
@@ -44,4 +44,5 @@
     "gitlens.views.commits.avatars": false,
     "gitlens.views.commits.showBranchComparison": false,
     "gitlens.views.showRelativeDateMarkers": false,
+    "window.zoomLevel": 1,
 }
