@@ -288,22 +288,11 @@ local theme = lush(function()
 -- }}}
 
 -- Telescope {{{
-        TelescopeSelection { bg=color8, fg = color15 };
-        TelescopeSelectionCaret { bg=color8, fg = color9 };
--- Group.new('TelescopeMultiSelection',
+        TelescopeSelection { bg=color0, fg = color15 };
+        TelescopeSelectionCaret { bg=color0, fg = color0 };
         TelescopeNormal { bg=bg, fg = color7 };
-
--- Border highlight groups.
         TelescopeBorder { bg=bg, fg = color8 };
-
--- Group.new('TelescopePromptBorder',
--- Group.new('TelescopeResultsBorder',
--- Group.new('TelescopePreviewBorder',
-
--- Used for highlighting characters that you match.
         TelescopeMatching { fg = color15, gui="bold" };
-
--- Used for the prompt prefix
         TelescopePromptPrefix { fg = color7 };
 -- }}}
 

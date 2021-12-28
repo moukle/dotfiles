@@ -16,7 +16,9 @@ opt.directory = vim.fn.stdpath('config') .. '/swap'
 -- UI {{{
 opt.termguicolors = true
 cmd [[colorscheme term]]
-
+opt.signcolumn = 'yes'
+-- }}}
+-- Editor {{{
 opt.number = true
 opt.relativenumber = true
 
@@ -24,6 +26,8 @@ opt.relativenumber = true
 opt.showmatch = true
 
 opt.showmode = false
+
+opt.scrolloff = 5
 -- }}}
 -- Folding {{{
 opt.foldmethod = 'expr'

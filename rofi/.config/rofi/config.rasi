@@ -15,9 +15,9 @@ configuration {
 }
 
 * {
-    text-font:      "SF Pro Text 15";
-    text-bold:      "SF Pro Text Bold 15";
-    text-mono-font: "Cascadia Mono Medium 11";
+    text-font:      "Fira Sans 15";
+    text-bold:      "Fira Sans Bold 15";
+    text-mono-font: "Liga SFMono Nerd Font 15";
     icon-font:      "Font Awesome 20";
 
     font: @text-font;

@@ -24,8 +24,9 @@ white_bright   = ${xrdb:color15}
 transparent    = "#00000000"
 
 [fonts]
-font_nerd = "Iosevka Nerd Font:size=18:weight=regular:antialias=true;5"
+font_nerd = "Iosevka Nerd Font:size=15:weight=regular:antialias=true;5"
 font_SF = "SF Pro Text:size=18:weight=medium:antialias=true;5"
+font_fira = "Fira Sans:size=18:weight=regular:antialias=true;5"
 
 font_roboto = "Roboto:size=18:weight=medium:antialias=true;3"
 font_roboto_slab = "Roboto Slab:size=18:weight=medium:antialias=true;4"
@@ -34,7 +35,8 @@ font_jetbrains = "JetBrainsMono Nerd Font Mono:size=28:weight=regular:antialias=
 font_casc = "Cascadia Code:size=28:weight=regular:antialias=true;8"
 
 [section/settings]
-font-0 = ${fonts.font_SF}
+font-0 = ${fonts.font_fira}
+; font-0 = ${fonts.font_SF}
 font-1 = ${fonts.font_nerd}
 
 accent = ${colors.yellow_dark}
@@ -42,7 +44,9 @@ background = ${colors.background}
 foreground = ${colors.white_bright}
 
 height = 45
-bottom = false
+; width = 37.5%
+; offset-x = 31.25%
+bottom = true
 
 line_size = 5
 border-bottom-size = 0
@@ -62,23 +66,21 @@ override-redirect = true
 ; ---------- bars --------------
 [bar/main_bspwm]
 inherit = section/settings
-monitor = DP-0
+monitor = DP-4
 
 height = 10
-offset-y = 55
+; offset-y = 55
 
 modules-center = bspwmbars
 
 [bar/main]
 inherit = section/settings
-monitor = DP-0
+monitor = DP-4
 bottom = false
 
 modules-left = polywins
-modules-center = 
-modules-right  = date pulseaudio powermenu
-
-border-top-size = 10
+modules-center = date
+modules-right  = pulseaudio powermenu
 
 tray-position   = right
 tray-padding    = 0
@@ -163,22 +165,22 @@ enable-click = true
 
 format = <label-state> <label-mode>
 
-label-focused  = " "
-label-occupied = " "
-label-urgent   = " "
-label-empty    = " "
+label-focused  = %{}
+label-occupied = %{}
+label-urgent   = %{}
+label-empty    = %{}
 
 label-focused-background  = ${colors.white_bright}
-label-occupied-background = ${colors.black_bright}
+label-occupied-background = ${colors.white_dark}
 label-urgent-background   = ${colors.red_dark}
 label-empty-background    = ${colors.background}
 
 ; 27 for 140 dpi
 ; 21 for 120 dpi
-label-focused-padding  = 10
-label-occupied-padding = 10
-label-urgent-padding   = 10
-label-empty-padding    = 10
+label-focused-padding  = 32
+label-occupied-padding = 32
+label-urgent-padding   = 32
+label-empty-padding    = 32
 
 [module/bspwm]
 type = internal/bspwm

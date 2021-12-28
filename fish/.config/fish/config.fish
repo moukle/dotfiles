@@ -23,3 +23,6 @@ ssh-add -q ~/.ssh/moritz
 
 # set paths (currently done in ~/.profile)
 fenv source ~/.profile
+
+# fzf show hidden
+set fzf_fd_opts --hidden --exclude=.git

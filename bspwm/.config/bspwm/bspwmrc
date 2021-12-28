@@ -12,7 +12,7 @@ hide() {
 
 # desktops
 if [ $HOSTNAME == "toaster" ]; then
-    bspc monitor DP-0 -d 1 2 3 4 5 6 7 8 9 0
+    bspc monitor DP-4 -d 1 2 3 4 5 6 7 8 9 0
     bspc monitor DP-2 -d a s d f g
     $HOME/.config/polybar/launch.sh main main_bspwm
     # hide
@@ -28,18 +28,18 @@ R() { bspc rule -a "$@"; }
 s() { pkill -x "$1"; { sleep 0.1; "$@" & }; }
 
 # ignore annoying defaults
-c ignore_ewmh_fullscreen enter
-c ignore_ewmh_fullscreen all
-c ignore_ewmh_focus true
+# c ignore_ewmh_fullscreen enter
+# c ignore_ewmh_fullscreen all
+# c ignore_ewmh_focus true
 
 c remove_disabled_monitors true
 c remove_unplugged_monitors true
 
 # padding
-c top_padding    98
+c top_padding    68
 c bottom_padding 33
-c right_padding  33
-c left_padding   33
+c right_padding  23
+c left_padding   23
 
 # gaps
 c window_gap     -5
@@ -49,8 +49,8 @@ c single_monocle true
 c borderless_monocle    true
 c border_width          5
 c focused_border_color  $color7
-c normal_border_color   $color8
-c active_border_color   $color8
+c normal_border_color   $color0
+c active_border_color   $color0
 c presel_feedback_color $color2
 
 # mouse

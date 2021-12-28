@@ -1,4 +1,5 @@
 local vim = vim
+local keymap = vim.api.nvim_set_keymap
 local wk = require 'which-key'
 
 vim.g.mapleader = ' '
@@ -37,6 +38,11 @@ wk.register({
     }
 }, { mode = 'n' } )
 
+keymap('n', 'ga', [[<Plug>(EasyAlign)]], {})
+keymap('n', '<c-j>', [[<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>]], {noremap = true })
 --}}}
+-- Visual Mode {{{
+keymap('x', 'ga', [[<Plug>(EasyAlign)]], {})
+-- }}}
 
 -- vim: foldmethod=marker foldlevel=0 foldenable foldmarker={{{,}}}

@@ -87,6 +87,7 @@ local function plugins(use)
 	}
 -- }}}
 -- Lang {{{
+    use 'JuliaEditorSupport/julia-vim'
 -- }}}
 end
 
