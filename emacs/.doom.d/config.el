@@ -91,7 +91,7 @@
   :hook (org-mode . org-fragtog-mode)
   :config
   (setq org-download-image-dir "./images")
-  (plist-put org-format-latex-options :foreground (nth 1 (nth 11 doom-themes--colors))) ;; HACK: really dirty way to get fg
+  ;; (plist-put org-format-latex-options :foreground (nth 1 (nth 11 doom-themes--colors))) ;; HACK: really dirty way to get fg
   )
 
 (after! org

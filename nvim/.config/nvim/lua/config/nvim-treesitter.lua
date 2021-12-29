@@ -1,60 +1,24 @@
 local ts = require 'nvim-treesitter.configs'
+local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
 
+-- Parsers {{{
+parser_config.org = {
+  install_info = {
+    url = 'https://github.com/milisims/tree-sitter-org',
+    revision = 'f110024d539e676f25b72b7c80b0fd43c34264ef',
+    files = {'src/parser.c', 'src/scanner.cc'},
+  },
+  filetype = 'org',
+}
+-- }}}
+
+-- Treesitter {{{
 ts.setup {
     ensure_installed = 'all',
     highlight = { enable = true },
     indent = { enable = true },
     autotag = { enable = true },
-
--- Refactor {{{
-    refactor = {
-        highlight_definitions = { enable = true },
-    },
---}}}
-
--- Textobjects {{{
-    textobjects = {
-        swap = {
-            enable = true,
-            swap_next = {
-                ["<leader>a"] = "@parameter.inner",
-            },
-            swap_previous = {
-                ["<leader>A"] = "@parameter.inner",
-            },
-        },
-    },
---}}}
-
--- Playground {{{
-    playground = {
-        enable = true,
-        disable = {},
-        updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
-        persist_queries = false, -- Whether the query persists across vim sessions
-        keybindings = {
-            toggle_query_editor = 'o',
-            toggle_hl_groups = 'i',
-            toggle_injected_languages = 't',
-            toggle_anonymous_nodes = 'a',
-            toggle_language_display = 'I',
-            focus_language = 'f',
-            unfocus_language = 'F',
-            update = 'R',
-            goto_node = '<cr>',
-            show_help = '?',
-        },
-    },
---}}}
-
--- Autotag {{{
-    autotag = {
-        enable = true,
-        filetypes = {
-            'html', 'xml', 'javascript', 'javascriptreact', 'typescriptreact', 'svelte', 'vue'
-        },
-    },
---}}}
+    additional_vim_regex_highlighting = {'org'},
 
 -- Context Comments {{{
     context_commentstring = {
@@ -65,7 +29,7 @@ ts.setup {
         }
     }
 --}}}
-
 }
+--- }}}
 
 -- vim: foldmethod=marker foldlevel=0 foldenable foldmarker={{{,}}}

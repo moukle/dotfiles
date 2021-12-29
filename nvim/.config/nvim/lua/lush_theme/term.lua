@@ -2,16 +2,6 @@ local lush = require 'lush'
 local hsl = lush.hsl
 
 -- Colors {{{
--- ========================================
--- Function to get colors from xresources
--- ========================================
-local function get_xresources_color (c)
-   local command = io.popen('xrdb -query | grep ' .. c .. ' -m 1 | cut -f 2')
-   local color = command:read("*l")
-   return color
-end
-
-
 local color0  = hsl(get_xresources_color('color0'))
 local color1  = hsl(get_xresources_color('color1'))
 local color2  = hsl(get_xresources_color('color2'))
@@ -143,21 +133,6 @@ local theme = lush(function()
         DiffChanged { fg = color4 };
         DiffRemoved { fg = color1 };
 -- }}}
-
--- Status Line {{{
-        SLModeText { bg = color0, fg = fg, gui = 'bold' };
-        SLModeSep { bg = bg, fg = color0 };
-        SLNormalText { bg = bg, fg = color7 };
-        SLDimText { bg = bg, fg = color7 };
-        SLLightText { bg = color0, fg = fg, gui = 'italic' };
-        SLLightSep { bg = bg, fg = color0 };
-        SLDarkText { bg = bg, fg = color0 };
-        SLError { fg = color1 };
-        SLWarning { fg = color3 };
-        SLInfo { fg = color2 };
-        SLHint { fg = color7 };
--- }}}
-
 -- Treesitter {{{
         TSComment { Comment, gui = 'italic' };
         TSPunctDelimiter { Delimiter };
@@ -215,7 +190,6 @@ local theme = lush(function()
 -- }}}
 
 -- }}}
-
 -- LSP {{{
         LspDiagnosticsDefaultHint { fg = color7 };
         LspDiagnosticsVirtualTextHint { LspDiagnosticsDefaultHint, gui = 'italic' };
@@ -241,7 +215,6 @@ local theme = lush(function()
         LspDiagnosticsSignInformation { LspDiagnosticsDefaultInformation };
         LspDiagnosticsUnderlineInformation { LspDiagnosticsDefaultInformation, gui = 'italic' };
 -- }}}
-
 -- Lsp Saga {{{
 -- Misc
         LspFloatWinBorder { fg = color8 };
@@ -281,96 +254,27 @@ local theme = lush(function()
         DefinitionIcon { fg = color7 };
         ReferencesIcon { fg = color7 };
 -- }}}
-
 -- Lsp Lightbulb {{{
         LightBulbFloatWin { bg = color2, fg = bg };
         LightBulbVirtualText { fg = color2 };
 -- }}}
-
 -- Telescope {{{
-        TelescopeSelection { bg=color0, fg = color15 };
+        TelescopeSelection      { bg=color0, fg = color15 };
         TelescopeSelectionCaret { bg=color0, fg = color0 };
-        TelescopeNormal { bg=bg, fg = color7 };
-        TelescopeBorder { bg=bg, fg = color8 };
-        TelescopeMatching { fg = color15, gui="bold" };
-        TelescopePromptPrefix { fg = color7 };
+        TelescopeNormal         { bg=bg, fg = color7 };
+        TelescopeBorder         { bg=bg, fg = color8 };
+        TelescopeMatching       { fg = color15, gui="bold" };
+        TelescopePromptPrefix   { fg = color7 };
+-- {{{ Headline
+        CodeBlock { bg=color0 };
+        Headline1 { bg=bg };
+        Headline2 { bg=bg };
+        Dash      { bg=bg };
 -- }}}
-
--- Startify {{{
-        StartifyBracket { fg = color8 };
-        StartifyFile { fg = color15, gui = 'italic' };
-        StartifyFooter { fg = color8 };
-        StartifyHeader { fg = color15 };
-        StartifyNumber { fg = color7 };
-        StartifyPath { fg = color7, gui = 'italic' };
-        StartifySection { fg = color7 };
-        StartifySelect { fg = color7 };
-        StartifySlash { fg = color7, gui = 'italic' };
-        StartifySpecial { fg = color8 };
-        StartifyVar { fg = color7 };
 -- }}}
-
--- Gitsigns {{{
-        DiffAddSign { fg = color2 };
-        DiffChangeSign { fg = color4 };
-        DiffDeleteSign { fg = color1 };
--- }}}
-
--- Nvim Tree {{{
-        -- NvimTreeNormal { fg = gray02 };
-
-        -- NvimTreeSymlink { fg = gray02 };
-        -- NvimTreeFolderName { fg = gray12 };
-        -- NvimTreeRootFolder { fg = gray02, gui = 'italic' };
-        -- NvimTreeFolderIcon { fg = gray02 };
-        -- NvimTreeExecFile { fg = gray02 };
-        -- NvimTreeSpecialFile { fg = gray02 };
-        -- NvimTreeImageFile { fg = gray02 };
-        -- NvimTreeMarkdownFile { fg = gray02 };
-        -- NvimTreeIndentMarker { fg = gray02 };
-
-        -- NvimTreeLicenseIcon { fg = gray02 };
-        -- NvimTreeYamlIcon { fg = gray02 };
-        -- NvimTreeTomlIcon { fg = gray02 };
-        -- NvimTreeGitignoreIcon { fg = gray02 };
-        -- NvimTreeJsonIcon { fg = gray02 };
-
-        -- NvimTreeLuaIcon { fg = gray02 };
-        -- NvimTreePythonIcon { fg = gray02 };
-        -- NvimTreeShellIcon { fg = gray02 };
-        -- NvimTreeJavascriptIcon { fg = gray02 };
-        -- NvimTreeCIcon { fg = gray02 };
-        -- NvimTreeReactIcon { fg = gray02 };
-        -- NvimTreeHtmlIcon { fg = gray02 };
-        -- NvimTreeRustIcon { fg = gray02 };
-        -- NvimTreeVimIcon { fg = gray02 };
-        -- NvimTreeTypescriptIcon { fg = gray02 };
-
-        -- NvimTreeGitDirty { fg = gray10, gui = 'italic' };
-        -- NvimTreeGitStaged { fg = lightgreen, gui = 'italic' };
-        -- NvimTreeGitMerge { fg = magenta, gui = 'italic' };
-        -- NvimTreeGitRenamed { fg = gray10, gui = 'italic' };
-        -- NvimTreeGitNew { fg = gray10, gui = 'italic' };
--- }}}
-
--- Fern {{{
-        FernSpinner { fg = color2 };
-        FernMarkedLine { fg = color15 };
-        FernMarkedText { fg = color15 };
-        FernRootSymbol { fg = color7 };
-        FernRootText { fg = color7 };
-        FernLeafSymbol { fg = color7 };
-        FernLeafText { fg = fg };
-        FernBranchSymbol { fg = color7 };
-        FernBranchText { fg = fg };
-        FernWindowSelectIndicator { Normal };
-        FernWindowSelectStatusLine { Normal };
--- }}}
-
 -- Indent Blankline {{{
     IndentBlanklineChar { fg = color0 };
 --}}}
-
 -- Cmp {{{
         -- The abbr field.
         CmpItemAbbr { Normal };

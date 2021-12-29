@@ -55,6 +55,7 @@ local function plugins(use)
 	use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 	use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
 	use 'ahmedkhalf/project.nvim'
+
 	use 'folke/which-key.nvim'
 
 	use 'numToStr/Comment.nvim'
@@ -88,6 +89,8 @@ local function plugins(use)
 -- }}}
 -- Lang {{{
     use 'JuliaEditorSupport/julia-vim'
+    use 'nvim-orgmode/orgmode'
+    use 'lukas-reineke/headlines.nvim'
 -- }}}
 end
 

@@ -24,10 +24,11 @@ opt.relativenumber = true
 
 -- Show matching brackets when text indicator is over them
 opt.showmatch = true
-
 opt.showmode = false
 
 opt.scrolloff = 5
+
+opt.mouse = 'a'
 -- }}}
 -- Folding {{{
 opt.foldmethod = 'expr'

@@ -60,6 +60,7 @@ cmp.setup {
 		{ name = 'luasnip', options = { use_show_condition = false } },
 		{ name = 'nvim_lsp' },
 		{ name = 'buffer' },
+		{ name = 'orgmode' },
 		-- { name = 'latex_symbols' },
 		-- { name = 'path' },
 	},

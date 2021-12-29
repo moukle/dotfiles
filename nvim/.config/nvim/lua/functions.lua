@@ -26,3 +26,12 @@ function string:align(width, align)
 	return self .. spacer
 end
 --}}}
+
+
+-- Function to get colors from xresources {{{
+function get_xresources_color (c)
+   local command = io.popen('xrdb -query | grep ' .. c .. ' -m 1 | cut -f 2')
+   local color = command:read("*l")
+   return color
+end
+-- }}}
