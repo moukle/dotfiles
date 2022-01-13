@@ -12,10 +12,9 @@ hide() {
 
 # desktops
 if [ $HOSTNAME == "toaster" ]; then
-    bspc monitor DP-4 -d 1 2 3 4 5 6 7 8 9 0
-    bspc monitor DP-2 -d a s d f g
-    $HOME/.config/polybar/launch.sh main main_bspwm
-    # hide
+    bspc monitor DP-2 -d 1 2 3 4 5 6 7 8 9 0
+    bspc monitor DP-4 -d a s d f g
+    $HOME/.config/polybar/launch.sh
 else
     bspc monitor HDMI2 -d 1 2 3 4 5 6 7 8 9 0
     bspc monitor eDP1  -d a s d f g
@@ -36,18 +35,18 @@ c remove_disabled_monitors true
 c remove_unplugged_monitors true
 
 # padding
-c top_padding    68
-c bottom_padding 33
+c top_padding    80
+c bottom_padding 23
 c right_padding  23
 c left_padding   23
 
 # gaps
-c window_gap     -10
+c window_gap     -5
 c single_monocle true
 
 # borders
 c borderless_monocle    true
-c border_width          10
+c border_width          5
 c focused_border_color  $color8
 c normal_border_color   $color0
 c active_border_color   $color0

@@ -258,6 +258,11 @@ local theme = lush(function()
         LightBulbFloatWin { bg = color2, fg = bg };
         LightBulbVirtualText { fg = color2 };
 -- }}}
+-- Neogit {{{
+        NeogitNotificationInfo    { fg = fg };
+        NeogitNotificationWarning { fg = color3 };
+        NeogitNotificationError   { fg = color1 };
+-- }}}
 -- Telescope {{{
         TelescopeSelection      { bg=color0, fg = color15 };
         TelescopeSelectionCaret { bg=color0, fg = color0 };
@@ -265,12 +270,12 @@ local theme = lush(function()
         TelescopeBorder         { bg=bg, fg = color8 };
         TelescopeMatching       { fg = color15, gui="bold" };
         TelescopePromptPrefix   { fg = color7 };
--- {{{ Headline
+-- }}}
+-- Headline {{{
         CodeBlock { bg=color0 };
         Headline1 { bg=bg };
         Headline2 { bg=bg };
         Dash      { bg=bg };
--- }}}
 -- }}}
 -- Indent Blankline {{{
     IndentBlanklineChar { fg = color0 };

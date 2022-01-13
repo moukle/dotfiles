@@ -54,6 +54,7 @@ local function plugins(use)
 	use { 'nvim-telescope/telescope.nvim', requires = { {'nvim-lua/plenary.nvim'} } }
 	use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 	use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
+    use 'sindrets/diffview.nvim'
 	use 'ahmedkhalf/project.nvim'
 
 	use 'folke/which-key.nvim'

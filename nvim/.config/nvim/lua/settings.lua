@@ -29,10 +29,12 @@ opt.showmode = false
 opt.scrolloff = 5
 
 opt.mouse = 'a'
+
+opt.clipboard = 'unnamedplus'
 -- }}}
 -- Folding {{{
 opt.foldmethod = 'expr'
-opt.foldexpr = 'nvim_treesitter#foldexpr()'
+-- opt.foldexpr = 'nvim_treesitter#foldexpr()'
 opt.fillchars = {eob = " " , vert = "┃", fold = " " }
 opt.foldtext = [[v:lua.FoldText()]]
 -- }}}
