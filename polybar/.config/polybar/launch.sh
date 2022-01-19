@@ -12,10 +12,9 @@ kill_bar() {
 
 kill_bar
 
+# polybar -q all -c $DIR/main.ini &
 polybar -q bspwm -c $DIR/main.ini &
-
 polybar -q polywins -c $DIR/main.ini &
-
 polybar -q tray -c $DIR/main.ini &
 polybar -q volume -c $DIR/main.ini &
 polybar -q time -c $DIR/main.ini &
