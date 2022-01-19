@@ -40,4 +40,12 @@ nvim_lsp.clangd.setup {
 }
 -- }}}
 
+-- Julia {{{
+nvim_lsp.julials.setup{
+    root_dir = function(fname)
+        return nvim_lsp.util.root_pattern 'Project.toml'(fname) -- or util.find_git_ancestor(fname)
+    end,
+}
+-- }}}
+
 -- vim: foldmethod=marker foldlevel=0 foldenable foldmarker={{{,}}}
