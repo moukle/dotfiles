@@ -1,0 +1,11 @@
+# ~/.config/starship.toml
+
+[git_state]
+disabled = true
+
+[git_status]
+disabled = true
+
+[character]
+success_symbol = "[λ](bold green)"
+error_symbol   = "[λ](bold red)"

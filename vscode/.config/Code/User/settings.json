@@ -1,5 +1,5 @@
 {
-    "workbench.colorTheme": "Ayu Mirage Bordered",
+    "workbench.colorTheme": "Monokai Pro (Filter Ristretto)",
     "breadcrumbs.enabled": false,
     "breadcrumbs.icons": false,
     "editor.colorDecorators": false,
@@ -22,7 +22,7 @@
     "terminal.integrated.fontWeight": "300",
     "workbench.editor.showIcons": false,
     "workbench.editor.tabCloseButton": "off",
-    "workbench.iconTheme": "vs-minimal",
+    "workbench.iconTheme": "Monokai Pro (Filter Ristretto) Icons",
     "workbench.tree.indent": 14,
     "workbench.tree.renderIndentGuides": "none",
     "window.menuBarVisibility": "toggle",
@@ -44,5 +44,5 @@
     "gitlens.views.commits.avatars": false,
     "gitlens.views.commits.showBranchComparison": false,
     "gitlens.views.showRelativeDateMarkers": false,
-    "window.zoomLevel": 1,
+    "window.zoomLevel": 2,
 }

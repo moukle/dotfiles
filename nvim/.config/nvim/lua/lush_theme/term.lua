@@ -112,11 +112,9 @@ local theme = lush(function()
         SpecialKey { fg = color7 };
         NonText { fg = color7 };
         Directory { fg = color7 };
-        Pmenu { fg = color7 };
+        Pmenu { bg=color0, fg = color7 };
         PmenuSbar { fg = color7 };
-        -- PmenuSbar { bg = Error.fg };
-        -- PmenuThumb { bg = gray09, fg = gray03 };
-        PmenuThumb { bg = color7};
+        PmenuThumb { bg = color7 };
         PmenuSel { bg = color8, fg = color15 };
         StatusLine { Normal , fg = color7 };
         TabLineSel { StatusLine };
@@ -225,15 +223,15 @@ local theme = lush(function()
         SagaShadow { fg = color1 };
         LspSagaFinderSelection { fg = color7 };
 -- Diagnostic
-        LspLinesDiagBorder { fg = color8 };
-        DiagnosticTruncateLine { fg = color8 };
-        DiagnosticError { Normal };
-        DiagnosticWarning { Normal };
-        DiagnosticInformation { Normal };
-        DiagnosticHint { Normal };
-        LspSagaShTruncateLine { fg = color8 };
-        LspSagaDocTruncateLine { fg = color8 };
-        LineDiagTuncateLine { fg = color8 };
+        LspLinesDiagBorder { bg=color0, fg = color8 };
+        DiagnosticTruncateLine { bg=color0, fg = color8 };
+        DiagnosticError { bg = color0, fg=color1 };
+        DiagnosticWarning {  bg = color0, fg=color7 };
+        DiagnosticInformation { bg=color0, fg=fg };
+        DiagnosticHint { bg=color0, fg=fg };
+        LspSagaShTruncateLine { bg=color0, fg = color8 };
+        LspSagaDocTruncateLine { bg=color0, fg = color8 };
+        LineDiagTuncateLine { bg=color0, fg = color8 };
 -- Code Action
         LspSagaCodeActionTitle { fg = color7 };
         LspSagaCodeActionTruncateLine { fg = color8 };
@@ -272,32 +270,31 @@ local theme = lush(function()
         TelescopePromptPrefix   { fg = color7 };
 -- }}}
 -- Headline {{{
-        CodeBlock { bg=color0 };
-        Headline1 { bg=bg };
-        Headline2 { bg=bg };
-        Dash      { bg=bg };
+        CodeBlock { bg=color0  };
+        Headline  { bg=color0, fg=color15};
+        Dash      { bg=bg,     fg=color8 };
 -- }}}
 -- Indent Blankline {{{
     IndentBlanklineChar { fg = color0 };
 --}}}
 -- Cmp {{{
         -- The abbr field.
-        CmpItemAbbr { Normal };
+        CmpItemAbbr { bg=color0, fg=fg };
 
         -- The deprecated item's abbr field.
         CmpItemAbbrDeprecated { Error };
 
         -- The matched characters highlight.
-        CmpItemAbbrMatch { Error };
+        CmpItemAbbrMatch { bg=color0, fg=color15, gui='bold' };
 
         -- The fuzzy matched characters highlight.
-        CmpItemAbbrMatchFuzzy { Error };
+        CmpItemAbbrMatchFuzzy { bg=color0, fg=color15, gui='bold' };
 
         -- The kind field.
-        CmpItemKind { fg = fg };
+        CmpItemKind { bg=color0, fg = color15 };
 
         -- The menu field.
-        CmpItemMenu { Normal };
+        CmpItemMenu { bg=color0, fg = color8 };
 --}}}
 }
 end)

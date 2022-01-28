@@ -48,4 +48,8 @@ nvim_lsp.julials.setup{
 }
 -- }}}
 
+-- Python
+nvim_lsp.pyright.setup{}
+-- }}}
+
 -- vim: foldmethod=marker foldlevel=0 foldenable foldmarker={{{,}}}
