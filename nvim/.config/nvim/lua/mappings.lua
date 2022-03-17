@@ -12,21 +12,21 @@ wk.register({
             name = 'File',
             ['.'] = { [[<cmd>:lua require("telescope.builtin").find_files( { cwd = vim.fn.expand("%:p:h") })<cr>]], 'File ./', noremap = true},
             f = { [[<cmd>:lua require("telescope.builtin").find_files{ find_command = { "rg", "--files", "--hidden", "--ignore", "-g", "!.git/*" } }<cr>]], 'File', noremap = true },
-            g = { [[<cmd>Telescope live_grep theme=ivy<cr>]], 'Grep', noremap = true },
-            b = { [[<cmd>Telescope file_browser theme=ivy<cr>]], 'Browser', noremap = true },
-            r = { [[<cmd>Telescope oldfiles theme=ivy<cr>]], 'Recent', noremap = true },
+            g = { [[<cmd>Telescope live_grep<cr>]], 'Grep', noremap = true },
+            b = { [[<cmd>Telescope file_browser<cr>]], 'Browser', noremap = true },
+            r = { [[<cmd>Telescope oldfiles<cr>]], 'Recent', noremap = true },
         },
 -- }}}
 -- Buffers {{{
         b = {
             name = 'Buffer',
-            b = { [[<cmd>Telescope buffers theme=ivy<cr>]], 'Buffers', noremap = true },
+            b = { [[<cmd>Telescope buffers<cr>]], 'Buffers', noremap = true },
         },
 -- }}}
 -- Project {{{
         p = {
             name = 'Project',
-            p = { [[<cmd>Telescope projects theme=ivy<cr>]], 'Projects', noremap = true },
+            p = { [[<cmd>Telescope projects<cr>]], 'Projects', noremap = true },
         },
 -- }}}
 -- Git {{{
@@ -46,6 +46,11 @@ wk.register({
             a = { [[<cmd>lua vim.lsp.buf.code_action()<cr>]], 'Code Action', silent = true, noremap = true },
             d = { [[<cmd>lua vim.lsp.buf.definition()<cr>]], 'Find Definition', silent = true, noremap = true },
             -- p = { [[<cmd>Lspsaga preview_definition<cr>]], 'Preview Definition', silent = true, noremap = true },
+        },
+-- Toggle
+        t = {
+            name = 'Toggle',
+            z = { [[<cmd>TZAtaraxis<cr>]], 'Toggle Zenmode', silent = true },
         },
 -- }}}
     }

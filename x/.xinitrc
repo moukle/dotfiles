@@ -19,11 +19,13 @@ done; f=
 
 redshift -l 51:10 > /dev/null & # blue filter
 dunst                         & # notifications
+unclutter                     & # hide idle cursor
 imwheel -b 45                 & # mousewheel speed
 emacs --daemon                & # start emacs daemon (connect via emacsclient)
-picom                         &
+# picom                         &
 
 # set background
-$HOME/.cache/wal/wallpaper.sh  & # set wallpaper
+# $HOME/.cache/wal/wallpaper.sh  & # set wallpaper
+nitrogen --restore
 
 exec bspwm

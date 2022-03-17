@@ -71,6 +71,7 @@ element alternate.normal {
 
 element selected.normal {
     background-color: @bg-alt2;
+    font: @text-bold;
     text-color: @fg;
 }
 

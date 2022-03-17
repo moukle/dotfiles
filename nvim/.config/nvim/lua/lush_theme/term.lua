@@ -262,12 +262,21 @@ local theme = lush(function()
         NeogitNotificationError   { fg = color1 };
 -- }}}
 -- Telescope {{{
-        TelescopeSelection      { bg=color0, fg = color15 };
+        TelescopeBorder         { bg=color0, fg = color0 };
+        TelescopePromptBorder   { bg=color8, fg = color8 };
+
+        TelescopePromptNormal   { bg=color8, fg = fg };
+        TelescopePromptPrefix   { bg=color8, fg = fg };
+
+        TelescopeNormal         { bg=color0, fg = color7 };
+
+        TelescopePreviewTitle   { bg=color0, fg = color7 };
+        TelescopePromptTitle    { bg=color8, fg = fg };
+        TelescopeResultsTitle   { bg=color0, fg = color8 };
+
+        TelescopeSelection      { bg=color8, fg = color15, gui="bold" };
         TelescopeSelectionCaret { bg=color0, fg = color0 };
-        TelescopeNormal         { bg=bg, fg = color7 };
-        TelescopeBorder         { bg=bg, fg = color8 };
         TelescopeMatching       { fg = color15, gui="bold" };
-        TelescopePromptPrefix   { fg = color7 };
 -- }}}
 -- Headline {{{
         CodeBlock { bg=color0  };

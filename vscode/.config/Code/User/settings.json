@@ -1,5 +1,5 @@
 {
-    "workbench.colorTheme": "Monokai Pro (Filter Ristretto)",
+    "workbench.colorTheme": "Ayu Light Bordered",
     "breadcrumbs.enabled": false,
     "breadcrumbs.icons": false,
     "editor.colorDecorators": false,
@@ -45,4 +45,5 @@
     "gitlens.views.commits.showBranchComparison": false,
     "gitlens.views.showRelativeDateMarkers": false,
     "window.zoomLevel": 2,
+    "workbench.startupEditor": "none",
 }

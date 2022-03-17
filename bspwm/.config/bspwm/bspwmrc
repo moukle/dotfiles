@@ -46,7 +46,7 @@ c single_monocle true
 
 # borders
 c borderless_monocle    true
-c border_width          5
+c border_width          2
 c focused_border_color  $color7
 c normal_border_color   $color0
 c active_border_color   $color0
@@ -71,7 +71,7 @@ R Emacs|Question state=floating
 R "gaime_server (DEBUG)" hidden=on
 
 R zoom desktop=^5  state=tiled
-R DDNet monitor=^2  follow=on state=fullscreen
+R DDNet desktop=^9  follow=on state=fullscreen
 # R DDNet desktop=^15 follow=on state=fullscreen
 
 c external_rules_command "$HOME/.config/bspwm/external_rules" # Spotify

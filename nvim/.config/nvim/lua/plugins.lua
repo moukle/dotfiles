@@ -49,6 +49,7 @@ local function plugins(use)
 	use 'nvim-lualine/lualine.nvim'
 	use 'rktjmp/lush.nvim'
 	use 'lukas-reineke/indent-blankline.nvim'
+    use 'Pocco81/TrueZen.nvim'
 -- }}}
 -- Editor {{{
 	use { 'nvim-telescope/telescope.nvim', requires = { {'nvim-lua/plenary.nvim'} } }
@@ -91,7 +92,7 @@ local function plugins(use)
 -- Lang {{{
     use 'JuliaEditorSupport/julia-vim'
     use 'nvim-orgmode/orgmode'
-    use 'lukas-reineke/headlines.nvim'
+    -- use 'lukas-reineke/headlines.nvim'
 -- }}}
 end
 

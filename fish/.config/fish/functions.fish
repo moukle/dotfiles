@@ -7,3 +7,12 @@ end
 
 # mkdir and cd afterwards
 function mkc; mkdir $argv && cd $argv; end
+
+# ddnet
+function ddn
+    $HOME/.x/xrandr.sh game
+    setxkbmap de nodeadkeys
+    DDNet
+    $HOME/.x/xrandr.sh
+    $HOME/.x/keyboard.sh
+end
