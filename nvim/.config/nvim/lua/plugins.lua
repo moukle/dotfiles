@@ -64,6 +64,7 @@ local function plugins(use)
 	use 'tpope/vim-repeat'
 	use 'machakann/vim-sandwich'
 	use 'junegunn/vim-easy-align'
+    -- use { 'eraserhd/parinfer-rust', run = 'cargo build --release' } -- useful for S-Expressions (lispy)
 -- }}}
 -- LSP {{{
 	use 'L3MON4D3/LuaSnip'
@@ -92,6 +93,7 @@ local function plugins(use)
 -- Lang {{{
     use 'JuliaEditorSupport/julia-vim'
     use 'nvim-orgmode/orgmode'
+    use { 'elkowar/yuck.vim', ft = {'yuck'} }
     -- use 'lukas-reineke/headlines.nvim'
 -- }}}
 end

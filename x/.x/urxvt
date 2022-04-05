@@ -1,5 +1,5 @@
-# Xft.dpi: 192x192
-# Xft.dpi: 138x138
+/* Xft.dpi: 192x192 */
+/* Xft.dpi: 138x138 */
 Xft.dpi: 93x93
 Xft.autohint: 0
 Xft.lcdfilter:  lcddefault

@@ -12,7 +12,9 @@ function mkc; mkdir $argv && cd $argv; end
 function ddn
     $HOME/.x/xrandr.sh game
     setxkbmap de nodeadkeys
+    eww kill
     DDNet
     $HOME/.x/xrandr.sh
     $HOME/.x/keyboard.sh
+    eww open bar
 end

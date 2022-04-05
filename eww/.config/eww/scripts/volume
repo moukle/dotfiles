@@ -1,0 +1,64 @@
+#!/bin/bash
+
+# Get Volume
+get_volume() {
+	status=`pamixer --get-mute | grep -wo 'true'`
+
+	if [[ "$status" == "true" ]]; then
+		volume=`pamixer --get-volume`
+		echo "$volume%"
+	else
+		echo "Mute"
+	fi
+}
+
+# Get icons
+get_icon() {
+	vol="$(get_volume)"
+	current="${vol%%%}"
+	status=`pamixer --get-mute | grep -wo 'true'`
+
+	if [[ "$status" == "true" ]]; then
+		if [[ "$current" -eq "0" ]]; then
+			echo "images/icons/volume/mute.png"
+		elif [[ ("$current" -ge "0") && ("$current" -le "30") ]]; then
+			echo "images/icons/volume/volume.png"
+		elif [[ ("$current" -ge "30") && ("$current" -le "60") ]]; then
+			echo "images/icons/volume/volume.png"
+		elif [[ ("$current" -ge "60") && ("$current" -le "100") ]]; then
+			echo "images/icons/volume/volume.png"
+		fi
+	else
+		echo "images/icons/volume/mute.png"
+	fi
+}
+
+# Increase Volume
+inc_volume() {
+	pamixer -i 5
+}
+
+# Decrease Volume
+dec_volume() {
+    pamixer -d 5
+}
+
+# Toggle Mute
+toggle_mute() {
+    pamixer --toggle-mute
+}
+
+# Execute accordingly
+if [[ "$1" == "--get" ]]; then
+	get_volume
+elif [[ "$1" == "--icon" ]]; then
+	get_icon
+elif [[ "$1" == "--inc" ]]; then
+	inc_volume
+elif [[ "$1" == "--dec" ]]; then
+	dec_volume
+elif [[ "$1" == "--toggle" ]]; then
+	toggle_mute
+else
+	get_volume
+fi

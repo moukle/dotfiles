@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+bsp_workspace_yuck() {
+  all_workspaces=$(bspc query -D --names)
+  focused=$(bspc query -D -d focused --names)
+  occupied=$(bspc query -D -d .occupied --names)
+
+  buffered=""
+  for name in $all_workspaces; do
+    if echo $focused | grep -q $name; then
+      active_class="active"
+    else
+      active_class="inactive"
+    fi
+
+    if echo $occupied | grep -q $name; then
+      button_class="occupied"
+      button_name=$name
+    else
+      button_class="empty"
+      button_name=$name
+    fi
+
+    buffered+="(button :class \"$button_class $active_class\"  :onclick \"bspc desktop -f $name\" \"$button_name\")"
+    echo -n "$buffered"
+    buffered=""
+  done
+}
+
+xprop -spy -root _NET_CURRENT_DESKTOP | while read -r; do
+  echo '(box :orientation "v" :class "workspaces" :space-evenly true :halign "center" :valign "center" :vexpand true '"$(bsp_workspace_yuck)"')'
+done

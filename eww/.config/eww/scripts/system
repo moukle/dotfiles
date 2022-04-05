@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+CFG="$HOME/.config/eww/sidedar"
+EWW=`which eww`
+
+close_eww() {
+	${EWW} --config "$CFG" close resources logout suspend lock reboot shutdown quotes
+}
+
+## Options #############################################
+if  [[ $1 = "--lock" ]]; then
+	close_eww
+    slock
+
+elif  [[ $1 = "--logout" ]]; then
+	close_eww
+    bspwm quit
+
+elif  [[ $1 = "--suspend" ]]; then
+	close_eww
+    pamixer --mute
+	systemctl suspend
+
+elif  [[ $1 = "--reboot" ]]; then
+	close_eww
+    systemctl reboot
+
+elif  [[ $1 = "--shutdown" ]]; then
+	close_eww
+    systemctl poweroff
+
+## Help Menu #############################################
+else
+echo "
+Available options:
+--lock	--logout	--suspend	--reboot	--shutdown
+"
+fi
