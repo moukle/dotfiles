@@ -1,21 +1,21 @@
 /* Created   by https://github.com/rxyhn 
-   Designed  by https://github.com/rxyhn
-   Maintaned by https://github.com/rxyhn
+Designed  by https://github.com/rxyhn
+Maintaned by https://github.com/rxyhn
 */
 
 // Global
 @import "/home/moritz/.cache/wal/colors.scss";
 
 *{
-  all: unset;
-	font-family: "JetBrains Mono";
+    all: unset;
+    font-family: "Fira Sans";
 }
 
 // EWW BAR
 .eww_bar{
-  background-color: $background;
-  color: $foreground;
-  padding: .3rem;
+    background-color: $background;
+    color: $foreground;
+    padding: .3rem;
 }
 
 // Launcher
@@ -28,152 +28,187 @@
 
 // Workspaces
 .workspaces {
-  button {
-    margin: 3px;
-    // font-family: "Font Awesome 6 Pro";
-    padding: .2rem .7rem .2rem .7rem;
     background-color: $color0;
     border-radius: 5px;
-    font-size: 1.5em;
-    &.inactive {
-      color: $color8;
+    button {
+        // margin: 1px;
+        // font-family: "Font Awesome 6 Pro";
+        padding: .2rem .7rem .2rem .7rem;
+        background-color: $color0;
+        border-radius: 5px;
+        font-size: 1.5em;
+        &.inactive {
+            color: $color8;
+        }
+        &.empty {
+            background: $color0;
+        }
+        &.occupied {
+            color: $color15;
+            font-weight: bold;
+            // background: $color8;
+        }
+        &.urgent {
+            color: $color15;
+            background: $color1;
+        }
+        &.active {
+            font-weight: bold;
+            color: $background;
+            background: $foreground;
+        }
     }
-    &.empty {
-      background: $color0;
-    }
-    &.occupied {
-      color: $foreground;
-      background: $color8;
-    }
-    &.active {
-      color: $background;
-      background: $foreground;
-    }
-  }
 }
 
 // Control Panel
 .control {
-padding: .5rem;
-font-family: Material Icons;
-font-size: 1.6em;
-background-color: $color0;
-border-radius: 5px;
+    padding: .5rem;
+    font-family: Material Icons;
+    font-size: 1.6em;
+    // background-color: $color0;
+    border-radius: 5px;
 }
 .bat{
-  font-family: JetBrainsMono Nerd Font;
-  font-size: 1.2em;
-  padding-right: .5rem;
-  color: $color4;
+    font-family: JetBrainsMono Nerd Font;
+    font-size: 1.2em;
+    padding-right: .5rem;
+    color: $color4;
 }
 .wifi-icon{
-  margin-bottom: .2rem;
-  color: $color5;
+    margin-bottom: .2rem;
+    color: $color5;
 }
 .brightness-icon{
-  margin: .2rem 0 .2rem 0;
-  color: $color3;
+    margin: .2rem 0 .2rem 0;
+    color: $color3;
 }
 .volume-icon{
-  margin: .2rem 0 .2rem 0;
-  color: $color4;
+    margin: .2rem 0 .2rem 0;
+    color: $color4;
 }
 scale trough {
-  all: unset;
-  background-color: $background;
-  border-radius: 5px;
-  min-height: 80px;
-  min-width: 10px;
-  margin: .3rem 0 .3rem 0;
+    all: unset;
+    background-color: $color0;
+    border-radius: 5px;
+    min-height: 80px;
+    min-width: 10px;
+    margin: .3rem 0 .3rem 0;
 }
 .bribar trough highlight {
-  background-color: $color3;
-  border-radius: 5px;
+    background-color: $color3;
+    border-radius: 5px;
 }
 .volbar trough highlight {
-  background-color: $color4;
-  border-radius: 5px;
+    background-color: $color4;
+    border-radius: 5px;
 }
 
 // Clock
 .time {
-  // font-family: Comic Mono;
-  font-weight: bold;
-  font-size: 1.5em;
-  background-color: $color0;
-  color: $color15;
-  border-radius: 5px;
-  padding: .7rem 0 .5rem 0;
-  margin: .5rem 0 .5rem 0;
+    // font-family: Comic Mono;
+    font-weight: bold;
+    font-size: 1.5em;
+    background-color: $color0;
+    color: $color15;
+    border-radius: 5px;
+    padding: .7rem 0 .5rem 0;
+    margin: .5rem 0 .5rem 0;
 }
 
 // Calendar
 .cal-box {
-  background-color: $color0;
-  color: $foreground;
-  // font-family: Comic Mono;
-  font-size: 1.2em;
-  font-weight: bold;
+    background-color: $color0;
+    color: $foreground;
+    // font-family: Comic Mono;
+    font-size: 1.2em;
+    font-weight: bold;
 
-  .cal-inner-box {
-      padding: 1rem 1rem .2rem;
+    .cal-inner-box {
+        padding: 1rem 1rem .2rem;
 
-      .cal {
-          &.highlight {
-              padding: 10rem;
-          }
+        .cal {
+            &.highlight {
+                padding: 10rem;
+            }
 
-          padding: .8rem .25rem 0rem;
-          margin-left: 10px;
-      }
-  }
+            padding: .8rem .25rem 0rem;
+            margin-left: 10px;
+        }
+    }
 }
 
 calendar:selected {
-  color: $color2;
+    color: $color2;
 }
 
 calendar.header {
-color: $color7;
-font-weight: bold;
+    color: $color7;
+    font-weight: bold;
 }
 
 calendar.button {
-color: $color15;
+    color: $color15;
 }
 
 calendar.highlight {
-color: $color7;
-font-weight: bold;
+    color: $color7;
+    font-weight: bold;
 }
 
 calendar:indeterminate {
-color: $color8;
+    color: $color8;
 }
 
 // Powermenu
 .powermenu {
-  font-family: feather;
-  font-size: 1.4em;
-  font-weight: bold;
+    font-family: feather;
+    font-size: 1.4em;
+    font-weight: bold;
 }
 .button-bspres, .button-reb, .button-lock,
 .button-quit, .button-off{
-  padding: .5rem .2rem .3rem .2rem;
+    padding: .5rem .2rem .3rem .2rem;
 }
 .button-off{
-  margin-bottom: .5rem;
-  color: $color1;
+    margin-bottom: .5rem;
+    color: $color1;
 }
 .button-bspres{
-  color: $color2;
+    color: $color2;
 }
 .button-reb{
-  color: $color3;
+    color: $color3;
 }
 .button-quit{
-  color: $color4;
+    color: $color4;
 }
 .button-lock{
-  color: $color5;
+    color: $color5;
+}
+
+// Dock
+.dockbox {
+    // background-color: $color0;
+    border-radius: 5px;
+    // padding: .3rem;
+    // margin: 3px;
+}
+
+.appicon {
+    background-color: $background;
+    border-radius: 5px;
+    background-repeat: no-repeat;
+    background-size: 40px;
+    background-position: center;
+    min-height: 50px;
+    min-width: 50px;
+    background-blend-mode: luminosity;
+    &.hidden {
+        background-color: $color0;
+        background-blend-mode: overlay;
+    }
+    &.focused {
+        background-blend-mode: normal;
+        // border-bottom: 5px solid red;
+    }
 }

@@ -1,32 +1,38 @@
 #!/usr/bin/env bash
 
 bsp_workspace_yuck() {
-  all_workspaces=$(bspc query -D --names)
-  focused=$(bspc query -D -d focused --names)
-  occupied=$(bspc query -D -d .occupied --names)
+    desktops=$(bspc query -D --names)
+    focused_desktops=$(bspc query -D -d focused --names)
+    occupied_desktops=$(bspc query -D -d .occupied --names)
+    urgent_desktops="$(bspc query -D -d .urgent --names)"
 
-  buffered=""
-  for name in $all_workspaces; do
-    if echo $focused | grep -q $name; then
-      active_class="active"
-    else
-      active_class="inactive"
-    fi
-
-    if echo $occupied | grep -q $name; then
-      button_class="occupied"
-      button_name=$name
-    else
-      button_class="empty"
-      button_name=$name
-    fi
-
-    buffered+="(button :class \"$button_class $active_class\"  :onclick \"bspc desktop -f $name\" \"$button_name\")"
-    echo -n "$buffered"
     buffered=""
+    for d in $desktops; do
+
+      # focus
+      if echo $focused_desktops | grep -q $d; then
+          active_class="active"
+      else
+          active_class="inactive"
+      fi
+
+      # occupied / urgent
+      if echo $occupied_desktops| grep -q $d; then
+          button_class="occupied"
+      elif echo $urgent_desktops | grep -q $d; then
+          button_class="urgent"
+      else
+          button_class="empty"
+      fi
+
+      button_name=$d
+      buffered+="(button :class \"$button_class $active_class\"  :onclick \"bspc desktop -f $d\" \"$button_name\")"
   done
+
+  echo "(box :orientation \"v\" :class \"workspaces\" :halign \"center\" :valign \"center\" :vexpand true :hexpand true $buffered)"
 }
 
-xprop -spy -root _NET_CURRENT_DESKTOP | while read -r; do
-  echo '(box :orientation "v" :class "workspaces" :space-evenly true :halign "center" :valign "center" :vexpand true '"$(bsp_workspace_yuck)"')'
+bsp_workspace_yuck
+bspc subscribe desktop node_transfer | while read -r _ ; do
+bsp_workspace_yuck
 done

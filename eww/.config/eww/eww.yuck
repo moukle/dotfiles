@@ -17,9 +17,14 @@
 		   	:onclick "scripts/popup launcher"  "*")))
 
 ;; Workspaces Widgets ;;
+(deflisten workspace "scripts/workspaces")
 (defwidget workspaces []
 	(literal :content workspace))
-(deflisten workspace "scripts/workspaces")
+
+;; Dock Widgets ;;
+(deflisten dock_listen "scripts/nodes")
+(defwidget dock []
+  (literal :content dock_listen))
 
 ;; Battery Widgets ;;
 (defwidget bat []
@@ -93,7 +98,7 @@
 (defpoll TEMP :interval "15m" `scripts/weather_info --temp`)
 (defpoll HEX :interval	"15m" `scripts/weather_info --hex`)
 (defpoll QUOTE :interval  "15m" `scripts/weather_info --quote`)
-(defwidget weather [] 
+(defwidget weather []
 	(eventbox :onhover "${eww} update weather=true" 		
 			  :onhoverlost "${eww} update weather=false"
 			  :tooltip QUOTE
@@ -107,16 +112,16 @@
 	(label :class "weathericon" :style "color: ${HEX};" :text ICON))))
 (defvar weather false)
 
-;; Control Panel Widgets ;;	
+;; Control Panel Widgets ;;
 (defwidget control []
-	(box :orientation "v" 
-		 :space-evenly false  
+	(box :orientation "v"
+		 :space-evenly false
 		 :class "control"
+      ; (weather)
+      (volum)))
 ; (bat)))
 ; (wifi)
 ; (bright)))
-	(weather)
-(volum)))
 
 ;; Clock Widgets ;;
 (defwidget time []
@@ -189,6 +194,14 @@
 ; (launcher)
 (workspaces)))
 
+
+;; Middle Widgets ;;
+(defwidget middle []
+	(box	:orientation "v" 
+			:space-evenly "false" 
+			:valign "center"
+(dock)))
+
 ;; Bottom Widgets ;;
 (defwidget bottom []
 	(box	:orientation "v" 
@@ -207,11 +220,12 @@
 
 ;; Bar Widgets ;;
 (defwidget bar []
-	(box :class "eww_bar" 
-		 :orientation "v" 
-		 :vexpand "false" 
+	(box :class "eww_bar"
+		 :orientation "v"
+		 :vexpand "false"
 		 :hexpand "false"
 (top)
+(middle)
 (end)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

@@ -1,6 +1,8 @@
 . ~/.config/fish/aliases.fish
 . ~/.config/fish/functions.fish
 
+# enable direnv
+direnv hook fish | source
 
 # disable greeting
 set fish_greeting

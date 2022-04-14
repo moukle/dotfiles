@@ -6,7 +6,7 @@ source ~/.cache/wal/colors.sh
 # desktops
 if [ $HOSTNAME == "toaster" ]; then
     bspc monitor DP-2 -d 1 2 3 4 5 6 7 8 9 0
-    bspc monitor DP-4 -d a s d f g
+    bspc monitor DP-0 -d a s d f g
     eww open bar
     eww reload
 else
@@ -29,17 +29,18 @@ c remove_disabled_monitors true
 c remove_unplugged_monitors true
 
 # padding
-c top_padding    0
-c bottom_padding 0
-c right_padding  0
-c left_padding   86
+c top_padding    4
+c bottom_padding 4
+c right_padding  4
+c left_padding   4
+c -m DP-2 left_padding 69
 
 # gaps
 c window_gap     -4
 c single_monocle true
 
 # borders
-c borderless_monocle    false
+c borderless_monocle    true
 c border_width          4
 c focused_border_color  $color7
 c normal_border_color   $color0

@@ -1,0 +1,52 @@
+#! /bin/bash
+
+icons_1="/usr/share/icons/Reversal-blue/apps/scalable"
+icons_2="/usr/share/icons/Tela/scalable/apps"
+
+is_hidden() {
+    xprop -id $1 | grep -q "_NET_WM_STATE(ATOM) = _NET_WM_STATE_HIDDEN"
+}
+
+print_icons_yuck() {
+    # nodes on current desktop which are windows
+    nodes=$(bspc query -N -d -n .window)
+    focused_node=$(bspc query -N -n)
+    buffer=""
+
+    for node in $nodes; do
+        # get class/title for each node
+        title=$(xprop WM_CLASS -id $node | cut -d'"' -f2)
+
+        # get corresponding icon
+        icon=$(find $icons_1 $icons_2 -name "$title*" -print -quit)
+        # echo $title $icon
+
+        # build yuck output
+        # actions
+        focus=":onclick \"bspc node -f $node\""
+        hide=":onrightclick \"bspc node $node -g hidden\""
+
+        # state
+        hidden=$(is_hidden $node && echo hidden)
+        focused=$([ $node == $focused_node ] && echo focused)
+        class=":class \"appicon $focused $hidden\""
+
+        # icon
+        style=":style \"background-image: url('$icon');\""
+
+        # build buffer
+        buffer="$buffer (button $style $class $focus $hide)"
+    done
+
+    if [[ $buffer ]]; then
+        echo "(box :class \"dockbox\" (box :orientation \"v\" :spacing 5 :valign \"center\" :halign \"center\" :space-evenly \"false\" :vexpand \"true\" :hexpand \"true\" $buffer))"
+    else
+        echo "" # don't print empty dockbox
+    fi
+}
+
+# listen to bspwm changes
+print_icons_yuck
+bspc subscribe desktop node_focus node_remove node_flag | while read -r _ ; do
+    print_icons_yuck
+done
