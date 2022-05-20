@@ -36,7 +36,7 @@ c left_padding   4
 c -m DP-2 left_padding 69
 
 # gaps
-c window_gap     -4
+c window_gap     10
 c single_monocle true
 
 # borders

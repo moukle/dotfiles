@@ -207,6 +207,7 @@
 	(box	:orientation "v" 
 			:space-evenly false 
 (time)
+(control)
 (power)))
 
 ;; End Widgets ;;
@@ -215,7 +216,6 @@
 		 :space-evenly "false" 
 		 :valign "end" 
 		 :spacing 5
-(control)
 (bottom)))
 
 ;; Bar Widgets ;;

@@ -9,6 +9,7 @@ Maintaned by https://github.com/rxyhn
 *{
     all: unset;
     font-family: "Fira Sans";
+    // font-family: "JetBrainsMono";
 }
 
 // EWW BAR
@@ -28,20 +29,20 @@ Maintaned by https://github.com/rxyhn
 
 // Workspaces
 .workspaces {
-    background-color: $color0;
+    // background-color: $color0;
     border-radius: 5px;
     button {
         // margin: 1px;
         // font-family: "Font Awesome 6 Pro";
         padding: .2rem .7rem .2rem .7rem;
-        background-color: $color0;
+        // background-color: $color0;
         border-radius: 5px;
         font-size: 1.5em;
         &.inactive {
             color: $color8;
         }
         &.empty {
-            background: $color0;
+            // background: $color0;
         }
         &.occupied {
             color: $color15;
@@ -84,7 +85,7 @@ Maintaned by https://github.com/rxyhn
 }
 .volume-icon{
     margin: .2rem 0 .2rem 0;
-    color: $color4;
+    // color: $color7;
 }
 scale trough {
     all: unset;
@@ -95,11 +96,11 @@ scale trough {
     margin: .3rem 0 .3rem 0;
 }
 .bribar trough highlight {
-    background-color: $color3;
+    background-color: $color8;
     border-radius: 5px;
 }
 .volbar trough highlight {
-    background-color: $color4;
+    background-color: $color8;
     border-radius: 5px;
 }
 
@@ -108,7 +109,7 @@ scale trough {
     // font-family: Comic Mono;
     font-weight: bold;
     font-size: 1.5em;
-    background-color: $color0;
+    // background-color: $color0;
     color: $color15;
     border-radius: 5px;
     padding: .7rem 0 .5rem 0;
@@ -171,44 +172,50 @@ calendar:indeterminate {
 }
 .button-off{
     margin-bottom: .5rem;
-    color: $color1;
+    // color: $color15;
 }
-.button-bspres{
-    color: $color2;
-}
-.button-reb{
-    color: $color3;
-}
-.button-quit{
-    color: $color4;
-}
-.button-lock{
-    color: $color5;
-}
+// .button-bspres{
+//     color: $color2;
+// }
+// .button-reb{
+//     color: $color3;
+// }
+// .button-quit{
+//     color: $color4;
+// }
+// .button-lock{
+//     color: $color5;
+// }
 
 // Dock
 .dockbox {
     // background-color: $color0;
-    border-radius: 5px;
+    // border-radius: 5px;
     // padding: .3rem;
     // margin: 3px;
 }
 
 .appicon {
     background-color: $background;
-    border-radius: 5px;
+    // border-radius: 5px;
     background-repeat: no-repeat;
     background-size: 40px;
     background-position: center;
     min-height: 50px;
     min-width: 50px;
     background-blend-mode: luminosity;
+    // border-bottom-width: 5px;
+    // border-bottom-style: solid;
+    // border-bottom-color: $background;
+
     &.hidden {
         background-color: $color0;
         background-blend-mode: overlay;
     }
     &.focused {
         background-blend-mode: normal;
-        // border-bottom: 5px solid red;
+        // border-bottom-width: 5px;
+        // border-bottom-style: solid;
+        // border-bottom-color: $color2;
     }
 }

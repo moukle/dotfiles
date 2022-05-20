@@ -22,7 +22,6 @@
     "terminal.integrated.fontWeight": "300",
     "workbench.editor.showIcons": false,
     "workbench.editor.tabCloseButton": "off",
-    "workbench.iconTheme": "Monokai Pro (Filter Ristretto) Icons",
     "workbench.tree.indent": 14,
     "workbench.tree.renderIndentGuides": "none",
     "window.menuBarVisibility": "toggle",
@@ -45,4 +44,51 @@
     "gitlens.views.showRelativeDateMarkers": false,
     "window.zoomLevel": 2,
     "workbench.startupEditor": "none",
+    "workbench.iconTheme": "ayu",
+    "vim.easymotion": true,
+    "vim.useSystemClipboard": true,
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<space>"
+            ],
+            "commands": [
+                "vspacecode.space"
+            ]
+        },
+        {
+            "before": [
+                ","
+            ],
+            "commands": [
+                "vspacecode.space",
+                {
+                    "command": "whichkey.triggerKey",
+                    "args": "m"
+                }
+            ]
+        }
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<space>"
+            ],
+            "commands": [
+                "vspacecode.space"
+            ]
+        },
+        {
+            "before": [
+                ","
+            ],
+            "commands": [
+                "vspacecode.space",
+                {
+                    "command": "whichkey.triggerKey",
+                    "args": "m"
+                }
+            ]
+        }
+    ],
 }
