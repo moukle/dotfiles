@@ -36,7 +36,7 @@ configuration {
 window {
     width: 25%;
     border: 0.00em;
-    /* border: 0.05em; */
+    border: 0.05em;
     y-offset: -200px;
 }
 

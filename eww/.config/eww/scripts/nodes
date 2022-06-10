@@ -1,10 +1,12 @@
 #! /bin/bash
 
 # icons_1="/usr/share/icons/Reversal-blue/apps/scalable"
-icons_1="/usr/share/icons/Papirus/128x128/apps/"
-icons_2="/usr/share/icons/Tela/scalable/apps"
+icons_1="/home/moritz/.icons/crayon"
+# icons_1="/usr/share/icons/Papirus/128x128/apps/"
+# icons_2="/usr/share/icons/Tela/scalable/apps"
+# icons_2=""
 # default="/usr/share/icons/Reversal-blue/apps/scalable/chmsee-icon.svg"
-default="/usr/share/icons/Papirus/128x128/apps/appimagekit-jubler.svg"
+default="/home/moritz/.icons/crayon/babe.png"
 
 is_hidden() {
     xprop -id $1 | grep -q "_NET_WM_STATE(ATOM) = _NET_WM_STATE_HIDDEN"

@@ -22,15 +22,15 @@ pkill dunst; dunst   & # dunst
 bspc wm -r             # bspwm
 
 # qutebrowser
-# if pgrep -x "qutebrowser" > /dev/null; then
-# 	qutebrowser :restart >> /dev/null
-# fi
+if pgrep -x "qutebrowser" > /dev/null; then
+	qutebrowser :restart >> /dev/null
+fi
 
 # rebuild colors-everything stylus
-# ln -sf "${HOME}/.cache/wal/colors-everything-css.styl" "${HOME}/dev/solarized-everything-css/themes/wal/colors.styl"
-# (cd ${HOME}/dev/solarized-everything-css && \
-# 	make clean >> /dev/null && \
-# 	make >> /dev/null)
+ln -sf "${HOME}/.cache/wal/colors-everything-css.styl" "${HOME}/dev/solarized-everything-css/themes/wal/colors.styl"
+(cd ${HOME}/dev/solarized-everything-css && \
+	make clean >> /dev/null && \
+	make >> /dev/null)
 
 # rebuild tabbed
 # tabbed_dir=$(where tabbed | xargs dirname)

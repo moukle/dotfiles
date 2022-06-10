@@ -204,8 +204,8 @@
 
 ;; Bottom Widgets ;;
 (defwidget bottom []
-	(box	:orientation "v" 
-			:space-evenly false 
+	(box	:orientation "v"
+			:space-evenly false
 (time)
 (control)
 (power)))
@@ -235,7 +235,7 @@
 (defwindow bar
 	:monitor 0
 	:stacking "fg"
-	:geometry (geometry :x "0" :y "0" :height "100%" :width "47px")
+	:geometry (geometry :x "0" :y "0" :height "100%" :width "65")
 	:reserve (struts :distance "35px" :side "left")
 	:wm-ignore false
 	:windowtype "dock"

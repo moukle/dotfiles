@@ -6,22 +6,36 @@ Maintaned by https://github.com/rxyhn
 // Global
 @import "/home/moritz/.cache/wal/colors.scss";
 
+// melon
+// $bg_light   : $background;
+// $bg_dark    : $color0;
+$bg_light   : #445967;
+$bg_dark    : #3C4F5B;
+$blue_light : #72A7D3;
+$blue_dark  : #5394C9;
+$cyan       : #37BF8D;
+$white      : #ffffff;
+$gray       : #CCCCCC;
+$red        : #d37277;
+
+
 *{
     all: unset;
     font-family: "Fira Sans";
+    font-weight: bold;
     // font-family: "JetBrainsMono";
 }
 
 // EWW BAR
 .eww_bar{
-    background-color: $background;
-    color: $foreground;
-    padding: .3rem;
+    background-color: $bg_light;
+    color: $gray;
+    // padding: .3rem;
 }
 
 // Launcher
 .launcher_icon{
-    color: $color1;
+    color: $cyan;
     font-family: "Font Awesome 6 Pro";
     font-size: 1.7em;
     padding: 1rem 0 1rem 0;
@@ -29,34 +43,35 @@ Maintaned by https://github.com/rxyhn
 
 // Workspaces
 .workspaces {
-    // background-color: $color0;
+    background-color: $bg_dark;
+    // border-radius: 15px;
     border-radius: 5px;
     button {
         // margin: 1px;
-        // font-family: "Font Awesome 6 Pro";
-        padding: .2rem .7rem .2rem .7rem;
+        padding: .6rem 1.2rem .6rem 1.2rem;
         // background-color: $color0;
-        border-radius: 5px;
+        // border-radius: 5px;
         font-size: 1.5em;
         &.inactive {
-            color: $color8;
+            color: $gray;
         }
         &.empty {
-            // background: $color0;
+            // background: $;
+            // color: $gray;
         }
         &.occupied {
-            color: $color15;
+            color: $white;
             font-weight: bold;
-            // background: $color8;
+            background: $blue_light;
         }
         &.urgent {
-            color: $color15;
-            background: $color1;
+            color: $white;
+            background: $red;
         }
         &.active {
             font-weight: bold;
-            color: $background;
-            background: $foreground;
+            color: $white;
+            background: $cyan;
         }
     }
 }
@@ -84,7 +99,8 @@ Maintaned by https://github.com/rxyhn
     color: $color3;
 }
 .volume-icon{
-    margin: .2rem 0 .2rem 0;
+    // margin: .2rem 0 .2rem 0;
+    // background: $blue_light;
     // color: $color7;
 }
 scale trough {
@@ -109,9 +125,9 @@ scale trough {
     // font-family: Comic Mono;
     font-weight: bold;
     font-size: 1.5em;
-    // background-color: $color0;
-    color: $color15;
-    border-radius: 5px;
+    // background-color: $blue_dark;
+    color: $white;
+    // border-radius: 5px;
     padding: .7rem 0 .5rem 0;
     margin: .5rem 0 .5rem 0;
 }
@@ -162,6 +178,7 @@ calendar:indeterminate {
 
 // Powermenu
 .powermenu {
+    // background: $blue_light;
     font-family: feather;
     font-size: 1.4em;
     font-weight: bold;
@@ -187,35 +204,29 @@ calendar:indeterminate {
 //     color: $color5;
 // }
 
-// Dock
-.dockbox {
-    // background-color: $color0;
-    // border-radius: 5px;
-    // padding: .3rem;
-    // margin: 3px;
-}
 
 .appicon {
-    background-color: $background;
-    // border-radius: 5px;
+    // background-color: $bg_dark;
+    border-radius: 5px;
     background-repeat: no-repeat;
     background-size: 40px;
     background-position: center;
     min-height: 50px;
     min-width: 50px;
-    background-blend-mode: luminosity;
+    // background-blend-mode: luminosity;
     // border-bottom-width: 5px;
     // border-bottom-style: solid;
     // border-bottom-color: $background;
 
     &.hidden {
-        background-color: $color0;
-        background-blend-mode: overlay;
+        background-color: $bg_light;
+        background-blend-mode: luminosity;
     }
     &.focused {
+        background-color: $bg_dark;
         background-blend-mode: normal;
-        // border-bottom-width: 5px;
-        // border-bottom-style: solid;
-        // border-bottom-color: $color2;
+        // border-left-width: 5px;
+        // border-left-style: solid;
+        // border-left-color: $cyan;
     }
 }

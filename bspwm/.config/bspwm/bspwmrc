@@ -29,19 +29,19 @@ c remove_disabled_monitors true
 c remove_unplugged_monitors true
 
 # padding
-c top_padding    4
-c bottom_padding 4
-c right_padding  4
-c left_padding   4
-c -m DP-2 left_padding 69
+c top_padding    30
+c bottom_padding 30
+c right_padding  30
+c left_padding   30
+c -m DP-2 left_padding 95
 
 # gaps
-c window_gap     10
+c window_gap     -15
 c single_monocle true
 
 # borders
-c borderless_monocle    true
-c border_width          4
+c borderless_monocle    false
+c border_width          15
 c focused_border_color  $color7
 c normal_border_color   $color0
 c active_border_color   $color0
