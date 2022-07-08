@@ -29,20 +29,20 @@ c remove_disabled_monitors true
 c remove_unplugged_monitors true
 
 # padding
-c top_padding    30
-c bottom_padding 30
-c right_padding  30
-c left_padding   30
-c -m DP-2 left_padding 95
+c top_padding    20
+c bottom_padding 20
+c right_padding  20
+c left_padding   20
+c -m DP-2 left_padding 85
 
 # gaps
-c window_gap     -15
+c window_gap     5
 c single_monocle true
 
 # borders
 c borderless_monocle    false
-c border_width          15
-c focused_border_color  $color7
+c border_width          5
+c focused_border_color  $color15
 c normal_border_color   $color0
 c active_border_color   $color0
 c presel_feedback_color $color2
@@ -61,7 +61,7 @@ R Spotify desktop=^8
 R Zathura        state=tiled
 R Pinentry       state=floating
 R Emacs          state=tiled
-R Signal         state=tiled
+R Signal         state=tiled desktop=^7
 R Emacs|Question state=floating
 R "gaime_server (DEBUG)" hidden=on
 

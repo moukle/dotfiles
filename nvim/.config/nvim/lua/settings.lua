@@ -17,10 +17,13 @@ opt.directory = vim.fn.stdpath('config') .. '/swap'
 opt.termguicolors = true
 cmd [[colorscheme term]]
 opt.signcolumn = 'yes'
+opt.cmdheight = 0
 -- }}}
 -- Editor {{{
 opt.number = true
 opt.relativenumber = true
+
+opt.timeoutlen = 500
 
 -- Show matching brackets when text indicator is over them
 opt.showmatch = true

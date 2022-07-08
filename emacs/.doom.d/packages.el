@@ -96,3 +96,4 @@
 (package! nano-theme :recipe (:host github :repo "rougier/nano-theme"))
 (package! nano-agenda :recipe (:host github :repo "rougier/nano-agenda"))
 (package! nano-modeline :recipe (:host github :repo "rougier/nano-modeline"))
+(package! nano-minibuffer :recipe (:host github :repo "rougier/nano-minibuffer"))

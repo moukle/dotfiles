@@ -25,7 +25,8 @@
                  '(right-fringe . 0)
                  '(tool-bar-lines . 0)
                  '(menu-bar-lines . 0)))))
-(use-package! nano-modeline :hook (after-init . nano-modeline-mode))
+(use-package! nano-modeline   :hook (after-init . nano-modeline-mode))
+;; (use-package! nano-minibuffer :hook (after-init . nano-minibuffer-mode))
 
 ;; Dim inactive windows
 (use-package dimmer
@@ -127,16 +128,16 @@
               (svg-tag-make tag :end -1 :inverse t :crop-left t :margin 0 :face 'org-date))))))); SVG-Tag
 
 ;; font
-;; (setq doom-font (font-spec :family "Cascadia Code" :size 20)
-;;       doom-big-font (font-spec :family "Cascadia Code" :size 25)
-;;       doom-variable-pitch-font (font-spec :family "SF Pro Text")
-;;       doom-unicode-font (font-spec :family "DejaVu Math TeX Gyre"))
+(setq doom-font (font-spec :family "Cascadia Code" :size 20)
+      doom-big-font (font-spec :family "Cascadia Code" :size 25)
+      doom-variable-pitch-font (font-spec :family "SF Pro Text")
+      doom-unicode-font (font-spec :family "DejaVu Math TeX Gyre"))
 
-(setq doom-font (font-spec :family "Liga SFMono Nerd Font" :size 22)
-      doom-big-font (font-spec :family "Liga SFMono Nerd Font" :size 25)
-      doom-variable-pitch-font (font-spec :family "Fira Sans" :size 20)
-      doom-unicode-font (font-spec :family "Liga SFMono Nerd Font")
-      doom-serif-font (font-spec :family "Fira Sans" :size 20))
+;; (setq doom-font (font-spec :family "Liga SFMono Nerd Font" :size 22)
+;;       doom-big-font (font-spec :family "Liga SFMono Nerd Font" :size 25)
+;;       doom-variable-pitch-font (font-spec :family "Fira Sans" :size 20)
+;;       doom-unicode-font (font-spec :family "Liga SFMono Nerd Font")
+;;       doom-serif-font (font-spec :family "Fira Sans" :size 20))
 
 
 ;; dashboard

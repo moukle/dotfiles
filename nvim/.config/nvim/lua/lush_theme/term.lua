@@ -118,7 +118,7 @@ local theme = lush(function()
         PmenuSel { bg = color8, fg = color15 };
         StatusLine { Normal , fg = color7 };
         TabLineSel { StatusLine };
-        StatusLineNC { StatusLine, fg = color7 };
+        StatusLineNC { StatusLine, fg = bg };
         TabLine { StatusLineNC };
         TabLineFill { StatusLineNC };
         WildMenu { fg = color7 };
