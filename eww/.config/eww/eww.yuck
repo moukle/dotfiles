@@ -71,23 +71,26 @@
 
 ;; Volume Widgets ;;
 (defwidget volum []
-	(eventbox :onhover "${eww} update volum=true" 		
+	(eventbox :onhover "${eww} update volum=true"
 			  :onhoverlost "${eww} update volum=false"
-	(box      :orientation "v" 	  
-			  :space-evenly "false" 
+	(box      :orientation "v"
+              :space-evenly "false"
 			  :spacing "2"
-	(revealer :transition "slideup" 
-			  :reveal volum         
+	(revealer :transition "slideup"
+			  :reveal volum
 			  :duration "550ms"
-	(scale    :class "volbar" 	  
+	(scale    :class "volbar"
 			  :value current-volume
-			  :orientation "v"      
-			  :flipped true 
-			  :tooltip "Volume: ${current-volume}%" 
-			  :max 101 
-			  :min 0 
+			  :orientation "v"
+			  :flipped true
+			  :tooltip "Volume: ${current-volume}%"
+			  :max 101
+			  :min 0
 			  :onchange "printf %.0f {} | xargs pamixer --set-volume" ))
-	(button   :onclick "scripts/popup audio"   :class "volume-icon" ""))))
+	(button   :onclick "scripts/popup audio"   
+              ; :class "volume-icon" ""
+              (image :path "/home/moritz/.icons/fluentui/Speaker\ 2/SVG/ic_fluent_speaker_2_24_filled.svg"
+                )))))
 (defpoll current-volume :interval "1s" "pamixer --get-volume")
 (defvar volum false)
 
@@ -165,25 +168,26 @@
 	(box		:orientation "v"					
 				:space-evenly "false"
 
-	(button   	:class "button-bspres"  			
-				:tooltip "BSPWM Restart" 
-				:onclick "bspc wm -r" "" )
-
-  	(button		:class "button-reb"					
-	  			:tooltip "Reboot"		 
-				:onclick "reboot"	"")
 
 	(button		:class "button-quit" 				
-				:tooltip "Logout" 		 
-				:onclick "killall bspwm" "")
+				:tooltip "Sleep & Lock" 		 
+				:onclick "systemctl suspend && slock"
+      (image :path "/home/moritz/.icons/fluentui/Sleep/SVG/ic_fluent_sleep_24_filled.svg"))
 
 	(button		:class "button-lock" 				
 				:tooltip "Lock Screen"	 
-				:onclick "slock"	"")))
+				:onclick "slock"	
+      (image :path "/home/moritz/.icons/fluentui/Lock\ Closed/SVG/ic_fluent_lock_closed_24_filled.svg"))
+  	(button		:class "button-reb"					
+	  			:tooltip "Reboot"		 
+				:onclick "reboot"
+                (image :path "/home/moritz/.icons/fluentui/Arrow Clockwise/SVG/ic_fluent_arrow_clockwise_24_filled.svg"))))
 
 	(button		:class "button-off"					
 				:tooltip "Shutdown"		 
-				:onclick "shutdown now"	""))))
+				:onclick "shutdown now"
+      (image :path "/home/moritz/.icons/fluentui/Power/SVG/ic_fluent_power_24_filled.svg"
+      )))))
 (defvar power false)
 
 ;; Top Widgets ;;

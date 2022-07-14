@@ -66,6 +66,7 @@ local function plugins(use)
 	use 'machakann/vim-sandwich'
 	use 'junegunn/vim-easy-align'
     use { 'windwp/nvim-autopairs', after = 'nvim-cmp' }
+    use 'elihunter173/dirbuf.nvim'
     -- use { 'eraserhd/parinfer-rust', run = 'cargo build --release' } -- useful for S-Expressions (lispy)
 -- }}}
 -- LSP {{{

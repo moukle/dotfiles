@@ -36,7 +36,7 @@ configuration {
 window {
     width: 25%;
     border: 0.00em;
-    border: 0.05em;
+    /* border: 0.05em; */
     y-offset: -200px;
 }
 
@@ -46,7 +46,7 @@ listview {
     fixed-height: false;
     /* reverse: true; */
     columns: 1;
-    scrollbar: true;
+    scrollbar: false;
     spacing: 1px;
     /* Remove strange gap between listview and inputbar */
     margin: -2px 0 0;
@@ -58,6 +58,7 @@ element {
     padding: 15;
     text-color: @bg-alt;
     background-color: @bg;
+    border-radius: 0.25em;
 }
 
 element normal.normal {
@@ -79,7 +80,7 @@ element selected.normal {
 entry {
     padding: 0.8em;
     text-color: @fg;
-    background-color: @bg-alt2;
+    /* background-color: @bg-alt2; */
 }
 
 inputbar {
@@ -108,6 +109,8 @@ textbox {
     font: @text-mono-font;
     /* border: 0.1em; */
     border-color: @bg-alt;
+    /* border: 0 0.1em 0 0; */
+    border-radius: 0.25em;
     padding: 12;
     background-color: @bg-alt2;
     color: @fg;
@@ -115,7 +118,7 @@ textbox {
 
 prompt {
     text-color: @bg-alt;
-    background-color: @bg-alt2;
+    /* background-color: @bg-alt2; */
     font: @icon-font;
     enabled: true;
     padding: 0.8em 0.1em 0 0.8em;

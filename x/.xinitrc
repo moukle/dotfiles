@@ -22,7 +22,7 @@ dunst                         & # notifications
 unclutter                     & # hide idle cursor
 imwheel -b 45                 & # mousewheel speed
 # emacs --daemon                & # start emacs daemon (connect via emacsclient)
-# picom                         &
+picom                         &
 
 # set background
 # $HOME/.cache/wal/wallpaper.sh  & # set wallpaper

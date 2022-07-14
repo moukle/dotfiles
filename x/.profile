@@ -1,12 +1,12 @@
 # PATH to bins
-export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/.local/bin/bspwm:$PATH"
-export PATH="$HOME/.emacs.d/bin:$PATH"
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.local/bin/bspwm"
+export PATH="$PATH:$HOME/.emacs.d/bin"
 
 # CUDA
-export PATH="/opt/cuda/bin/:/opt/cuda/nsight_compute/:$PATH"
+export PATH="$PATH:/opt/cuda/bin/:/opt/cuda/nsight_compute/"
 
-export LD_LIBRARY_PATH="/opt/cuda/targets/x86_64-linux/lib/:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/opt/cuda/targets/x86_64-linux/lib/"
 
 # Programs
 export EDITOR="nvim"

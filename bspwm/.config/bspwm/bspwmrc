@@ -36,14 +36,14 @@ c left_padding   20
 c -m DP-2 left_padding 85
 
 # gaps
-c window_gap     5
+c window_gap     10
 c single_monocle true
 
 # borders
-c borderless_monocle    false
-c border_width          5
-c focused_border_color  $color15
-c normal_border_color   $color0
+c borderless_monocle    true
+c border_width          0
+c focused_border_color  $color0
+c normal_border_color   $background
 c active_border_color   $color0
 c presel_feedback_color $color2
 

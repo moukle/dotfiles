@@ -8,3 +8,5 @@
 	user = moukle
 [commit]
 	gpgsign = true
+[url "git@github.com:"]
+	pushInsteadOf = "https://github.com/"
