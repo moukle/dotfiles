@@ -1,19 +1,20 @@
 # Dotfiles - my personal configuration files
 
 <img src=".screens/dark.png" width="100%" />
-<img src=".screens/light.png" width="100%" />
+<!-- <img src=".screens/light.png" width="100%" /> --->
 
 ## Tools
 
-| | |
-|-|-|
-| **Shell:** | fish + fisher |
-| **WM:** | bspwm + polybar |
-| **Editor:** | [Doom Emacs][doom-emacs] (and occasionally vscode) |
-| **Terminal:** | kitty |
-| **Launcher:** | rofi |
-| **Browser:** | qutebrowser |
-| **Notifications:** | dunst |
+|                    |               |
+| -                  | -             |
+| **Shell:**         | fish + fisher |
+| **WM:**            | bspwm + eww   |
+| **Editor:**        | nvim          |
+| **Terminal:**      | kitty         |
+| **Launcher:**      | rofi          |
+| **Browser:**       | qutebrowser   |
+| **Notifications:** | dunst         |
+| **Icontheme:**     | worst         |
 
 
 ## Install
@@ -27,5 +28,4 @@ stow bspwm
 ```
 
 
-[doom-emacs]: https://github.com/hlissner/doom-emacs
 [gnu-stow]: https://www.gnu.org/software/stow/
