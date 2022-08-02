@@ -29,29 +29,32 @@ c remove_disabled_monitors true
 c remove_unplugged_monitors true
 
 # padding
-c top_padding    20
-c bottom_padding 20
-c right_padding  20
-c left_padding   20
-c -m DP-2 left_padding 85
+c top_padding    5
+c bottom_padding 5
+c right_padding  5
+c left_padding   5
+c -m DP-2 left_padding 70
 
 # gaps
-c window_gap     10
+c window_gap     -5
 c single_monocle true
 
 # borders
 c borderless_monocle    true
-c border_width          0
-c focused_border_color  $color0
-c normal_border_color   $background
+c border_width          5
+c focused_border_color  $color8
+c normal_border_color   $color0
 c active_border_color   $color0
-c presel_feedback_color $color2
+c presel_feedback_color $color8
 
 # mouse
 c click_to_focus        true
 c focus_follows_pointer false
 
-# rules
+# removed all / default / prev rules
+bspc rule --remove '*:*'
+
+# add rules
 R qutebrowser desktop=^1
 R firefox     desktop=^1
 

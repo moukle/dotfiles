@@ -32,3 +32,10 @@ set fish_pager_color_completion
 set fish_pager_color_description $fish_color_quote yellow
 set fish_pager_color_progress brwhite --background=cyan
 set fish_color_history_current --bold
+
+# FZF colors
+export FZF_DEFAULT_OPTS="
+    $FZF_DEFAULT_OPTS
+    --color fg:7,bg:$background,hl:1,fg+:232,bg+:1,hl+:255
+    --color info:7,prompt:2,spinner:1,pointer:232,marker:1
+"

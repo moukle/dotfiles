@@ -238,13 +238,13 @@
 ;; Bar Windows ;;
 (defwindow bar
 	:monitor 0
-	:stacking "fg"
+	:stacking "bg"
 	:geometry (geometry :x "0" :y "0" :height "100%" :width "65")
 	:reserve (struts :distance "35px" :side "left")
 	:wm-ignore false
 	:windowtype "dock"
-	; :hexpand "false"
-	; :vexpand "false"
+	:hexpand "false"
+	:vexpand "false"
 (bar))
 
 ;; Calendar Windows ;;

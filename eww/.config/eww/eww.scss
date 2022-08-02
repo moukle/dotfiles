@@ -6,35 +6,36 @@ Maintaned by https://github.com/rxyhn
 // Global
 @import "/home/moritz/.cache/wal/colors.scss";
 
+$bg: rgba(10, 10, 10, 0.9);
+// $bg: $background;
+
 // melon
-// $bg_light   : $background;
-// $bg_dark    : $color0;
-$bg_light   : #445967;
-$bg_dark    : #3C4F5B;
-$blue_light : #72A7D3;
-$blue_dark  : #5394C9;
-$cyan       : #37BF8D;
-$white      : #ffffff;
-$gray       : #CCCCCC;
-$red        : #d37277;
+// $color0   : $bg;
+// $color0   : #445967;
+// $bg    : #3C4F5B;
+// $color4 : #72A7D3;
+// $color5  : #5394C9;
+// $color3       : #37BF8D;
+// $color15      : #ffffff;
+// $color8       : #CCCCCC;
+// $color1        : #d37277;
 
 *{
     all: unset;
     font-family: "Fira Sans";
-    font-weight: bold;
     // font-family: "JetBrainsMono";
 }
 
 // EWW BAR
 .eww_bar{
-    background-color: $bg_light;
-    color: $gray;
-    // padding: .3rem;
+    background-color: $bg;
+    color: $color8;
+    padding: .3rem;
 }
 
 // Launcher
 .launcher_icon{
-    color: $cyan;
+    color: $color3;
     font-family: "Font Awesome 6 Pro";
     font-size: 1.7em;
     padding: 1rem 0 1rem 0;
@@ -42,35 +43,35 @@ $red        : #d37277;
 
 // Workspaces
 .workspaces {
-    background-color: $bg_dark;
+    // background-color: $bg;
     // border-radius: 15px;
-    border-radius: 5px;
+    // border-radius: 5px;
     button {
         // margin: 1px;
-        padding: .6rem 1.2rem .6rem 1.2rem;
+        padding: .3rem .6rem .3rem .6rem;
         // background-color: $color0;
         // border-radius: 5px;
         font-size: 1.5em;
         &.inactive {
-            color: $gray;
+            color: $color8;
         }
         &.empty {
             // background: $;
-            // color: $gray;
+            // color: $color8;
         }
         &.occupied {
-            color: $white;
-            font-weight: bold;
-            background: $blue_light;
+            color: $color7;
+            // font-weight: bold;
+            // background: $color4;
         }
         &.urgent {
-            color: $white;
-            background: $red;
+            color: $color1;
+            // background: $color1;
         }
         &.active {
             font-weight: bold;
-            color: $white;
-            background: $cyan;
+            color: $color15;
+            // background: $color3;
         }
     }
 }
@@ -99,8 +100,8 @@ $red        : #d37277;
 }
 .volume-icon{
     // margin: .2rem 0 .2rem 0;
-    // background: $blue_light;
-    color: $white;
+    // background: $color4;
+    color: $color15;
 }
 scale trough {
     all: unset;
@@ -122,10 +123,9 @@ scale trough {
 // Clock
 .time {
     // font-family: Comic Mono;
-    font-weight: bold;
     font-size: 1.5em;
-    // background-color: $blue_dark;
-    color: $white;
+    // background-color: $color5;
+    color: $color15;
     // border-radius: 5px;
     padding: .7rem 0 .5rem 0;
     margin: .5rem 0 .5rem 0;
@@ -137,7 +137,6 @@ scale trough {
     color: $foreground;
     // font-family: Comic Mono;
     font-size: 1.2em;
-    font-weight: bold;
 
     .cal-inner-box {
         padding: 1rem 1rem .2rem;
@@ -154,16 +153,16 @@ scale trough {
 }
 
 calendar:selected {
-    color: $color2;
+    color: $color15;
+    font-weight: bold;
 }
 
 calendar.header {
     color: $color7;
-    font-weight: bold;
 }
 
 calendar.button {
-    color: $color15;
+    color: $color8;
 }
 
 calendar.highlight {
@@ -173,12 +172,13 @@ calendar.highlight {
 
 calendar:indeterminate {
     color: $color8;
+    font-weight: bold;
 }
 
 // Powermenu
 .powermenu {
-    // background: $blue_light;
-    color: $white;
+    // background: $color4;
+    color: $color15;
     font-family: feather;
     font-size: 1.4em;
     font-weight: bold;
@@ -189,7 +189,7 @@ calendar:indeterminate {
 }
 .button-off {
     margin-bottom: .5rem;
-    color: $white;
+    color: $color15;
 }
 // .button-bspres{
 //     color: $color2;
@@ -204,29 +204,29 @@ calendar:indeterminate {
 //     color: $color5;
 // }
 
-
 .appicon {
-    // background-color: $bg_dark;
+    // background-color: $bg;
     border-radius: 5px;
     background-repeat: no-repeat;
-    background-size: 40px;
+    background-size: 60px;
     background-position: center;
     min-height: 50px;
     min-width: 50px;
     // background-blend-mode: luminosity;
     // border-bottom-width: 5px;
     // border-bottom-style: solid;
-    // border-bottom-color: $background;
+    // border-bottom-color: $bg;
 
     &.hidden {
-        background-color: $bg_light;
-        background-blend-mode: luminosity;
+        background-size: 40px;
+        // background-color: $background;
+        // background-blend-mode: luminosity;
     }
     &.focused {
-        background-color: $bg_dark;
+        background-color: $bg;
         background-blend-mode: normal;
         // border-left-width: 5px;
         // border-left-style: solid;
-        // border-left-color: $cyan;
+        // border-left-color: $color3;
     }
 }

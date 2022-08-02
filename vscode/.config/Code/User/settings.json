@@ -1,5 +1,5 @@
 {
-    "workbench.colorTheme": "Ayu Light Bordered",
+    "workbench.colorTheme": "Min Dark",
     "breadcrumbs.enabled": false,
     "breadcrumbs.icons": false,
     "editor.colorDecorators": false,
@@ -44,7 +44,7 @@
     "gitlens.views.showRelativeDateMarkers": false,
     "window.zoomLevel": 2,
     "workbench.startupEditor": "none",
-    "workbench.iconTheme": "ayu",
+    "workbench.iconTheme": "Monokai Classic Monochrome Icons",
     "vim.easymotion": true,
     "vim.useSystemClipboard": true,
     "vim.normalModeKeyBindingsNonRecursive": [
@@ -91,4 +91,5 @@
             ]
         }
     ],
+    "workbench.productIconTheme": "fluent-icons",
 }
