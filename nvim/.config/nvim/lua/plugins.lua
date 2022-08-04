@@ -50,6 +50,10 @@ local function plugins(use)
 	use 'rktjmp/lush.nvim'
 	use 'lukas-reineke/indent-blankline.nvim'
     use 'Pocco81/TrueZen.nvim'
+    use 'karb94/neoscroll.nvim'
+    use 'yamatsum/nvim-cursorline'
+    use 'folke/todo-comments.nvim'
+    use 'gelguy/wilder.nvim'
 -- }}}
 -- Editor {{{
 	use { 'nvim-telescope/telescope.nvim', requires = { {'nvim-lua/plenary.nvim'} } }
@@ -67,11 +71,16 @@ local function plugins(use)
 	use 'junegunn/vim-easy-align'
     use { 'windwp/nvim-autopairs', after = 'nvim-cmp' }
     use 'elihunter173/dirbuf.nvim'
+    use 'chentoast/marks.nvim'
+    use 'ggandor/leap.nvim'
+
     -- use { 'eraserhd/parinfer-rust', run = 'cargo build --release' } -- useful for S-Expressions (lispy)
 -- }}}
 -- LSP {{{
 	use 'L3MON4D3/LuaSnip'
 	use 'onsails/lspkind-nvim'
+    use 'j-hui/fidget.nvim'
+    use 'folke/trouble.nvim'
 
 	use 'neovim/nvim-lspconfig'
 	use 'hrsh7th/cmp-nvim-lsp'
@@ -79,6 +88,8 @@ local function plugins(use)
 	use 'hrsh7th/cmp-path'
 	use 'hrsh7th/cmp-cmdline'
 	use 'hrsh7th/nvim-cmp'
+
+    use 'ray-x/lsp_signature.nvim'
 
     use 'rafamadriz/friendly-snippets'
 -- }}}
@@ -100,6 +111,9 @@ local function plugins(use)
     use 'nvim-orgmode/orgmode'
     use { 'elkowar/yuck.vim', ft = {'yuck'} }
     -- use 'lukas-reineke/headlines.nvim'
+-- }}}
+-- Misc {{{
+    use 'lambdalisue/suda.vim'
 -- }}}
 end
 

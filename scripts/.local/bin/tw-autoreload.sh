@@ -5,7 +5,7 @@
 
 fifofile=/tmp/ddnet.fifo
 
-local_dir=$HOME/.teeworlds/maps/Justice3/
+local_dir=$HOME/.teeworlds/maps/j3/
 mkfifo $fifofile
 
 while true; do

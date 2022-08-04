@@ -57,5 +57,8 @@ opt.listchars = 'tab:│ ,trail:━'
 
 opt.wrap = true
 --}}}
+-- Misc {{{
+opt.wildignore = '*.o,*.obj,*.class,*/nvim/backup/*,*/nvim/undo/*,*/nvim/swap/*,*.ppm'
+--}}}
 
 -- vim: foldmethod=marker foldlevel=0 foldenable foldmarker={{{,}}}

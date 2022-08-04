@@ -5,6 +5,8 @@ local cmd = vim.cmd
 local nvim_lsp = require 'lspconfig'
 local cmp_lsp = require 'cmp_nvim_lsp'
 
+require 'fidget'.setup{}
+require 'trouble'.setup{}
 -- Handlers {{{
 lsp.handlers['textDocument/publishDiagnostics'] =
     lsp.with(lsp.diagnostic.on_publish_diagnostics, {

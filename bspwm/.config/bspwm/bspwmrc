@@ -6,7 +6,7 @@ source ~/.cache/wal/colors.sh
 # desktops
 if [ $HOSTNAME == "toaster" ]; then
     bspc monitor DP-2 -d 1 2 3 4 5 6 7 8 9 0
-    bspc monitor DP-0 -d a s d f g
+    bspc monitor DP-0 -d a s d f g h r j k l
     eww open bar
     eww reload
 else

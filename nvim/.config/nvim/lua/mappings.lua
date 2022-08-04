@@ -7,6 +7,9 @@ vim.g.mapleader = ' '
 -- Normal Mode {{{
 wk.register({
     ['<leader>'] = {
+-- General {{{
+        n = { [[<cmd>noh<cr>]], 'Remove search highlight', silent = true },
+-- }}}
 -- File {{{
         f = {
             name = 'File',
@@ -40,7 +43,7 @@ wk.register({
             name = 'LSP',
             t = { [[<cmd>TroubleToggle<cr>]], 'Show Quickfix', silent = true },
             i = { [[<cmd>lua vim.lsp.buf.implementation()<CR>]], 'Goto Implementation', silent = true, noremap = true },
-            f = { [[<cmd>lua vim.lsp.buf.formatting()<CR>]], 'Format Buffer', silent = true, noremap = true },
+            f = { [[<cmd>lua vim.lsp.buf.format()<CR>]], 'Format Buffer', silent = true, noremap = true },
             l = { [[<cmd>lua print(vim.lsp.buf.server_ready())<CR>]], 'Lsp Status', silent = true, noremap = true },
             r = { [[<cmd>lua vim.lsp.buf.rename()<cr>]], 'Rename', silent = true, noremap = true },
             a = { [[<cmd>lua vim.lsp.buf.code_action()<cr>]], 'Code Action', silent = true, noremap = true },
@@ -57,9 +60,25 @@ wk.register({
 }, { mode = 'n' } )
 
 keymap('n', 'ga', [[<Plug>(EasyAlign)]], {})
-keymap('n', '<c-j>', [[<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>]], {noremap = true })
+
+keymap('n', 'K', [[<cmd>lua vim.lsp.buf.hover()<cr>]], {silent = true, noremap = true })
+keymap('n', '<c-j>', [[<cmd>lua vim.lsp.diagnostic.open_float()<CR>]], {noremap = true })
+keymap('n', '<c-k>', [[<cmd>lua vim.lsp.buf.signature_help()<CR>]], {silent = true, noremap = true })
+
+keymap('n', '<Tab>', '>>', {noremap = true })
+keymap('n', '<S-Tab>', '<<', {noremap = true })
 --}}}
+
 -- Visual Mode {{{
+wk.register({
+    ['<leader>'] = {
+        l = {
+            name = 'lsp',
+            f = { [[<cmd>lua vim.lsp.buf.range_formatting()<CR>]], 'Format Range', silent = true, noremap = true },
+            a = { [[<cmd><C-U>Lspsaga range_code_action<cr>]], 'Range Code Action', silent = true, noremap = true },
+        },
+    },
+}, {mode = 'x'})
 keymap('x', 'ga', [[<Plug>(EasyAlign)]], {})
 -- }}}
 
