@@ -266,7 +266,7 @@ local theme = lush(function()
         TelescopePromptBorder   { bg=color8, fg = color8 };
 
         TelescopePromptNormal   { bg=color8, fg = fg };
-        TelescopePromptPrefix   { bg=color8, fg = fg };
+        TelescopePromptPrefix   { bg=color8, fg = color15 };
 
         TelescopeNormal         { bg=color0, fg = color7 };
 
