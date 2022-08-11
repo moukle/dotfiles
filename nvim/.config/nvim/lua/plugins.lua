@@ -53,7 +53,10 @@ local function plugins(use)
     use 'karb94/neoscroll.nvim'
     use 'yamatsum/nvim-cursorline'
     use 'folke/todo-comments.nvim'
-    use 'gelguy/wilder.nvim'
+    -- use 'gelguy/wilder.nvim'
+    use 'lewis6991/satellite.nvim'
+    use 'stevearc/dressing.nvim'
+    -- use 'savq/melange'
 -- }}}
 -- Editor {{{
 	use { 'nvim-telescope/telescope.nvim', requires = { {'nvim-lua/plenary.nvim'} } }
@@ -71,16 +74,26 @@ local function plugins(use)
 	use 'junegunn/vim-easy-align'
     use { 'windwp/nvim-autopairs', after = 'nvim-cmp' }
     use 'elihunter173/dirbuf.nvim'
-    use 'chentoast/marks.nvim'
+    -- use 'chentoast/marks.nvim'
     use 'ggandor/leap.nvim'
+    use 'simnalamburt/vim-mundo'
+    use { "s1n7ax/nvim-window-picker", tag = "v1.*" }
+
+    use {
+            "nvim-neo-tree/neo-tree.nvim",
+            branch = "v2.x",
+            requires = {
+                "nvim-lua/plenary.nvim",
+                "kyazdani42/nvim-web-devicons",
+                "MunifTanjim/nui.nvim",
+            },
+    }
 
     -- use { 'eraserhd/parinfer-rust', run = 'cargo build --release' } -- useful for S-Expressions (lispy)
 -- }}}
 -- LSP {{{
 	use 'L3MON4D3/LuaSnip'
 	use 'onsails/lspkind-nvim'
-    use 'j-hui/fidget.nvim'
-    use 'folke/trouble.nvim'
 
 	use 'neovim/nvim-lspconfig'
 	use 'hrsh7th/cmp-nvim-lsp'
@@ -90,6 +103,11 @@ local function plugins(use)
 	use 'hrsh7th/nvim-cmp'
 
     use 'ray-x/lsp_signature.nvim'
+
+    use 'j-hui/fidget.nvim'
+    use 'folke/trouble.nvim'
+    use 'lewis6991/hover.nvim'
+    use 'stevearc/aerial.nvim'
 
     use 'rafamadriz/friendly-snippets'
 -- }}}

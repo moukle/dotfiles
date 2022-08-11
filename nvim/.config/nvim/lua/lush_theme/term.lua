@@ -305,6 +305,10 @@ local theme = lush(function()
         -- The menu field.
         CmpItemMenu { bg=color0, fg = color8 };
 --}}}
+-- Window Switcher {{{
+    -- NvimWindoSwitch   { bg = color8, fg = color15, gui=bold };
+    -- NvimWindoSwitchNC { bg = color0, fg = fg, gui=bold };
+-- }}}
 }
 end)
 

@@ -62,7 +62,7 @@ wk.register({
 keymap('n', 'ga', [[<Plug>(EasyAlign)]], {})
 
 keymap('n', 'K', [[<cmd>lua vim.lsp.buf.hover()<cr>]], {silent = true, noremap = true })
-keymap('n', '<c-j>', [[<cmd>lua vim.lsp.diagnostic.open_float()<CR>]], {noremap = true })
+keymap('n', '<c-j>', [[<cmd>lua vim.diagnostic.open_float()<CR>]], {noremap = true })
 keymap('n', '<c-k>', [[<cmd>lua vim.lsp.buf.signature_help()<CR>]], {silent = true, noremap = true })
 
 keymap('n', '<Tab>', '>>', {noremap = true })

@@ -7,6 +7,7 @@ local cmp_lsp = require 'cmp_nvim_lsp'
 
 require 'fidget'.setup{}
 require 'trouble'.setup{}
+
 -- Handlers {{{
 lsp.handlers['textDocument/publishDiagnostics'] =
     lsp.with(lsp.diagnostic.on_publish_diagnostics, {
@@ -16,7 +17,6 @@ lsp.handlers['textDocument/publishDiagnostics'] =
         update_in_insert = true
     })
 -- }}}
-
 -- Signs {{{
 cmd [[sign define LspDiagnosticsSignError text=┣ texthl=LspDiagnosticsSignError linehl= numhl=]]
 cmd [[sign define LspDiagnosticsSignWarning text=┣ texthl=LspDiagnosticsSignWarning linehl= numhl=]]
@@ -41,7 +41,6 @@ nvim_lsp.clangd.setup {
     capabilities = custom_capabilities
 }
 -- }}}
-
 -- Julia {{{
 nvim_lsp.julials.setup{
     root_dir = function(fname)
@@ -49,8 +48,7 @@ nvim_lsp.julials.setup{
     end,
 }
 -- }}}
-
--- Python
+-- Python {{{
 nvim_lsp.pyright.setup{}
 -- }}}
 

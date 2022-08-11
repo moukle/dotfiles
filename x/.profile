@@ -3,6 +3,22 @@ export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.local/bin/bspwm"
 export PATH="$PATH:$HOME/.emacs.d/bin"
 
+# Wayland
+# export CLUTTER_BACKEND=wayland
+# export GBM_BACKEND=nvidia-drm
+# export LIBSEAT_BACKEND=logind
+# export MOZ_ENABLE_WAYLAND=1
+# export MOZ_USE_XINPUT2=1
+# export QT_QPA_PLATFORM=wayland
+# export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+# export SDL_VIDEODRIVER=wayland
+# export WLR_NO_HARDWARE_CURSORS=1
+# export WLR_RENDERER=vulkan
+# export XDG_SESSION_TYPE=wayland
+# export __GLX_VENDOR_LIBRARY_NAME=nvidia
+# export __GL_GSYNC_ALLOWED=0
+# export __GL_VRR_ALLOWED=0
+
 # CUDA
 export PATH="$PATH:/opt/cuda/bin/:/opt/cuda/nsight_compute/"
 
