@@ -38,7 +38,8 @@ opt.clipboard = 'unnamedplus'
 -- Folding {{{
 opt.foldmethod = 'expr'
 -- opt.foldexpr = 'nvim_treesitter#foldexpr()'
-opt.fillchars = {eob = " " , vert = "┃", fold = " " }
+-- opt.fillchars = {eob = " " , vert = "┃", fold = " " }
+vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 opt.foldtext = [[v:lua.FoldText()]]
 -- }}}
 -- Search {{{

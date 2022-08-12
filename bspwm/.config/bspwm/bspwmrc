@@ -1,13 +1,14 @@
 #! /bin/sh
 
-source ~/.profile
-source ~/.cache/wal/colors.sh
+. ~/.profile
+. ~/.cache/wal/colors.sh
 
 # wrappers {{{
 c() { bspc config "$@";  }
 R() { bspc rule -a "$@"; }
 s() { pkill -x "$1"; { sleep 0.1; "$@" & }; }
 # }}}
+
 # desktops {{{
 if [ $HOSTNAME == "toaster" ]; then
     bspc monitor DP-2 -d 1 2 3 4 5 6 7 8 9 0
@@ -22,6 +23,7 @@ fi
 c remove_disabled_monitors true
 c remove_unplugged_monitors true
 # }}}
+
 # style {{{
 # padding
 c top_padding    25
@@ -42,6 +44,7 @@ c normal_border_color   $color0
 c active_border_color   $color0
 c presel_feedback_color $color8
 # }}}
+
 # misc {{{
 # ignore annoying defaults
 # c ignore_ewmh_fullscreen enter
@@ -52,6 +55,7 @@ c presel_feedback_color $color8
 c click_to_focus        true
 c focus_follows_pointer false
 # }}}
+
 # rules {{{
 # removed all / default / prev rules
 bspc rule --remove '*:*'
@@ -76,9 +80,11 @@ R DDNet desktop=^9  follow=on state=fullscreen
 
 c external_rules_command "$HOME/.config/bspwm/external_rules" # Spotify
 # }}}
+
 # programs {{{
 wmname LG3D # java
 s sxhkd
 }}}
 
-# vim: foldmethod=marker foldlevel=0 foldenable foldmarker={{{,}}} set ft=sh
+
+# vim: foldmethod=marker foldlevel=0 foldenable foldmarker={{{,}}} ft=sh

@@ -87,8 +87,8 @@ local theme = lush(function()
         Todo { fg = bg, bg=color1 };
         Comment { fg = color8, gui = 'italic' };
         LineNr { fg = color8 };
-        Folded { LineNr, gui = 'italic' };
-        FoldColumn { bg = color7, fg = color9 };
+        Folded { LineNr, gui = 'italic', bg = color0};
+        FoldColumn { fg = color8 };
         SignColumn { fg = color7 };
         ColorColumn { bg = color8 };
         CursorLine { bg = color0 };
@@ -106,8 +106,8 @@ local theme = lush(function()
         ErrorMsg { Error };
         ErrorMsg { fg = color1 };
         WarningMsg { fg = color3 };
-        ModeMsg { fg = color7 };
-        MoreMsg { fg = color7 };
+        ModeMsg { bg=color0, fg = color7 };
+        MoreMsg { bg = color0, fg = color7 };
         MatchParen { fg = color1, gui = 'bold' };
         Cursor { bg = color7 };
         Underlined { fg = color7, gui = 'underline' };
@@ -310,6 +310,13 @@ local theme = lush(function()
 -- Window Switcher {{{
     -- NvimWindoSwitch   { bg = color8, fg = color15, gui=bold };
     -- NvimWindoSwitchNC { bg = color0, fg = fg, gui=bold };
+-- }}}
+        -- Ufo {{{
+        -- UfoFoldedBg       { bg = color0, fg = color7};
+        -- UfoFoldedFg       { bg = color0, fg = color7};
+        -- UfoPreviewSbar    { bg = color0, fg = color7};
+        -- UfoPreviewThumb   { bg = color0, fg = color7};
+        -- UfoFoldedEllipsis { bg = color0, fg = color7};
 -- }}}
 }
 end)

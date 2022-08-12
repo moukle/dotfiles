@@ -66,6 +66,8 @@ local function plugins(use)
     use 'sindrets/diffview.nvim'
 	use 'ahmedkhalf/project.nvim'
 
+    use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
+
 	use 'folke/which-key.nvim'
 
 	use 'numToStr/Comment.nvim'
