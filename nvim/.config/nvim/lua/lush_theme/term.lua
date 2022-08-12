@@ -1,26 +1,28 @@
 local lush = require 'lush'
 local hsl = lush.hsl
 
--- Colors {{{
-local color0  = hsl(get_xresources_color('color0'))
-local color1  = hsl(get_xresources_color('color1'))
-local color2  = hsl(get_xresources_color('color2'))
-local color3  = hsl(get_xresources_color('color3'))
-local color4  = hsl(get_xresources_color('color4'))
-local color5  = hsl(get_xresources_color('color5'))
-local color6  = hsl(get_xresources_color('color6'))
-local color7  = hsl(get_xresources_color('color7'))
-local color8  = hsl(get_xresources_color('color8'))
-local color9 = hsl(get_xresources_color('color9'))
-local color10 = hsl(get_xresources_color('color10'))
-local color11 = hsl(get_xresources_color('color11'))
-local color12 = hsl(get_xresources_color('color12'))
-local color13 = hsl(get_xresources_color('color13'))
-local color14 = hsl(get_xresources_color('color14'))
-local color15 = hsl(get_xresources_color('color15'))
 
-local bg = hsl(get_xresources_color('background'))
-local fg = hsl(get_xresources_color('foreground'))
+-- Colors {{{
+vim.cmd [[ source $HOME/.cache/wal/colors-wal.vim ]]
+local bg = vim.g.background
+local fg = vim.g.foreground
+local cursor = vim.g.cursor
+local color0 = vim.g.color0
+local color1 = vim.g.color1
+local color2 = vim.g.color2
+local color3 = vim.g.color3
+local color4 = vim.g.color4
+local color5 = vim.g.color5
+local color6 = vim.g.color6
+local color7 = vim.g.color7
+local color8 = vim.g.color8
+local color9 = vim.g.color9
+local color10 = vim.g.color10
+local color11 = vim.g.color11
+local color12 = vim.g.color12
+local color13 = vim.g.color13
+local color14 = vim.g.color14
+local color15 = vim.g.color15
 -- }}}
 
 -- NeoVim Terminal {{{
