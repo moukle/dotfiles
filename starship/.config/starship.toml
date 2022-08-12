@@ -1,16 +1,24 @@
 # ~/.config/starship.toml
 
-[git_state]
-disabled = true
+continuation_prompt = "[▶   ](bright-black)"
 
-[git_status]
-disabled = true
+right_format = "$all"
+format       = "$character"
+add_newline  = false
 
 [character]
-success_symbol = "[λ](bold green)"
-error_symbol   = "[λ](bold red)"
+success_symbol = "[](bold green)"
+error_symbol   = "[](bold red)"
+vicmd_symbol   = "[](bold yellow)"
 
-[custom]
+[directory]
+style = "white"
+
+[sudo]
+style = "bold red"
+# symbol = "#"
+format = "[$symbol]($style)"
+disabled = false
 
 [custom.tab]
 description = "The current tab in the tab terminal multiplexer"
@@ -19,3 +27,17 @@ when = "tab --starship"
 shell = ["sh"]
 format = "[$output]($style) "
 style = "bold blue"
+
+[git_branch]
+format = "[$symbol$branch]($style)"
+style = "bright-white"
+symbol = "🌱 "
+
+[git_status]
+format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
+style = "cyan"
+
+[cmd_duration]
+format = "[$duration]($style) "
+style = "yellow"
+

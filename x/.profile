@@ -31,4 +31,4 @@ export BROWSER="qutebrowser"
 export TERM=xterm-256color
 
 # Prompt
-export STARSHIP_CONFIG=~/.config/starship.toml
+export STARSHIP_CONFIG=$HOME/.config/starship.toml

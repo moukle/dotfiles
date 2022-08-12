@@ -22,7 +22,7 @@ $bg: $background;
 
 *{
     all: unset;
-    font-family: "Fira Sans";
+    font-family: "SF Display Pro";
     // font-family: "JetBrainsMono";
 }
 
@@ -54,8 +54,10 @@ $bg: $background;
         font-size: 1.5em;
         &.inactive {
             color: $color8;
+            font-weight: bold;
         }
         &.empty {
+            font-weight: normal;
             // background: $;
             // color: $color8;
         }
