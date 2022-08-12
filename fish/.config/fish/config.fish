@@ -21,10 +21,12 @@ fish_vi_key_bindings
 
 # add ssh-key (quiet)
 # also: https://github.com/ivakyb/fish_ssh_agent
-ssh-add -q ~/.ssh/moritz
+fish_ssh_agent
+# AddKeysToAgent yes
+# ssh-add -q ~/.ssh/moritz
 
 # set paths (currently done in ~/.profile)
-fenv source ~/.profile
+source ~/.profile
 
 # fzf show hidden
 set fzf_fd_opts --hidden --exclude=.git
