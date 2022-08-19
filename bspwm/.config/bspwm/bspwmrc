@@ -11,8 +11,8 @@ s() { pkill -x "$1"; { sleep 0.1; "$@" & }; }
 
 # desktops {{{
 if [ $HOSTNAME == "toaster" ]; then
-    bspc monitor DP-2 -d 1 2 3 4 5 6 7 8 9 0
-    bspc monitor DP-0 -d a s d f g h r j k l
+    bspc monitor DP-0 -d 1 2 3 4 5 6 7 8 9 0
+    bspc monitor DP-2 -d a s d f g h r j k l
     eww open bar
     eww reload
 else
@@ -26,14 +26,14 @@ c remove_unplugged_monitors true
 
 # style {{{
 # padding
-c top_padding    25
-c bottom_padding 25
-c right_padding  25
-c left_padding   25
-c -m DP-2 left_padding 90
+c top_padding    55
+c bottom_padding 55
+c right_padding  55
+c left_padding   55
+c -m DP-0 left_padding 115
 
 # gaps
-c window_gap     15
+c window_gap     -5
 c single_monocle true
 
 # borders

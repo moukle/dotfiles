@@ -38,7 +38,7 @@ end
 -- customize fold text
 local handler = function(virtText, lnum, endLnum, width, truncate)
     local newVirtText = {}
-    local suffix = ('  %dℓ '):format(endLnum - lnum)
+    local suffix = ('  %dL'):format(endLnum - lnum)
     local sufWidth = vim.fn.strdisplaywidth(suffix)
     local targetWidth = width - sufWidth
     local curWidth = 0
@@ -70,7 +70,7 @@ require('ufo').setup({
     preview = {
         win_config = {
             border = {'', '─', '', '', '', '─', '', ''},
-            -- winhighlight = 'Normal:Folded',
+            winhighlight = 'Normal:Folded',
             winblend = 0
         },
         mappings = {

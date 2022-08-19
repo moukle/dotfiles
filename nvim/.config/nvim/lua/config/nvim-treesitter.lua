@@ -14,9 +14,16 @@ parser_config.org = {
 
 -- Treesitter {{{
 ts.setup {
-    ensure_installed = 'all',
-    highlight = { enable = true },
-    indent = { enable = true },
+    ensure_installed = { "cpp", "lua", "gdscript", "python", "cmake", "dockerfile", "fish", "markdown", "julia" },
+    auto_install = true,
+    highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = true,
+    },
+    indent = {
+        enable = true,
+        disable = { "gdscript", },
+    },
     autotag = { enable = true },
     additional_vim_regex_highlighting = {'org'},
 

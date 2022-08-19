@@ -51,5 +51,13 @@ nvim_lsp.julials.setup{
 -- Python {{{
 nvim_lsp.pyright.setup{}
 -- }}}
+-- gdscript {{{
+nvim_lsp.gdscript.setup{
+    on_attach = on_attach,
+    flags = {
+        debounce_text_changes = 150,
+    }
+}
+-- }}}
 
 -- vim: foldmethod=marker foldlevel=0 foldenable foldmarker={{{,}}}

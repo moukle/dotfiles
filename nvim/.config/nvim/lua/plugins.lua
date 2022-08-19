@@ -134,6 +134,7 @@ local function plugins(use)
 -- }}}
 -- Misc {{{
     use 'lambdalisue/suda.vim'
+    use 'habamax/vim-godot'
 -- }}}
 end
 

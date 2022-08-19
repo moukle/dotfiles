@@ -87,7 +87,7 @@ local theme = lush(function()
         Todo { fg = bg, bg=color1 };
         Comment { fg = color8, gui = 'italic' };
         LineNr { fg = color8 };
-        Folded { LineNr, gui = 'italic', bg = color0};
+        Folded { fg = color8, gui = 'italic', bg = color0};
         FoldColumn { fg = color8 };
         SignColumn { fg = color7 };
         ColorColumn { bg = color8 };
@@ -311,12 +311,12 @@ local theme = lush(function()
     -- NvimWindoSwitch   { bg = color8, fg = color15, gui=bold };
     -- NvimWindoSwitchNC { bg = color0, fg = fg, gui=bold };
 -- }}}
-        -- Ufo {{{
-        -- UfoFoldedBg       { bg = color0, fg = color7};
-        -- UfoFoldedFg       { bg = color0, fg = color7};
-        -- UfoPreviewSbar    { bg = color0, fg = color7};
-        -- UfoPreviewThumb   { bg = color0, fg = color7};
-        -- UfoFoldedEllipsis { bg = color0, fg = color7};
+-- Ufo {{{
+    -- UfoFoldedBg       { bg = color0, fg = color7};
+    -- UfoFoldedFg       { bg = color0, fg = color7};
+    -- UfoPreviewSbar    { bg = color0, fg = color7};
+    -- UfoPreviewThumb   { bg = color0, fg = color7};
+    -- UfoFoldedEllipsis { bg = color0, fg = color7};
 -- }}}
 }
 end)
