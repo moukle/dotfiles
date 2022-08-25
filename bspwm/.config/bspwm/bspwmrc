@@ -71,7 +71,7 @@ R Zathura        state=tiled
 R Pinentry       state=floating
 R Emacs          state=tiled
 R Signal         state=tiled desktop=^7
-R Emacs|Question state=floating
+#R Emacs|Question state=floating
 R "gaime_server (DEBUG)" hidden=on
 
 R zoom desktop=^5  state=tiled
@@ -84,7 +84,7 @@ c external_rules_command "$HOME/.config/bspwm/external_rules" # Spotify
 # programs {{{
 wmname LG3D # java
 s sxhkd
-}}}
+# }}}
 
 
 # vim: foldmethod=marker foldlevel=0 foldenable foldmarker={{{,}}} ft=sh

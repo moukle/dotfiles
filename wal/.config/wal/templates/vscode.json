@@ -1,5 +1,5 @@
-{
-    "workbench.colorTheme": "Rosé Pine Dawn",
+{{
+    "workbench.colorTheme": "{wallpaper}",
     "breadcrumbs.enabled": false,
     "breadcrumbs.icons": false,
     "editor.colorDecorators": false,
@@ -23,62 +23,62 @@
     "workbench.editor.tabCloseButton": "off",
     "workbench.tree.indent": 14,
     "workbench.tree.renderIndentGuides": "none",
-    "workbench.colorCustomizations": {
-        // "activityBar.background": "#121415",
-        // "breadcrumb.background": "#161819",
-        // "breadcrumbPicker.background": "#27292a",
-        // "debugToolBar.background": "#161819",
-        // "editor.background": "#161819",
-        // "editorBracketMatch.background": "#161819",
-        // "editorGroupHeader.tabsBackground": "#161819",
-        // "editorHoverWidget.background": "#161819",
-        // "editorOverviewRuler.border": "#161819",
-        // "editorOverviewRuler.background": "#161819",
-        // "editorWidget.background": "#27292a",
-        // "editor.lineHighlightBackground": "#27292a",
-        // "list.activeSelectionBackground": "#27292a",
-        // "list.hoverBackground": "#27292a",
-        // "menu.background": "#161819",
-        // "notifications.background": "#161819",
-        // "panel.background": "#27292a",
-        // "quickInput.background": "#161819",
-        // "scrollbarSlider.activeBackground": "#27292a",
-        // "scrollbarSlider.hoverBackground": "#1f2122",
-        // "scrollbarSlider.background": "#060809",
-        // "settings.checkboxBackground": "#27292a",
-        // "settings.dropdownBackground": "#27292a",
-        // "settings.numberInputBackground": "#27292a",
-        // "settings.textInputBackground": "#27292a",
-        // "sideBar.background": "#121415",
-        // "sideBar.dropBackground": "#121415",
-        // "sideBarSectionHeader.background": "#121415",
-        // "statusBar.background": "#121415",
-        // "statusBar.noFolderBackground": "#161819",
-        // "tab.activeBackground": "#121415",
-        // "tab.activeBorder": "#16181900",
-        // "tab.border": "#161819",
-        // "tab.inactiveBackground": "#161819",
-        // "terminal.ansiBlack": "#1c252c",
-        // "terminal.ansiBlue": "#6791c9",
-        // "terminal.ansiBrightBlack": "#484e5b",
-        // "terminal.ansiBrightBlue": "#79aaeb",
-        // "terminal.ansiBrightCyan": "#7acfe4",
-        // "terminal.ansiBrightGreen": "#8cd7aa",
-        // "terminal.ansiBrightMagenta": "#c488ec",
-        // "terminal.ansiBrightRed": "#f16269",
-        // "terminal.ansiBrightWhite": "#e5e5e5",
-        // "terminal.ansiBrightYellow": "#e9967e",
-        // "terminal.ansiCyan": "#67afc1",
-        // "terminal.ansiGreen": "#78b892",
-        // "terminal.ansiMagenta": "#bc83e3",
-        // "terminal.ansiRed": "#df5b61",
-        // "terminal.ansiWhite": "#d9d7d6",
-        // "terminal.ansiYellow": "#de8f78",
-        // "terminal.background": "#161819",
-        // "terminal.foreground": "#d9d7d6",
-        // "terminal.selectionBackground": "#242f33",
-        // "titleBar.activeBackground": "#27292a",
-    },
+    "workbench.colorCustomizations": {{
+        "activityBar.background": "{color0}",
+        "breadcrumb.background": "{color8}",
+        "breadcrumbPicker.background": "{color8}",
+        "debugToolBar.background": "{color8}",
+        "editor.background": "{background}",
+        "editorBracketMatch.background": "{color0}",
+        "editorGroupHeader.tabsBackground": "{background}",
+        "editorHoverWidget.background": "{color8}",
+        "editorOverviewRuler.border": "{color0}",
+        "editorOverviewRuler.background": "{color0}",
+        "editorWidget.background": "{color8}",
+        "editor.lineHighlightBackground": "{color0}",
+        "list.activeSelectionBackground": "{color0}",
+        "list.hoverBackground": "{color8}",
+        "menu.background": "{color0}",
+        "notifications.background": "{color8}",
+        "panel.background": "{color8}",
+        "quickInput.background": "{color0}",
+        "scrollbarSlider.activeBackground": "{color8}",
+        "scrollbarSlider.hoverBackground": "{color8}",
+        "scrollbarSlider.background": "{color8}",
+        "settings.checkboxBackground": "{color8}",
+        "settings.dropdownBackground": "{color8}",
+        "settings.numberInputBackground": "{color8}",
+        "settings.textInputBackground": "{color8}",
+        "sideBar.background": "#{color0.darken(3%)}",
+        "sideBar.dropBackground": "{color0}",
+        "sideBarSectionHeader.background": "{color0}",
+        "statusBar.background": "{color0}",
+        "statusBar.noFolderBackground": "{color8}",
+        "tab.activeBackground": "{color8}",
+        "tab.activeBorder": "{background}",
+        "tab.border": "{background}",
+        "tab.inactiveBackground": "{color0}",
+        "terminal.ansiBlack": "{color0}",
+        "terminal.ansiBlue": "{color4}",
+        "terminal.ansiBrightBlack": "{color8}",
+        "terminal.ansiBrightBlue": "{color12}",
+        "terminal.ansiBrightCyan": "{color14}",
+        "terminal.ansiBrightGreen": "{color10}",
+        "terminal.ansiBrightMagenta": "{color13}",
+        "terminal.ansiBrightRed": "{color9}",
+        "terminal.ansiBrightWhite": "{color15}",
+        "terminal.ansiBrightYellow": "{color11}",
+        "terminal.ansiCyan": "{color6}",
+        "terminal.ansiGreen": "{color2}",
+        "terminal.ansiMagenta": "{color5}",
+        "terminal.ansiRed": "{color1}",
+        "terminal.ansiWhite": "{color7}",
+        "terminal.ansiYellow": "{color3}",
+        "terminal.background": "{background}",
+        "terminal.foreground": "{foreground}",
+        "terminal.selectionBackground": "{cursor}",
+        "titleBar.activeBackground": "{color8}"
+    }},
     "window.menuBarVisibility": "toggle",
     "terminal.integrated.commandsToSkipShell": [
         "language-julia.interrupt"
@@ -102,65 +102,65 @@
     "vim.easymotion": true,
     "vim.useSystemClipboard": true,
     "vim.normalModeKeyBindingsNonRecursive": [
-        {
+        {{
             "before": [
                 "<space>"
             ],
             "commands": [
                 "vspacecode.space"
             ]
-        },
-        {
+        }},
+        {{
             "before": [
                 ","
             ],
             "commands": [
                 "vspacecode.space",
-                {
+                {{
                     "command": "whichkey.triggerKey",
                     "args": "m"
-                }
+                }}
             ]
-        }
+        }}
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
-        {
+        {{
             "before": [
                 "<space>"
             ],
             "commands": [
                 "vspacecode.space"
             ]
-        },
-        {
+        }},
+        {{
             "before": [
                 ","
             ],
             "commands": [
                 "vspacecode.space",
-                {
+                {{
                     "command": "whichkey.triggerKey",
                     "args": "m"
-                }
+                }}
             ]
-        }
+        }}
     ],
     "workbench.productIconTheme": "fluent-icons",
     "workbench.iconTheme": "eq-material-theme-icons",
     // "customizeUI.activityBar": "bottom",
     "customizeUI.titleBar": "inline",
     "customizeUI.font.regular": "Roboto",
-    "customizeUI.fontSizeMap": {
+    "customizeUI.fontSizeMap": {{
         "13px": "12px",
         "monospace": "12px"
-    },
-    "customizeUI.stylesheet": {
+    }},
+    "customizeUI.stylesheet": {{
         ".tabs-container ": "padding-top:7px; padding-left:2px; padding-bottom:5px",
         ".tabs-container > .tab": "border-radius: 7px 7px 7px 7px; height: 20px; margin-left: 5px; padding-right:4px",
         ".monaco-editor .suggest-widget": "border-radius: 10px 10px 10px 10px; overflow:hidden;"
-    },
+    }},
     "editor.minimap.enabled": false,
     "makefile.makeDirectory": "0x_extra/custom_arrays",
     "makefile.makefilePath": "0x_extra/custom_arrays/Makefile",
     "Lua.telemetry.enable": false
-}
+    }}

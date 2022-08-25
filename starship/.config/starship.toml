@@ -4,12 +4,21 @@ continuation_prompt = "[▶   ](bright-black)"
 
 right_format = "$all"
 format       = "$character"
+# right_format = """$git_branch$git_status$cmd_duration$directory"""
+# format       = "$all"
 add_newline  = false
 
+scan_timeout = 10
+
 [character]
-success_symbol = "[](bold green)"
-error_symbol   = "[](bold red)"
-vicmd_symbol   = "[](bold yellow)"
+success_symbol = " [](bold green)"
+error_symbol   = " [](bold red)"
+vicmd_symbol   = "[  ](bold yellow)"
+
+[hostname]
+ssh_only = true
+format = "[$hostname](bold blue) "
+disabled = false
 
 [directory]
 style = "white"
@@ -29,13 +38,18 @@ format = "[$output]($style) "
 style = "bold blue"
 
 [git_branch]
-format = "[$symbol$branch]($style)"
+format = "[$symbol$branch ]($style)"
 style = "bright-white"
 symbol = "🌱 "
 
 [git_status]
 format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
 style = "cyan"
+disabled = true
+
+[git_commit]
+format = "[\\($hash\\)]($style) [\\($tag\\)]($style)"
+style = "green"
 
 [cmd_duration]
 format = "[$duration]($style) "

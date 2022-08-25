@@ -12,11 +12,8 @@ function mkc; mkdir $argv && cd $argv; end
 function ddx
     $HOME/.x/xrandr.sh game
     setxkbmap de nodeadkeys
-    eww kill
-    pkill picom
     DDNet
     $HOME/.x/xrandr.sh
     $HOME/.x/keyboard.sh
-    eww open bar
-    picom --experimental-backends &
+    echo 'awesome.restart()' | awesome-client
 end

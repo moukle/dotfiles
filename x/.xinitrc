@@ -17,15 +17,16 @@ for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
 	[ -x "$f" ] && . "$f"
 done; f=
 
-redshift -l 51:10 > /dev/null & # blue filter
-dunst                         & # notifications
-unclutter                     & # hide idle cursor
+# redshift -l 51:10 > /dev/null & # blue filter
+# dunst                         & # notifications
+# unclutter                     & # hide idle cursor
 imwheel -b 45                 & # mousewheel speed
 # emacs --daemon                & # start emacs daemon (connect via emacsclient)
 # picom --experimental-backends &
 
 # set background
 # $HOME/.cache/wal/wallpaper.sh  & # set wallpaper
-nitrogen --restore
+# nitrogen --restore
 
-exec bspwm
+# exec bspwm
+awesome

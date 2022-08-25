@@ -57,6 +57,7 @@ local function plugins(use)
     use 'lewis6991/satellite.nvim'
     use 'stevearc/dressing.nvim'
     -- use 'savq/melange'
+    -- use 'brenoprata10/nvim-highlight-colors'
 -- }}}
 -- Editor {{{
 	use { 'nvim-telescope/telescope.nvim', requires = { {'nvim-lua/plenary.nvim'} } }
