@@ -1,4 +1,0 @@
-! #include ".cache/squash/x_colors"
-#include ".cache/wal/colors.Xresources"
-
-#include ".x/urxvt"

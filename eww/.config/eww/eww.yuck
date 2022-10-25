@@ -87,12 +87,14 @@
 			  :max 101
 			  :min 0
 			  :onchange "printf %.0f {} | xargs pamixer --set-volume" ))
-	(button   :onclick "scripts/popup audio"   
+	(button   :onclick "pavucontrol"   
+              ; :text "a"
               ; :class "volume-icon" ""
-              (image :path "/home/moritz/.icons/fluentui-dark/Speaker\ 2/SVG/ic_fluent_speaker_2_24_filled.svg"
-                )))))
+      ))))
+              ; (image :path "/home/moritz/.icons/fluentui-system-icons/assets/Speaker\ 2/SVG/ic_fluent_speaker_2_24_filled.svg"
+                ; )))))
 (defpoll current-volume :interval "1s" "pamixer --get-volume")
-(defvar volum false)
+(defvar volum true)
 
 
 ;; Weather
@@ -171,22 +173,22 @@
 
 	(button		:class "button-quit" 				
 				:tooltip "Sleep & Lock" 		 
-				:onclick "systemctl suspend && slock"
-      (image :path "/home/moritz/.icons/fluentui-dark/Sleep/SVG/ic_fluent_sleep_24_filled.svg"))
+				:onclick "zzz && slock"
+      (image :path "/home/moritz/.icons/fluentui-system-icons/assets/Sleep/SVG/ic_fluent_sleep_24_filled.svg"))
 
 	(button		:class "button-lock" 				
 				:tooltip "Lock Screen"	 
 				:onclick "slock"	
-      (image :path "/home/moritz/.icons/fluentui-dark/Lock\ Closed/SVG/ic_fluent_lock_closed_24_filled.svg"))
+      (image :path "/home/moritz/.icons/fluentui-system-icons/assets/Lock\ Closed/SVG/ic_fluent_lock_closed_24_filled.svg"))
   	(button		:class "button-reb"					
 	  			:tooltip "Reboot"		 
 				:onclick "reboot"
-                (image :path "/home/moritz/.icons/fluentui-dark/Arrow Clockwise/SVG/ic_fluent_arrow_clockwise_24_filled.svg"))))
+                (image :path "/home/moritz/.icons/fluentui-system-icons/assets/Arrow Clockwise/SVG/ic_fluent_arrow_clockwise_24_filled.svg"))))
 
 	(button		:class "button-off"					
 				:tooltip "Shutdown"		 
 				:onclick "shutdown now"
-      (image :path "/home/moritz/.icons/fluentui-dark/Power/SVG/ic_fluent_power_24_filled.svg"
+      (image :path "/home/moritz/.icons/fluentui-system-icons/assets/Power/SVG/ic_fluent_power_24_filled.svg"
       )))))
 (defvar power false)
 
@@ -239,7 +241,11 @@
 (defwindow bar
 	:monitor 0
 	:stacking "bg"
-	:geometry (geometry :x "0" :y "0" :height "100%" :width "65")
+    :geometry (geometry :x "0" 
+                        :y "0" 
+                        :height "100%" 
+                        :width "65"
+                        :anchor "top right")
 	:reserve (struts :distance "35px" :side "left")
 	:wm-ignore false
 	:windowtype "dock"

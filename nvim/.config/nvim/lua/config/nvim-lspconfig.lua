@@ -33,12 +33,11 @@ local function CustomOnAttach(client, bufnr)
     lsp_status.on_attach(client)
 end
 
-local custom_capabilities = cmp_lsp.update_capabilities(lsp.protocol.make_client_capabilities())
+-- local custom_capabilities = cmp_lsp.update_capabilities(lsp.protocol.make_client_capabilities())
 
 -- C {{{
 nvim_lsp.clangd.setup {
     filetypes = { 'c', 'cpp', 'objc', 'objcpp', 'cuda' },
-    capabilities = custom_capabilities
 }
 -- }}}
 -- Julia {{{

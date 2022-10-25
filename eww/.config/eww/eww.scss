@@ -1,41 +1,30 @@
-/* Created   by https://github.com/rxyhn 
-Designed  by https://github.com/rxyhn
-Maintaned by https://github.com/rxyhn
-*/
-
 // Global
-@import "/home/moritz/.cache/wal/colors.scss";
+// @import "/home/moritz/.cache/wal/colors.scss";
 
-// $bg: rgba(10, 10, 10, 0.9);
-$bg: $background;
+$bg: rgba(0, 0, 0, 0.2);
 
-// melon
-// $color0   : $bg;
-// $color0   : #445967;
-// $bg    : #3C4F5B;
-// $color4 : #72A7D3;
-// $color5  : #5394C9;
-// $color3       : #37BF8D;
-// $color15      : #ffffff;
-// $color8       : #CCCCCC;
-// $color1        : #d37277;
+$fg: rgba(255, 255, 255, 1);
+$fga: rgba(255, 255, 255, 0.7);
+$fgb: rgba(255, 255, 255, 0.2);
 
 *{
     all: unset;
-    font-family: "SF Display Pro";
+    font-family: "Fira Sans";
+    font-size: 1.1em;
     // font-family: "JetBrainsMono";
 }
 
 // EWW BAR
 .eww_bar{
     background-color: $bg;
-    color: $color8;
-    padding: .3rem;
+    color: $fg;
+    padding-top: 1.0rem;
+    // padding: 1.0rem;
 }
 
 // Launcher
 .launcher_icon{
-    color: $color3;
+    color: $fg;
     font-family: "Font Awesome 6 Pro";
     font-size: 1.7em;
     padding: 1rem 0 1rem 0;
@@ -43,18 +32,18 @@ $bg: $background;
 
 // Workspaces
 .workspaces {
-    // background-color: $bg;
-    // border-radius: 15px;
-    // border-radius: 5px;
+    background-color: $bg;
+    border-radius: 10px;
+    padding: 8px;
     button {
-        // margin: 1px;
-        padding: .3rem .6rem .3rem .6rem;
-        // background-color: $color0;
+        margin: 5px;
+        // padding: .3rem .6rem .3rem .6rem;
+        // background-color: $bg;
         // border-radius: 5px;
         font-size: 1.5em;
         &.inactive {
-            color: $color8;
-            font-weight: bold;
+            color: $fgb;
+            // font-weight: bold;
         }
         &.empty {
             font-weight: normal;
@@ -62,17 +51,17 @@ $bg: $background;
             // color: $color8;
         }
         &.occupied {
-            color: $color7;
+            color: $fga;
             // font-weight: bold;
             // background: $color4;
         }
         &.urgent {
-            color: $color1;
+            color: $fg;
             // background: $color1;
         }
         &.active {
             font-weight: bold;
-            color: $color15;
+            color: $fg;
             // background: $color3;
         }
     }
@@ -83,61 +72,61 @@ $bg: $background;
     padding: .5rem;
     font-family: Material Icons;
     font-size: 1.6em;
-    // background-color: $color0;
+    // background-color: $bg;
     border-radius: 5px;
 }
 .bat{
     font-family: JetBrainsMono Nerd Font;
     font-size: 1.2em;
     padding-right: .5rem;
-    color: $color4;
+    color: $fg;
 }
 .wifi-icon{
     margin-bottom: .2rem;
-    color: $color5;
+    color: $fg;
 }
 .brightness-icon{
     margin: .2rem 0 .2rem 0;
-    color: $color3;
+    color: $fg;
 }
 .volume-icon{
     // margin: .2rem 0 .2rem 0;
-    // background: $color4;
-    color: $color15;
+    // background: $bg;
+    color: $fg;
 }
 scale trough {
     all: unset;
-    background-color: $color0;
+    background-color: $fgb;
     border-radius: 5px;
     min-height: 80px;
     min-width: 10px;
     margin: .3rem 0 .3rem 0;
 }
 .bribar trough highlight {
-    background-color: $color8;
+    background-color: $fg;
     border-radius: 5px;
 }
 .volbar trough highlight {
-    background-color: $color8;
+    background-color: $fg;
     border-radius: 5px;
 }
 
 // Clock
 .time {
     // font-family: Comic Mono;
-    font-size: 1.5em;
-    // background-color: $color5;
-    color: $color15;
-    // border-radius: 5px;
-    padding: .7rem 0 .5rem 0;
-    margin: .5rem 0 .5rem 0;
+    // font-size: 0.0em;
+    // background-color: $bg;
+    color: $fg;
+    // border-radius: 10px;
+    // padding: .7rem 0 .5rem 0;
+    padding: 10px;
+    // margin: 5px;
 }
 
 // Calendar
 .cal-box {
-    background-color: $color0;
-    color: $foreground;
-    // font-family: Comic Mono;
+    background-color: $fg;
+    color: $fg;
     font-size: 1.2em;
 
     .cal-inner-box {
@@ -155,32 +144,32 @@ scale trough {
 }
 
 calendar:selected {
-    color: $color15;
+    color: $fg;
     font-weight: bold;
 }
 
 calendar.header {
-    color: $color7;
+    color: $fg;
 }
 
 calendar.button {
-    color: $color8;
+    color: $fg;
 }
 
 calendar.highlight {
-    color: $color7;
+    color: $fg;
     font-weight: bold;
 }
 
 calendar:indeterminate {
-    color: $color8;
+    color: $fg;
     font-weight: bold;
 }
 
 // Powermenu
 .powermenu {
     // background: $color4;
-    color: $color15;
+    color: $fg;
     font-family: feather;
     font-size: 1.4em;
     font-weight: bold;
@@ -191,7 +180,7 @@ calendar:indeterminate {
 }
 .button-off {
     margin-bottom: .5rem;
-    color: $color15;
+    color: $fg;
 }
 // .button-bspres{
 //     color: $color2;
@@ -208,16 +197,13 @@ calendar:indeterminate {
 
 .appicon {
     // background-color: $bg;
-    border-radius: 5px;
+    border-radius: 10px;
     background-repeat: no-repeat;
-    background-size: 60px;
+    background-size: 50px;
     background-position: center;
-    min-height: 50px;
-    min-width: 50px;
+    min-height: 40px;
+    min-width: 40px;
     // background-blend-mode: luminosity;
-    // border-bottom-width: 5px;
-    // border-bottom-style: solid;
-    // border-bottom-color: $bg;
 
     &.hidden {
         background-size: 40px;
@@ -229,6 +215,6 @@ calendar:indeterminate {
         background-blend-mode: normal;
         // border-left-width: 5px;
         // border-left-style: solid;
-        // border-left-color: $color3;
+        // border-left-color: $bg;
     }
 }

@@ -3,50 +3,39 @@
 . ~/.profile
 . ~/.cache/wal/colors.sh
 
-# wrappers {{{
+##########
+# wrappers
+##########
 c() { bspc config "$@";  }
 R() { bspc rule -a "$@"; }
 s() { pkill -x "$1"; { sleep 0.1; "$@" & }; }
-# }}}
 
-# desktops {{{
-if [ $HOSTNAME == "toaster" ]; then
-    bspc monitor DP-0 -d 1 2 3 4 5 6 7 8 9 0
-    bspc monitor DP-2 -d a s d f g h r j k l
-    eww open bar
-    eww reload
-else
-    bspc monitor HDMI2 -d 1 2 3 4 5 6 7 8 9 0
-    bspc monitor eDP1  -d a s d f g
-    $HOME/.config/polybar/launch.sh laptop laptopExt
-fi
-c remove_disabled_monitors true
+#######
+# bspwm
+#######
+# monitors
+for m in $(bspc query -M --names); do
+    bspc monitor $m -d 1 2 3 4 5 6 7 8 9 0
+done
+c remove_disabled_monitors  true
 c remove_unplugged_monitors true
-# }}}
 
-# style {{{
-# padding
-c top_padding    55
-c bottom_padding 55
-c right_padding  55
-c left_padding   55
-c -m DP-0 left_padding 115
 
-# gaps
-c window_gap     -5
-c single_monocle true
+# style
+for dir in "left" "right" "top" "bottom"; do
+    c ${dir}_padding 5
+done
+c -m DP-2 right_padding 85
 
-# borders
+c window_gap            10
+c single_monocle        true
 c borderless_monocle    true
-c border_width          5
+c border_width          2
 c focused_border_color  $color15
 c normal_border_color   $color0
 c active_border_color   $color0
 c presel_feedback_color $color8
-# }}}
 
-# misc {{{
-# ignore annoying defaults
 # c ignore_ewmh_fullscreen enter
 # c ignore_ewmh_fullscreen all
 # c ignore_ewmh_focus true
@@ -54,37 +43,35 @@ c presel_feedback_color $color8
 # mouse
 c click_to_focus        true
 c focus_follows_pointer false
-# }}}
 
-# rules {{{
-# removed all / default / prev rules
-bspc rule --remove '*:*'
+#######
+# rules
+#######
+bspc rule --remove '*' # removed all / default / prev rules
 
-# add rules
-R qutebrowser desktop=^1
-R firefox     desktop=^1
-
-R discord desktop=^7 follow=off focus=off
-R Spotify desktop=^8
-
-R Zathura        state=tiled
-R Pinentry       state=floating
-R Emacs          state=tiled
-R Signal         state=tiled desktop=^7
-#R Emacs|Question state=floating
-R "gaime_server (DEBUG)" hidden=on
-
-R zoom desktop=^5  state=tiled
-R DDNet desktop=^9  follow=on state=fullscreen
-# R DDNet desktop=^15 follow=on state=fullscreen
+R qutebrowser   desktop=^1
+R firefox       desktop=^1
+R discord       desktop=^7  follow=off focus=off
+R Signal        state=tiled desktop=^7
+R Zathura       state=tiled
+R Pinentry      state=floating
+R Emacs         state=tiled
+R "gaime_server (DEBUG)"    hidden=on
+# R zoom          desktop=^5  state=tiled
+R DDNet         desktop=^9  follow=on  state=fullscreen
 
 c external_rules_command "$HOME/.config/bspwm/external_rules" # Spotify
-# }}}
 
-# programs {{{
-wmname LG3D # java
-s sxhkd
-# }}}
 
+###########
+# autostart
+###########
+s sxhkd                                         # hotkeys
+s picom --config $HOME/.config/picom/picom.conf # compositor
+s dunst --config $HOME/.config/dunst/dunstrc    # notifications
+
+nitrogen --restore & # wallpaper
+eww open bar         # bar
+wmname LG3D          # java
 
 # vim: foldmethod=marker foldlevel=0 foldenable foldmarker={{{,}}} ft=sh
