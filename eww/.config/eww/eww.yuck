@@ -173,7 +173,7 @@
 
 	(button		:class "button-quit" 				
 				:tooltip "Sleep & Lock" 		 
-				:onclick "zzz && slock"
+				:onclick "sudo zzz && slock"
       (image :path "/home/moritz/.icons/fluentui-system-icons/assets/Sleep/SVG/ic_fluent_sleep_24_filled.svg"))
 
 	(button		:class "button-lock" 				
@@ -182,15 +182,15 @@
       (image :path "/home/moritz/.icons/fluentui-system-icons/assets/Lock\ Closed/SVG/ic_fluent_lock_closed_24_filled.svg"))
   	(button		:class "button-reb"					
 	  			:tooltip "Reboot"		 
-				:onclick "reboot"
+				:onclick "sudo reboot"
                 (image :path "/home/moritz/.icons/fluentui-system-icons/assets/Arrow Clockwise/SVG/ic_fluent_arrow_clockwise_24_filled.svg"))))
 
 	(button		:class "button-off"					
 				:tooltip "Shutdown"		 
-				:onclick "shutdown now"
+				:onclick "sudo poweroff"
       (image :path "/home/moritz/.icons/fluentui-system-icons/assets/Power/SVG/ic_fluent_power_24_filled.svg"
       )))))
-(defvar power false)
+(defvar power true)
 
 ;; Top Widgets ;;
 (defwidget top []

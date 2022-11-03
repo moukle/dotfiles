@@ -15,5 +15,5 @@ function ddx
     DDNet
     $HOME/.x/xrandr.sh
     $HOME/.x/keyboard.sh
-    echo 'awesome.restart()' | awesome-client
+    # echo 'awesome.restart()' | awesome-client
 end

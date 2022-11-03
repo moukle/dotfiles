@@ -20,9 +20,9 @@ ln -sf "${HOME}/.cache/wal/vscode.json"        "${HOME}/.config/Code/User/settin
 # $HOME/.cache/wal/wallpaper.sh
 
 # restart programs
-# pkill dunst; dunst   & # dunst
-# bspc wm -r             # bspwm
-echo 'awesome.restart()' | awesome-client &> /dev/null
+pkill dunst; dunst   & # dunst
+bspc wm -r             # bspwm
+# echo 'awesome.restart()' | awesome-client &> /dev/null
 
 # qutebrowser
 if pgrep -x "qutebrowser" > /dev/null; then
