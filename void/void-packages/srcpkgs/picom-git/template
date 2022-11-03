@@ -1,0 +1,34 @@
+# Template file for 'picom-ibhagwan'
+pkgname=picom-git
+version=1
+revision=5
+wrksrc=picom-next
+build_style=meson
+configure_args="-Dwith_docs=true"
+hostmakedepends="git pkg-config asciidoc"
+makedepends="MesaLib-devel dbus-devel libconfig-devel libev-devel pcre-devel
+ pixman-devel xcb-util-image-devel xcb-util-renderutil-devel
+ libxdg-basedir-devel uthash"
+depends="desktop-file-utils"
+short_desc="Lightweight compositor for X11 (previously a compton fork)"
+maintainer="Frank Steinborn <steinex@nognu.de>"
+license="MIT, MPL-2.0"
+homepage="https://github.com/yshui/picom"
+
+do_fetch() {
+    git clone https://github.com/yshui/picom $wrksrc
+    cd $wrksrc
+    git submodule update --init --recursive
+  # git clone --single-branch --branch next-rebase --depth=1 "https://github.com/yshui/picom" ${wrksrc}
+}
+
+post_install() {
+	vlicense LICENSES/MIT
+	vsconf picom.sample.conf
+}
+
+picom-git_package() {
+	depends="${sourcepkg}>=${version}_${revision}"
+	build_style=meta
+	short_desc+=" (transitional dummy package)"
+}
