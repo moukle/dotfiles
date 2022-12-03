@@ -4,11 +4,11 @@ nvim/.config/nvim/plugged
 nvim/.config/nvim/tags
 nvim/.config/nvim/.netrwhist
 
-teeworlds/.teeworlds/*
-!teeworlds/.teeworlds/editor/entities/
-!teeworlds/.teeworlds/console.png
-!teeworlds/.teeworlds/console_bar.png
-!teeworlds/.teeworlds/settings_ddnet.cfg
+teeworlds/.local/share/ddnet/*
+!teeworlds/.local/share/ddnet/editor/entities/
+!teeworlds/.local/share/ddnet/console.png
+!teeworlds/.local/share/ddnet/console_bar.png
+!teeworlds/.local/share/ddnet/settings_ddnet.cfg
 
 fish/.config/fish/completions/
 fish/.config/fish/conf.d/

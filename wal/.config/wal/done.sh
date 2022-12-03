@@ -22,6 +22,7 @@ ln -sf "${HOME}/.cache/wal/vscode.json"        "${HOME}/.config/Code/User/settin
 # restart programs
 pkill dunst; dunst   & # dunst
 bspc wm -r             # bspwm
+eww reload             # eww
 # echo 'awesome.restart()' | awesome-client &> /dev/null
 
 # qutebrowser

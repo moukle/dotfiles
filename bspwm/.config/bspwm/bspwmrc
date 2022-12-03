@@ -25,12 +25,12 @@ c remove_unplugged_monitors true
 for dir in "left" "right" "top" "bottom"; do
     c ${dir}_padding 5
 done
-c -m DP-2 right_padding 85
+c -m DP-2 right_padding 110
 
 c window_gap            10
 c single_monocle        true
 c borderless_monocle    true
-c border_width          4
+c border_width          3
 c focused_border_color  $color15
 c normal_border_color   $color0
 c active_border_color   $color0

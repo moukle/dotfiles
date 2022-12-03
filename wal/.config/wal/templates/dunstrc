@@ -11,7 +11,7 @@
     # geometry = "700x50-0+68"
     width = 300
     height = 50
-    offset = 5x5
+    offset = 80x5
 
     # Seperator between multiple notifications
     separator_height = 1

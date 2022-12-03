@@ -6,14 +6,14 @@
 (defvar eww "/usr/bin/eww -c $HOME/.config/eww")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;							Widget Section's							 ;;	
+;;							Widget Section's							 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Launcher Widgets ;;
 (defwidget launcher []
-	(box :orientation "v" 
-		 :space-evenly "false" 
+	(box :orientation "v"
+		 :space-evenly "false"
 		 :spacing -15
-  	(button :class "launcher_icon" 
+  	(button :class "launcher_icon"
 		   	:onclick "scripts/popup launcher"  "*")))
 
 ;; Workspaces Widgets ;;
@@ -28,43 +28,43 @@
 
 ;; Battery Widgets ;;
 (defwidget bat []
-	(box	:orientation "v"	
+	(box	:orientation "v"
 			:space-evenly "false"
-	(label	:class "bat"		
-			:halign "end"		
-			:text battery	
+	(label	:class "bat"
+			:halign "end"
+			:text battery
 			:tooltip "Battery: ${battery-cappacity}%")))
 (defpoll battery			:interval "1s"	"scripts/battery icon")
 (defpoll battery-cappacity	:interval "1s"	"scripts/battery percent")
 
 ;; Wifi Widgets ;;
 (defwidget wifi []
-	(box		:orientation "v"  
+	(box		:orientation "v"
 				:tooltip wifi-name
-	(button		:onclick "scripts/popup wifi" 
+	(button		:onclick "scripts/popup wifi"
 				:class "wifi-icon" wifi-icon)))
 (defpoll wifi-icon :interval "1s" "scripts/wifi icon")
 (defpoll wifi-name :interval "1s" "scripts/wifi name")
 
 ;; Brightness Widgets ;;
 (defwidget bright []
-  (eventbox :onhover "${eww} update bright=true"   
+  (eventbox :onhover "${eww} update bright=true"
   			:onhoverlost "${eww} update bright=false"
-  			(box    :orientation "v"  
-			  		:space-evenly "false"  
+  			(box    :orientation "v"
+			  		:space-evenly "false"
 					:spacing 2
-  			(revealer :transition "slideup" 
-			  		  :reveal bright   
+  			(revealer :transition "slideup"
+			  		  :reveal bright
 					  :duration "550ms"
-  			(scale :class "bribar" 
-			  	   :value current-brightness 
-				   :tooltip "Brightness: ${current-brightness}%" 
-				   :onchange "brightnessctl set {}%" 
-				   :orientation "v" 
-				   :flipped true 
-				   :max 101 
+  			(scale :class "bribar"
+			  	   :value current-brightness
+				   :tooltip "Brightness: ${current-brightness}%"
+				   :onchange "brightnessctl set {}%"
+				   :orientation "v"
+				   :flipped true
+				   :max 101
 				   :min 0))
-  			(label :class "brightness-icon" 
+  			(label :class "brightness-icon"
 			  	   :text ""))))
 (defpoll current-brightness :interval "1s" "brightnessctl -m -d amdgpu_bl0 | awk -F, '{print substr($4, 0, length($4)-1)}' | tr -d '%'")
 (defvar bright false)
@@ -87,7 +87,7 @@
 			  :max 101
 			  :min 0
 			  :onchange "printf %.0f {} | xargs pamixer --set-volume" ))
-	(button   :onclick "pavucontrol"   
+	(button   :onclick "pavucontrol"
               ; :text "a"
               ; :class "volume-icon" ""
       ))))
@@ -104,50 +104,40 @@
 (defpoll HEX :interval	"15m" `scripts/weather_info --hex`)
 (defpoll QUOTE :interval  "15m" `scripts/weather_info --quote`)
 (defwidget weather []
-	(eventbox :onhover "${eww} update weather=true" 		
+	(eventbox :onhover "${eww} update weather=true"
 			  :onhoverlost "${eww} update weather=false"
 			  :tooltip QUOTE
-	(box      :orientation "v" 	  
-			  :space-evenly "false" 
+	(box      :orientation "v"
+			  :space-evenly "false"
 			  :spacing "2"
-	(revealer :transition "slideup" 
-			  :reveal weather         
+	(revealer :transition "slideup"
+			  :reveal weather
 			  :duration "550ms"
 	(label :class "weathertemp" :text TEMP))
 	(label :class "weathericon" :style "color: ${HEX};" :text ICON))))
 (defvar weather false)
 
-;; Control Panel Widgets ;;
-(defwidget control []
-	(box :orientation "v"
-		 :space-evenly false
-		 :class "control"
-      ; (weather)
-      (volum)))
-; (bat)))
-; (wifi)
-; (bright)))
 
 ;; Clock Widgets ;;
 (defwidget time []
-	(box	:orientation "v" 
-			:class "time" 
+	(box	:orientation "v"
+			:class "time"
 			:valign "end"
-	(button	:onclick "scripts/popup calendar"	
+	(button	:onclick "scripts/popup calendar"
 			:class "time-hour" hour)
-	(button	:onclick "scripts/popup calendar"	
+	(button	:onclick "scripts/popup calendar"
 			:class "time-min"  min)))
 (defpoll hour	:interval "1s"	"date '+%H'")
 (defpoll min	:interval "1s"	"date '+%M'")
 
 ;; Calendar Widgets ;;
 (defwidget cal []
-	(box :class "cal-box" 
+	(box :class "cal-box"
 		 :orientation "v"
 	(box :class "cal-inner-box"
-	(calendar :class "cal" 
-			  :day calendar_day 
-			  :month calendar_month 
+	(calendar :class "cal"
+			  :day calendar_day
+			  :month calendar_month
 			  :year calendar_year))))
 (defpoll calendar_day :interval "10h"
     "date '+%d'")
@@ -158,53 +148,70 @@
 
 ;; Powermenu Widgets ;;
 (defwidget power []
-	(eventbox	:onhover "${eww} update power=true"	
-				:onhoverlost "${eww} update power=false" 
-	(box		:orientation "v"					
-				:space-evenly "false" 	 
-				:vexpand "false" 	
+	(eventbox	:onhover "${eww} update power=true"
+				:onhoverlost "${eww} update power=false"
+	(box		:orientation "v"
+				:space-evenly "false"
+				:vexpand "false"
 				:class "powermenu"
-	(revealer	:transition "slideup"				
-				:reveal power			 
+	(revealer	:transition "slideup"
+				:reveal power
 				:duration "550ms"
-	(box		:orientation "v"					
+	(box		:orientation "v"
 				:space-evenly "false"
 
 
-	(button		:class "button-quit" 				
-				:tooltip "Sleep & Lock" 		 
+	(button		:class "button-quit"
+				:tooltip "Sleep & Lock"
 				:onclick "sudo zzz && slock"
-      (image :path "/home/moritz/.icons/fluentui-system-icons/assets/Sleep/SVG/ic_fluent_sleep_24_filled.svg"))
+                ; :label "blabla")
+      (label :text ""))
+      ; (image :path "/home/moritz/.icons/fluentui-system-icons/assets/Sleep/SVG/ic_fluent_sleep_24_filled.svg"))
 
-	(button		:class "button-lock" 				
-				:tooltip "Lock Screen"	 
-				:onclick "slock"	
-      (image :path "/home/moritz/.icons/fluentui-system-icons/assets/Lock\ Closed/SVG/ic_fluent_lock_closed_24_filled.svg"))
-  	(button		:class "button-reb"					
-	  			:tooltip "Reboot"		 
+	(button		:class "button-lock"
+				:tooltip "Lock Screen"
+				:onclick "slock"
+	  (label :text ""))
+      ; (image :path "/home/moritz/.icons/fluentui-system-icons/assets/Lock\ Closed/SVG/ic_fluent_lock_closed_24_filled.svg"))
+  	(button		:class "button-reb"
+	  			:tooltip "Reboot"
 				:onclick "sudo reboot"
-                (image :path "/home/moritz/.icons/fluentui-system-icons/assets/Arrow Clockwise/SVG/ic_fluent_arrow_clockwise_24_filled.svg"))))
+				(label :text ""))))
+                ;(image :path "/home/moritz/.icons/fluentui-system-icons/assets/Arrow Clockwise/SVG/ic_fluent_arrow_clockwise_24_filled.svg"))))
 
-	(button		:class "button-off"					
-				:tooltip "Shutdown"		 
+	(button		:class "button-off"
+				:tooltip "Shutdown"
 				:onclick "sudo poweroff"
-      (image :path "/home/moritz/.icons/fluentui-system-icons/assets/Power/SVG/ic_fluent_power_24_filled.svg"
+				(label :text ""
+      ; (image :path "/home/moritz/.icons/fluentui-system-icons/assets/Power/SVG/ic_fluent_power_24_filled.svg"
       )))))
 (defvar power true)
 
+;; Control Panel Widgets ;;
+(defwidget control []
+	(box :orientation "v"
+		 :space-evenly false
+		 :class "control"
+      (power)
+      (time)))
+; (weather)
+; (bat)
+; (wifi)
+; (bright)
+
 ;; Top Widgets ;;
 (defwidget top []
-	(box	:orientation "v" 
-			:space-evenly "false" 
-			:valign "start" 
+	(box	:orientation "v"
+			:space-evenly "false"
+			:valign "start"
 ; (launcher)
 (workspaces)))
 
 
 ;; Middle Widgets ;;
 (defwidget middle []
-	(box	:orientation "v" 
-			:space-evenly "false" 
+	(box	:orientation "v"
+			:space-evenly "false"
 			:valign "center"
 (dock)))
 
@@ -212,15 +219,14 @@
 (defwidget bottom []
 	(box	:orientation "v"
 			:space-evenly false
-(time)
-(control)
-(power)))
+(volum)
+(control)))
 
 ;; End Widgets ;;
 (defwidget end []
-	(box :orientation "v" 
-		 :space-evenly "false" 
-		 :valign "end" 
+	(box :orientation "v"
+		 :space-evenly "false"
+		 :valign "end"
 		 :spacing 5
 (bottom)))
 
@@ -235,15 +241,15 @@
 (end)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;							Window Section's							 ;;	
+;;							Window Section's							 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Bar Windows ;;
 (defwindow bar
 	:monitor 0
 	:stacking "bg"
-    :geometry (geometry :x "0" 
-                        :y "0" 
-                        :height "100%" 
+    :geometry (geometry :x "0"
+                        :y "0"
+                        :height "100%"
                         :width "65"
                         :anchor "top right")
 	:reserve (struts :distance "35px" :side "left")
@@ -255,8 +261,8 @@
 
 ;; Calendar Windows ;;
 (defwindow calendar
-	:geometry (geometry :x "85" 
-						:y "79%" 
-						:width "270px" 
+	:geometry (geometry :x "85"
+						:y "79%"
+						:width "270px"
 						:height "60px")
 (cal))

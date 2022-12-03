@@ -56,6 +56,7 @@ local function plugins(use)
     -- use 'gelguy/wilder.nvim'
     use 'lewis6991/satellite.nvim'
     use 'stevearc/dressing.nvim'
+    use 'mcchrish/zenbones.nvim'
     -- use 'savq/melange'
     -- use 'brenoprata10/nvim-highlight-colors'
 -- }}}

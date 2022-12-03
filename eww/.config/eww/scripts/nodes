@@ -1,11 +1,7 @@
 #! /bin/bash
 
-# icons_1="/usr/share/icons/Reversal-blue/apps/scalable"
 icons_1="/home/moritz/.icons/worst"
-# icons_1="/usr/share/icons/Papirus/128x128/apps/"
-# icons_2="/usr/share/icons/Tela/scalable/apps"
-# icons_2=""
-# default="/usr/share/icons/Reversal-blue/apps/scalable/chmsee-icon.svg"
+# icons_1="/home/moritz/.icons/jyphs"
 default="/home/moritz/.icons/worst/earth.png"
 
 is_hidden() {

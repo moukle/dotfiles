@@ -16,7 +16,8 @@ opt.directory = vim.fn.stdpath('config') .. '/swap'
 -- UI {{{
 opt.termguicolors = true
 cmd [[colorscheme term]]
-opt.signcolumn = 'yes'
+-- cmd [[colorscheme zenbones]]
+-- opt.signcolumn = 'yes'
 opt.cmdheight = 0
 -- }}}
 -- Editor {{{

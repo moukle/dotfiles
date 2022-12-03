@@ -30,7 +30,7 @@ c.content.blocking.hosts.lists = [
 
 ## Options
 c.downloads.position = 'bottom'
-c.downloads.location.directory = os.path.expanduser("~/dl")
+c.downloads.location.directory = os.path.expanduser("~/Downloads")
 c.downloads.location.prompt = False
 c.prompt.filebrowser = False
 c.spellcheck.languages = ['en-US']

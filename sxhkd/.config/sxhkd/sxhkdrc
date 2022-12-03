@@ -134,7 +134,8 @@ super + {_,shift} + {1-9,0}
 
 # focus the node in the given direction
 super + {h,j,k,l}
-	bspc node -f {west,south,north,east}
+	focus.sh {west,south,north,east}
+	# bspc node -f {west,south,north,east}
 	# polybar-msg hook bspnodes_ipc 1
 
 # focus the node in the given direction

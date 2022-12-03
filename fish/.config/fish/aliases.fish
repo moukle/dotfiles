@@ -12,3 +12,6 @@ alias gtop "gotop --nvidia"
 
 alias gst "git status --short"
 alias gcm "git commit -m"
+
+# void
+alias xr "sudo xbps-remove"  # matchin xtools' xi

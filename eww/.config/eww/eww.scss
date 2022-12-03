@@ -1,30 +1,34 @@
 // Global
-// @import "/home/moritz/.cache/wal/colors.scss";
+@import "/home/moritz/.cache/wal/colors.scss";
 
-$bg: rgba(0, 0, 0, 0.2);
+// $bg: rgba(0, 0, 0, 0.3);
+$bg: rgba(244, 244, 244, 0.01);
 
-$fg: rgba(255, 255, 255, 1);
-$fga: rgba(255, 255, 255, 0.7);
-$fgb: rgba(255, 255, 255, 0.2);
+$fg: rgba(255, 255, 255, 1.0);
+$fga: rgba(255, 255, 255, 0.8);
+$fgb: rgba(255, 255, 255, 0.5);
+$fgc: rgba(255, 255, 255, 0.3);
 
 *{
     all: unset;
-    font-family: "Fira Sans";
+    font-family: "Roboto Sans";
     font-size: 1.1em;
+    // font-weight: regular;
     // font-family: "JetBrainsMono";
 }
 
 // EWW BAR
 .eww_bar{
     background-color: $bg;
-    color: $fg;
-    padding-top: 1.0rem;
-    // padding: 1.0rem;
+    color: $foreground;
+    // padding-top: 1.0rem;
+    padding: 0.5rem 0 0.5rem 0;
+    // padding: 0.5rem;
 }
 
 // Launcher
 .launcher_icon{
-    color: $fg;
+    color: $foreground;
     font-family: "Font Awesome 6 Pro";
     font-size: 1.7em;
     padding: 1rem 0 1rem 0;
@@ -32,101 +36,95 @@ $fgb: rgba(255, 255, 255, 0.2);
 
 // Workspaces
 .workspaces {
-    background-color: $bg;
-    border-radius: 10px;
-    padding: 8px;
     button {
-        margin: 5px;
-        // padding: .3rem .6rem .3rem .6rem;
-        // background-color: $bg;
-        // border-radius: 5px;
-        font-size: 1.5em;
+        margin: 10px;
+        // padding: .3rem .9rem .3rem .6rem;
+        // padding: 1.2rem 1.3rem 1.2rem 1.3rem;
+        padding: 1.0rem;
+        background-color: $background;
+        border-radius: 50%;
+        font-size: 0.0em;
         &.inactive {
-            color: $fgb;
-            // font-weight: bold;
+            background-color: $background;
         }
         &.empty {
             font-weight: normal;
-            // background: $;
-            // color: $color8;
+            background-color: $color0;
         }
         &.occupied {
-            color: $fga;
-            // font-weight: bold;
-            // background: $color4;
-        }
-        &.urgent {
-            color: $fg;
-            // background: $color1;
+            background-color: $color7;
         }
         &.active {
             font-weight: bold;
-            color: $fg;
-            // background: $color3;
+            background-color: $color1;
+        }
+        &.urgent {
+            background-color: $foreground;
         }
     }
 }
 
 // Control Panel
 .control {
-    padding: .5rem;
-    font-family: Material Icons;
-    font-size: 1.6em;
-    // background-color: $bg;
-    border-radius: 5px;
+    padding-left: 1.0rem;
+    padding-right: 1.0rem;
+    // font-family: Material Icons;
+    // font-size: 1.6em;
+    // background-color: $background;
+    border-radius: 25px;
+    margin: 5px;
 }
 .bat{
     font-family: JetBrainsMono Nerd Font;
     font-size: 1.2em;
     padding-right: .5rem;
-    color: $fg;
+    color: $foreground;
 }
 .wifi-icon{
     margin-bottom: .2rem;
-    color: $fg;
+    color: $foreground;
 }
 .brightness-icon{
     margin: .2rem 0 .2rem 0;
-    color: $fg;
+    color: $foreground;
 }
 .volume-icon{
     // margin: .2rem 0 .2rem 0;
     // background: $bg;
-    color: $fg;
+    color: $color1;
 }
 scale trough {
     all: unset;
-    background-color: $fgb;
-    border-radius: 5px;
-    min-height: 80px;
-    min-width: 10px;
-    margin: .3rem 0 .3rem 0;
+    background-color: $color0;
+    color: $color1;
+    border-radius: 10px;
+    min-height: 100px;
+    min-width: 20px;
+    margin: 2.3rem 0 2.3rem 0;
+    // margin: 1em;
 }
 .bribar trough highlight {
-    background-color: $fg;
+    background-color: $foreground;
     border-radius: 5px;
 }
 .volbar trough highlight {
-    background-color: $fg;
-    border-radius: 5px;
+    background-color: $color4;
+    border-radius: 10px;
 }
 
 // Clock
 .time {
-    // font-family: Comic Mono;
-    // font-size: 0.0em;
-    // background-color: $bg;
-    color: $fg;
-    // border-radius: 10px;
-    // padding: .7rem 0 .5rem 0;
-    padding: 10px;
-    // margin: 5px;
+    color: $foreground;
+    background-color: $background;
+    border-radius: 20px;
+    padding: 10px 20px 10px 20px;
+    margin: 1.3rem 0 0.3rem 0;
 }
 
 // Calendar
 .cal-box {
-    background-color: $fg;
-    color: $fg;
+    background-color: $foreground;
+    color: $foreground;
     font-size: 1.2em;
 
     .cal-inner-box {
@@ -144,34 +142,35 @@ scale trough {
 }
 
 calendar:selected {
-    color: $fg;
+    color: $foreground;
     font-weight: bold;
 }
 
 calendar.header {
-    color: $fg;
+    color: $foreground;
 }
 
 calendar.button {
-    color: $fg;
+    color: $foreground;
 }
 
 calendar.highlight {
-    color: $fg;
+    color: $foreground;
     font-weight: bold;
 }
 
 calendar:indeterminate {
-    color: $fg;
+    color: $foreground;
     font-weight: bold;
 }
 
 // Powermenu
 .powermenu {
     // background: $color4;
-    color: $fg;
-    font-family: feather;
-    font-size: 1.4em;
+    color: $foreground;
+    // font-family: feather;
+    font-family: 'Material Icons';
+    font-size: 1.5em;
     font-weight: bold;
 }
 .button-bspres, .button-reb, .button-lock,
@@ -180,27 +179,30 @@ calendar:indeterminate {
 }
 .button-off {
     margin-bottom: .5rem;
-    color: $fg;
+    color: $color1;
 }
-// .button-bspres{
-//     color: $color2;
-// }
-// .button-reb{
-//     color: $color3;
-// }
-// .button-quit{
-//     color: $color4;
-// }
-// .button-lock{
-//     color: $color5;
-// }
+.button-bspres{
+    color: $color2;
+}
+.button-reb{
+    color: $color7;
+}
+.button-quit{
+    color: $color4;
+}
+.button-lock{
+    color: $color3;
+}
 
 .appicon {
-    // background-color: $bg;
-    border-radius: 10px;
+    // background-color: $background;
     background-repeat: no-repeat;
     background-size: 50px;
     background-position: center;
+    border-radius: 35%;
+    // padding-left: 15px;
+    // padding-right: 15px;
+    margin: 10px;
     min-height: 40px;
     min-width: 40px;
     // background-blend-mode: luminosity;
@@ -211,10 +213,10 @@ calendar:indeterminate {
         // background-blend-mode: luminosity;
     }
     &.focused {
-        background-color: $bg;
-        background-blend-mode: normal;
-        // border-left-width: 5px;
-        // border-left-style: solid;
-        // border-left-color: $bg;
+        // background-color: $background;
+        // background-blend-mode: normal;
+        // border-right-width: 5px;
+        // border-right-style: solid;
+        // border-right-color: $fga;
     }
 }

@@ -318,6 +318,26 @@ local theme = lush(function()
     -- UfoPreviewThumb   { bg = color0, fg = color7};
     -- UfoFoldedEllipsis { bg = color0, fg = color7};
 -- }}}
+-- NeoTree {{{
+        -- NeoTreeNormal   { bg = color0 };
+        -- NeoTreeNormalNC   { bg = color0 };
+        -- NeoTreeIndentMarker   { fg = color8 };
+
+        NeoTreeEmptyFolderName  { fg = color0 };
+        NeoTreeEndOfBuffer      { fg = color0 };
+        -- NeoTreeFolderIcon       { fg = color8 },
+        -- NeoTreeFolderName       { fg = color.folder_bg },
+        NeoTreeGitDirty         { fg = color1 };
+        NeoTreeIndentMarker     { fg = color8 };
+        NeoTreeNormal           { bg = color0 };
+        NeoTreeNormalNC         { bg = color0 };
+        NeoTreeOpenedFolderName { fg = color8 };
+        NeoTreeGitIgnored       { fg = color8 };
+        NeoTreeCursorLine       { bg = color8 };
+
+        NeoTreeWinSeparator { fg = color8, bg = color8, };
+        NeoTreeWindowPicker { fg = color1, bg = color0, };
+-- }}}
 }
 end)
 

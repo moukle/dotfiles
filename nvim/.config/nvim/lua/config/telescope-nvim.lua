@@ -16,7 +16,7 @@ telescope.setup {
             "--column",
             "--smart-case",
             "--hidden",
-            "--glob=!.git/",
+            -- "--glob=!.git/",
         },
         prompt_prefix = " ",
         selection_caret = "  ",

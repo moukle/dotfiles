@@ -2,9 +2,9 @@
 
 bsp_workspace_yuck() {
     desktops=$(bspc query -D --names -m)
-    focused_desktops=$(bspc query -D -d focused --names)
-    occupied_desktops=$(bspc query -D -d .occupied --names)
-    urgent_desktops="$(bspc query -D -d .urgent --names)"
+    focused_desktops=$(bspc query -D -d focused --names -m)
+    occupied_desktops=$(bspc query -D -d .occupied --names -m)
+    urgent_desktops=$(bspc query -D -d .urgent --names -m)
 
     buffered=""
     for d in $desktops; do

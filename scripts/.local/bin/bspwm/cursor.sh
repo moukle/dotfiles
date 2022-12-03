@@ -1,6 +1,6 @@
 #!/bin/sh -e
 #  move cursor to focused window
-exit
+# exit
 
 # pipe then read for clean variable names
 { wmp; wattr whxyb "$(pfw)"; } | {
