@@ -59,6 +59,7 @@ local function plugins(use)
     use 'mcchrish/zenbones.nvim'
     -- use 'savq/melange'
     -- use 'brenoprata10/nvim-highlight-colors'
+    use { "catppuccin/nvim", as = "catppuccin" }
 -- }}}
 -- Editor {{{
 	use { 'nvim-telescope/telescope.nvim', requires = { {'nvim-lua/plenary.nvim'} } }

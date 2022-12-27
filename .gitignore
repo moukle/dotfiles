@@ -4,6 +4,10 @@ nvim/.config/nvim/plugged
 nvim/.config/nvim/tags
 nvim/.config/nvim/.netrwhist
 
+teeworlds/.teeworlds/demos/auto/
+teeworlds/.teeworlds/downloadedskins/
+teeworlds/.teeworlds/downloadedmaps/
+
 teeworlds/.local/share/ddnet/*
 !teeworlds/.local/share/ddnet/editor/entities/
 !teeworlds/.local/share/ddnet/console.png

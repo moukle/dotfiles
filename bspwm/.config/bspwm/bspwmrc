@@ -25,7 +25,7 @@ c remove_unplugged_monitors true
 for dir in "left" "right" "top" "bottom"; do
     c ${dir}_padding 5
 done
-c -m DP-2 right_padding 110
+c -m eDP1 right_padding 80
 
 c window_gap            10
 c single_monocle        true
@@ -70,7 +70,8 @@ s sxhkd                                         # hotkeys
 s picom --config $HOME/.config/picom/picom.conf # compositor
 s dunst --config $HOME/.config/dunst/dunstrc    # notifications
 
-nitrogen --restore & # wallpaper
+# nitrogen --restore & # wallpaper
+$HOME/.cache/wal/wallpaper.sh
 eww open bar         # bar
 wmname LG3D          # java
 

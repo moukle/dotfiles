@@ -8,24 +8,27 @@
     # corner_radius = 8
 
     # Make the width 3740 (3840 - 100), have 50 left margin and 95 above
-    # geometry = "700x50-0+68"
     width = 300
-    height = 50
-    offset = 80x5
+    # height = 50
+    offset = 15x15
+    origin = "top-center"
+    ellipsize = "middle"
 
     # Seperator between multiple notifications
-    separator_height = 1
+    separator_height = 2
     separator_color = "{color0}"
 
     # Add vertical padding to the inside of the notification
-    padding = 5
+    padding = 15
 
     # Add horizontal padding for when the text gets long enough
     horizontal_padding = 10
+    text_icon_padding = 10
+    corner_radius = 8;
 
     # The frame color and width of the notification
     frame_color = "{color0}"
-    frame_width = 5
+    frame_width = 2
 
     # How long a user needs to be idle for sticky notifications
     idle_threshold = 120
@@ -33,21 +36,33 @@
     # Font and typography settings
     # font = JetBrainsMono Nerd Font 12
     font = SF Pro Text 12
-    alignment = center
+    # font = "monospace 10";
+    alignment = left
     word_wrap = yes
 
     # Format for how notifications will be displayed
     # Usage: `notify-send 'Title' 'Summary'`
-    format = "<b>%s</b>: %b"
+    # format = "<b>%s</b>: %b"
+    format = "<span size='x-large' font_desc='monospace 9' weight='bold' foreground='{color15}'>%a</span>\n%s\n%b";
 
     # Allow some HTML tags like <i> and <u> in notifications
     markup = full
 
     # Add icon support
-    # icon_postion  = left
+    icon_position = left
     icon_path     = /usr/share/icons/eSuru++/apps/32/:/usr/share/icons/eSuru++/status/32/:/usr/share/icons/eSuru++/status/symbolic
-    max_icon_size = 32
+    min_icon_size = 48
+    max_icon_size = 64
 
+    progress_bar = true
+    progress_bar_height = 8;
+    progress_bar_frame_width = 1;
+    progress_bar_min_width = 150;
+    progress_bar_max_width = 300;
+
+
+[fullscreen_delay_everything]
+    fullscreen = "delay"
 
 # Set the background and foreground (text) color for all notifications
 [urgency_low]

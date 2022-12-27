@@ -35,7 +35,8 @@ configuration {
 /* Layout */
 window {
     width: 25%;
-    border: 0.00em;
+    border: 0.05em;
+    border-radius: 0.4em;
     y-offset: -200px;
 }
 

@@ -15,7 +15,7 @@ opt.directory = vim.fn.stdpath('config') .. '/swap'
 -- }}}
 -- UI {{{
 opt.termguicolors = true
-cmd [[colorscheme term]]
+cmd [[colorscheme catppuccin-mocha]]
 -- cmd [[colorscheme zenbones]]
 -- opt.signcolumn = 'yes'
 opt.cmdheight = 0

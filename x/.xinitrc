@@ -8,11 +8,15 @@ xset s 7200 7200                # screensaver after 60*120seconds
 
 redshift -l 51:10 > /dev/null & # blue filter
 
+# start some nice programs
+for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
+	[ -x "$f" ] && . "$f"
+done; f=
+
 # audio
-pipewire &
-pipewire-pulse &
+# pipewire &
+# pipewire-pulse &
 
-
-export $(dbus-launch)
+# export $(dbus-launch)
 
 exec bspwm
