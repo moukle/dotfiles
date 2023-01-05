@@ -12,7 +12,7 @@ redshift -l 51:10 > /dev/null & # blue filter
 pipewire &
 pipewire-pulse &
 
-
+kitty &
 export $(dbus-launch)
 
 exec bspwm

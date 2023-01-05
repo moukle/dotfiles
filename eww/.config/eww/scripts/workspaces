@@ -26,7 +26,7 @@ bsp_workspace_yuck() {
       fi
 
       button_name=$d
-      buffered+="(button :class \"$button_class $active_class\"  :onclick \"bspc desktop -f $d\" \"$button_name\")"
+      buffered+="(button :class \"$button_class $active_class\"  :onclick \"bspc desktop -f 'focused:^$d'\" \"$button_name\")"
   done
 
   echo "(box :orientation \"v\" :class \"workspaces\" :halign \"center\" :valign \"center\" :vexpand true :hexpand true $buffered)"

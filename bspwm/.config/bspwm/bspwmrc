@@ -14,9 +14,15 @@ s() { pkill -x "$1"; { sleep 0.1; "$@" & }; }
 # bspwm
 #######
 # monitors
-for m in $(bspc query -M --names); do
-    bspc monitor $m -d 1 2 3 4 5 6 7 8 9 0
-done
+m_primary = $(xrandr | grep primary | awk '{print $1}')
+# for m in $(bspc query -M --names); do
+#     bspc monitor $m -d 1 2 3 4 5
+# done
+# bspc monitor $m_primary -d 1 2 3 4 5 6 7 8 9 0
+
+bspc monitor DP-2 -d 1 2 3 4 game 6 7 8 9 0
+bspc monitor DP-0 -d 1 2 3 4 5
+
 c remove_disabled_monitors  true
 c remove_unplugged_monitors true
 
@@ -58,7 +64,11 @@ R Pinentry      state=floating
 R Emacs         state=tiled
 R "gaime_server (DEBUG)"    hidden=on
 # R zoom          desktop=^5  state=tiled
-R DDNet         desktop=^9  follow=on  state=fullscreen
+R DDNet         desktop=game  follow=on  state=fullscreen
+
+# PoE
+R "steam_app_238960" desktop=game
+# R "pobfrontend"      monitor=DP-0 desktop=0
 
 c external_rules_command "$HOME/.config/bspwm/external_rules" # Spotify
 
@@ -70,7 +80,8 @@ s sxhkd                                         # hotkeys
 s picom --config $HOME/.config/picom/picom.conf # compositor
 s dunst --config $HOME/.config/dunst/dunstrc    # notifications
 
-nitrogen --restore & # wallpaper
+# nitrogen --restore & # wallpaper
+$HOME/.cache/wal/wallpaper.sh
 eww open bar         # bar
 wmname LG3D          # java
 

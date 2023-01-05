@@ -17,7 +17,7 @@ ln -sf "${HOME}/.cache/wal/vscode.json"        "${HOME}/.config/Code/User/settin
 # ln -sf "${HOME}/.cache/wal/colors-discord.css" "${HOME}/.config/discocss/colors-discord.css"
 
 # set background
-# $HOME/.cache/wal/wallpaper.sh
+$HOME/.cache/wal/wallpaper.sh
 
 # restart programs
 pkill dunst; dunst   & # dunst

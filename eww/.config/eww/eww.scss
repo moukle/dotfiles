@@ -2,7 +2,7 @@
 @import "/home/moritz/.cache/wal/colors.scss";
 
 // $bg: rgba(0, 0, 0, 0.3);
-$bg: rgba(244, 244, 244, 0.01);
+$bg: rgba(244, 244, 244, 0.001);
 
 $fg: rgba(255, 255, 255, 1.0);
 $fga: rgba(255, 255, 255, 0.8);
@@ -56,7 +56,7 @@ $fgc: rgba(255, 255, 255, 0.3);
         }
         &.active {
             font-weight: bold;
-            background-color: $color1;
+            background-color: $color14;
         }
         &.urgent {
             background-color: $foreground;
@@ -108,7 +108,7 @@ scale trough {
     border-radius: 5px;
 }
 .volbar trough highlight {
-    background-color: $color4;
+    background-color: $color7;
     border-radius: 10px;
 }
 
@@ -179,19 +179,19 @@ calendar:indeterminate {
 }
 .button-off {
     margin-bottom: .5rem;
-    color: $color1;
+    color: $color15;
 }
 .button-bspres{
-    color: $color2;
+    color: $color15;
 }
 .button-reb{
-    color: $color7;
+    color: $color15;
 }
 .button-quit{
-    color: $color4;
+    color: $color15;
 }
 .button-lock{
-    color: $color3;
+    color: $color15;
 }
 
 .appicon {
