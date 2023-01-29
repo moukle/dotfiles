@@ -7,22 +7,22 @@
 # Includes: zathura, dunst, discord, stylus
 # =================================================
 
-mkdir -p  "${HOME}/.config/zathura"
+# mkdir -p  "${HOME}/.config/zathura"
 mkdir -p  "${HOME}/.config/dunst"
-mkdir -p  "${HOME}/.config/Code/User"
+# mkdir -p  "${HOME}/.config/Code/User"
 
-ln -sf "${HOME}/.cache/wal/zathurarc"          "${HOME}/.config/zathura/zathurarc"
+# ln -sf "${HOME}/.cache/wal/zathurarc"          "${HOME}/.config/zathura/zathurarc"
 ln -sf "${HOME}/.cache/wal/dunstrc"            "${HOME}/.config/dunst/dunstrc"
-ln -sf "${HOME}/.cache/wal/vscode.json"        "${HOME}/.config/Code/User/settings.json"
+# ln -sf "${HOME}/.cache/wal/vscode.json"        "${HOME}/.config/Code/User/settings.json"
 # ln -sf "${HOME}/.cache/wal/colors-discord.css" "${HOME}/.config/discocss/colors-discord.css"
 
 # set background
-$HOME/.cache/wal/wallpaper.sh
+# $HOME/.cache/wal/wallpaper.sh
 
 # restart programs
 pkill dunst; dunst   & # dunst
-bspc wm -r             # bspwm
-eww reload             # eww
+# bspc wm -r             # bspwm
+# eww reload             # eww
 # echo 'awesome.restart()' | awesome-client &> /dev/null
 
 # qutebrowser

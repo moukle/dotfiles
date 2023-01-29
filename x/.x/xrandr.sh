@@ -1,6 +1,6 @@
 #! /bin/bash
 
-if [[ $HOSTNAME = "void" ]]; then
+if [[ $HOSTNAME = "archlinux" ]]; then
     xrandr --dpi 138x138 \
         --output DP-2 --mode 3840x2160 --primary --scale 1.0x1.0 \
         --output DP-0 --mode 1920x1080 --rate 144 --left-of DP-2

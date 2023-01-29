@@ -11,7 +11,7 @@ set fzf_fd_opts --hidden --exclude=.git
 
 fish_vi_key_bindings
 fish_ssh_agent
-ssh-add -q ~/.ssh/moritz
+ssh-add -q ~/.ssh/id_ed25519
 # fzf_key_bindings
 
 starship init fish | source

@@ -1,5 +1,6 @@
 alias ls "exa --icons --group-directories-first"
 alias la "ls -a"
+alias ll "ls -l"
 alias lla "ls -la"
 alias cp "rsync -avhW --no-compress --progress"
 alias bat "bat --plain --theme='base16-256'"

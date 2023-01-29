@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 wal --theme $@
-$HOME/.config/wal/done.sh
+# $HOME/.config/wal/done.sh
 
 if [[ "$*" == *"-l"* ]]
 then

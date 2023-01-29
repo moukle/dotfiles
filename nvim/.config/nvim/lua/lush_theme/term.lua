@@ -7,12 +7,12 @@ vim.cmd [[ source $HOME/.cache/wal/colors-wal.vim ]]
 local bg = vim.g.background
 local fg = vim.g.foreground
 local cursor = vim.g.cursor
-local color0 = vim.g.color0
+local color8 = vim.g.color8
 local color1 = vim.g.color1
 local color2 = vim.g.color2
 local color3 = vim.g.color3
 local color4 = vim.g.color4
-local color5 = vim.g.color5
+local color8 = vim.g.color8
 local color6 = vim.g.color6
 local color7 = vim.g.color7
 local color8 = vim.g.color8
@@ -48,27 +48,27 @@ local theme = lush(function()
         return {
 -- Vim Editor {{{
         Normal { bg = bg, fg = fg };
-        Whitespace { fg = color0 };
-        EndOfBuffer { fg = color0 };
+        Whitespace { fg = color8 };
+        EndOfBuffer { fg = color8 };
         Conceal { Normal };
         Constant { fg = fg, gui = 'bold' };
         Character { Constant };
-        String { fg = color6 };
-        Number { fg = color6 };
-        Float { fg = color6 };
-        NormalFloat { bg = color0, fg = color8 };
+        String { fg = color2 };
+        Number { fg = color2 };
+        Float { fg = color2 };
+        NormalFloat { bg = color8, fg = color2 };
         Boolean { Number };
         Identifier { fg = color7 };
         Function { fg = color3, gui='bold' };
-        Statement { fg = color5, gui = 'bold' };
+        Statement { fg = color6, gui = 'bold' };
         Conditional { Statement };
         Repeat { Statement };
         Label { Statement };
         Exception { Statement };
-        Operator { fg = fg };
-        Keyword { fg = color7 };
-        PreProc { fg = color7 };
-        Include { PreProc };
+        Operator { Statement };
+        Keyword { Statement };
+        PreProc { fg = color7, bg=color8 };
+        Include { PreProc};
         Define { PreProc };
         Macro { PreProc };
         PreCondit { PreProc };
@@ -85,13 +85,13 @@ local theme = lush(function()
         SpecialComment { fg = color15, gui = 'bold' };
         Title { fg = color15, gui = 'bold' };
         Todo { fg = bg, bg=color1 };
-        Comment { fg = color8, gui = 'italic' };
-        LineNr { fg = color8 };
-        Folded { fg = color8, gui = 'italic', bg = color0};
-        FoldColumn { fg = color8 };
+        Comment { fg = color13, gui = 'italic' };
+        LineNr { fg = color13, gui = 'light'};
+        Folded { fg = color8, gui = 'italic', bg = color8};
+        FoldColumn { fg = color13 };
         SignColumn { fg = color7 };
         ColorColumn { bg = color8 };
-        CursorLine { bg = color0 };
+        CursorLine { bg = color8 };
         CursorColumn { CursorLine };
         CursorLineNr { LineNr, fg = color7, gui = 'bold' };
         Visual { bg = color8, fg = color15 };
@@ -106,15 +106,15 @@ local theme = lush(function()
         ErrorMsg { Error };
         ErrorMsg { fg = color1 };
         WarningMsg { fg = color3 };
-        ModeMsg { bg=color0, fg = color7 };
-        MoreMsg { bg = color0, fg = color7 };
+        ModeMsg { bg=color8, fg = color7 };
+        MoreMsg { bg = color8, fg = color7 };
         MatchParen { fg = color1, gui = 'bold' };
         Cursor { bg = color7 };
         Underlined { fg = color7, gui = 'underline' };
         SpecialKey { fg = color7 };
         NonText { fg = color7 };
         Directory { fg = color7 };
-        Pmenu { bg=color0, fg = color7 };
+        Pmenu { bg=color8, fg = color7 };
         PmenuSbar { fg = color7 };
         PmenuThumb { bg = color7 };
         PmenuSel { bg = color8, fg = color15 };
@@ -186,7 +186,7 @@ local theme = lush(function()
 
 -- Refactor {{{
         TSDefinitionUsage { fg = color15, gui= 'bold' };
-        TSDefinition { fg = color5, gui= 'bold' };
+        TSDefinition { fg = color8, gui= 'bold' };
 -- }}}
 
 -- }}}
@@ -225,15 +225,15 @@ local theme = lush(function()
         SagaShadow { fg = color1 };
         LspSagaFinderSelection { fg = color7 };
 -- Diagnostic
-        LspLinesDiagBorder { bg=color0, fg = color8 };
-        DiagnosticTruncateLine { bg=color0, fg = color8 };
-        DiagnosticError { bg = color0, fg=color1 };
-        DiagnosticWarning {  bg = color0, fg=color7 };
-        DiagnosticInformation { bg=color0, fg=fg };
-        DiagnosticHint { bg=color0, fg=fg };
-        LspSagaShTruncateLine { bg=color0, fg = color8 };
-        LspSagaDocTruncateLine { bg=color0, fg = color8 };
-        LineDiagTuncateLine { bg=color0, fg = color8 };
+        LspLinesDiagBorder { bg=color8, fg = color8 };
+        DiagnosticTruncateLine { bg=color8, fg = color8 };
+        DiagnosticError { bg = color8, fg=color1 };
+        DiagnosticWarning {  bg = color8, fg=color7 };
+        DiagnosticInformation { bg=color8, fg=fg };
+        DiagnosticHint { bg=color8, fg=fg };
+        LspSagaShTruncateLine { bg=color8, fg = color8 };
+        LspSagaDocTruncateLine { bg=color8, fg = color8 };
+        LineDiagTuncateLine { bg=color8, fg = color8 };
 -- Code Action
         LspSagaCodeActionTitle { fg = color7 };
         LspSagaCodeActionTruncateLine { fg = color8 };
@@ -264,83 +264,82 @@ local theme = lush(function()
         NeogitNotificationError   { fg = color1 };
 -- }}}
 -- Telescope {{{
-        TelescopeBorder         { bg=color0, fg = color0 };
-        TelescopePromptBorder   { bg=color8, fg = color8 };
+        TelescopeBorder         { bg=color8, fg = color8 };
+        TelescopePromptBorder   { bg=color4, fg = color4 };
 
-        TelescopePromptNormal   { bg=color8, fg = fg };
-        TelescopePromptPrefix   { bg=color8, fg = color15 };
+        TelescopePromptNormal   { bg=color4, fg = fg };
+        TelescopePromptPrefix   { bg=color4, fg = color15 };
 
-        TelescopeNormal         { bg=color0, fg = color7 };
+        TelescopeNormal         { bg=color8, fg = color7 };
 
-        TelescopePreviewTitle   { bg=color0, fg = color7 };
-        TelescopePromptTitle    { bg=color8, fg = fg };
-        TelescopeResultsTitle   { bg=color0, fg = color8 };
+        TelescopePreviewTitle   { bg=color4, fg = color7 };
+        TelescopePromptTitle    { bg=color4, fg = fg };
+        TelescopeResultsTitle   { bg=color8, fg = color4 };
 
         TelescopeSelection      { bg=color8, fg = color15, gui="bold" };
-        TelescopeSelectionCaret { bg=color0, fg = color0 };
+        TelescopeSelectionCaret { bg=color8, fg = color8 };
         TelescopeMatching       { fg = color15, gui="bold" };
 -- }}}
 -- Headline {{{
-        CodeBlock { bg=color0  };
-        Headline  { bg=color0, fg=color15};
+        CodeBlock { bg=color8  };
+        Headline  { bg=color8, fg=color15};
         Dash      { bg=bg,     fg=color8 };
 -- }}}
 -- Indent Blankline {{{
-    IndentBlanklineChar { fg = color0 };
+    IndentBlanklineChar { fg = color8 };
 --}}}
 -- Cmp {{{
         -- The abbr field.
-        CmpItemAbbr { bg=color0, fg=fg };
+        CmpItemAbbr { bg=color8, fg=fg };
 
         -- The deprecated item's abbr field.
         CmpItemAbbrDeprecated { Error };
 
         -- The matched characters highlight.
-        CmpItemAbbrMatch { bg=color0, fg=color15, gui='bold' };
+        CmpItemAbbrMatch { bg=color8, fg=color15, gui='bold' };
 
         -- The fuzzy matched characters highlight.
-        CmpItemAbbrMatchFuzzy { bg=color0, fg=color15, gui='bold' };
+        CmpItemAbbrMatchFuzzy { bg=color8, fg=color15, gui='bold' };
 
         -- The kind field.
-        CmpItemKind { bg=color0, fg = color15 };
+        CmpItemKind { bg=color8, fg = color15 };
 
         -- The menu field.
-        CmpItemMenu { bg=color0, fg = color8 };
+        CmpItemMenu { bg=color8, fg = color8 };
 --}}}
 -- Window Switcher {{{
     -- NvimWindoSwitch   { bg = color8, fg = color15, gui=bold };
-    -- NvimWindoSwitchNC { bg = color0, fg = fg, gui=bold };
+    -- NvimWindoSwitchNC { bg = color8, fg = fg, gui=bold };
 -- }}}
 -- Ufo {{{
-    -- UfoFoldedBg       { bg = color0, fg = color7};
-    -- UfoFoldedFg       { bg = color0, fg = color7};
-    -- UfoPreviewSbar    { bg = color0, fg = color7};
-    -- UfoPreviewThumb   { bg = color0, fg = color7};
-    -- UfoFoldedEllipsis { bg = color0, fg = color7};
+    -- UfoFoldedBg       { bg = color8, fg = color7};
+    -- UfoFoldedFg       { bg = color8, fg = color7};
+    -- UfoPreviewSbar    { bg = color8, fg = color7};
+    -- UfoPreviewThumb   { bg = color8, fg = color7};
+    -- UfoFoldedEllipsis { bg = color8, fg = color7};
 -- }}}
 -- NeoTree {{{
-        -- NeoTreeNormal   { bg = color0 };
-        -- NeoTreeNormalNC   { bg = color0 };
+        -- NeoTreeNormal   { bg = color8 };
+        -- NeoTreeNormalNC   { bg = color8 };
         -- NeoTreeIndentMarker   { fg = color8 };
 
-        NeoTreeEmptyFolderName  { fg = color0 };
-        NeoTreeEndOfBuffer      { fg = color0 };
+        NeoTreeEmptyFolderName  { fg = color8 };
+        NeoTreeEndOfBuffer      { fg = color8 };
         -- NeoTreeFolderIcon       { fg = color8 },
         -- NeoTreeFolderName       { fg = color.folder_bg },
         NeoTreeGitDirty         { fg = color1 };
         NeoTreeIndentMarker     { fg = color8 };
-        NeoTreeNormal           { bg = color0 };
-        NeoTreeNormalNC         { bg = color0 };
+        NeoTreeNormal           { bg = color8 };
+        NeoTreeNormalNC         { bg = color8 };
         NeoTreeOpenedFolderName { fg = color8 };
         NeoTreeGitIgnored       { fg = color8 };
         NeoTreeCursorLine       { bg = color8 };
 
         NeoTreeWinSeparator { fg = color8, bg = color8, };
-        NeoTreeWindowPicker { fg = color1, bg = color0, };
+        NeoTreeWindowPicker { fg = color1, bg = color8, };
 -- }}}
 }
 end)
 
 return theme
 
--- vim: foldmethod=marker foldlevel=0 foldenable foldmarker={{{,}}}
