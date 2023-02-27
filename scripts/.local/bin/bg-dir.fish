@@ -86,9 +86,9 @@ while true
     for IMG in $(command ls $IMAGE_DIR | shuffle)
         sleep $TIMER_SECONDS
         echo "---- $IMG"
-        set -l IMG "$IMAGE_DIR$IMG"
-        hyprctl hyprpaper preload "$IMG"            >> /dev/null
-        hyprctl hyprpaper wallpaper "eDP-1,$IMG"    >> /dev/null
-        pkill swaybg
+        set -l IMG "$IMAGE_DIR/$IMG"
+        hyprctl hyprpaper wallpaper "eDP-1,$IMG"    #>> /dev/null
     end
 end
+
+exit
