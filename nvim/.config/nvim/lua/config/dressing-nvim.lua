@@ -5,8 +5,6 @@ end
 
 dressing.setup {
     input = {
-        winblend = 10,
-        winhighlight = "Normal:DressingInputNormalFloat,NormalFloat:DressingInputNormalFloat,FloatBorder:DressingInputFloatBorder",
         border = "single",
     },
 }

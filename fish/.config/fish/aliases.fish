@@ -1,4 +1,5 @@
 alias ls "exa --icons --group-directories-first"
+# alias ls "ls --color --group-directories-first"
 alias la "ls -a"
 alias lla "ls -la"
 alias cp "rsync -avhW --no-compress --progress"
