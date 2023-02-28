@@ -57,6 +57,11 @@ config.bind('<Shift+Ins>', 'fake-key <Ctrl+V>', mode='insert')
 config.bind('<Ctrl-R>', 'config-cycle content.user_stylesheets "~/dev/solarized-everything-css/css/wal-dark/wal-dark-all-sites.css" ""')
 # c.content.user_stylesheets = glob.glob(os.path.expanduser('~/development/solarized-everything-css/css/wal-dark/*.css'))
 
+# Layout
+c.tabs.padding           = {"bottom": 24, "left": 20, "right": 23, "top": 23}
+c.tabs.indicator.padding = {"bottom": 0, "left": 0, "right": 8, "top": 0}
+c.statusbar.padding      = {"bottom": 15, "left": 3, "right": 3, "top": 15}
+
 ## Load theme
-for path in glob.glob(os.path.expanduser('~/.config/qutebrowser/extra/*.py')):
+for path in glob.glob(os.path.expanduser('~/.cache/wal/colors-qutebrowser.py')):
     config.source(path)
