@@ -26,7 +26,7 @@ configuration {
     foreground-color: @fg;
     border-color: @bg-alt2;
 
-    border: 0;
+    border: 0.00em;
     margin: 0;
     padding: 0;
     spacing: 0;
@@ -72,7 +72,7 @@ element alternate.normal {
 }
 
 element selected.normal {
-    background-color: @bg-alt2;
+    background-color: @bg-alt;
     font: @text-bold;
     text-color: @fg;
 }
