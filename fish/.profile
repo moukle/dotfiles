@@ -1,5 +1,6 @@
 # bin
 export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.local/bin/CoppeliaSim_Edu_V4_4_0_rev0_Ubuntu22_04"
 # export PATH="$PATH:$HOME/.local/bin/bspwm"
 # export PATH="$PATH:$HOME/.cargo/bin"
 # export PATH="$PATH:$HOME/.emacs.d/bin"

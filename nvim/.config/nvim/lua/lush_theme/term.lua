@@ -7,14 +7,15 @@ vim.cmd [[ source $HOME/.cache/wal/colors-wal.vim ]]
 local bg = vim.g.background
 local fg = vim.g.foreground
 local cursor = vim.g.cursor
-local color8 = vim.g.color8
+local color0 = vim.g.color0
 local color1 = vim.g.color1
 local color2 = vim.g.color2
 local color3 = vim.g.color3
 local color4 = vim.g.color4
-local color8 = vim.g.color8
 local color6 = vim.g.color6
 local color7 = vim.g.color7
+local color8 = vim.g.color8
+local color8 = vim.g.color8
 local color8 = vim.g.color8
 local color9 = vim.g.color9
 local color10 = vim.g.color10
@@ -86,12 +87,12 @@ local theme = lush(function()
         Title { fg = color15, gui = 'bold' };
         Todo { fg = bg, bg=color1 };
         Comment { fg = color13, gui = 'italic' };
-        LineNr { fg = color13, gui = 'light'};
-        Folded { fg = color8, gui = 'italic', bg = color8};
+        LineNr { fg = color4, bg=bg, gui = 'light'};
+        Folded { fg = color8, gui = 'italic', bg = bg};
         FoldColumn { fg = color13 };
         SignColumn { fg = color7 };
         ColorColumn { bg = color8 };
-        CursorLine { bg = color8 };
+        CursorLine { bg = color8, };
         CursorColumn { CursorLine };
         CursorLineNr { LineNr, fg = color7, gui = 'bold' };
         Visual { bg = color8, fg = color15 };
@@ -109,7 +110,7 @@ local theme = lush(function()
         ModeMsg { bg=color8, fg = color7 };
         MoreMsg { bg = color8, fg = color7 };
         MatchParen { fg = color1, gui = 'bold' };
-        Cursor { bg = color7 };
+        Cursor { bg = color4 };
         Underlined { fg = color7, gui = 'underline' };
         SpecialKey { fg = color7 };
         NonText { fg = color7 };
@@ -118,7 +119,7 @@ local theme = lush(function()
         PmenuSbar { fg = color7 };
         PmenuThumb { bg = color7 };
         PmenuSel { bg = color8, fg = color15 };
-        StatusLine { Normal , fg = color7 };
+        StatusLine { fg = color7, bg=color0 };
         TabLineSel { StatusLine };
         StatusLineNC { StatusLine, fg = bg };
         TabLine { StatusLineNC };
@@ -329,13 +330,13 @@ local theme = lush(function()
         -- NeoTreeFolderName       { fg = color.folder_bg },
         NeoTreeGitDirty         { fg = color1 };
         NeoTreeIndentMarker     { fg = color8 };
-        NeoTreeNormal           { bg = color8 };
-        NeoTreeNormalNC         { bg = color8 };
+        NeoTreeNormal           { bg = color0 };
+        NeoTreeNormalNC         { bg = color0 };
         NeoTreeOpenedFolderName { fg = color8 };
         NeoTreeGitIgnored       { fg = color8 };
-        NeoTreeCursorLine       { bg = color8 };
+        NeoTreeCursorLine       { bg = color0, fg=color15 };
 
-        NeoTreeWinSeparator { fg = color8, bg = color8, };
+        NeoTreeWinSeparator { fg = bg, bg = bg, };
         NeoTreeWindowPicker { fg = color1, bg = color8, };
 -- }}}
 }

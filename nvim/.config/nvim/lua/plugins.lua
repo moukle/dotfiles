@@ -57,6 +57,7 @@ local function plugins(use)
     use 'lewis6991/satellite.nvim'
     use 'stevearc/dressing.nvim'
     use 'mcchrish/zenbones.nvim'
+    use 'catppuccin/nvim'
     -- use 'savq/melange'
     -- use 'brenoprata10/nvim-highlight-colors'
 -- }}}
@@ -84,14 +85,22 @@ local function plugins(use)
     use { "s1n7ax/nvim-window-picker", tag = "v1.*" }
 
     use {
-            "nvim-neo-tree/neo-tree.nvim",
-            branch = "v2.x",
-            requires = {
-                "nvim-lua/plenary.nvim",
-                "kyazdani42/nvim-web-devicons",
-                "MunifTanjim/nui.nvim",
-            },
+        'nvim-tree/nvim-tree.lua',
+        requires = {
+            'nvim-tree/nvim-web-devicons', -- optional, for file icons
+        },
+        tag = 'nightly' -- optional, updated every week. (see issue #1193)
     }
+
+    -- use {
+    --         "nvim-neo-tree/neo-tree.nvim",
+    --         branch = "v2.x",
+    --         requires = {
+    --             "nvim-lua/plenary.nvim",
+    --             "kyazdani42/nvim-web-devicons",
+    --             "MunifTanjim/nui.nvim",
+    --         },
+    -- }
 
     -- use { 'eraserhd/parinfer-rust', run = 'cargo build --release' } -- useful for S-Expressions (lispy)
 -- }}}

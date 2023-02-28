@@ -1,3 +1,5 @@
+@import url("/home/moritz/.cache/wal/colors-waybar.css");
+
 * {
     border: none;
     border-radius: 0;
@@ -8,8 +10,8 @@
 }
 
 window#waybar {
-    color: #9e9e9e;
-    background-color: #fefefe;
+    color: @color5;
+    background-color: @background;
     transition-property: background-color;
     transition-duration: 0.5s;
 }
@@ -30,23 +32,23 @@ window#waybar.hidden {
     margin: 6px 3px;
     border-radius: 4px;
     /* background-color: #1e1e2e; */
-    color: #cecece;
+    color: @color4;
 }
 
 #workspaces button.active {
-    color: #1e1e1e;
+    color: @color7;
     /* background-color: #cdd6f4; */
 }
 
 #workspaces button:hover {
     box-shadow: inherit;
     text-shadow: inherit;
-    color: #1e1e1e;
-    background-color: #cecece;
+    color: @color7;
+    background-color: @color8;
 }
 
 #workspaces button.urgent {
-    color: #f38ba8;
+    color: @color1;
 }
 
 #custom-weather,
@@ -63,8 +65,7 @@ window#waybar.hidden {
     border-radius: 4px;
     margin: 6px 3px;
     padding: 6px 12px;
-    /* background-color: #1e1e2e; */
-    /* color: #181825; */
+    /* background-color: @color8; */
 }
 
 #custom-power {
@@ -87,17 +88,17 @@ window#waybar.hidden {
 }
 
 #custom-swallow {
-    color: #cdd6f4;
+    /* color: #cdd6f4; */
 }
 
 #battery {
-    background-color: #f38ba8;
+    /* background-color: #f38ba8; */
 }
 
 @keyframes blink {
     to {
-        background-color: #f38ba8;
-        color: #181825;
+        background-color: @color8;
+        /* color: #181825; */
     }
 }
 
@@ -105,8 +106,8 @@ window#waybar.hidden {
 .critical,
 .urgent,
 #battery.critical:not(.charging) {
-    background-color: #f38ba8;
-    color: #181825;
+    background-color: @color1;
+    /* color: #181825; */
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
@@ -115,7 +116,7 @@ window#waybar.hidden {
 }
 
 #backlight {
-    background-color: #fab387;
+    /* background-color: #fab387; */
 }
 
 #pulseaudio.microphone {
