@@ -29,17 +29,20 @@ c.content.blocking.hosts.lists = [
 # c.content.blocking.whitelist = []
 
 ## Options
-c.downloads.position = 'bottom'
+c.downloads.position           = 'bottom'
 c.downloads.location.directory = os.path.expanduser("~/Downloads")
-c.downloads.location.prompt = False
-c.prompt.filebrowser = False
-c.spellcheck.languages = ['en-US']
-c.session.lazy_restore = True
-c.tabs.show = 'multiple'
-c.tabs.title.format = '{audio}{current_title} - {host}'
-c.tabs.title.format_pinned = ''
-c.window.title_format = '{current_title} - {host} - qutebrowser'
-c.scrolling.smooth = True
+c.downloads.location.prompt    = False
+c.prompt.filebrowser           = False
+c.spellcheck.languages         = ['en-US']
+c.session.lazy_restore         = True
+c.tabs.show                    = 'multiple'
+c.tabs.title.format            = '{audio}{current_title} - {host}'
+c.tabs.title.format_pinned     = ''
+c.window.title_format          = '{current_title} - {host} - qutebrowser'
+c.scrolling.smooth             = True
+
+# >_<
+c.url.searchengines = { "DEFAULT": "https://www.google.com/search?hl=en&q={}"}
 
 ## Keybindings
 config.bind('tm', 'tab-mute')
@@ -47,7 +50,7 @@ config.bind(';V', 'hint links spawn mpv {hint-url}')
 config.bind('tt', 'set-cmd-text -s :tab-select ', mode='normal')
 
 # Use external editor
-c.editor.command = ['emacsclient', '-c', '-F', '((name . "qutebrowser-editor"))', '+{line}:{column}', '{}']
+# c.editor.command = ['emacsclient', '-c', '-F', '((name . "qutebrowser-editor"))', '+{line}:{column}', '{}']
 # Though we set it, I use the more specialzied emacs-everywhere instead
 config.bind('<Ctrl+E>',    'edit-text', mode='insert')
 config.bind('<Ctrl+E>',    'hint inputs --first ;; edit-text', mode='normal')

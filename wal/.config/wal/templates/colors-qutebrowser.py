@@ -13,10 +13,9 @@ c.tabs.indicator.width = 0
 # Miscs
 c.tabs.background = True
 
-
 ## Fonts
-c.fonts.default_family = "Cascadia Mono"
-c.fonts.default_size = "10pt"
+c.fonts.default_family = "Cascadia Code"
+c.fonts.default_size = "15pt"
 
 
 ## Colors

@@ -16,11 +16,12 @@ c.tabs.indicator.padding = {"bottom": 0, "left": 0, "right": 8, "top": 0}
 # Miscs
 c.tabs.background = True
 c.statusbar.padding = {"bottom": 15, "left": 3, "right": 3, "top": 15}
+c.statusbar.show = "in-mode"
 
 
 ## Fonts
-c.fonts.default_family = "Cascadia Mono"
-c.fonts.default_size = "10pt"
+c.fonts.default_family = "Cascadia Code"
+c.fonts.default_size = "15pt"
 
 
 ## Colors
