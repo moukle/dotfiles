@@ -3,5 +3,5 @@
 	bg-alt: {color8};
 	bg-alt2: {color0};
 	fg:     {foreground};
-	fg-alt: {color7};
+	fg-alt: {color6};
 }}
