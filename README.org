@@ -1,0 +1,21 @@
+* Dotfiles - my personal configuration files
+
+** Tools
+
+| Shell         | =fish= + =fisher= |
+| WM            | =hyprland=        |
+| Editor        | =nvim= + =emacs=  |
+| Terminal      | =kitty=           |
+| Launcher      | =rofi=            |
+| Browser       | =qutebrowser=     |
+| Notifications | =dunst=           |
+
+** Install
+
+Managed with [[https://www.gnu.org/software/stow/][GNU Stow]].
+
+To symlink for example =hyprland= config simply call:
+
+#+begin_src sh
+stow hyprland
+#+end_src
