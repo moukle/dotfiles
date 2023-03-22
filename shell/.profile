@@ -6,3 +6,9 @@ export PATH="$PATH:$HOME/.config/emacs/bin"
 export EDITOR="nvim"
 # export BROWSER="qutebrowser"
 export BROWSER="firefox"
+
+# vars
+export EXA_ICON_SPACING=2
+
+# wayland
+export MOZ_ENABLE_WAYLAND=1
