@@ -8,11 +8,13 @@
 # =================================================
 
 # mkdir -p  "${HOME}/.config/zathura"
-mkdir -p  "${HOME}/.config/dunst"
+# mkdir -p  "${HOME}/.config/dunst"
+mkdir -p  "${HOME}/.config/wezterm/colors"
 # mkdir -p  "${HOME}/.config/Code/User"
 
 # ln -sf "${HOME}/.cache/wal/zathurarc"          "${HOME}/.config/zathura/zathurarc"
-ln -sf "${HOME}/.cache/wal/dunstrc"            "${HOME}/.config/dunst/dunstrc"
+# ln -sf "${HOME}/.cache/wal/dunstrc"            "${HOME}/.config/dunst/dunstrc"
+ln -sf "${HOME}/.cache/wal/wezterm-wal.toml"            "${HOME}/.config/wezterm/colors/wal.toml"
 # ln -sf "${HOME}/.cache/wal/vscode.json"        "${HOME}/.config/Code/User/settings.json"
 # ln -sf "${HOME}/.cache/wal/colors-discord.css" "${HOME}/.config/discocss/colors-discord.css"
 
@@ -20,15 +22,15 @@ ln -sf "${HOME}/.cache/wal/dunstrc"            "${HOME}/.config/dunst/dunstrc"
 # $HOME/.cache/wal/wallpaper.sh
 
 # restart programs
-pkill dunst; dunst   & # dunst
+# pkill dunst; dunst   & # dunst
 # bspc wm -r             # bspwm
 # eww reload             # eww
 # echo 'awesome.restart()' | awesome-client &> /dev/null
 
 # qutebrowser
-if pgrep -x "qutebrowser" > /dev/null; then
-	qutebrowser :restart &> /dev/null
-fi
+# if pgrep -x "qutebrowser" > /dev/null; then
+# 	qutebrowser :restart &> /dev/null
+# fi
 
 # rebuild colors-everything stylus
 # ln -sf "${HOME}/.cache/wal/colors-everything-css.styl" "${HOME}/dev/solarized-everything-css/themes/wal/colors.styl"

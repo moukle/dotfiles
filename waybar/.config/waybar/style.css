@@ -10,7 +10,7 @@
 }
 
 window#waybar {
-    color: @color5;
+    color: @color8;
     background-color: @background;
     transition-property: background-color;
     transition-duration: 0.5s;
@@ -32,11 +32,11 @@ window#waybar.hidden {
     margin: 6px 3px;
     border-radius: 4px;
     /* background-color: #1e1e2e; */
-    color: @color4;
+    color: @color7;
 }
 
 #workspaces button.active {
-    color: @color7;
+    color: @color0;
     /* background-color: #cdd6f4; */
 }
 
