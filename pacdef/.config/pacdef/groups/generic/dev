@@ -1,0 +1,6 @@
+[arch]
+julia
+docker
+docker-buildx
+docker-compose
+python-poetry

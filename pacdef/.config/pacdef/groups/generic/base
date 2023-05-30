@@ -1,0 +1,17 @@
+[arch]
+bat
+chaotic-aur/neovim-nightly-bin
+direnv
+exa
+fff
+git
+imwheel
+stow
+starship
+tmux
+wget
+which
+xdg-ninja
+yay
+zsh
+zplug
