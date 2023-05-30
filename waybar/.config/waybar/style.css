@@ -145,6 +145,7 @@ window#waybar.hidden {
 
 tooltip {
     font-family: "Inter", sans-serif;
+    font-size: 12px;
     border-radius: 8px;
     padding: 20px;
     margin: 30px;
@@ -152,5 +153,6 @@ tooltip {
 
 tooltip label {
     font-family: "Inter", sans-serif;
+    font-size: 12px;
     padding: 20px;
 }

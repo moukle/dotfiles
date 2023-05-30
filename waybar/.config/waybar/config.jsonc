@@ -9,11 +9,7 @@
         "height" : 34,
         // "width" : 2000,
         "modules-left" : [
-            // "custom/logo",
             "wlr/workspaces",
-            // "custom/swallow",
-            // "custom/weather",
-            // "custom/todo",
             "tray",
         ],
 
@@ -59,7 +55,8 @@
 
         "custom/power" : {
             "tooltip" : false,
-            "on-click": "swaynag -t warning -m 'Power Menu Options' -b 'Logout' 'swaymsg exit' -b 'Lock' 'swaylock -fF' -b 'Sleep' 'swaymsg exec systemctl suspend' -b 'Shutdown' 'systemctl shutdown' -b 'Reboot' 'reboot'",
+            "on-click": ". $HOME/.config/rofi/powermenu/type-2/powermenu.sh",
+            // "on-click": "swaynag -t warning -m 'Power Menu Options' -b 'Logout' 'swaymsg exit' -b 'Lock' 'swaylock -fF' -b 'Sleep' 'swaymsg exec systemctl suspend' -b 'Shutdown' 'systemctl shutdown' -b 'Reboot' 'reboot'",
             "format" : "󰤆",
         },
 

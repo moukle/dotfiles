@@ -4,4 +4,11 @@
 	bg-alt2: {color0};
 	fg:     {foreground};
 	fg-alt: {color6};
+
+    background: {color0};
+    background-alt: {color8};
+    foreground: {foreground};
+    selected: {color5};
+    active: {color15};
+    urgent: {color1};
 }}

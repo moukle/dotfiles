@@ -1,5 +1,8 @@
 #!/bin/fish
 
+set BEFORE $1
+set AFTER  $2
+
 for f in $(find . -type f -name "*.svg")
-    sed -i "s/#999999/#ffffff/" $f
+    sed -i "s/$BEFORE/$AFTER/" $f
 end
