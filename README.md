@@ -1,6 +1,8 @@
 # .files
 *making the adventure into the Wayland 🧙*
 
+![image](https://github.com/moukle/dotfiles/assets/4622472/bed68302-e6e9-4694-96f9-83849517b3aa)
+
 ## Info
 
 |   |   |
