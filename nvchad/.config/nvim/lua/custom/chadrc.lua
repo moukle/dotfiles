@@ -2,8 +2,8 @@
 local M = {}
 
 M.ui = {
-  theme = "everforest_light",
-  theme_toggle = { "everforest_light", "melange" },
+  theme = "ayu_light",
+  theme_toggle = { "ayu_light", "melange" },
   statusline = { theme = "minimal" },
 }
 

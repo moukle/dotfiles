@@ -1,158 +1,129 @@
 @import url("/home/moritz/.cache/wal/colors-waybar.css");
 
 * {
-    border: none;
-    border-radius: 0;
-    min-height: 0;
-    font-family: Material Design Icons, SF Pro Rounded;
-    font-size: 1.15em;
-    font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  min-height: 0;
+  font-family: Inter;
+  font-size: 1.05em;
+  font-weight: 500;
 }
 
 window#waybar {
-    color: @color8;
-    background-color: @background;
-    transition-property: background-color;
-    transition-duration: 0.5s;
+  background-color: transparent;
+}
+
+window#waybar > box {
+  margin: 10px;
 }
 
 window#waybar.hidden {
-    opacity: 0.5;
+  opacity: 0.5;
 }
 
+/* Tooltips */
+
+tooltip {
+  background: @background;
+  padding: 0px;
+  border: 2px solid @color0;
+  border-radius: 8px;
+  margin: 12px;
+}
+
+tooltip label {
+  background: @background;
+  text-shadow: none;
+  color: @foreground;
+  font-weight: bold;
+  padding: 0px 5px;
+}
+
+/* modules */
+
+.modules-left,
+/* .modules-center, */
+.modules-right {
+  /* padding: 2px; */
+  background-color: @background;
+  color: @color8;
+  box-shadow: 1 1 3 1px rgba(0,0,0,0.15);
+}
+
+.modules-right {
+  /* background-color: @color3; */
+  /* color: @background; */
+}
+
+/*  center */
+
 #workspaces {
-    background-color: transparent;
+  /* background-color: @background; */
+  /* color: @color1; */
 }
 
 #workspaces button {
-    all: initial; /* Remove GTK theme values (waybar #1351) */
-    min-width: 0; /* Fix weird spacing in materia (waybar #450) */
-    box-shadow: inset 0 -3px transparent; /* Use box-shadow instead of border so the text isn't offset */
-    padding: 6px 18px;
-    margin: 6px 3px;
-    border-radius: 4px;
-    /* background-color: #1e1e2e; */
-    color: @color7;
+  min-width: 20px;
+  padding: 6px 18px;
+  color: @color7;
 }
 
 #workspaces button.active {
-    color: @color0;
-    /* background-color: #cdd6f4; */
+  background-color: @color3;
+  color: @background;
 }
 
 #workspaces button:hover {
-    box-shadow: inherit;
-    text-shadow: inherit;
-    color: @color7;
-    background-color: @color8;
+  background-color: @color7;
+  color: @background;
 }
 
 #workspaces button.urgent {
-    color: @color1;
+  background-color: @color1;
+  color: @background;
 }
 
-#custom-weather,
-#custom-swallow,
+/* left side */
+#clock {
+  padding: 10px 20px;
+  background-color: @color3;
+  color: @background;
+}
+
+#clock.date {
+  background: @background;
+  color: @color7;
+}
+
+/* right side */
 #custom-power,
-#custom-todo,
-#custom-weather,
 #battery,
 #backlight,
 #pulseaudio,
-#network,
-#clock,
+#network {
+  padding: 6px 15px;
+  /* background: @color1; */
+}
+
 #tray {
-    border-radius: 4px;
-    margin: 6px 3px;
-    padding: 6px 12px;
-    /* background-color: @color8; */
-}
-
-#custom-power {
-    margin-right: 6px;
-}
-
-#custom-logo {
-    margin: 6px 3px 6px 9px;
-    padding: 6px 18px;
-    background-image: url("${Logo}");
-    background-size: 70%;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-#custom-weather,
-#custom-todo {
-    /* color: #cdd6f4; */
-    /* background-color: #1e1e2e; */
-}
-
-#custom-swallow {
-    /* color: #cdd6f4; */
-}
-
-#battery {
-    /* background-color: #f38ba8; */
+  padding: 6px 15px;
+  background: @color7;
 }
 
 @keyframes blink {
-    to {
-        background-color: @color8;
-        /* color: #181825; */
-    }
+to {
+  background-color: @color8;
+}
 }
 
 .warning,
 .critical,
 .urgent,
 #battery.critical:not(.charging) {
-    background-color: @color1;
-    /* color: #181825; */
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-#backlight {
-    /* background-color: #fab387; */
-}
-
-#pulseaudio.microphone {
-    /* background-color: #f9e2af; */
-}
-
-#pulseaudio {
-    /* background-color: #a6e3a1; */
-}
-
-#network {
-    /* background-color: #94e2d5; */
-}
-
-#clock.date {
-    /* background-color: #89b4fa; */
-}
-
-#clock {
-    /* background-color: #cba6f7; */
-}
-
-#custom-power {
-    /* background-color: #f2cdcd; */
-}
-
-tooltip {
-    font-family: "Inter", sans-serif;
-    font-size: 12px;
-    border-radius: 8px;
-    padding: 20px;
-    margin: 30px;
-}
-
-tooltip label {
-    font-family: "Inter", sans-serif;
-    font-size: 12px;
-    padding: 20px;
+  background-color: @color1;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
