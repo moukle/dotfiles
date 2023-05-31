@@ -1,6 +1,8 @@
 source $HOME/.profile
 source $HOME/.cache/wal/colors.sh
 
+# FZF colors
+
 # xdg-ninja
 export ZPLUG_HOME="$XDG_DATA_HOME/zplug"
 export HISTFILE="$XDG_STATE_HOME"/zsh/history
@@ -48,3 +50,11 @@ f() {
 
 # fzf
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.zsh ] && source "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.zsh
+
+export FZF_DEFAULT_OPTS="
+    $FZF_DEFAULT_OPTS
+    --multi
+    --height=80% --reverse --padding=1
+    --color fg:$color7,bg:$background,hl:1,fg+:$foreground,bg+:0,hl+:0
+    --color info:7,prompt:7,spinner:0,pointer:$background,marker:7
+"
