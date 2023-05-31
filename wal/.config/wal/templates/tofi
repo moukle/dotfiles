@@ -1,0 +1,38 @@
+font = Inter
+font-size = 18
+font-variations = "wght 500"
+
+horizontal = true
+anchor = bottom-left
+margin-left = 0
+width = 100%
+height = 70
+
+outline-width = 0
+border-width = 0
+min-input-width = 0
+result-spacing = 25
+
+hide-input = true
+
+padding-top = 20
+padding-bottom = 0
+padding-left = 0
+padding-right = 0
+
+prompt-text = ""
+prompt-padding = 0
+background-color = {background}
+text-color = {foreground}
+
+default-result-background = {color0}
+default-result-background-padding = 5, 10
+default-result-background-corner-radius = 12
+
+selection-color = {background}
+selection-background = {color3}
+selection-background-padding = 5, 10
+selection-background-corner-radius = 12
+selection-match-color = {color7}
+
+clip-to-padding = false

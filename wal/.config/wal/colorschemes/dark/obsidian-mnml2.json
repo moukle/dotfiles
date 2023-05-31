@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/moritz/Media/Walls/pexels-francesco-ungaro-9206100.jpg",
+
+    "special": {
+        "background": "#272727",
+        "foreground": "#d3d3d3",
+        "cursor": "#959595"
+    },
+    "colors": {
+        "color0": "#151515",
+        "color1": "#db6057",
+        "color2": "#38b27d",
+        "color3": "#4dadd5",
+        "color4": "#515151",
+        "color5": "#7b7b7b",
+        "color6": "#959595",
+        "color7": "#d3d3d3",
+        "color8": "#353535",
+        "color9": "#ff675c",
+        "color10": "#38d687",
+        "color11": "#63a0bb",
+        "color12": "#606060",
+        "color13": "#888888",
+        "color14": "#acacac",
+        "color15": "#e9e9e9"
+    }
+}

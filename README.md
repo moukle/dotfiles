@@ -1,31 +1,64 @@
-# Dotfiles - my personal configuration files
+# .files
+*making the adventure into the Wayland 🧙*
 
-<img src=".screens/dark.png" width="100%" />
-<!-- <img src=".screens/light.png" width="100%" /> --->
+![image](https://github.com/moukle/dotfiles/assets/4622472/bed68302-e6e9-4694-96f9-83849517b3aa)
 
-## Tools
+## Info
 
-|                    |               |
-| -                  | -             |
-| **Shell:**         | fish + fisher |
-| **WM:**            | bspwm + eww   |
-| **Editor:**        | nvim          |
-| **Terminal:**      | kitty         |
-| **Launcher:**      | rofi          |
-| **Browser:**       | qutebrowser   |
-| **Notifications:** | dunst         |
-| **Icontheme:**     | worst         |
+|   |   |
+| - | - |
+| 💻 Shell             | zsh + [zap](https://github.com/zap-zsh/zap) + [starship](https://github.com/starship/starship)             |
+| 🖥️ WM                | [hyprland](https://github.com/hyprwm/Hyprland) + [waybar](https://github.com/Alexays/Waybar)               |
+| ✍️  Editor            | [NvChad](https://github.com/NvChad/NvChad)                                                                 |
+| 🐱 Terminal          | [kitty](https://github.com/kovidgoyal/kitty)                                                               |
+| 🚀 Launcher          | [tofi](https://github.com/philj56/tofi)                                                                    |
+| 🌐  Browser           | chromium + [qutebrowser](https://github.com/qutebrowser/qutebrowser)                                       |
+| 📣 Notifications     | [dunst](https://github.com/dunst-project/dunst)                                                            |
+| 🌈 Color Automation  | [wal](https://github.com/dylanaraps/pywal)                                                                 |
+| 📦 Pacman Manager    | [pacdef](https://github.com/steven-omaha/pacdef)                                                           |
+| 📂 File Manager      | [fff](https://github.com/dylanaraps/fff)                                                                   |
+| 🖊️ Font              | [Fantasque Sans Nerd](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FantasqueSansMono) |
+| 🛠️ Other             | [fzf](https://github.com/junegunn/fzf)                                                                     |
+| 🖼️ Wallpaper         | by [Tom Pumford](https://unsplash.com/photos/FB_oz9I1Jx8)                                                  |
 
+## Installation
+My dotfiles are managed with [GNU Stow](https://www.gnu.org/software/stow/), a symlink farm manager. To set up the configurations, follow these steps:
 
-## Install
+1. Clone this repository:
+   ```shell
+   git clone https://github.com/moukle/dotfiles.git
+2. Change into the dotfiles directory:
+    ```shell
+    cd dotfiles
+    ```
+3. Symlink the desired configuration using Stow. For example, to symlink the hyprland config:
+    ```shell
+    stow hyprland
+    ```
+4. Repeat the above step for each configuration you want to set up.
 
-Managed with [GNU Stow][gnu-stow].
+## PyWal
+I use wal to generate and change color-schemes on the fly.
+In the `wal/.config/wal/templates` folder you find configs for:
+- dunst
+- tofi
+- zathura
+- qutebrowser
+- ...
 
-To symlink for example `bspwm` config simply call:
+Simply change whole setup colors by
+```sh
+walr.sh <theme> <light>
 
-``` sh
-stow bspwm
+# example
+walr.sh ayu -l
 ```
 
+## Inspiration
+- [hal-ullr](https://www.deviantart.com/hal-ullr)
+- [mauforonda](https://github.com/mauforonda/dotfiles)
+- [zzzeyez](https://github.com/zzzeyez/dots)
+- ...
 
-[gnu-stow]: https://www.gnu.org/software/stow/
+# License
+This project is licensed under the MIT License.
