@@ -11,7 +11,7 @@
   // "width" : 2000,
         "modules-left" : [
           "clock#date",
-          "clock",
+          "clock"
         ],
 
         "modules-center" : [
@@ -31,47 +31,16 @@
         "wlr/workspaces" : {
           "on-click" : "activate",
           "format" : "{name}",
-          // "format" : "{icon}",
           "all-outputs" : true,
           "disable-scroll" : true,
           "active-only" : false,
-          "sort-by-number": true,
-          "format-icons": {
-            "default": "",
-            "1": "",
-            "2": "",
-            "3": "",
-            "4": "",
-            "5": "",
-            "active": "",
-            "urgent": ""
-          }
-        },
-
-        "custom/logo" : {
-          "tooltip" : false,
-          "format" : " "
-        },
-
-        "custom/weather" : {
-          "tooltip" : true,
-          "format" : "{}",
-          "interval" : 30,
-          "exec" : "$HOME/.config/waybar/scripts/waybar-wttr.py",
-          "return-type" : "json"
-        },
-
-        "custom/swallow" : {
-          "tooltip" : false,
-          "on-click" : "$HOME/.config/waybar/scripts/waybar-swallow.sh",
-          "format" : "󰊰"
+          "sort-by-number": true
         },
 
         "custom/power" : {
           "tooltip" : false,
           "on-click": ". $HOME/.config/rofi/powermenu/type-2/powermenu.sh",
-            // "on-click": "swaynag -t warning -m 'Power Menu Options' -b 'Logout' 'swaymsg exit' -b 'Lock' 'swaylock -fF' -b 'Sleep' 'swaymsg exec systemctl suspend' -b 'Shutdown' 'systemctl shutdown' -b 'Reboot' 'reboot'",
-            "format" : "󰤆"
+          "format" : "󰤆"
         },
 
         "tray" : {
@@ -80,14 +49,11 @@
 
         "clock" : {
           "tooltip" : true,
-          "format" : "{:%H:%M}",
-          // "tooltip-format" : "
-          // <big>{:%Y %B}</big>
-          // <tt><small>{calendar}</small></tt>"
+          "format" : "{:%H:%M}"
         },
 
         "clock#date" : {
-          "format" : "{:%a %d %b}",
+          "format" : "{:%A, %dth %b}",
           "tooltip-format" : "
           <big>{:%Y %B}</big>
           <tt><small>{calendar}</small></tt>"
@@ -98,31 +64,28 @@
           "format" : "{icon} {percent}%",
           "format-icons" : ["󰋙","󰫃","󰫄","󰫅","󰫆","󰫇","󰫈"],
           "on-scroll-up" : "brightnessctl s 1%-",
-          "on-scroll-down" : "brightnessctl s +1%",
+          "on-scroll-down" : "brightnessctl s +1%"
         },
 
         "battery" : {
           "states" : {
             "warning" : 30,
-            "critical" : 15,
+            "critical" : 15
           },
           "format" : "{icon} {capacity}%",
           "tooltip-format" : "{timeTo}, {capacity}%",
           "format-charging" : "󰂄 {capacity}%",
           "format-plugged" : "󰚥 {capacity}%",
           "format-alt" : "{time} {icon}",
-          "format-icons" : ["󰂃", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+          "format-icons" : ["󰂃", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
 
         },
 
         "network" : {
-            // "format-wifi" : "󰖩 {essid}",
             "format-wifi" : "󰖩 {essid}",
-            // "format": "{icon}"
-            // "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
             "format-ethernet" : "󰈀",
-            // "format-alt" : "󱛇",
-            // "format-disconnected" : "󰖪",
+            "format-alt" : "󱛇",
+            "format-disconnected" : "󰖪",
             "tooltip-format" : "
             󰅃 {bandwidthUpBytes} 󰅀 {bandwidthDownBytes}
             {ipaddr}/{ifname} via {gwaddr} ({signalStrength}%)",
@@ -132,11 +95,11 @@
           "tooltip" : true,
           "format" : "{icon}",
           "format-muted" : "󰖁",
-          "format-icons" : {"default" : ["󰕿", "󰖀", "󰕾"],},
+          "format-icons" : {"default" : ["󰕿", "󰖀", "󰕾"]},
           "tooltip-format" : "{desc}, {volume}%",
           "on-click" : "pamixer -t",
-          "on-scroll-up" : "pamixer -d 5",
-          "on-scroll-down" : "pamixer -i 5",
+          "on-scroll-up" : "pamixer -i 5",
+          "on-scroll-down" : "pamixer -d 5",
         },
 
         "pulseaudio#microphone" : {

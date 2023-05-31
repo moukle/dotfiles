@@ -34,9 +34,12 @@ alias v="nvim"
 alias c="bat --plain --theme='base16-256'"
 alias cp="advcp -gR"
 alias mv="advmv -g"
-alias mkdir="mkdir -p"
 
 # funcs
+mc () {
+  mkdir -p $1 && cd $1
+}
+
 f() {
     fff "$@"
     cd "$(cat "${XDG_CACHE_HOME:=${HOME}/.cache}/fff/.fff_d")"
