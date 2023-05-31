@@ -3,7 +3,7 @@ font-size = 18
 font-variations = "wght 500"
 
 horizontal = true
-anchor = top-left
+anchor = bottom-left
 margin-left = 0
 width = 100%
 height = 70
