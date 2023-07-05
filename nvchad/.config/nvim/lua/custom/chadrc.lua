@@ -3,6 +3,7 @@ local M = {}
 
 M.ui = {
   theme = "ayu_light",
+  -- theme_toggle = { "ayu_light", "melange" },
   theme_toggle = { "ayu_light", "melange" },
   statusline = { theme = "minimal" },
 }

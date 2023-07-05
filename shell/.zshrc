@@ -55,6 +55,6 @@ export FZF_DEFAULT_OPTS="
     $FZF_DEFAULT_OPTS
     --multi
     --height=80% --reverse --padding=1
-    --color fg:$color7,bg:$background,hl:1,fg+:$foreground,bg+:0,hl+:0
+    --color fg:$foreground,bg:$background,hl:1,fg+:$foreground,bg+:0,hl+:15
     --color info:7,prompt:7,spinner:0,pointer:$background,marker:7
 "
