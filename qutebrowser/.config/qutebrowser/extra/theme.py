@@ -1,6 +1,10 @@
 import subprocess
 import sys
 
+from qutebrowser.config.config import ConfigContainer  # noqa: F401
+
+c: ConfigContainer = c  # noqa: F821 pylint: disable=E0602,C0103
+
 ## Layout
 # tabs left and only favicons
 c.tabs.padding = {"bottom": 24, "left": 20, "right": 23, "top": 23}
@@ -9,7 +13,7 @@ c.tabs.show = "multiple"
 # c.tabs.title.format = "{index}"
 # c.tabs.title.format = ""
 c.tabs.width = 70
-c.tabs.favicons.scale = 1.5
+c.tabs.favicons.scale = 1.0
 c.tabs.indicator.width = 0
 c.tabs.indicator.padding = {"bottom": 0, "left": 0, "right": 8, "top": 0}
 
@@ -18,10 +22,9 @@ c.tabs.background = True
 c.statusbar.padding = {"bottom": 15, "left": 3, "right": 3, "top": 15}
 c.statusbar.show = "in-mode"
 
-
 ## Fonts
 c.fonts.default_family = "Cascadia Code"
-c.fonts.default_size = "15pt"
+c.fonts.default_size = "10pt"
 
 
 ## Colors
@@ -57,6 +60,16 @@ def adjust(hexstr, scalefactor):
 
 
 xresources = read_xresources("*")
+melon = {
+        "bg_light"   : "#445967",
+        "bg_dark"    : "#3C4F5B",
+        "blue_light" : "#72A7D3",
+        "blue_dark"  : "#5394C9",
+        "cyan"       : "#37BF8D",
+        "white"      : "#ffffff",
+        "gray"       : "#CCCCCC",
+        "red"        : "#d37277",
+        }
 
 c.colors.completion.fg = xresources["*.foreground"]
 c.colors.completion.category.bg = xresources["*.background"]
@@ -135,18 +148,34 @@ c.colors.statusbar.url.warn.fg = xresources["*.color3"]
 # c.colors.tabs.selected.odd.bg  = adjust(xresources['*.background'], 1.35)
 # c.colors.tabs.selected.odd.fg  = xresources['*.color3']
 
-c.colors.tabs.bar.bg = xresources["*.background"]
+c.colors.tabs.bar.bg = melon["blue_dark"]
 
-c.colors.tabs.indicator.error = xresources["*.color1"]
-c.colors.tabs.indicator.start = xresources["*.color15"]
-c.colors.tabs.indicator.stop = xresources["*.color6"]
+c.colors.tabs.indicator.error = melon["red"]
+c.colors.tabs.indicator.start = melon["white"]
+c.colors.tabs.indicator.stop =  melon["gray"]
 
-c.colors.tabs.even.bg = xresources["*.background"]
-c.colors.tabs.even.fg = xresources["*.foreground"]
-c.colors.tabs.odd.bg = xresources["*.background"]
-c.colors.tabs.odd.fg = xresources["*.foreground"]
+c.colors.tabs.even.bg = melon["blue_dark"]
+c.colors.tabs.even.fg = melon["blue_dark"]
+c.colors.tabs.odd.bg  = melon["blue_dark"]
+c.colors.tabs.odd.fg  = melon["blue_dark"]
 
-c.colors.tabs.selected.even.bg = xresources["*.color0"]
-c.colors.tabs.selected.even.fg = xresources["*.foreground"]
-c.colors.tabs.selected.odd.bg = xresources["*.color0"]
-c.colors.tabs.selected.odd.fg = xresources["*.foreground"]
+c.colors.tabs.selected.even.bg = melon["blue_light"]
+c.colors.tabs.selected.even.fg = melon["blue_light"]
+c.colors.tabs.selected.odd.bg  = melon["blue_light"]
+c.colors.tabs.selected.odd.fg  = melon["blue_light"]
+
+# c.colors.tabs.bar.bg = xresources["*.background"]
+#
+# c.colors.tabs.indicator.error = xresources["*.color1"]
+# c.colors.tabs.indicator.start = xresources["*.color15"]
+# c.colors.tabs.indicator.stop = xresources["*.color6"]
+#
+# c.colors.tabs.even.bg = xresources["*.background"]
+# c.colors.tabs.even.fg = xresources["*.foreground"]
+# c.colors.tabs.odd.bg = xresources["*.background"]
+# c.colors.tabs.odd.fg = xresources["*.foreground"]
+#
+# c.colors.tabs.selected.even.bg = xresources["*.color0"]
+# c.colors.tabs.selected.even.fg = xresources["*.foreground"]
+# c.colors.tabs.selected.odd.bg = xresources["*.color0"]
+# c.colors.tabs.selected.odd.fg = xresources["*.foreground"]

@@ -1,6 +1,11 @@
 import glob
 import os
 
+from qutebrowser.config.configfiles import ConfigAPI  # noqa: F401
+from qutebrowser.config.config import ConfigContainer  # noqa: F401
+
+config: ConfigAPI = config  # noqa: F821 pylint: disable=E0602,C0103
+c: ConfigContainer = c  # noqa: F821 pylint: disable=E0602,C0103
 
 ## Load settings applied with :set
 config.load_autoconfig()
@@ -66,5 +71,6 @@ c.tabs.indicator.padding = {"bottom": 0, "left": 0, "right": 8, "top": 0}
 c.statusbar.padding      = {"bottom": 15, "left": 3, "right": 3, "top": 15}
 
 ## Load theme
-for path in glob.glob(os.path.expanduser('~/.cache/wal/colors-qutebrowser.py')):
+# for path in glob.glob(os.path.expanduser('~/.cache/wal/colors-qutebrowser.py')):
+for path in glob.glob(os.path.expanduser('~/.config/qutebrowser/extra/theme.py')):
     config.source(path)

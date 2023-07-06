@@ -1,5 +1,6 @@
 # bin
 export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.local/bin/bspwm"
 export PATH="$PATH:$HOME/.config/emacs/bin"
 
 # XDG (xdg-ninja)

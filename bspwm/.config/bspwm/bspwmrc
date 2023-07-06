@@ -1,0 +1,90 @@
+#! /bin/sh
+
+. ~/.profile
+. ~/.cache/wal/colors.sh
+
+##########
+# wrappers
+##########
+c() { bspc config "$@";  }
+R() { bspc rule -a "$@"; }
+s() { pkill -x "$1" -9; { sleep 0.1; "$@" & }; }
+
+#######
+# bspwm
+#######
+# monitors
+# m_primary = $(xrandr | grep primary | awk '{print $1}')
+# for m in $(bspc query -M --names); do
+#     bspc monitor $m -d 1 2 3 4 5
+# done
+# bspc monitor $m_primary -d 1 2 3 4 5 6 7 8 9 0
+
+bspc monitor DP-2 -d 1 2 3 4 5 6 7 8 9 0
+bspc monitor DP-0 -d a s d f g
+
+c remove_disabled_monitors  true
+c remove_unplugged_monitors true
+
+# style
+for dir in "left" "right" "top" "bottom"; do
+    c ${dir}_padding 30
+done
+c -m DP-2 top_padding 80
+
+c window_gap            0
+c single_monocle        false
+c borderless_monocle    false
+# c border_width          5
+c focused_border_color  $color0
+c normal_border_color   $color0
+c active_border_color   $color0
+c presel_feedback_color $color0
+
+# c ignore_ewmh_fullscreen enter
+# c ignore_ewmh_fullscreen all
+# c ignore_ewmh_focus true
+
+# mouse
+c click_to_focus        true
+c focus_follows_pointer false
+c pointer_motion_interval  2
+
+#######
+# rules
+#######
+bspc rule --remove '*' # removed all / default / prev rules
+
+R qutebrowser   desktop=1
+R firefox       desktop=1
+R discord       desktop=7  follow=off focus=off
+R Signal        state=tiled desktop=7
+R Zathura       state=tiled
+R Pinentry      state=floating
+R Emacs         state=tiled
+R "gaime_server (DEBUG)"    hidden=on
+# R zoom          desktop=^5  state=tiled
+# R DDNet         desktop=game  follow=on  state=fullscreen
+
+# PoE
+# R "steam_app_238960" desktop=game
+# R "pobfrontend"      monitor=DP-0 desktop=0
+
+# c external_rules_command "$HOME/.config/bspwm/external_rules" # Spotify
+
+
+###########
+# autostart
+###########
+# s picom --config $HOME/.config/picom/picom.conf # compositor
+s sxhkd -c $HOME/.config/sxhkd/sxhkdrc          # hotkeys
+s dunst --config $HOME/.config/dunst/dunstrc    # notifications
+s borders.sh ${background:1} ${color7:1} ${background:1}
+s bar.sh
+
+nitrogen --restore & # wallpaper
+# $HOME/.cache/wal/wallpaper.sh
+# eww open bar         # bar
+wmname LG3D          # java
+
+# vim: foldmethod=marker foldlevel=0 foldenable foldmarker={{{,}}} ft=sh
