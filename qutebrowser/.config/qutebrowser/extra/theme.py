@@ -60,6 +60,7 @@ def adjust(hexstr, scalefactor):
 
 
 xresources = read_xresources("*")
+print(xresources)
 melon = {
         "bg_light"   : "#445967",
         "bg_dark"    : "#3C4F5B",

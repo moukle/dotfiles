@@ -9,13 +9,13 @@ super + ctrl + s
 super + Return
 	kitty
 
-# rofi
-# super + d
-#     rofi -show file-browser-extended -file-browser-depth 2
-
+# program launcher
 super + d
 	rofi -show drun
-	# $HOME/.config/rofi/bin/launcher_colorful
+
+# password manager
+super + p
+  rofi-rbw
 
 # default sink
 super + v

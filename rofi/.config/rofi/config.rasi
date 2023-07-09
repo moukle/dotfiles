@@ -1,0 +1,135 @@
+configuration {
+  icon-theme:       "Paper";
+  show-icons:       true;
+  cycle:            true;
+  disable-history:  false;
+  /* monitor:          "-4"; */
+
+  /* Vim-esque C-j/C-k as up/down in rofi */
+  kb-accept-entry: "Return,Control+m,KP_Enter";
+  kb-row-down: "Down,Control+n,Control+j";
+  kb-remove-to-eol: "";
+  kb-row-up: "Up,Control+p,Control+k";
+}
+
+* {
+  text-font:      "Fira Sans 15";
+  text-font-mono: "Fira Code 13";
+  /* icon-font:      "Hurmit Nerd Font Mono 26"; */
+  icon-font:      "FontAwesome 20";
+
+  background-color: @bg;
+  text-color: @fg-list;
+  font: @text-font;
+  border-color: @bg-dark;
+}
+
+
+/**** Layout ****/
+window {
+  width:    1000px;
+  y-offset: -250px;
+  anchor:   north;
+  location: center;
+  border: 1px;
+  children: [ inputbar, message, listview ];
+}
+
+listview {
+  lines: 12;
+  fixed-height: false;
+  columns: 2;
+  scrollbar: true;
+  spacing: 1px;
+  margin: -2px 0 0;
+  border: 0;
+}
+
+message {
+    background-color: @bg-alt;
+    padding: 0.3em;
+    border: 0;
+}
+
+scrollbar {
+  handle-width: 1px;
+}
+inputbar {
+  children: [ textbox-icon, prompt, entry ];
+  border: 0 0 0;
+}
+textbox-icon, prompt {
+  padding: 11px;
+  expand: false;
+  border: 0 1px 0 0;
+  margin: 0 -2px 0 0;
+}
+textbox-icon {
+  padding: 7px 4px 0;
+}
+entry, element {
+  padding: 10px 13px;
+}
+textbox {
+    background-color: @bg-alt;
+    font: @text-font-mono;
+    margin: 20px;
+}
+
+
+/**** Looks ****/
+scrollbar {
+  background-color: @bg-alt2;
+  handle-color: @fg;
+  border-color: @bg-alt;
+}
+listview, inputbar {
+  background-color: @bg-alt;
+}
+textbox-icon, prompt, entry {
+  text-color: @fg;
+}
+prompt, entry {
+  background-color: @bg-alt;
+}
+textbox-icon, prompt {
+  background-color: @bg-alt;
+}
+prompt {
+  background-color: @bg-alt;
+}
+textbox-icon {
+  font: @icon-font;
+}
+entry {
+  /* font: @text-font-mono; */
+  text-color: @fg;
+}
+
+element {
+  background-color: @bg;
+  text-color: @fg;
+}
+element normal.normal {
+    background-color: @bg;
+    text-color: @fg;
+}
+
+element alternate.normal {
+    background-color: @bg;
+    text-color: @fg;
+}
+element selected {
+  background-color: @bg-alt2;
+  text-color: @fg;
+}
+
+textbox-icon {
+  str: "  ";
+}
+
+prompt {
+  enabled: false;
+}
+
+@import "~/.cache/wal/colors-rofi.rasi"

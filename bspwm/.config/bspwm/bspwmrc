@@ -48,7 +48,7 @@ c presel_feedback_color $color0
 # mouse
 c click_to_focus        true
 c focus_follows_pointer false
-c pointer_motion_interval  2
+c pointer_motion_interval  40
 
 #######
 # rules
