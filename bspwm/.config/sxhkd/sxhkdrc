@@ -126,7 +126,7 @@ super + ctrl + t; s
 # ------------------------------
 # focus next monitor
 super + {_,shift} + x
-	bspc {monitor -f, node -m} next
+	bspc {monitor -f, node -m} next && cursor.sh
 
 # send node to desktop on current monitor index
 super + {_,shift} + {1-9,0}
@@ -161,7 +161,7 @@ super + {Left,Down,Up,Right}
 
 # hide current node, or restore a queried hidden node
 super + a
-	bspc node (bspc query -N -d -n .hidden | head -n 1) -g hidden
+	bspc node $(bspc query -N -d -n .hidden | head -n 1) -g hidden
 
 
 # ------------------------------

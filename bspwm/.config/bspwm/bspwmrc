@@ -32,7 +32,7 @@ for dir in "left" "right" "top" "bottom"; do
 done
 c -m DP-2 top_padding 80
 
-c window_gap            0
+c window_gap            -7
 c single_monocle        false
 c borderless_monocle    false
 # c border_width          5
@@ -79,7 +79,9 @@ R "gaime_server (DEBUG)"    hidden=on
 # s picom --config $HOME/.config/picom/picom.conf # compositor
 s sxhkd -c $HOME/.config/sxhkd/sxhkdrc          # hotkeys
 s dunst --config $HOME/.config/dunst/dunstrc    # notifications
-s borders.sh ${background:1} ${color7:1} ${background:1}
+# s borders.sh ${background:1} ${color7:1} ${background:1}
+# s borders.sh ${background:1} 2EBC67 ${background:1}
+s borders.sh ${background:1} 528BFF ${background:1}
 s bar.sh
 
 nitrogen --restore & # wallpaper

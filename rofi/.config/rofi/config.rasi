@@ -18,10 +18,22 @@ configuration {
   /* icon-font:      "Hurmit Nerd Font Mono 26"; */
   icon-font:      "FontAwesome 20";
 
-  background-color: @bg;
-  text-color: @fg-list;
+
+  melon-green-light: #2EBC67;
+  melon-green-dark: #299E5C;
+
+  melon-bg-light: #445967;
+  melon-bg-dark: #3C4F5B;
+  melon-blue-light: #72A7D3;
+  melon-blue-dark: #5394C9;
+  melon-white: #ffffff;
+  melon-gray: #CCCCCC;
+  melon-red: #d37277;
+
+  background-color: @melon-bg-light;
+  text-color: @melon-white;
   font: @text-font;
-  border-color: @bg-dark;
+  border-color: @melon-bg-light;
 }
 
 
@@ -40,13 +52,13 @@ listview {
   fixed-height: false;
   columns: 2;
   scrollbar: true;
-  spacing: 1px;
+  spacing: 3px;
   margin: -2px 0 0;
   border: 0;
 }
 
 message {
-    background-color: @bg-alt;
+    background-color: @melon-bg-dark;
     padding: 0.3em;
     border: 0;
 }
@@ -65,13 +77,14 @@ textbox-icon, prompt {
   margin: 0 -2px 0 0;
 }
 textbox-icon {
-  padding: 7px 4px 0;
+  padding: 14px 8px 0;
 }
 entry, element {
-  padding: 10px 13px;
+  padding: 15px 13px;
 }
 textbox {
-    background-color: @bg-alt;
+    background-color: @melon-bg-dark;
+    text-color: @melon-gray;
     font: @text-font-mono;
     margin: 20px;
 }
@@ -84,44 +97,44 @@ scrollbar {
   border-color: @bg-alt;
 }
 listview, inputbar {
-  background-color: @bg-alt;
+  background-color: @melon-bg-dark;
 }
 textbox-icon, prompt, entry {
-  text-color: @fg;
+  text-color: @melon-white;
 }
 prompt, entry {
-  background-color: @bg-alt;
+  background-color: @melon-green-light;
 }
 textbox-icon, prompt {
-  background-color: @bg-alt;
+  background-color: @melon-green-dark;
 }
 prompt {
-  background-color: @bg-alt;
+  background-color: @melon-bg-dark;
 }
 textbox-icon {
   font: @icon-font;
 }
 entry {
   /* font: @text-font-mono; */
-  text-color: @fg;
+  text-color: @melon-white;
 }
 
 element {
-  background-color: @bg;
-  text-color: @fg;
+  /* background-color: @melon-bg-dark; */
+  /* text-color: @melon-gray; */
 }
 element normal.normal {
-    background-color: @bg;
-    text-color: @fg;
+    background-color: @melon-bg-light;
+    text-color: @melon-gray;
 }
 
 element alternate.normal {
-    background-color: @bg;
-    text-color: @fg;
+    background-color: @melon-bg-light;
+    text-color: @melon-gray;
 }
-element selected {
-  background-color: @bg-alt2;
-  text-color: @fg;
+element selected.normal {
+  background-color: @melon-blue-dark;
+  text-color: @melon-white;
 }
 
 textbox-icon {

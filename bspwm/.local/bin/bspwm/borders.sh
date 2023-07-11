@@ -18,9 +18,9 @@ targets() {
 		normal)  bspc query -N -n .\!focused.\!fullscreen
 	esac
 }
-bspc config border_width 12
+bspc config border_width 10
 
-draw() { chwb2 -I "$inner" -O "$outer" -i "2" -o "10" $*; }
+draw() { chwb2 -I "$inner" -O "$outer" -i "3" -o "7" $*; }
 
 # initial draw, and then subscribe to events
 { echo; bspc subscribe node_geometry node_focus; } |
