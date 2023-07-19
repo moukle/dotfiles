@@ -43,7 +43,11 @@ window {
   y-offset: -250px;
   anchor:   north;
   location: center;
-  border: 1px;
+  border: 0px;
+  border-radius: 10px;
+  padding: 0px;
+  margin: 0px;
+  background-color: @melon-bg-dark;
   children: [ inputbar, message, listview ];
 }
 

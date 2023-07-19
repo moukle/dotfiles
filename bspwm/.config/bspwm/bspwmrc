@@ -80,7 +80,6 @@ R "gaime_server (DEBUG)"    hidden=on
 s sxhkd -c $HOME/.config/sxhkd/sxhkdrc          # hotkeys
 s dunst --config $HOME/.config/dunst/dunstrc    # notifications
 # s borders.sh ${background:1} ${color7:1} ${background:1}
-# s borders.sh ${background:1} 2EBC67 ${background:1}
 s borders.sh ${background:1} 528BFF ${background:1}
 s bar.sh
 

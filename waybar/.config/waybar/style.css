@@ -1,20 +1,32 @@
 @import url("/home/moritz/.cache/wal/colors-waybar.css");
 
+@define-color melon_bg_light    #445967;
+@define-color melon_bg_dark     #3C4F5B;
+@define-color melon_bg_darker   #32424c;
+@define-color melon_blue_light  #72A7D3;
+@define-color melon_blue_dark   #5394C9;
+@define-color melon_cyan        #37BF8D;
+@define-color melon_white       #ffffff;
+@define-color melon_gray        #CCCCCC;
+@define-color melon_red         #d37277;
+
 * {
   border: none;
-  border-radius: 8px;
+  border-radius: 25px;
   /* min-height: 0; */
-  font-family: Inter;
-  font-size: 1.05em;
+  font-family: SF Pro Rounded;
+  font-size: 1.08em;
   font-weight: 500;
 }
 
 window#waybar {
-  background-color: transparent;
+  background-color: @melon_bg_light;
+  /* background-color: transparent; */
+  border-radius: 0px;
 }
 
 window#waybar > box {
-  margin: 10px;
+  margin: 8px;
 }
 
 window#waybar.hidden {
@@ -44,33 +56,29 @@ tooltip label {
 .modules-left,
 /* .modules-center, */
 .modules-right {
-  /* padding: 2px; */
-  background-color: @background;
-  color: @color8;
+  padding: 5px;
+  background-color: @melon_bg_darker;
+  color: @melon_gray;
   box-shadow: 1 1 3 1px rgba(0,0,0,0.15);
-}
-
-.modules-right {
-  /* background-color: @color3; */
-  /* color: @background; */
 }
 
 /*  center */
 
 #workspaces {
-  /* background-color: @background; */
+  background-color: @melon_blue_dark;
   /* color: @color1; */
 }
 
 #workspaces button {
   min-width: 20px;
   padding: 6px 18px;
-  color: @color7;
+  color: @melon_white;
+  background-color: @melon_blue_dark;
 }
 
 #workspaces button.active {
-  background-color: @color3;
-  color: @background;
+  background-color: @melon_blue_light;
+  color: @melon_white;
 }
 
 #workspaces button:hover {
@@ -85,16 +93,16 @@ tooltip label {
 
 /* left side */
 #clock {
-  border-radius: 0 8 8 0px;
+  /* border-radius: 0 8 8 0px; */
   padding: 10px 20px;
-  background-color: @color3;
+  /* background-color: @melon_cyan; */
   color: @background;
 }
 
 #clock.date {
-  border-radius: 8 0 0 8px;
-  background: @background;
-  color: @color7;
+  /* border-radius: 8 0 0 8px; */
+  background: @melon_bg_darker;
+  color: @melon_white;
 }
 
 /* right side */
@@ -108,8 +116,8 @@ tooltip label {
 }
 
 #tray {
-  padding: 6px 15px;
-  background: @color7;
+  padding: 16px 20px;
+  background: @melon_bg_darker;
 }
 
 @keyframes blink {
