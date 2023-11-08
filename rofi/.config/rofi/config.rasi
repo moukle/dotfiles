@@ -52,7 +52,7 @@ window {
 }
 
 listview {
-  lines: 12;
+  lines: 10;
   fixed-height: false;
   columns: 2;
   scrollbar: true;

@@ -25,7 +25,7 @@ export NIMBLE_DIR="$XDG_DATA_HOME/nimble"
 
 # programs
 export EDITOR="nvim"
-export BROWSER="firefox"
+export BROWSER="chromium"
 
 # vars
 export EXA_ICON_SPACING=2
@@ -44,6 +44,6 @@ export FFF_KEY_REFRESH="e"
 export MOZ_ENABLE_WAYLAND=1
 
 # python
-export PYENV_ROOT="$XDG_DATA_HOME"/pyenv
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+# export PYENV_ROOT="$XDG_DATA_HOME"/pyenv
+# command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"

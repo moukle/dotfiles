@@ -4,7 +4,7 @@
 
 help="Usage: $(basename $0) [region]"
 notification_icon=camera-photo-symbolic.symbolic
-notification_miliseconds=6000
+notification_miliseconds=3000
 notification_id=12
 
 directory=$HOME/Media/Screenshots/

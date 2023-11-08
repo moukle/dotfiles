@@ -51,4 +51,15 @@
 
 (package! doom-nano-modeline
   :recipe (:host github
-  :repo "ronisbr/doom-nano-modeline"))
+           :repo "ronisbr/doom-nano-modeline"))
+
+(package! typst-ts-mode
+        :recipe (:host sourcehut
+                 :repo "meow_king/typst-ts-mode"))
+
+(package! copilot
+  :recipe (:host github :repo "zerolfx/copilot.el" :files ("*.el" "dist")))
+
+;; (package! minizinc-mode
+;;   :recipe (:host github
+;;            :repo "m00nlight/minizinc-mode"))

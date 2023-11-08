@@ -2,10 +2,9 @@
 
 [global]
   origin = top-center
-  offset = 30x0
+  offset = 0x2
   scale = 1
   corner_radius = 10
-  icon_corner_radius = 10
   transparency = 0
   padding = 10
   text_icon_padding = 10
@@ -25,8 +24,14 @@
   vertical_alignment = center
 
   progress_bar = true
-  icon_path = /usr/share/icons/Adwaita/32x32/status/:/usr/share/icons/Adwaita/32x32/devices/:/usr/share/icons/Adwaita/32x32/legacy/:/usr/share/icons/Adwaita/32x32/emblems
+  progress_bar_height = 10
+  progress_bar_frame_width = 0
+  progress_bar_min_width = 125
+  progress_bar_max_width = 250
+  progress_bar_corner_radius = 4
+  icon_path = /usr/share/icons/Adwaita/32x32/status/:/usr/share/icons/Adwaita/32x32/devices/:/usr/share/icons/Adwaita/32x32/legacy/:/usr/share/icons/Adwaita/32x32/emblems:/usr/share/icons/Reversal-green/status/symbolic/
   max_icon_size = 32
+  icon_corner_radius = 5
 
   show_indicators = no
 # mouse_left_click = do_action

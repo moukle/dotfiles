@@ -24,10 +24,10 @@ export XDG_SESSION_TYPE=wayland
 export XDG_SESSION_DESKTOP=Hyprland
 
 # NVIDIA
-export LIBVA_DRIVER_NAME=nvidia
-export GBM_BACKEND=nvidia-drm
-export __GLX_VENDOR_LIBRARY=nvidia
-export WLR_NO_HARDWARE_CURSORS=1
+# export LIBVA_DRIVER_NAME=nvidia
+# export GBM_BACKEND=nvidia-drm
+# export __GLX_VENDOR_LIBRARY=nvidia
+# export WLR_NO_HARDWARE_CURSORS=1
 
 # Theming
 export XCURSOR_SIZE=48

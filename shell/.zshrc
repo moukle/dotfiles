@@ -1,8 +1,6 @@
 source $HOME/.profile
 source $HOME/.cache/wal/colors.sh
 
-# FZF colors
-
 # xdg-ninja
 export ZPLUG_HOME="$XDG_DATA_HOME/zplug"
 export HISTFILE="$XDG_STATE_HOME"/zsh/history
@@ -25,9 +23,6 @@ plug "zsh-users/zsh-autosuggestions"
 plug "zsh-users/zsh-history-substring-search"
 plug "zap-zsh/completions"
 
-# Starship prompt
-eval "$(starship init zsh)"
-
 # various
 setopt SHARE_HISTORY
 export SUDO_PROMPT=$'Password for ->\033[32;05;16m %u\033[0m  '
@@ -49,8 +44,6 @@ f() {
 }
 
 # fzf
-[ -f "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.zsh ] && source "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.zsh
-
 export FZF_DEFAULT_OPTS="
     $FZF_DEFAULT_OPTS
     --multi
@@ -58,3 +51,8 @@ export FZF_DEFAULT_OPTS="
     --color fg:$foreground,bg:$background,hl:1,fg+:$foreground,bg+:0,hl+:15
     --color info:7,prompt:7,spinner:0,pointer:$background,marker:7
 "
+
+# Starship prompt
+eval "$(starship init zsh)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

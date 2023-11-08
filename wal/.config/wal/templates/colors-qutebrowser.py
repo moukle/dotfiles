@@ -39,6 +39,16 @@ def adjust(hexstr, scalefactor):
 
     return "#%02x%02x%02x" % (r, g, b)
 
+
+melon_bg_light = "#445967"
+melon_bg_dark = "#3C4F5B"
+melon_blue_light = "#72A7D3"
+melon_blue_dark = "#5394C9"
+melon_cyan = "#37BF8D"
+melon_white = "#ffffff"
+melon_gray = "#CCCCCC"
+melon_red = "#d37277"
+
 c.colors.completion.fg = "{foreground}"
 c.colors.completion.category.bg = "{background}"
 c.colors.completion.category.border.bottom = "{color8}"
@@ -105,18 +115,34 @@ c.colors.statusbar.url.hover.fg = "{color6}"
 c.colors.statusbar.url.success.https.fg = adjust("{foreground}", 0.7)
 c.colors.statusbar.url.warn.fg = "{color3}"
 
-c.colors.tabs.bar.bg = "{background}"
+# c.colors.tabs.bar.bg = "{background}"
 
-c.colors.tabs.indicator.error = "{color1}"
-c.colors.tabs.indicator.start = "{color15}"
-c.colors.tabs.indicator.stop = "{color6}"
+# c.colors.tabs.indicator.error = "{color1}"
+# c.colors.tabs.indicator.start = "{color15}"
+# c.colors.tabs.indicator.stop = "{color6}"
 
-c.colors.tabs.even.bg = "{background}"
-c.colors.tabs.even.fg = "{foreground}"
-c.colors.tabs.odd.bg = "{background}"
-c.colors.tabs.odd.fg = "{foreground}"
+# c.colors.tabs.even.bg = "{background}"
+# c.colors.tabs.even.fg = "{foreground}"
+# c.colors.tabs.odd.bg = "{background}"
+# c.colors.tabs.odd.fg = "{foreground}"
 
-c.colors.tabs.selected.even.bg = "{color0}"
-c.colors.tabs.selected.even.fg = "{foreground}"
-c.colors.tabs.selected.odd.bg = "{color0}"
-c.colors.tabs.selected.odd.fg = "{foreground}"
+# c.colors.tabs.selected.even.bg = "{color0}"
+# c.colors.tabs.selected.even.fg = "{foreground}"
+# c.colors.tabs.selected.odd.bg = "{color0}"
+# c.colors.tabs.selected.odd.fg = "{foreground}"
+
+c.colors.tabs.bar.bg = melon_blue_dark
+
+c.colors.tabs.indicator.error = melon_red
+c.colors.tabs.indicator.start = melon_white
+c.colors.tabs.indicator.stop = melon_gray
+
+c.colors.tabs.even.bg = melon_blue_dark
+c.colors.tabs.even.fg = melon_blue_dark
+c.colors.tabs.odd.bg = melon_blue_dark
+c.colors.tabs.odd.fg = melon_blue_dark
+
+c.colors.tabs.selected.even.bg = melon_blue_light
+c.colors.tabs.selected.even.fg = melon_blue_light
+c.colors.tabs.selected.odd.bg = melon_blue_light
+c.colors.tabs.selected.odd.fg = melon_blue_light
