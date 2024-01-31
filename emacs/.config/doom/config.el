@@ -10,9 +10,13 @@
 (setq doom-font (font-spec :family "Fira Code" :size 20) ;; :weight 'semi-bold)
       doom-variable-pitch-font (font-spec :family "Fira Code" :size 20 :weight 'semi-bold))
 ;; (setq doom-theme 'doom-tomorrow-night)
-(setq doom-theme 'doom-material)
+;; (setq doom-theme 'doom-material)
 ;; (setq doom-theme 'doom-plain)
 ;; (setq doom-theme 'doom-ayu-light)
+
+(setq doom-modeline-height 40)
+(setq all-the-icons-scale-factor 1.1)
+
 
 ;; Nano
 ;; (setq doom-theme 'doom-nano-light)

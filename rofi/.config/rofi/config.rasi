@@ -34,15 +34,16 @@ configuration {
   text-color: @melon-white;
   font: @text-font;
   border-color: @melon-bg-light;
+  lines: 5;
 }
 
 
 /**** Layout ****/
 window {
-  width:    1000px;
-  y-offset: -250px;
+  width:    500px;
+  y-offset: -850px;
   anchor:   north;
-  location: center;
+  location: 5;
   border: 0px;
   border-radius: 10px;
   padding: 0px;
@@ -52,9 +53,9 @@ window {
 }
 
 listview {
-  lines: 10;
+  lines: 5;
   fixed-height: false;
-  columns: 2;
+  columns: 1;
   scrollbar: true;
   spacing: 3px;
   margin: -2px 0 0;
@@ -104,7 +105,7 @@ listview, inputbar {
   background-color: @melon-bg-dark;
 }
 textbox-icon, prompt, entry {
-  text-color: @melon-white;
+  text-color: @melon-green-light;
 }
 prompt, entry {
   background-color: @melon-green-light;

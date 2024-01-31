@@ -14,12 +14,14 @@ if [[ "$#" -ne 1 ]]; then
 fi
 
 if [[ "$1" =~ $pattern ]]; then
-    dunstify \
-        -a "brightness" "$(brightnessctl set "$1" | grep -oE '([0-9]*%)')" \
-        -u low \
-        -t "$notification_miliseconds" \
-        -i "$notification_icon" \
-        -r "$notification_id"
+  value="$(brightnessctl set "$1" | grep -oE '([0-9]*%)')"
+  dunstify \
+    -a "LIGHTCTL" "Brightness: " \
+    -u normal \
+    -h int:value:"$value" \
+    -t "$notification_miliseconds" \
+    -i "$notification_icon" \
+    -r "$notification_id"
 else
     echo "$help" >&2
     exit 1

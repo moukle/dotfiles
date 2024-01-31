@@ -2,10 +2,9 @@
 local M = {}
 
 M.ui = {
-  theme = "ayu_light",
-  -- theme_toggle = { "ayu_light", "melange" },
-  theme_toggle = { "ayu_light", "melange" },
-  statusline = { theme = "minimal" },
+  theme = "doomchad",
+  theme_toggle = { "doomchad", "doomchad" },
+  statusline = { theme = "minimal", separator_style = "round" }
 }
 
 M.plugins = "custom.plugins"

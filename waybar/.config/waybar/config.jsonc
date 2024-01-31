@@ -1,14 +1,14 @@
 {
   "layer": "top",
-  "position" : "top",
+  "position" : "right",
   // "mode" : "dock",
   "exclusive" : true,
   "passthrough" : false,
   "fixed-center" : true,
   "gtk-layer-shell" : true,
   // "output": "DP-2",
-  "height" : 20,
-  // "width" : 2000,
+  // "height" : 20,
+  // "width" : -100,
         "modules-left" : [
           // "clock#date",
           "clock"
@@ -54,7 +54,9 @@
 
         "clock" : {
           "tooltip" : true,
-          "format" : "{:%H:%M}",
+          "rotate": 270,
+          // "format" : "{:%H:%M}",
+          "format" : "{:%R}",
           "tooltip-format": "{:%A %B %d, %Y}"
         },
 

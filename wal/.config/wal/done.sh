@@ -26,6 +26,7 @@ ln -sf "${HOME}/.cache/wal/wezterm-wal.toml"     "${HOME}/.config/wezterm/colors
 # restart programs
 # ================
 pkill dunst; dunst   & # dunst
+pkill waybar; waybar & # waybar
 
 # qutebrowser
 # if pgrep -x "qutebrowser" > /dev/null; then
